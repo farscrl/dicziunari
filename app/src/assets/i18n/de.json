@@ -1,0 +1,10 @@
+{
+  "MENU": {
+    "SEARCH": "Suche",
+    "FAVOURITES": "Gespeichert",
+    "SETTINGS": "Einstellungen"
+  },
+  "SEARCH": {
+    "TITLE": "Suchen"
+  }
+}
