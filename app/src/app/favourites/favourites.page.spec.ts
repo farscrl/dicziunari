@@ -4,7 +4,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { FavouritesPage } from './favourites.page';
 
-describe('Tab2Page', () => {
+describe('FavouritesPage', () => {
   let component: FavouritesPage;
   let fixture: ComponentFixture<FavouritesPage>;
 

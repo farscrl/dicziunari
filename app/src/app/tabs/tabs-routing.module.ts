@@ -8,27 +8,27 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'search',
         loadChildren: () => import('../search/search.module').then(m => m.SearchPageModule)
       },
       {
-        path: 'tab2',
+        path: 'favourites',
         loadChildren: () => import('../favourites/favourites.module').then(m => m.FavouritesPageModule)
       },
       {
-        path: 'tab3',
+        path: 'settings',
         loadChildren: () => import('../settings/settings.module').then(m => m.SettingsPageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/search',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/search',
     pathMatch: 'full'
   }
 ];
