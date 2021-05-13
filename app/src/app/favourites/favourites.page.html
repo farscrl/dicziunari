@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Gespeichert
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Gespeichert</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item *ngFor="let favuorite of favourites">
+    <ion-label>
+      <h2>{{ favuorite.DStichwort }}</h2>
+      <h2>{{ favuorite.RStichwort }}</h2>
+    </ion-label>
+    <ion-note slot="end">
+      <ion-button size="small">V</ion-button>
+      <ion-icon name="star-outline"></ion-icon>
+    </ion-note>
+  </ion-item>
+</ion-content>
