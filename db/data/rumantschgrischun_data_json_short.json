@@ -1,0 +1,120 @@
+[
+ {
+  "RStichwort": "supplement da regulaziun",
+  "RGenus": "m",
+  "DStichwort": "Regulierungsnachtrag",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "agiunta da regulaziun",
+  "RGenus": "f",
+  "DStichwort": "Regulierungsnachtrag",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "armament",
+  "RGenus": "m",
+  "DStichwort": "Bewaffnung",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "armaziun",
+  "RGenus": "f",
+  "DStichwort": "Bewaffnung",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "armas",
+  "RGenus": "f.pl",
+  "DStichwort": "Bewaffnung",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "valur da cumparegliaziun",
+  "RGenus": "f",
+  "DStichwort": "Vergleichswert",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "mesiraziun electronica da distanzas",
+  "RGenus": "f",
+  "DStichwort": "elektronische Distanzmessung",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "forza da l'olma",
+  "RGenus": "f",
+  "DStichwort": "Seelenstärke",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "forza interna",
+  "RGenus": "f",
+  "DStichwort": "Seelenstärke",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "surpli da la bilantscha dals pajaments",
+  "RGenus": "m",
+  "DStichwort": "Zahlungsbilanzüberschuss",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "lescha federala davart la scolaziun universitara en las professiuns medicinalas",
+  "RGenus": "f",
+  "DStichwort": "Bundesgesetz über die universitäre Ausbildung in den medizinischen Berufen",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "insusceptibel",
+  "DStichwort": "unempfänglich"
+ },
+ {
+  "RStichwort": "betg susceptibel",
+  "DStichwort": "unempfänglich"
+ },
+ {
+  "RStichwort": "insensibel",
+  "DStichwort": "unempfänglich"
+ },
+ {
+  "RStichwort": "aria currenta",
+  "RGenus": "f",
+  "DStichwort": "Luftabzug",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "ventilaziun",
+  "RGenus": "f",
+  "DStichwort": "Luftabzug",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "eveniment accumpagnant",
+  "RGenus": "m",
+  "DStichwort": "Nebenereignis",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "tripel (f. tripla)",
+  "DStichwort": "dreifach"
+ },
+ {
+  "RStichwort": "traidubel (traidubla)",
+  "DStichwort": "dreifach"
+ },
+ {
+  "RStichwort": "mastergn da ferrer",
+  "RGenus": "m",
+  "DStichwort": "Schmiedehandwerk",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "entrada en l'uniun",
+  "RGenus": "f",
+  "DStichwort": "Unionsbeitritt",
+  "DGenus": "m"
+ },
+ {},
+ {"RStichwort": "smalefix"}
+]
