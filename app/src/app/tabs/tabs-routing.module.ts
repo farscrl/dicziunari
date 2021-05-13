@@ -9,15 +9,15 @@ const routes: Routes = [
     children: [
       {
         path: 'tab1',
-        loadChildren: () => import('../search/search.module').then(m => m.Tab1PageModule)
+        loadChildren: () => import('../search/search.module').then(m => m.SearchPageModule)
       },
       {
         path: 'tab2',
-        loadChildren: () => import('../favourites/favourites.module').then(m => m.Tab2PageModule)
+        loadChildren: () => import('../favourites/favourites.module').then(m => m.FavouritesPageModule)
       },
       {
         path: 'tab3',
-        loadChildren: () => import('../settings/settings.module').then(m => m.Tab3PageModule)
+        loadChildren: () => import('../settings/settings.module').then(m => m.SettingsPageModule)
       },
       {
         path: '',

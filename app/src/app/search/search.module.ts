@@ -4,8 +4,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SearchPage } from './search.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+import { TranslateModule } from '@ngx-translate/core';
 
-import { Tab1PageRoutingModule } from './search-routing.module';
+import { SearchPageRoutingModule } from './search-routing.module';
 
 @NgModule({
   imports: [
@@ -13,8 +14,9 @@ import { Tab1PageRoutingModule } from './search-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab1PageRoutingModule
+    SearchPageRoutingModule,
+    TranslateModule,
   ],
   declarations: [SearchPage]
 })
-export class Tab1PageModule {}
+export class SearchPageModule {}

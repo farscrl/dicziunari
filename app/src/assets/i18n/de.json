@@ -5,6 +5,33 @@
     "SETTINGS": "Einstellungen"
   },
   "SEARCH": {
-    "TITLE": "Suchen"
+    "TITLE": "Suchen",
+    "SEARCHFIELD": {
+      "LABEL": "Suchen",
+      "CANCEL": "Abbrechen"
+    },
+    "DE": "Deutsch"
+  },
+  "FAVOURITES": {
+    "TITLE": "Gespeichert"
+  },
+  "SETTINGS": {
+    "TITLE": "Einstellungen",
+    "MODE": {
+      "TITLE": "Suchmodus",
+      "START": "Wortanfang",
+      "MATCH": "Exakte Übereinstimmung",
+      "SUBSTRING": "Teilstring"
+    },
+    "VERBS": {
+      "TITLE": "Konjugierte Verben",
+      "INCLUDE": "In die Suche einbeziehen"
+    },
+    "OTHER": {
+      "TITLE": "Sonstiges",
+      "FEEDBACK": "Feedback",
+      "HELP": "Hilfe",
+      "INFO": "Info"
+    }
   }
 }

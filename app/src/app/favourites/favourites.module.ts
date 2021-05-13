@@ -1,12 +1,12 @@
 import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FavouritesPage } from './favourites.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+import { TranslateModule } from '@ngx-translate/core';
 
-import { Tab2PageRoutingModule } from './favourites-routing.module';
+import { FavouritesPageRoutingModule } from './favourites-routing.module';
 
 @NgModule({
   imports: [
@@ -14,8 +14,9 @@ import { Tab2PageRoutingModule } from './favourites-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab2PageRoutingModule
+    FavouritesPageRoutingModule,
+    TranslateModule,
   ],
   declarations: [FavouritesPage]
 })
-export class Tab2PageModule {}
+export class FavouritesPageModule {}
