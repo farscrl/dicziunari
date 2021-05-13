@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        Deutsch
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-select interface="popover" value="rumgrischun">
+        <ion-select-option value="rumgrischun">R. Grischun</ion-select-option>
+        <ion-select-option value="sursilv">Sursilvan</ion-select-option>
+        <ion-select-option value="sutsilv">Sutsilvan</ion-select-option>
+        <ion-select-option value="surm">Surmiran</ion-select-option>
+        <ion-select-option value="puter">Puter</ion-select-option>
+        <ion-select-option value="vall">Vallader</ion-select-option>
+      </ion-select>
+    </ion-buttons>
+
+    <ion-title>
+      <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-searchbar showCancelButton="focus"></ion-searchbar>
+
+  <ion-list>
+    <ng-container *ngFor="let pled of pleds">
+      <ion-item lines="none" class="first">
+        <ion-label>{{ pled.DStichwort }}</ion-label>
+        <ion-note slot="end">
+          <ion-button size="small">V</ion-button>
+          <ion-icon name="star-outline"></ion-icon>
+        </ion-note>
+      </ion-item>
+      <ion-item lines="none" class="last">
+        {{ pled.RStichwort }}
+      </ion-item>
+    </ng-container>
+  </ion-list>
+
+
+</ion-content>

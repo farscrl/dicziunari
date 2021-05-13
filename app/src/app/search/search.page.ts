@@ -1,0 +1,43 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-search',
+  templateUrl: 'search.page.html',
+  styleUrls: ['search.page.scss']
+})
+export class SearchPage {
+
+  public pleds = [
+    {
+      DStichwort: 'arbeiten',
+      RStichwort: 'lavurar'
+    },
+    {
+      DStichwort: 'arbeiten (krampfen)',
+      RStichwort: 'travagliar'
+    },
+    {
+      DStichwort: 'arbeiten (hantieren)',
+      RStichwort: 'truschar'
+    },
+    {
+      DStichwort: 'arbeiten',
+      RStichwort: 'traffitgar'
+    },
+    {
+      DStichwort: 'arbeiten (als Taglöhner)',
+      RStichwort: 'ir a schurnada'
+    },
+    {
+      DStichwort: 'arbeiten',
+      RStichwort: 'ir a dis'
+    },
+    {
+      DStichwort: 'Teilzeit arbeiten  ',
+      RStichwort: 'lavurar a temp parzial'
+    },
+  ]
+
+  constructor() {}
+
+}
