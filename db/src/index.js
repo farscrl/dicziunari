@@ -5,87 +5,102 @@ const { pick }   = require('stream-json/filters/Pick');
 const { ignore } = require('stream-json/filters/Ignore');
 const { streamArray } = require('stream-json/streamers/StreamArray');
 const Database = require('better-sqlite3');
+const { exception } = require('console');
 
 const DB_NAME = 'build/dicziunari.db';
 const TABLE_RUMGR = 'rumgr';
+const TABLE_RUMGR_IDX = 'rumgr_idx';
 const FILE_PATH = 'data/rumantschgrischun_data_json.json';
 // const FILE_PATH = 'data/rumantschgrischun_data_json_short.json';
 
 let processedEntries = 0;
 const columnList = [
+    { colName: 'id',                 colType: 'INTEGER PRIMARY KEY' },
+    { colName: 'weight',             colType: 'INTEGER' },
+
     // R
-    'RStichwort',
-    'RGenus',
+    { colName: 'RStichwort',         colType: 'TEXT' },
+    { colName: 'RGenus',             colType: 'TEXT' },
 
     // D
-    'DStichwort',
-    'DGenus',
+    { colName: 'DStichwort',         colType: 'TEXT' },
+    { colName: 'DGenus',             colType: 'TEXT' },
 
     // R conj
-    'infinitiv',
-    'preschentsing1',
-    'preschentsing2',
-    'preschentsing3',
-    'preschentplural1',
-    'preschentplural2',
-    'preschentplural3',
-    'imperfectsing1',
-    'imperfectsing2',
-    'imperfectsing3',
-    'imperfectplural1',
-    'imperfectplural2',
-    'imperfectplural3',
-    'participperfectfs',
-    'participperfectms',
-    'participperfectfp',
-    'participperfectmp',
-    'futursing1',
-    'futursing2',
-    'futursing3',
-    'futurplural1',
-    'futurplural2',
-    'futurplural3',
-    'conjunctivsing1',
-    'conjunctivsing2',
-    'conjunctivsing3',
-    'conjunctivplural1',
-    'conjunctivplural2',
-    'conjunctivplural3',
-    'cundizionalsing1',
-    'cundizionalsing2',
-    'cundizionalsing3',
-    'cundizionalplural1',
-    'cundizionalplural2',
-    'cundizionalplural3',
-    'imperativ1',
-    'imperativ2',
-    'gerundium',
+    { colName: 'infinitiv',          colType: 'TEXT' },
+    { colName: 'preschentsing1',     colType: 'TEXT' },
+    { colName: 'preschentsing2',     colType: 'TEXT' },
+    { colName: 'preschentsing3',     colType: 'TEXT' },
+    { colName: 'preschentplural1',   colType: 'TEXT' },
+    { colName: 'preschentplural2',   colType: 'TEXT' },
+    { colName: 'preschentplural3',   colType: 'TEXT' },
+    { colName: 'imperfectsing1',     colType: 'TEXT' },
+    { colName: 'imperfectsing2',     colType: 'TEXT' },
+    { colName: 'imperfectsing3',     colType: 'TEXT' },
+    { colName: 'imperfectplural1',   colType: 'TEXT' },
+    { colName: 'imperfectplural2',   colType: 'TEXT' },
+    { colName: 'imperfectplural3',   colType: 'TEXT' },
+    { colName: 'participperfectfs',  colType: 'TEXT' },
+    { colName: 'participperfectms',  colType: 'TEXT' },
+    { colName: 'participperfectfp',  colType: 'TEXT' },
+    { colName: 'participperfectmp',  colType: 'TEXT' },
+    { colName: 'futursing1',         colType: 'TEXT' },
+    { colName: 'futursing2',         colType: 'TEXT' },
+    { colName: 'futursing3',         colType: 'TEXT' },
+    { colName: 'futurplural1',       colType: 'TEXT' },
+    { colName: 'futurplural2',       colType: 'TEXT' },
+    { colName: 'futurplural3',       colType: 'TEXT' },
+    { colName: 'conjunctivsing1',    colType: 'TEXT' },
+    { colName: 'conjunctivsing2',    colType: 'TEXT' },
+    { colName: 'conjunctivsing3',    colType: 'TEXT' },
+    { colName: 'conjunctivplural1',  colType: 'TEXT' },
+    { colName: 'conjunctivplural2',  colType: 'TEXT' },
+    { colName: 'conjunctivplural3',  colType: 'TEXT' },
+    { colName: 'cundizionalsing1',   colType: 'TEXT' },
+    { colName: 'cundizionalsing2',   colType: 'TEXT' },
+    { colName: 'cundizionalsing3',   colType: 'TEXT' },
+    { colName: 'cundizionalplural1', colType: 'TEXT' },
+    { colName: 'cundizionalplural2', colType: 'TEXT' },
+    { colName: 'cundizionalplural3', colType: 'TEXT' },
+    { colName: 'imperativ1',         colType: 'TEXT' },
+    { colName: 'imperativ2',         colType: 'TEXT' },
+    { colName: 'gerundium',          colType: 'TEXT' },
 ];
 
 let db;
 let insertStatementLemma;
+let insertStatementIdx;
+let id = 1;
 
 function prepareAndCleanDb() {
     db = new Database(DB_NAME);
 
+    //speedup for sqlite inserts
+    //as seen on http://blog.quibb.org/2010/08/fast-bulk-inserts-into-sqlite/
     db.pragma("synchronous=OFF");
     db.pragma("count_changes=OFF");
     db.pragma("journal_mode=MEMORY");
     db.pragma("temp_store=MEMORY");
+
     db.exec("DROP TABLE IF EXISTS " + TABLE_RUMGR +" ;");
+    db.exec("DROP TABLE IF EXISTS " + TABLE_RUMGR_IDX + ";")
 
     // create used columns
-    const columnDef = Array.from(columnList).map(column => column + " TEXT").join(", ");
+    const columnDef = columnList.map(column => column.colName + ' ' + column.colType).join(", ");
     db.exec("CREATE TABLE " + TABLE_RUMGR + "(" +columnDef + ");");
+
+    // creating virtual fts5 table. Used options:
+    // lemma is the search term. content sets the content to another table, content_rowid defines what column that identifies the data in the data-table, columsize defines, that values are not stored seperately in the virtual table
+    db.exec("CREATE VIRTUAL TABLE " + TABLE_RUMGR_IDX + " using fts5(lemma, content = '" + TABLE_RUMGR + "', content_rowid = 'id', columnsize=0);");
 
     // create prepared statement to add each lemma
     insertStatementLemma = db.prepare(
-        "INSERT INTO " + TABLE_RUMGR + " ("+ columnList.join(", ")+") " + 
-        "VALUES ("+Array.from(columnList).map(column => "$"+column).join(", ")+");");
-
+        "INSERT INTO " + TABLE_RUMGR + " ("+ columnList.map(col => col.colName).join(", ")+") " + 
+        "VALUES (" + Array.from(columnList).map(column => "$"+column.colName).join(", ")+");");
+    insertStatementIdx = db.prepare("INSERT INTO " + TABLE_RUMGR_IDX + " (rowId, lemma) VALUES ($rowId, $lemma);");
+    
     // start transaction
     db.exec("BEGIN TRANSACTION;");
-
 }
 
 function createPipeline(filePath) {
@@ -116,6 +131,28 @@ function searchColumnNames(lemma) {
     }
 }
 
+function calculateWeight(lemma) {
+    // TODO: implement algorithm for weight
+    return 1;
+}
+
+function insertLemma(lemma) {
+    var binds = {};
+    binds['id'] = id;
+    binds['weight'] = calculateWeight(lemma);
+    columnList.forEach(column => binds[column.colName] = lemma[column.colName]);
+    insertStatementLemma.run(binds);
+}
+
+function insertIndex(lemma) {
+    var binds = {};
+    binds["rowId"] = id;
+    binds["lemma"] = lemma.RStichwort;
+    insertStatementIdx.run(binds);
+    binds["lemma"] = lemma.DStichwort;
+    insertStatementIdx.run(binds);
+}
+
 function handleLemma(lemma) {
     //console.log(lemma);
 
@@ -126,9 +163,9 @@ function handleLemma(lemma) {
 
     ++processedEntries;
 
-    var binds = {};
-    columnList.forEach(column => binds[column] = lemma[column]);
-    insertStatementLemma.run(binds);
+    insertLemma(lemma);
+    insertIndex(lemma);
+    id++;
 
     if (processedEntries % 1000 === 0) {
         console.log('Processed ' + processedEntries + ' lemmas');
