@@ -24,7 +24,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-searchbar showCancelButton="focus"></ion-searchbar>
+  <ion-searchbar showCancelButton="focus" [(ngModel)]="lemma" (ngModelChange)="search()"></ion-searchbar>
 
   <ion-list>
     <ng-container *ngFor="let pled of pleds">

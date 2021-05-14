@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SearchService } from '../services/search.service';
 
 @Component({
   selector: 'app-search',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['search.page.scss']
 })
 export class SearchPage {
+
+  public lemma = '';
 
   public pleds = [
     {
@@ -38,6 +41,13 @@ export class SearchPage {
     },
   ]
 
-  constructor() {}
+  constructor(
+    private searchService: SearchService,
+  ) {}
 
+ search() {
+  this.searchService.searchTerm(this.lemma).then((pleds) => {
+    this.pleds = pleds;
+  })
+ }
 }
