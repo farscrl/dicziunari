@@ -24,7 +24,8 @@
       "TITLE": "Modus da tschertgar",
       "START": "Cumenzament dal pled",
       "MATCH": "Exact",
-      "SUBSTRING": "Part"
+      "SUBSTRING": "Part",
+      "END": "Fin dal pled"
     },
     "VERBS": {
       "TITLE": "Verbs conjugads",
@@ -35,6 +36,18 @@
       "FEEDBACK": "Resun",
       "HELP": "Agid",
       "INFO": "Info"
+    }
+  },
+  "PAGES": {
+    "BACK": "Turnar",
+    "FEEDBACK": {
+      "TITLE": "Resun"
+    },
+    "HELP": {
+      "TITLE": "Agid"
+    },
+    "INFO": {
+      "TITLE": "Infurmaziuns"
     }
   }
 }

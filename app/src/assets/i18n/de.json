@@ -24,7 +24,8 @@
       "TITLE": "Suchmodus",
       "START": "Wortanfang",
       "MATCH": "Exakte Übereinstimmung",
-      "SUBSTRING": "Teilstring"
+      "SUBSTRING": "Teilstring",
+      "END": "Wortende"
     },
     "VERBS": {
       "TITLE": "Konjugierte Verben",
@@ -35,6 +36,18 @@
       "FEEDBACK": "Feedback",
       "HELP": "Hilfe",
       "INFO": "Info"
+    }
+  },
+  "PAGES": {
+    "BACK": "Zurück",
+    "FEEDBACK": {
+      "TITLE": "Feedback"
+    },
+    "HELP": {
+      "TITLE": "Hilfe"
+    },
+    "INFO": {
+      "TITLE": "Informationen"
     }
   }
 }

@@ -27,7 +27,7 @@
       </ion-item>
     </ion-radio-group>
 
-    <ion-radio-group>
+    <ion-radio-group [(ngModel)]="searchMode" (ionChange)="searchModeChanged()">
       <ion-list-header>
         <ion-label>{{ "SETTINGS.MODE.TITLE" | translate}}</ion-label>
       </ion-list-header>
@@ -45,6 +45,11 @@
         <ion-label>{{ "SETTINGS.MODE.SUBSTRING" | translate}}</ion-label>
         <ion-radio slot="start" value="substring"></ion-radio>
       </ion-item>
+
+      <ion-item>
+        <ion-label>{{ "SETTINGS.MODE.END" | translate}}</ion-label>
+        <ion-radio slot="start" value="end"></ion-radio>
+      </ion-item>
     </ion-radio-group>
 
     <ion-list-header>
@@ -52,19 +57,19 @@
     </ion-list-header>
     <ion-item>
       <ion-label>{{ "SETTINGS.VERBS.INCLUDE" | translate}}</ion-label>
-      <ion-toggle slot="start" name="blueberry" checked></ion-toggle>
+      <ion-toggle slot="start" name="blueberry" [(ngModel)]="includeVerbs" (ionChange)="includeVerbsChanged()"></ion-toggle>
     </ion-item>
 
     <ion-list-header>
       <ion-label>{{ "SETTINGS.OTHER.TITLE" | translate}}</ion-label>
     </ion-list-header>
-    <ion-item detail="true">
+    <ion-item detail="true" (click)="openPage('feedback')">
       <ion-label>{{ "SETTINGS.OTHER.FEEDBACK" | translate}}</ion-label>
     </ion-item>
-    <ion-item detail="true">
+    <ion-item detail="true" (click)="openPage('help')">
       <ion-label>{{ "SETTINGS.OTHER.HELP" | translate}}</ion-label>
     </ion-item>
-    <ion-item detail="true">
+    <ion-item detail="true" (click)="openPage('info')">
       <ion-label>{{ "SETTINGS.OTHER.INFO" | translate}}</ion-label>
     </ion-item>
   </ion-list>

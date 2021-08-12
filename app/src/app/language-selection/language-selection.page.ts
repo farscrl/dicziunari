@@ -13,7 +13,7 @@ export class LanguageSelectionPage implements OnInit {
 
   ngOnInit() {}
 
-  selectLanguage(locale: string) {
+  selectLanguage(locale: 'de' | 'rm') {
     this.configService.setSelectedLocale(locale);
     this.translateService.use(locale);
     this.router.navigate(['']);

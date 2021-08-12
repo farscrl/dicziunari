@@ -8,6 +8,9 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { TranslateModule } from '@ngx-translate/core';
 
 import { SettingsPageRoutingModule } from './settings-routing.module';
+import { FeedbackPage } from './feedback/feedback.page';
+import { HelpPage } from './help/help.page';
+import { InfoPage } from './info/info.page';
 
 @NgModule({
   imports: [
@@ -19,6 +22,6 @@ import { SettingsPageRoutingModule } from './settings-routing.module';
     SettingsPageRoutingModule,
     TranslateModule,
   ],
-  declarations: [SettingsPage],
+  declarations: [SettingsPage, FeedbackPage, HelpPage, InfoPage],
 })
 export class SettingsPageModule {}
