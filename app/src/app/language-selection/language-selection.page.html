@@ -1,0 +1,33 @@
+<ion-content>
+  <div class="main-content">
+    <ion-text class="headers">
+      <h1>
+        Bainvegni!<br>
+        Willkommen!
+      </h1>
+    </ion-text>
+
+    <div class="texts">
+      <p style="flex-grow: 1;">
+        En tge lingua vuls ti utilisar l'app?
+        <br>
+        <br>
+        In welcher Sprache möchtest du die App benutzen?
+      </p>
+    </div>
+
+    <div>
+      <ion-button expand="block" (click)="selectLanguage('rm')">Rumantsch</ion-button>
+      <ion-button expand="block" (click)="selectLanguage('de')">Deutsch</ion-button>
+    </div>
+
+    <div>
+      <p>
+        La lingua da l'app pos ti adina era midar en las preferenzas.
+        <br>
+        <br>
+        Die App-Sprache kann jederzeit in den Einstellungen geändert werden.
+      </p>
+    </div>
+  </div>
+</ion-content>

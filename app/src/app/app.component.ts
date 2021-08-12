@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { Platform } from '@ionic/angular';
-import { SearchService } from './services/search.service';
+import { ConfigService } from './services/config.service';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +10,10 @@ import { SearchService } from './services/search.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private translateService: TranslateService, private platform: Platform, private searchService: SearchService) {
+  constructor(private translateService: TranslateService, private platform: Platform, private configService: ConfigService) {
     this.platform.ready().then(() => {
       SplashScreen.show();
-      setTimeout(function () {
+      setTimeout(() => {
         SplashScreen.hide();
       }, 5000);
     });
@@ -22,9 +22,12 @@ export class AppComponent {
 
   private initTranslateService() {
     this.translateService.addLangs(['de', 'rm']);
-    this.translateService.setDefaultLang('de');
-
-    const browserLang = this.translateService.getBrowserLang();
-    this.translateService.use(browserLang.match(/de|rm/) ? browserLang : 'de');
+    if (!!this.configService.getSelectedLocale()) {
+      this.translateService.setDefaultLang(this.configService.getSelectedLocale());
+      this.translateService.use(this.configService.getSelectedLocale());
+    } else {
+      this.translateService.setDefaultLang('de');
+      this.translateService.use('de');
+    }
   }
 }

@@ -12,6 +12,21 @@
   </ion-header>
 
   <ion-list>
+    <ion-radio-group [(ngModel)]="appLanguage" (ionChange)="languageChanged()">
+      <ion-list-header>
+        <ion-label>{{ "SETTINGS.LANGUAGE.TITLE" | translate}}</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Rumantsch</ion-label>
+        <ion-radio slot="start" value="rm"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Deutsch</ion-label>
+        <ion-radio slot="start" value="de"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
     <ion-radio-group>
       <ion-list-header>
         <ion-label>{{ "SETTINGS.MODE.TITLE" | translate}}</ion-label>

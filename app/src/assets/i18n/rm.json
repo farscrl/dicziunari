@@ -1,0 +1,40 @@
+{
+  "MENU": {
+    "SEARCH": "Tschertgar",
+    "FAVOURITES": "Memorisà",
+    "SETTINGS": "Preferenzas"
+  },
+  "SEARCH": {
+    "TITLE": "Tschertgar",
+    "SEARCHFIELD": {
+      "LABEL": "Tschertgar",
+      "CANCEL": "Interrumper"
+    },
+    "DE": "Tudestg"
+  },
+  "FAVOURITES": {
+    "TITLE": "Memorisà"
+  },
+  "SETTINGS": {
+    "TITLE": "Preferenzas",
+    "LANGUAGE": {
+      "TITLE": "Lingua da l'app"
+    },
+    "MODE": {
+      "TITLE": "Modus da tschertgar",
+      "START": "Cumenzament dal pled",
+      "MATCH": "Exact",
+      "SUBSTRING": "Part"
+    },
+    "VERBS": {
+      "TITLE": "Verbs conjugads",
+      "INCLUDE": "Includer en la tschertga"
+    },
+    "OTHER": {
+      "TITLE": "Auter",
+      "FEEDBACK": "Resun",
+      "HELP": "Agid",
+      "INFO": "Info"
+    }
+  }
+}

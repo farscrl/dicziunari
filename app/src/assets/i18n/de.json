@@ -17,6 +17,9 @@
   },
   "SETTINGS": {
     "TITLE": "Einstellungen",
+    "LANGUAGE": {
+      "TITLE": "App-Sprache"
+    },
     "MODE": {
       "TITLE": "Suchmodus",
       "START": "Wortanfang",
