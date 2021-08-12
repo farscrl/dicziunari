@@ -10,12 +10,7 @@ import { SearchService } from './services/search.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(
-    private translateService: TranslateService,
-    private platform: Platform,
-    private searchService: SearchService,
-  ) {
-
+  constructor(private translateService: TranslateService, private platform: Platform, private searchService: SearchService) {
     this.platform.ready().then(() => {
       SplashScreen.show();
       setTimeout(function () {

@@ -9,28 +9,28 @@ const routes: Routes = [
     children: [
       {
         path: 'search',
-        loadChildren: () => import('../search/search.module').then(m => m.SearchPageModule)
+        loadChildren: () => import('../search/search.module').then((m) => m.SearchPageModule),
       },
       {
         path: 'favourites',
-        loadChildren: () => import('../favourites/favourites.module').then(m => m.FavouritesPageModule)
+        loadChildren: () => import('../favourites/favourites.module').then((m) => m.FavouritesPageModule),
       },
       {
         path: 'settings',
-        loadChildren: () => import('../settings/settings.module').then(m => m.SettingsPageModule)
+        loadChildren: () => import('../settings/settings.module').then((m) => m.SettingsPageModule),
       },
       {
         path: '',
         redirectTo: '/tabs/search',
-        pathMatch: 'full'
-      }
-    ]
+        pathMatch: 'full',
+      },
+    ],
   },
   {
     path: '',
     redirectTo: '/tabs/search',
-    pathMatch: 'full'
-  }
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({

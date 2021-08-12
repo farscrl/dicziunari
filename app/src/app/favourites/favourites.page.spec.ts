@@ -8,16 +8,18 @@ describe('FavouritesPage', () => {
   let component: FavouritesPage;
   let fixture: ComponentFixture<FavouritesPage>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [FavouritesPage],
-      imports: [IonicModule.forRoot(), ExploreContainerComponentModule]
-    }).compileComponents();
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [FavouritesPage],
+        imports: [IonicModule.forRoot(), ExploreContainerComponentModule],
+      }).compileComponents();
 
-    fixture = TestBed.createComponent(FavouritesPage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+      fixture = TestBed.createComponent(FavouritesPage);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    }),
+  );
 
   it('should create', () => {
     expect(component).toBeTruthy();

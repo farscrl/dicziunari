@@ -6,17 +6,13 @@ import { CapacitorSQLite, SQLiteConnection } from '@capacitor-community/sqlite';
 const DB_NAME_KEY = 'db_name';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SearchService {
-
   private isReady = false;
 
-  constructor(
-    private http: HttpClient,
-    private alertCtrl: AlertController
-  ) {
-    this.init()
+  constructor(private http: HttpClient, private alertCtrl: AlertController) {
+    this.init();
   }
 
   async init(): Promise<void> {
@@ -30,8 +26,8 @@ export class SearchService {
       } catch (e) {
         const alert = await this.alertCtrl.create({
           header: 'No DB access',
-          message: 'This app can\'t work without Database access.',
-          buttons: ['OK']
+          message: "This app can't work without Database access.",
+          buttons: ['OK'],
         });
         await alert.present();
       }
@@ -49,9 +45,9 @@ export class SearchService {
     // create db connection
     const hasConnection = await sqlite.isConnection('dicziunari');
     if (hasConnection) {
-      await sqlite.createConnection("dicziunari", false, "no-encryption", 1);
+      await sqlite.createConnection('dicziunari', false, 'no-encryption', 1);
     } else {
-      await sqlite.retrieveConnection("dicziunari");
+      await sqlite.retrieveConnection('dicziunari');
     }
     await CapacitorSQLite.open({ database: 'dicziunari' });
     this.isReady = true;
@@ -61,9 +57,16 @@ export class SearchService {
     if (!this.isReady) {
       return [];
     }
-    const statement = "SELECT c.RStichwort, c.DStichwort FROM rumgr c, rumgr_idx idx WHERE idx.lemma match '"+lemma+"' and idx.rowId = c.id LIMIT 0,10;";
+    const statement =
+      "SELECT c.RStichwort, c.DStichwort FROM rumgr c, rumgr_idx idx WHERE idx.lemma match '" +
+      lemma +
+      "' and idx.rowId = c.id LIMIT 0,10;";
     console.warn(statement);
-    const values = await CapacitorSQLite.query({ database: 'dicziunari', statement, values: [] });
+    const values = await CapacitorSQLite.query({
+      database: 'dicziunari',
+      statement,
+      values: [],
+    });
     return values.values;
   }
 }

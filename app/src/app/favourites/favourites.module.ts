@@ -9,14 +9,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FavouritesPageRoutingModule } from './favourites-routing.module';
 
 @NgModule({
-  imports: [
-    IonicModule,
-    CommonModule,
-    FormsModule,
-    ExploreContainerComponentModule,
-    FavouritesPageRoutingModule,
-    TranslateModule,
-  ],
-  declarations: [FavouritesPage]
+  imports: [IonicModule, CommonModule, FormsModule, ExploreContainerComponentModule, FavouritesPageRoutingModule, TranslateModule],
+  declarations: [FavouritesPage],
 })
 export class FavouritesPageModule {}

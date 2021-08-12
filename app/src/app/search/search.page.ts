@@ -4,50 +4,47 @@ import { SearchService } from '../services/search.service';
 @Component({
   selector: 'app-search',
   templateUrl: 'search.page.html',
-  styleUrls: ['search.page.scss']
+  styleUrls: ['search.page.scss'],
 })
 export class SearchPage {
-
   public lemma = '';
 
   public pleds = [
     {
       DStichwort: 'arbeiten',
-      RStichwort: 'lavurar'
+      RStichwort: 'lavurar',
     },
     {
       DStichwort: 'arbeiten (krampfen)',
-      RStichwort: 'travagliar'
+      RStichwort: 'travagliar',
     },
     {
       DStichwort: 'arbeiten (hantieren)',
-      RStichwort: 'truschar'
+      RStichwort: 'truschar',
     },
     {
       DStichwort: 'arbeiten',
-      RStichwort: 'traffitgar'
+      RStichwort: 'traffitgar',
     },
     {
       DStichwort: 'arbeiten (als Taglöhner)',
-      RStichwort: 'ir a schurnada'
+      RStichwort: 'ir a schurnada',
     },
     {
       DStichwort: 'arbeiten',
-      RStichwort: 'ir a dis'
+      RStichwort: 'ir a dis',
     },
     {
       DStichwort: 'Teilzeit arbeiten  ',
-      RStichwort: 'lavurar a temp parzial'
+      RStichwort: 'lavurar a temp parzial',
     },
-  ]
+  ];
 
-  constructor(
-    private searchService: SearchService,
-  ) {}
+  constructor(private searchService: SearchService) {}
 
- search() {
-  this.searchService.searchTerm(this.lemma).then((pleds) => {
-    this.pleds = pleds;
-  })
- }
+  search() {
+    this.searchService.searchTerm(this.lemma).then((pleds) => {
+      this.pleds = pleds;
+    });
+  }
 }
