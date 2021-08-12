@@ -19,5 +19,8 @@
         "RUMGR",
         "dicziunari"
     ],
-    "peacock.color": "#2b051f"
+    "peacock.color": "#2b051f",
+    "prettier.configPath": "app/.prettierrc.json",
+    "prettier.ignorePath": "app/.prettierignore",
+    "editor.formatOnSave": true
 }
