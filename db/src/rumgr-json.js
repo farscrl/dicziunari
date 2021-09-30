@@ -111,7 +111,7 @@ function createPipeline(filePath) {
         streamArray(),
         data => {
             return data.value;
-          }
+        }
     ]);
 }
 
@@ -189,18 +189,17 @@ function configurePipeline(pipeline) {
     });
 
     pipeline.on('end', () => {
-        
         finalizeDb();
     });
 }
 
 module.exports = {
     main: function () {
-    console.log('Start converting JSON file for Rumantsch Grischun...');
+        console.log('Start converting JSON file for Rumantsch Grischun...');
 
-    prepareAndCleanDb();
+        prepareAndCleanDb();
 
-    const pipeline = createPipeline(FILE_PATH);
-    configurePipeline(pipeline);
+        const pipeline = createPipeline(FILE_PATH);
+        configurePipeline(pipeline);
     }
 }

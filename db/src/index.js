@@ -1,4 +1,5 @@
 var rumgrJson = require('./rumgr-json');
+var valladerHtml = require('./vallader-html');
 
 
 switch (process.argv[2]) {
@@ -23,7 +24,7 @@ switch (process.argv[2]) {
         break;
     
     case "vallader":
-        console.log("Not implemented yet");
+        valladerHtml.main();
         break;
 
     case "all":
