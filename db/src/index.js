@@ -1,5 +1,6 @@
 var rumgrJson = require('./rumgr-json');
 var valladerHtml = require('./vallader-html');
+var puterHtml = require('./puter-html');
 
 
 switch (process.argv[2]) {
@@ -20,7 +21,7 @@ switch (process.argv[2]) {
         break;
     
     case "puter":
-        console.log("Not implemented yet");
+        puterHtml.main();
         break;
     
     case "vallader":
@@ -33,6 +34,6 @@ switch (process.argv[2]) {
         // todo: sursilvan
         // todo: sutsilvan
         // todo: surmiran
-        // todo: puter
-        // todo: vallader
+        puterHtml.main();
+        valladerHtml.main();
 }
