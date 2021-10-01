@@ -1,0 +1,513 @@
+[
+    {
+        "type": "database",
+        "name": "nvs"
+    },
+    {
+        "type": "table",
+        "name": "NVS",
+        "database": "nvs",
+        "data": [
+            {
+                "cn_DS": "1",
+                "Etymologie": "",
+                "Corp": "m, 1. erster Buchstabe des Alphabets; ti stos aunc aschuntar in \"a\", du musst noch ein \"A\" hinzufügen. – 2. als Zeichen für Hausmarken; in A cun in streh sutvi sco noda-casa, ein A mit einem Strich darunter als Hauszeichen. – 3. (ohne Art.) tgi che di a sto era dir b, wer A sagt, muss auch B sagen; dir si enzatgei naven dad a tochen z, etwas von A bis Z hersagen. – 4. (Tonart) a-dur, A-Dur. ",
+                "Phonetik": "$",
+                "Phonetik2": "(<f>$<\/f>)",
+                "Redewendung": "wer A sagt, muss auch B sagen",
+                "Stichwort": "a I",
+                "StichwortD": "a-dur, A-Dur"
+            },
+            {
+                "cn_DS": "2",
+                "Etymologie": "",
+                "Corp": "interj, 1. Rufwort für Kälber; a, pusch, puschin! komm, Kälbchen, komm! – 2. Ausruf. – a) (des Erstaunens) a, ussa vegn ei pér endamen a mi! ah, jetzt entsinne ich mich erst wieder! a, buca ver! ah, das kann doch nicht wahr sein! – b) (der Ungeduld) a, quei vala meins che nuot! ah, das ist doch nichts wert! ",
+                "Phonetik": "$",
+                "Phonetik2": "(<f>$<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "a II",
+                "StichwortD": "ah"
+            },
+            {
+                "cn_DS": "3",
+                "Etymologie": "[zu lat. ad, tw. mit Einw. von ab]. ",
+                "Corp": "prep, 1. (mit Dativ der Person oder Sache). – a). – a) a mi, mir; ~ nus, uns; agl aug, dem Onkel; als affons, den Kindern; allas mattauns, den Mädchen; quei s'auda ~ mi, das gehört mir; ~ tgi duei dar la cadeina? wem soll ich die Kette geben? trer capiala ~ mintga otgà, sich vor jedem Dummkopf verbeugen; dar colur ad ina preit, eine Wand mit Farbe bestreichen. – b) (vereinz.; kirchenspr.) a ti viv jeu, a ti mier jeu, dir lebe und sterbe ich. – b). – a) (redupl.; tw. veralt.) adami, adanus, adavus, mir, uns, euch; das quei adami? gibst du es mir? – b) vgl. -> agli. – 2. (lokal; Ort und Richtung anzeigend) bei, in, nach, bis; a Turitg, in\/nach Zürich; ~ casa, zu Hause, nach Hause; ~ scola, zur Schule, in der Schule; ~ seniester, links, nach links; semetter ~ meisa, sich zu Tische setzen; da cheu ~ Cuera, von hier bis nach Chur. – 3. (temporal). – a) allas duas, um zwei Uhr; a bun'ura, früh, frühzeitig; all'entschatta, anfangs; ad interim va ei, vorläufig geht’s. – b) oz ~ quendisch, heute in vierzehn Tagen; oz ad otg, heute in acht Tagen; – 4. (distrib.) zu, je, für; in ad in, einer nach dem andern; treis ~ treis, zu dritt, je drei und drei; ad onn, jährlich, pro Jahr; ~ tschun francs il toc, zu (je) fünf Franken das Stück. – 5. (modal) ad ault, in die Höhe; ~ memoria, aus dem Gedächtnis, auswendig; alla buna, gütlich; alla veglia, nach herkömmlicher Art; ~ bien seveser! auf Wiedersehen! ir ~ prau, passen; far tut alla sperta, überstürzen, übereilen. – 6. (charakterisierend; lit., gewählt; vgl. bes. -> da) motor ~ gas, Gasmotor m; aviun ~ reacziun, Düsenflugzeug n. – 7. (verb. mit Verben). – a) (Verb + präp. Obj.) arrivar ~ (tier) enzatgei, zu etw. gelangen, etw. erreichen; alzar ils mauns ~ Diu, die Hände zu Gott erheben; condemnar enzatgi ad enzatgei, jem. zu etw. verurteilen; surmenar ad enzatgei, zu etw. verführen; corrispunder ad in giavisch, einem Wunsche entsprechen; dar ~ dies ad enzatgi, jem. hinterrücks angreifen, überfallen; esser preparaus ~ tut, auf alles gefasst sein; impunder il temps al studi, die Zeit dem Studium widmen. – b) (final) ir ~ vias, zum Gemeinwerk antreten (d.h. zur Ausbesserung der Alp- und Flurwege); ir ~ catscha, auf die Jagd gehen; ir alla\/a pesca, fischen gehen; ir ~ cavagl, reiten; ir ~ dis, im Taglohn arbeiten. – c) (Verb + Präp. + Inf.). – a). – (1) ir ~ cantar, singen gehen; ir ~ clamar, rufen gehen. – (2) ir ~ piarder, verloren gehen. – (3) entscheiver ~ plover, zu regnen anfangen. – b) (Verb + Präp. + Inf.; Futurkonstr., usw.) nus vegnin ~ rispunder, wir werden eine Antwort geben; vus vegnis buc ad esser schi da bein! ihr werdet doch nicht so albern sein! – g) (Dauer, Intensität). – (1) (redupl.) dar ad in dar, in einem fort regnen; grir ad in grir, ständig schreien. – (2) (mit Gerund.; durativ) ir ~ buffond, ausser Atem sein; ir ~ lahergnond, ständig kichern. – (3) (intens.) dir e turnar ~ dir, insistieren, immer wieder sagen.",
+                "Phonetik": "a, at",
+                "Phonetik2": "(<f>a, at, <\/f>vereinz. redupl. <f>3d<\/f>; verb. mit Art., geschr.: al\/agl, alla\/allas, pl. als; vor Vokal ad)",
+                "Redewendung": "",
+                "Stichwort": "a III",
+                "StichwortD": "bei, in, nach, bis, zu, um, je, für"
+            },
+            {
+                "cn_DS": "4",
+                "Etymologie": "[wie schwdt. a wa (ach was!), oit. àbba]. ",
+                "Corp": "interj, ach was! ~, ti mo dorma vinavon! ach was, schlaf du nur weiter!",
+                "Phonetik": "b6",
+                "Phonetik2": "(<f>b6<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "aba",
+                "StichwortD": "ach was!"
+            },
+            {
+                "cn_DS": "5",
+                "Etymologie": "[Deverb. von -> bandunar ‘verlassen']. ",
+                "Corp": "m, 1. Hingabe f, Ergebenheit f; ~ en Diu, Hingabe an Gott; in sentiment da cumplein ~, ein Gefühl völliger Hingabe. – 2. Verlassen n, Preisgabe f, Aufgabe f; quei munta igl ~ d'in tal project, das bedeutet die Preisgabe eines solchen Projektes; igl ~ d'ina persuna blessada, das Im-Stiche-lassen eines Verletzten. – 3. Verlassenheit f, Einsamkeit f; siu ~ ei gronds, seine Verlassenheit ist gross; -> bandun II.",
+                "Phonetik": "bnd©n",
+                "Phonetik2": "(<f>bnd©n<\/f>)",
+                "Redewendung": "im Stiche lassen",
+                "Stichwort": "abandun",
+                "StichwortD": "Hingabe, Ergebenheit, Verlassen, Preisgabe, Aufgabe, Verlassenheit, Einsamkeit"
+            },
+            {
+                "cn_DS": "6",
+                "Etymologie": "[Zus. mit a(d) u. bandunar ‘verlassen'; it. abbandonare]. ",
+                "Corp": "tr, verlassen, preisgeben, im Stiche lassen.",
+                "Phonetik": "bndun6",
+                "Phonetik2": "(<f>bndun6<\/f>)",
+                "Redewendung": "im Stiche lassen",
+                "Stichwort": "abandunar",
+                "StichwortD": "verlassen, preisgeben, im Stiche lassen"
+            },
+            {
+                "cn_DS": "7",
+                "Etymologie": "",
+                "Corp": "adj, verlassen, einsam, herrenlos. ",
+                "Phonetik": "bndun3u",
+                "Phonetik2": "(<f>bndun3u,<\/f> f. <f>-6d<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abandunau",
+                "StichwortD": "verlassen, einsam, herrenlos"
+            },
+            {
+                "cn_DS": "8",
+                "Etymologie": "[Zus. mit a u. bass ‘tief, niedrig'; it. abbasso]. ",
+                "Corp": "I adv. – 1. (lokal) unten, zuunterst, gegen unten, abwärts; giu pli ~, weiter unten; ir ~, hinuntergehen, hinuntersteigen. – 2. (modal) tegn il tgau ~! ziehe den Kopf ein! sgular ~, tief fliegen. – II adj.attrib, tief, niedrig; il sulegl ~, die tiefstehende Sonne; ils praus ~ ein gia terreins, die tiefer gelegenen Wiesen sind schon aper.",
+                "Phonetik": "b3s",
+                "Phonetik2": "(<f>b3s<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abass",
+                "StichwortD": "unten, zuunterst, abwärts, tief, niedrig"
+            },
+            {
+                "cn_DS": "9",
+                "Etymologie": "[lat. abbatissa ‘Äbtissin'; it. abbadessa, badessa]. ",
+                "Corp": "f, Äbtissin f; la mumma ~, die (ehrwürdige) Mutter Äbtissin.",
+                "Phonetik": "bdDs",
+                "Phonetik2": "(<f>bdDs<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abbadessa",
+                "StichwortD": "Äbtissin"
+            },
+            {
+                "cn_DS": "10",
+                "Etymologie": "[mlat. abbatia, it. abbazia]. ",
+                "Corp": "f, Abtei f; l'~ da Mustér, die Abtei Disentis.",
+                "Phonetik": "btsè",
+                "Phonetik2": "(<f>btsè<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abbazia",
+                "StichwortD": "Abtei"
+            },
+            {
+                "cn_DS": "11",
+                "Etymologie": "[Abl. von -> abbazia]. ",
+                "Corp": "adj, die Abtei, den Abt betreffend; baselgia ~a, Abtskirche f.",
+                "Phonetik": "btsj6l",
+                "Phonetik2": "(<f>btsj6l<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abbazial",
+                "StichwortD": "die Abtei betreffend, den Abt betreffend"
+            },
+            {
+                "cn_DS": "12",
+                "Etymologie": "[nach dt. Abc]. ",
+                "Corp": "m, Abc-Buch n, Fibel f; (scherzh. Kinderspruch) abc da nuot saver, das Abc lernen (und doch) nichts wissen.",
+                "Phonetik": "abetsP",
+                "Phonetik2": "(<f>abetsP<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abc",
+                "StichwortD": "Abc-Buch, Fibel, Abc"
+            },
+            {
+                "cn_DS": "13",
+                "Etymologie": "[spätlat. abdicare]. ",
+                "Corp": "I intr, absagen, abdanken, ein Amt niederlegen; il president ha aunc buc abdicau, der Präsident hat sein Amt noch nicht niedergelegt; ~ d'in uffeci, auf ein Amt verzichten. – Sy: dar giu, demissiunar, disdir, renunziar. – II tr, (vereinz.; veralt.) absetzen, zum Rücktritt zwingen; ~ igl uestg, den Bischof absetzen.",
+                "Phonetik": "pdik6",
+                "Phonetik2": "(<f>pdik6<\/f>; geschr. 3.: abdichescha)",
+                "Redewendung": "",
+                "Stichwort": "abdicar",
+                "StichwortD": "absagen, abdanken, ein Amt niederlegen, auf ein Amt verzichten, absetzen, zum Rücktritt zwingen"
+            },
+            {
+                "cn_DS": "14",
+                "Etymologie": "[lat. abdicatio, -one]. ",
+                "Corp": "f, Abdankung f, Rücktritt m; Entsagung f. – Sy: demissiun.",
+                "Phonetik": "pdiktsj©n",
+                "Phonetik2": "(<f>pdiktsj©n<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abdicaziun",
+                "StichwortD": "Abdankung, Rücktritt, Entsagung"
+            },
+            {
+                "cn_DS": "15",
+                "Etymologie": "",
+                "Corp": "m, Abdomen n, Hinterleib m (bes. von Insekten). – Sy: davos, tgil. ",
+                "Phonetik": "pd~mÕn",
+                "Phonetik2": "(<f>pd~mÕn<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abdomen",
+                "StichwortD": "Abdomen, Hinterleib"
+            },
+            {
+                "cn_DS": "16",
+                "Etymologie": "",
+                "Corp": "adj, den Hinterleib betreffend. ",
+                "Phonetik": "pdomin6l",
+                "Phonetik2": "(<f>pdomin6l<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abdominal",
+                "StichwortD": "den Hinterleib betreffend"
+            },
+            {
+                "cn_DS": "17",
+                "Etymologie": "",
+                "Corp": "m -> abc.",
+                "Phonetik": "",
+                "Phonetik2": "",
+                "Redewendung": "",
+                "Stichwort": "abece",
+                "StichwortD": ""
+            },
+            {
+                "cn_DS": "18",
+                "Etymologie": "[Abl. von abece; Neol. von P. P. Spescha]. ",
+                "Corp": "tr, (vereinz.) buchstabieren. – Sy: bustabar.",
+                "Phonetik": "betsed6",
+                "Phonetik2": "(<f>betsed6<\/f>, 3. <f>-D≈<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abecedar",
+                "StichwortD": "buchstabieren"
+            },
+            {
+                "cn_DS": "19",
+                "Etymologie": "[mlat. abecedarius bzw. it. abecedario]. ",
+                "Corp": "m, (vereinz.) Abc-Buch n.",
+                "Phonetik": "betsed6ri",
+                "Phonetik2": "(<f>betsed6ri<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abecedari",
+                "StichwortD": "Abc-Buch"
+            },
+            {
+                "cn_DS": "20",
+                "Etymologie": "[schwdt. aber; die Nbf. aver schon um 1860 bezeugt, später durch Cahannes begünstigt; vgl -> aver* I]. ",
+                "Corp": "adv, aber, hingegen; inaparts ~ tenevan cun el, gewisse Leute hielten jedoch zu ihm; jeu ~ sai buca far quei, ich dagegen kann das nicht tun; ~ quei che fa surstar, ei, jedoch, was Erstaunen hervorruft, ist. – Sy: denton, mo, perencunter.",
+                "Phonetik": "3bÕr",
+                "Phonetik2": "(<f>3bÕr, <\/f>älter vereinz. auch: <f>3vÕr<\/f>; umgangsspr.)",
+                "Redewendung": "",
+                "Stichwort": "aber",
+                "StichwortD": "aber, hingegen, dagegen, jedoch"
+            },
+            {
+                "cn_DS": "21",
+                "Etymologie": "",
+                "Corp": "f, 1. (von Messinstrumenten, Flugbahn, usw.) Abweichung f, Aberration f. – 2. (von einer Lehre) Abirrung f. – Sy: deviaziun, sviada, sviament. ",
+                "Phonetik": "bertsj©n",
+                "Phonetik2": "(<f>bertsj©n<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "aberraziun",
+                "StichwortD": "Abweichung, Aberration, Abirrung"
+            },
+            {
+                "cn_DS": "22",
+                "Etymologie": "[zu it. aberrante]. ",
+                "Corp": "adj, abweichend, abirrend, unsinnig; ideas ~as, abweichende Ideen.",
+                "Phonetik": "ber~nt",
+                "Phonetik2": "(<f>ber~nt<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "aberront",
+                "StichwortD": "abweichend, abirrend, unsinnig"
+            },
+            {
+                "cn_DS": "23",
+                "Etymologie": "[zu dt., schwdt. Habersack; vgl. tess. (Biasca) barsách ‘fagotto']. ",
+                "Corp": "m, 1. (veralt.). – a) Militärtornister m. – Sy: caura, sac, turnister. – b) Schustersack m. – c) Schulsack m. – d) Tragsack m, Rucksack m. – Sy: bulscha, sacados. – 2. fig. Buckel m.",
+                "Phonetik": "bÕrs3k",
+                "Phonetik2": "(<f>bÕrs3k<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abersac",
+                "StichwortD": "Militärtornister, Schustersack, Schulsack, Tragsack, Rucksack, Buckel"
+            },
+            {
+                "cn_DS": "24",
+                "Etymologie": "[spätlat. abiudicare ‘rechtlich aberkennen']. ",
+                "Corp": "tr, (jur.) aberkennen, absprechen; ~ ils dretgs, die Rechte aberkennen.",
+                "Phonetik": "pˆudik6",
+                "Phonetik2": "(<f>pˆudik6, <\/f>geschr. 3.: abgiudichescha)",
+                "Redewendung": "",
+                "Stichwort": "abgiudicar",
+                "StichwortD": "aberkennen, absprechen"
+            },
+            {
+                "cn_DS": "25",
+                "Etymologie": "",
+                "Corp": "f, Aberkennung f. ",
+                "Phonetik": "pˆudiktsj©n",
+                "Phonetik2": "(<f>pˆudiktsj©n<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abgiudicaziun",
+                "StichwortD": "Aberkennung"
+            },
+            {
+                "cn_DS": "26",
+                "Etymologie": "[lat. abyssus ‘Abgrund'; Ersatz für älteres abgrund (Consolaziun)]. ",
+                "Corp": "m, (bibl.) Abyssus m, Abgrund m, Tiefe f, Schlund m. – Sy: precipezi, profunditad.",
+                "Phonetik": "bás",
+                "Phonetik2": "(<f>bás<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abiss",
+                "StichwortD": "Abyssus, Abgrund, Tiefe, Schlund"
+            },
+            {
+                "cn_DS": "27",
+                "Etymologie": "[zu dt. abyssal]. ",
+                "Corp": "adj, (vereinz.) abgründig, abgrundtief.",
+                "Phonetik": "bis6l",
+                "Phonetik2": "(<f>bis6l<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abissal",
+                "StichwortD": "abgründig, abgrundtief"
+            },
+            {
+                "cn_DS": "28",
+                "Etymologie": "",
+                "Corp": "m, Abiturient m, Maturand m. ",
+                "Phonetik": "biturjDnt",
+                "Phonetik2": "(<f>biturjDnt<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abiturient",
+                "StichwortD": "Abiturient, Maturand"
+            },
+            {
+                "cn_DS": "29",
+                "Etymologie": "",
+                "Corp": "m, (gramm.) Ablativ m. ",
+                "Phonetik": "bltáf",
+                "Phonetik2": "(<f>bltáf<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "ablativ",
+                "StichwortD": "Ablativ"
+            },
+            {
+                "cn_DS": "30",
+                "Etymologie": "[spätlat. ablutio, -one ‘Abspülung']. ",
+                "Corp": "f, (relig.) Waschung f; vischi d'~, Waschungsgefäss n. – Sy: lavaziun.",
+                "Phonetik": "blutsj©n",
+                "Phonetik2": "(<f>blutsj©n<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abluziun",
+                "StichwortD": "Waschung, Waschungsgefäss"
+            },
+            {
+                "cn_DS": "31",
+                "Etymologie": "[spätlat. abnegatio, -one, zu abnegare ‘verleugnen']. ",
+                "Corp": "f, Verleugnung f, Entsagung f.",
+                "Phonetik": "pnegtsj©n",
+                "Phonetik2": "(<f>pnegtsj©n<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abnegaziun",
+                "StichwortD": "Verleugnung, Entsagung"
+            },
+            {
+                "cn_DS": "32",
+                "Etymologie": "[lat. abolere ‘aufheben']. ",
+                "Corp": "tr, abschaffen, aufheben; ~ ina lescha, ein Gesetz aufheben; ~ isonzas, Bräuche abschaffen. – Sy: abrogar, cassar, dismetter, revocar.",
+                "Phonetik": "bolè",
+                "Phonetik2": "(<f>bolè,<\/f> 3. <f>-B≈<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abolir",
+                "StichwortD": "abschaffen, aufheben"
+            },
+            {
+                "cn_DS": "33",
+                "Etymologie": "",
+                "Corp": "f, Abschaffung f, Aufhebung f. ",
+                "Phonetik": "bolitsj©n",
+                "Phonetik2": "(<f>bolitsj©n<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "aboliziun",
+                "StichwortD": "Abschaffung, Aufhebung"
+            },
+            {
+                "cn_DS": "34",
+                "Etymologie": "",
+                "Corp": "adj, verabscheuungswürdig, abscheulich; in'ovra abominabla, eine verabscheuungswürdige Tat. ",
+                "Phonetik": "bomin6bÕl",
+                "Phonetik2": "(<f>bomin6bÕl,<\/f> f. <f>-bl<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abominabel",
+                "StichwortD": "verabscheuungswürdig, abscheulich"
+            },
+            {
+                "cn_DS": "35",
+                "Etymologie": "",
+                "Corp": "f, Abscheulichkeit f, Scheusslichkeit f. ",
+                "Phonetik": "bominabld6t",
+                "Phonetik2": "(<f>bominabld6t<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abominabladad",
+                "StichwortD": "Abscheulichkeit, Scheusslichkeit"
+            },
+            {
+                "cn_DS": "36",
+                "Etymologie": "[lat. abominari ‘verabscheuen']. ",
+                "Corp": "tr, verabscheuen; ~ il mal, das Böse verabscheuen.",
+                "Phonetik": "bomin6",
+                "Phonetik2": "(<f>bomin6, <\/f>3.<f> -D≈<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abominar",
+                "StichwortD": "verabscheuen"
+            },
+            {
+                "cn_DS": "37",
+                "Etymologie": "",
+                "Corp": "f, Abscheu m. ",
+                "Phonetik": "bomintsj©n",
+                "Phonetik2": "(<f>bomintsj©n<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abominaziun",
+                "StichwortD": "Abscheu"
+            },
+            {
+                "cn_DS": "38",
+                "Etymologie": "[Abl. von -> abonnar]. ",
+                "Corp": "m, Abonnement n, Bezugspreis m; ~ da gasetta, Zeitungsabonnement n; ~ general, Generalabonnement n; ~ a mesa taxa, Halbtaxabonnement n.",
+                "Phonetik": "bonmDn",
+                "Phonetik2": "(<f>bonmDn<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abonnament",
+                "StichwortD": "Abonnement, Bezugspreis, Zeitungsabonnement, Generalabonnement, Halbtaxabonnement"
+            },
+            {
+                "cn_DS": "39",
+                "Etymologie": "[nach dt. abonnieren, it. abbonare]. ",
+                "Corp": "tr, abonnieren; ~ ina gasetta, eine Zeitung abonnieren; esser abonnaus ad ina gasetta, eine Zeitung abonniert haben.",
+                "Phonetik": "bon6",
+                "Phonetik2": "(<f>bon6, <\/f>3. <f>-D≈<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abonnar",
+                "StichwortD": "abonnieren"
+            },
+            {
+                "cn_DS": "40",
+                "Etymologie": "",
+                "Corp": "m, Abonnent m. ",
+                "Phonetik": "bon3u",
+                "Phonetik2": "(<f>bon3u<\/f>, pl. <f>abon3i<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abonnau",
+                "StichwortD": "Abonnent"
+            },
+            {
+                "cn_DS": "41",
+                "Etymologie": "",
+                "Corp": "m, Abonnent m, Abnehmer m (einer Zeitung, einer Dienstleistung). ",
+                "Phonetik": "bonDnt",
+                "Phonetik2": "(<f>bonDnt<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abonnent",
+                "StichwortD": "Abonnent, Abnehmer  (einer Zeitung, einer Dienstleistung)"
+            },
+            {
+                "cn_DS": "42",
+                "Etymologie": "[lat. aborigines ‘Ureinwohner']. ",
+                "Corp": "m, Urbewohner m, Ureinwohner m. – Sy: indigen.",
+                "Phonetik": "boriˆDn",
+                "Phonetik2": "(<f>boriˆDn<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "aborigen",
+                "StichwortD": "Urbewohner, Ureinwohner"
+            },
+            {
+                "cn_DS": "43",
+                "Etymologie": "",
+                "Corp": "m, 1. Abort m, Fehlgeburt f. – Sy: spiarsa. – 2. Fruchtabtreibung f. – Sy: scatschada, scatschar. ",
+                "Phonetik": "b~rt",
+                "Phonetik2": "(<f>b~rt<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abort",
+                "StichwortD": "Abort, Fehlgeburt, Fruchtabtreibung"
+            },
+            {
+                "cn_DS": "44",
+                "Etymologie": "",
+                "Corp": "tr, abortieren, die Leibesfrucht abtreiben; far ~, die Leibesfrucht abtreiben lassen. ",
+                "Phonetik": "bort6",
+                "Phonetik2": "(<f>bort6, <\/f>nbf. <f>abortè,<\/f> 3. <f>-D≈<\/f>; geschr.: abortir)",
+                "Redewendung": "",
+                "Stichwort": "abortar",
+                "StichwortD": "abortieren, abtreiben"
+            },
+            {
+                "cn_DS": "45",
+                "Etymologie": "",
+                "Corp": "tr -> abortar. ",
+                "Phonetik": "",
+                "Phonetik2": "",
+                "Redewendung": "",
+                "Stichwort": "abortir",
+                "StichwortD": ""
+            },
+            {
+                "cn_DS": "46",
+                "Etymologie": "",
+                "Corp": "adj, den Abort betreffend; mied ~, Abtreibungsmittel n. ",
+                "Phonetik": "bortáf",
+                "Phonetik2": "(<f>bortáf,<\/f> f. <f>-èv<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abortiv",
+                "StichwortD": "den Abort betreffend, Abtreibungsmittel"
+            },
+            {
+                "cn_DS": "47",
+                "Etymologie": "",
+                "Corp": "m -> abort. ",
+                "Phonetik": "",
+                "Phonetik2": "",
+                "Redewendung": "",
+                "Stichwort": "abortus",
+                "StichwortD": ""
+            },
+            {
+                "cn_DS": "48",
+                "Etymologie": "[it. abbreviare ‘abkürzen']. ",
+                "Corp": "tr, abkürzen, verkürzen. – Sy: scursanir.",
+                "Phonetik": "brevj6",
+                "Phonetik2": "(<f>brevj6,<\/f> 3. <f>-D≈<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abreviar",
+                "StichwortD": "abkürzen, verkürzen"
+            },
+            {
+                "cn_DS": "49",
+                "Etymologie": "",
+                "Corp": "f, Kürzung f, Abkürzung f (von Wörtern). – Sy: scursanida. ",
+                "Phonetik": "brevjtsj©n",
+                "Phonetik2": "(<f>brevjtsj©n<\/f>)",
+                "Redewendung": "",
+                "Stichwort": "abreviaziun",
+                "StichwortD": "Kürzung, Abkürzung"
+            },
+            {
+                "cn_DS": "50",
+                "Etymologie": "[lat. abrogare ‘aufheben']. ",
+                "Corp": "tr, abschaffen, aufheben, ausser Kraft setzen; ~ ina lescha, ein Gesetz aufheben. – Sy: abolir, cassar, dismetter, revocar.",
+                "Phonetik": "prog6",
+                "Phonetik2": "(<f>prog6,<\/f> geschr. 3: abroghescha)",
+                "Redewendung": "ausser Kraft setzen",
+                "Stichwort": "abrogar",
+                "StichwortD": "abschaffen, aufheben"
+            }
+        ]
+    }
+]

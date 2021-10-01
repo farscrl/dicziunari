@@ -1,4 +1,5 @@
 var rumgrJson = require('./rumgr-json');
+var sursilvanJson = require('./sursilvan-json');
 var valladerHtml = require('./vallader-html');
 var puterHtml = require('./puter-html');
 
@@ -9,7 +10,7 @@ switch (process.argv[2]) {
         break;
 
     case "sursilvan":
-        console.log("Not implemented yet");
+        sursilvanJson.main();
         break;
 
     case "sutsilvan":
@@ -31,7 +32,7 @@ switch (process.argv[2]) {
     case "all":
     default:
         rumgrJson.main();
-        // todo: sursilvan
+        sursilvanJson.main();
         // todo: sutsilvan
         // todo: surmiran
         puterHtml.main();
