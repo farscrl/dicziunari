@@ -5,7 +5,7 @@
     </ion-buttons>
 
     <ion-buttons slot="end">
-      <ion-select interface="popover" value="rumgrischun">
+      <ion-select interface="popover" value="rumgrischun" (ionChange)="dictionaryChanged($event)" [value]="selectedDictionary">
         <ion-select-option value="rumgrischun">Rumantsch Grischun</ion-select-option>
         <ion-select-option value="sursilv">Sursilvan</ion-select-option>
         <ion-select-option value="sutsilv">Sutsilvan</ion-select-option>

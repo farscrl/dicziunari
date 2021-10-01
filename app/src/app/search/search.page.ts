@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SearchService } from '../services/search.service';
+import { ConfigService } from '../services/config.service';
 
 @Component({
   selector: 'app-search',
@@ -8,6 +9,7 @@ import { SearchService } from '../services/search.service';
 })
 export class SearchPage {
   public lemma = '';
+  public selectedDictionary;
 
   public pleds = [
     {
@@ -40,11 +42,17 @@ export class SearchPage {
     },
   ];
 
-  constructor(private searchService: SearchService) {}
+  constructor(private searchService: SearchService, private configService: ConfigService) {
+    this.selectedDictionary = configService.getSelectedDictionary();
+  }
 
   search() {
     this.searchService.searchTerm(this.lemma).then((pleds) => {
       this.pleds = pleds;
     });
+  }
+
+  dictionaryChanged(value) {
+    this.configService.setSelectedDictionary(value.detail.value);
   }
 }
