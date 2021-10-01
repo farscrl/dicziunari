@@ -1,7 +1,7 @@
 const fs = require('fs');
 const Database = require('better-sqlite3');
 
-const DB_NAME = 'build/dicziunari.db';
+const DB_NAME = 'build/dicziunariSQLite.db';
 const TABLE_SURSILVAN = 'sursilvan';
 const TABLE_SURSILVAN_IDX = 'sursilvan_idx';
 const FILE_PATH = 'data/sursilvan.json';

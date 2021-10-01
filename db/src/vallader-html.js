@@ -2,7 +2,7 @@ const fs = require('fs');
 const Database = require('better-sqlite3');
 const parser = require('node-html-parser');
 
-const DB_NAME = 'build/dicziunari.db';
+const DB_NAME = 'build/dicziunariSQLite.db';
 const TABLE_VALLADER = 'vallader';
 const TABLE_VALLADER_IDX = 'vallader_idx';
 const FILE_PATH = 'data/vallader.htm';
