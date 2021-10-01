@@ -57,22 +57,6 @@ function prepareAndCleanDb() {
     db.exec("BEGIN TRANSACTION;");
 }
 
-// This function can be used to handle each lemma to check if all columns exported from the json are found
-function searchColumnNames(lemma) {
-    ++processedEntries;
-
-    for(let property in lemma) {
-        if (!columnList.includes(property)) {
-            console.error("Colum '" + property + "' missing");
-            throw new Error("Column missing!");
-        }
-    }
-
-    if (processedEntries % 1000 === 0) {
-        console.log('Processed ' + processedEntries + ' lemmas');
-    }
-}
-
 function calculateWeight(lemma) {
     // TODO: implement algorithm for weight
     return 1;
