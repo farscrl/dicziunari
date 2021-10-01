@@ -95,25 +95,6 @@ function insertIndex(lemma) {
     insertStatementIdx.run(binds);
 }
 
-function handleLemma(lemma) {
-    //console.log(lemma);
-
-    // filter empty objects
-    if (!Object.keys(lemma).length) {
-        return;
-    }
-
-    ++processedEntries;
-
-    insertLemma(lemma);
-    insertIndex(lemma);
-    id++;
-
-    if (processedEntries % 1000 === 0) {
-        console.log('Processed ' + processedEntries + ' lemmas');
-    }
-}
-
 function parseData() {
     const data = fs.readFileSync(FILE_PATH, 'utf8');
     const lemmas = JSON.parse(data)[1].data;

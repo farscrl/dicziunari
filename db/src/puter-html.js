@@ -94,25 +94,6 @@ function insertIndex(lemma) {
     insertStatementIdx.run(binds);
 }
 
-function handleLemma(lemma) {
-    //console.log(lemma);
-
-    // filter empty objects
-    if (!Object.keys(lemma).length) {
-        return;
-    }
-
-    ++processedEntries;
-
-    insertLemma(lemma);
-    insertIndex(lemma);
-    id++;
-
-    if (processedEntries % 1000 === 0) {
-        console.log('Processed ' + processedEntries + ' lemmas');
-    }
-}
-
 function finalizeDb() {
     console.log('Processed ' + processedEntries + ' lemmas');
     console.log('file ended');
