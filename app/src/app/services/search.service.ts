@@ -3,7 +3,8 @@ import { Device } from '@capacitor/device';
 import { HttpClient } from '@angular/common/http';
 import { AlertController } from '@ionic/angular';
 import { CapacitorSQLite, SQLiteConnection } from '@capacitor-community/sqlite';
-const DB_NAME_KEY = 'db_name';
+import { SQLiteService } from './sqlite.service';
+const DB_NAME_KEY = 'dicziunari';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,7 @@ const DB_NAME_KEY = 'db_name';
 export class SearchService {
   private isReady = false;
 
-  constructor(private http: HttpClient, private alertCtrl: AlertController) {
+  constructor(private http: HttpClient, private alertCtrl: AlertController, private sqliteService: SQLiteService) {
     this.init();
   }
 
@@ -36,23 +37,6 @@ export class SearchService {
     }
   }
 
-  private async setupDatabase() {
-    // copy db file
-    const sqlitePlugin: any = CapacitorSQLite;
-    const sqlite = new SQLiteConnection(sqlitePlugin);
-    await sqlite.copyFromAssets();
-
-    // create db connection
-    const hasConnection = await sqlite.isConnection('dicziunari');
-    if (hasConnection) {
-      await sqlite.createConnection('dicziunari', false, 'no-encryption', 1);
-    } else {
-      await sqlite.retrieveConnection('dicziunari');
-    }
-    await CapacitorSQLite.open({ database: 'dicziunari' });
-    this.isReady = true;
-  }
-
   async searchTerm(lemma: string) {
     if (!this.isReady) {
       return [];
@@ -63,10 +47,25 @@ export class SearchService {
       "' and idx.rowId = c.id LIMIT 0,10;";
     console.warn(statement);
     const values = await CapacitorSQLite.query({
-      database: 'dicziunari',
+      database: DB_NAME_KEY,
       statement,
       values: [],
     });
     return values.values;
+  }
+
+  private async setupDatabase() {
+    // copy db file
+    await this.sqliteService.copyFromAssets();
+
+    // create db connection
+    const hasConnection = await this.sqliteService.isConnection(DB_NAME_KEY);
+    if (hasConnection) {
+      await this.sqliteService.createConnection(DB_NAME_KEY, false, 'no-encryption', 1);
+    } else {
+      await this.sqliteService.retrieveConnection(DB_NAME_KEY);
+    }
+    await CapacitorSQLite.open({ database: DB_NAME_KEY });
+    this.isReady = true;
   }
 }
