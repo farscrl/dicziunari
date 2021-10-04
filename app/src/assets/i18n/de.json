@@ -6,6 +6,7 @@
   },
   "SEARCH": {
     "TITLE": "Suchen",
+    "DICTIONARY": "Idiom wählen",
     "SEARCHFIELD": {
       "LABEL": "Suchen",
       "CANCEL": "Abbrechen"

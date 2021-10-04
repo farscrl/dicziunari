@@ -9,6 +9,8 @@ export class ConfigService {
 
   private dictionary: 'rumgrischun' | 'sursilv' | 'sutsilv' | 'surm' | 'puter' | 'vall';
 
+  private searchDirection: 'fromDe' | 'fromRm' | 'both';
+
   private searchMode: 'start' | 'substring' | 'end' | 'match' = 'start';
 
   private includeVerbs = false;
@@ -23,6 +25,7 @@ export class ConfigService {
       | 'puter'
       | 'vall'
       | undefined;
+    this.searchDirection = localStorageService.getItem('searchDirection') as 'fromDe' | 'fromRm' | 'both';
     this.searchMode = localStorageService.getItem('searchMode') as 'start' | 'substring' | 'end' | 'match';
     this.includeVerbs = JSON.parse(localStorageService.getItem('includeVerbs')) as boolean;
   }
@@ -50,6 +53,18 @@ export class ConfigService {
 
   public isLocaleSelected(): boolean {
     return !!this.locale;
+  }
+
+  public getSearchDirection(): 'fromDe' | 'fromRm' | 'both' {
+    if (this.searchDirection) {
+      return this.searchDirection;
+    }
+    return 'fromDe';
+  }
+
+  public setSearchDirection(searchDirection: 'fromDe' | 'fromRm' | 'both') {
+    this.searchDirection = searchDirection;
+    this.localStorageService.setItem('searchDirection', searchDirection);
   }
 
   public getSearchMode(): 'start' | 'substring' | 'end' | 'match' {

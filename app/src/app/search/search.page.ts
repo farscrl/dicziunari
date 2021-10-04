@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { ConfigService } from '../services/config.service';
 
@@ -7,9 +7,10 @@ import { ConfigService } from '../services/config.service';
   templateUrl: 'search.page.html',
   styleUrls: ['search.page.scss'],
 })
-export class SearchPage {
+export class SearchPage implements OnInit {
   public lemma = '';
   public selectedDictionary;
+  public searchDirection;
 
   public pleds = [
     {
@@ -42,8 +43,11 @@ export class SearchPage {
     },
   ];
 
-  constructor(private searchService: SearchService, private configService: ConfigService) {
-    this.selectedDictionary = configService.getSelectedDictionary();
+  constructor(private searchService: SearchService, private configService: ConfigService) {}
+
+  ngOnInit() {
+    this.selectedDictionary = this.configService.getSelectedDictionary();
+    this.searchDirection = this.configService.getSearchDirection();
   }
 
   search() {
@@ -54,5 +58,23 @@ export class SearchPage {
 
   dictionaryChanged(value) {
     this.configService.setSelectedDictionary(value.detail.value);
+  }
+
+  changeSearchDirection() {
+    switch (this.searchDirection) {
+      case 'fromDe':
+        this.configService.setSearchDirection('fromRm');
+        this.searchDirection = this.configService.getSearchDirection();
+        break;
+      case 'fromRm':
+        this.configService.setSearchDirection('both');
+        this.searchDirection = this.configService.getSearchDirection();
+        break;
+      case 'both':
+      default:
+        this.configService.setSearchDirection('fromDe');
+        this.searchDirection = this.configService.getSearchDirection();
+        break;
+    }
   }
 }

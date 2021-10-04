@@ -1,29 +1,34 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button> {{ "SEARCH.DE" | translate}} </ion-button>
-    </ion-buttons>
-
-    <ion-buttons slot="end">
-      <ion-select interface="popover" value="rumgrischun" (ionChange)="dictionaryChanged($event)" [value]="selectedDictionary">
-        <ion-select-option value="rumgrischun">Rumantsch Grischun</ion-select-option>
-        <ion-select-option value="sursilv">Sursilvan</ion-select-option>
-        <ion-select-option value="sutsilv">Sutsilvan</ion-select-option>
-        <ion-select-option value="surm">Surmiran</ion-select-option>
-        <ion-select-option value="puter">Puter</ion-select-option>
-        <ion-select-option value="vall">Vallader</ion-select-option>
-      </ion-select>
-    </ion-buttons>
-
-    <ion-title>
-      <ion-icon name="arrow-forward-outline"></ion-icon>
-    </ion-title>
+    <ion-grid class="ion-no-padding">
+      <ion-row class="ion-no-padding" style="align-items: center;">
+        <ion-col size="5">
+          <ion-label>{{ "SEARCH.DE" | translate}}</ion-label>
+        </ion-col>
+        <ion-col size="2" style="text-align: center;">
+          <ion-icon name="arrow-forward-outline" *ngIf="searchDirection === 'fromDe'" (click)="changeSearchDirection()"></ion-icon>
+          <ion-icon name="arrow-back-outline" *ngIf="searchDirection === 'fromRm'" (click)="changeSearchDirection()"></ion-icon>
+          <ion-icon name="arrow-up-outline" *ngIf="searchDirection === 'both'" (click)="changeSearchDirection()"></ion-icon>
+        </ion-col>
+        <ion-col size="5">
+          <ion-select (ionChange)="dictionaryChanged($event)" [value]="selectedDictionary">
+            <ion-select-option value="rumgrischun">Rumantsch Grischun</ion-select-option>
+            <ion-select-option value="sursilv">Sursilvan</ion-select-option>
+            <ion-select-option value="sutsilv">Sutsilvan</ion-select-option>
+            <ion-select-option value="surm">Surmiran</ion-select-option>
+            <ion-select-option value="puter">Puter</ion-select-option>
+            <ion-select-option value="vall">Vallader</ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar showCancelButton="focus" [(ngModel)]="lemma" (ngModelChange)="search()"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-searchbar showCancelButton="focus" [(ngModel)]="lemma" (ngModelChange)="search()"></ion-searchbar>
-
   <ion-list>
     <ng-container *ngFor="let pled of pleds">
       <ion-item lines="none" class="first">
