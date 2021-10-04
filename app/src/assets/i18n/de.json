@@ -11,7 +11,11 @@
       "LABEL": "Suchen",
       "CANCEL": "Abbrechen"
     },
-    "DE": "Deutsch"
+    "DE": "Deutsch",
+    "RESULTS": {
+      "SAVE": "Speichern",
+      "COPY": "Kopieren"
+    }
   },
   "FAVOURITES": {
     "TITLE": "Gespeichert"

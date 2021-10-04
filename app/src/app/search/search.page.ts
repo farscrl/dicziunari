@@ -8,7 +8,7 @@ import { ConfigService } from '../services/config.service';
   styleUrls: ['search.page.scss'],
 })
 export class SearchPage implements OnInit {
-  public lemma = '';
+  public lemma = 'arbeiten';
   public selectedDictionary;
   public searchDirection;
 

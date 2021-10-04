@@ -31,14 +31,8 @@
 <ion-content [fullscreen]="true">
   <ion-list>
     <ng-container *ngFor="let pled of pleds">
-      <ion-item lines="none" class="first">
-        <ion-label>{{ pled.DStichwort }}</ion-label>
-        <ion-note slot="end">
-          <ion-button size="small">V</ion-button>
-          <ion-icon name="star-outline"></ion-icon>
-        </ion-note>
-      </ion-item>
-      <ion-item lines="none" class="last"> {{ pled.RStichwort }} </ion-item>
+      <app-search-result [lemmaD]="pled.DStichwort" [lemmaR]="pled.RStichwort" [searchString]="lemma"></app-search-result>
+
     </ng-container>
   </ion-list>
 </ion-content>

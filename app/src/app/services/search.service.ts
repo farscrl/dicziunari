@@ -42,7 +42,7 @@ export class SearchService {
       return [];
     }
     const statement =
-      "SELECT c.RStichwort, c.DStichwort FROM rumgr c, rumgr_idx idx WHERE idx.lemma match '" +
+      "SELECT c.id, c.RStichwort, c.DStichwort FROM rumgr c, rumgr_idx idx WHERE idx.lemma match '" +
       lemma +
       "' and idx.rowId = c.id LIMIT 0,10;";
     console.warn(statement);

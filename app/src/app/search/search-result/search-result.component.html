@@ -1,0 +1,27 @@
+<ion-item-sliding>
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" [innerHtml]="lemmaD | highlight: searchString">
+        </ion-col>
+        <ion-col size="5" [innerHtml]="lemmaR | highlight: searchString">
+
+        </ion-col>
+        <ion-col size="1">
+          <ion-button size="small">V</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item-options side="end">
+    <ion-item-option color="warning" (click)="addFavorite();">
+      <ion-icon slot="top" name="star"></ion-icon>
+      {{ 'SEARCH.RESULTS.SAVE' | translate}}
+    </ion-item-option>
+    <ion-item-option color="primary" (click)="copy()">
+      <ion-icon slot="top" name="copy"></ion-icon>
+      {{ 'SEARCH.RESULTS.COPY' | translate}}
+    </ion-item-option>
+  </ion-item-options>
+</ion-item-sliding>

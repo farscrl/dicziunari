@@ -11,7 +11,11 @@
       "LABEL": "Tschertgar",
       "CANCEL": "Interrumper"
     },
-    "DE": "Tudestg"
+    "DE": "Tudestg",
+    "RESULTS": {
+      "SAVE": "Speichern",
+      "COPY": "Kopieren"
+    }
   },
   "FAVOURITES": {
     "TITLE": "Memorisà"
