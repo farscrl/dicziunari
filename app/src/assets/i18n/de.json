@@ -14,7 +14,8 @@
     "DE": "Deutsch",
     "RESULTS": {
       "SAVE": "Speichern",
-      "COPY": "Kopieren"
+      "COPY": "Kopieren",
+      "COPIED": "Eintrag kopiert"
     },
     "NO_RESULTS": {
       "TITLE": "Hoppla!",
