@@ -13,7 +13,13 @@
         "statusBar.foreground": "#e7e7e7",
         "statusBarItem.hoverBackground": "#590a40",
         "titleBar.inactiveBackground": "#2b051f99",
-        "titleBar.inactiveForeground": "#e7e7e799"
+        "titleBar.inactiveForeground": "#e7e7e799",
+        "editorGroup.border": "#590a40",
+        "panel.border": "#590a40",
+        "sash.hoverBorder": "#590a40",
+        "sideBar.border": "#590a40",
+        "statusBarItem.remoteBackground": "#2b051f",
+        "statusBarItem.remoteForeground": "#e7e7e7"
     },
     "cSpell.words": [
         "RUMGR",
