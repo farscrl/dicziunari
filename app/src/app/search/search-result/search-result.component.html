@@ -7,7 +7,7 @@
         <ion-col size="5" [innerHtml]="lemmaR | highlight: searchString">
 
         </ion-col>
-        <ion-col size="1">
+        <ion-col size="1" *ngIf="isVerb">
           <ion-button size="small">V</ion-button>
         </ion-col>
       </ion-row>

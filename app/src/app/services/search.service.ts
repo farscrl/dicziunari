@@ -4,6 +4,8 @@ import { Device } from '@capacitor/device';
 import { AlertController } from '@ionic/angular';
 import { CapacitorSQLite } from '@capacitor-community/sqlite';
 import { SQLiteService } from './sqlite.service';
+import { QueryUtil } from '../util/query.util';
+import { ConfigService } from './config.service';
 const DB_NAME_KEY = 'dicziunari';
 
 @Injectable({
@@ -17,8 +19,13 @@ export class SearchService {
   private pageSize = 10;
   private hasMoreResults = true;
 
-  constructor(private alertCtrl: AlertController, private sqlLiteService: SQLiteService) {
-    sqlLiteService.isInitialized().subscribe((isInitialized) => {
+  constructor(
+    private alertCtrl: AlertController,
+    private sqlLiteService: SQLiteService,
+    private configService: ConfigService,
+    private queryUtil: QueryUtil,
+  ) {
+    this.sqlLiteService.isInitialized().subscribe((isInitialized) => {
       if (isInitialized) {
         this.init();
       }
@@ -66,10 +73,11 @@ export class SearchService {
   }
 
   getSearchStatement() {
-    return (
-      "SELECT c.id, c.RStichwort, c.DStichwort FROM rumgr c, rumgr_idx idx WHERE idx.lemma match '" +
-      this.searchLemma +
-      "' and idx.rowId = c.id"
+    return this.queryUtil.getQuery(
+      this.configService.getSelectedDictionary(),
+      this.configService.getSearchDirection(),
+      this.configService.getSearchMode(),
+      this.searchLemma,
     );
   }
 

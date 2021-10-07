@@ -28,6 +28,10 @@ export class SearchPage implements OnInit {
     if (this.infiniteScroll) {
       this.infiniteScroll.disabled = false;
     }
+    if (this.lemma === '') {
+      this.pleds = [];
+      return;
+    }
     this.searchService.newSearch(this.lemma).then((pleds) => {
       this.pleds = pleds;
     });
@@ -46,6 +50,7 @@ export class SearchPage implements OnInit {
 
   dictionaryChanged(value) {
     this.configService.setSelectedDictionary(value.detail.value);
+    this.search();
   }
 
   changeSearchDirection() {
@@ -64,5 +69,6 @@ export class SearchPage implements OnInit {
         this.searchDirection = this.configService.getSearchDirection();
         break;
     }
+    this.search();
   }
 }

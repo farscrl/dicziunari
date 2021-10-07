@@ -13,10 +13,10 @@
         <ion-col size="5">
           <ion-select (ionChange)="dictionaryChanged($event)" [value]="selectedDictionary">
             <ion-select-option value="rumgrischun">Rumantsch Grischun</ion-select-option>
-            <ion-select-option value="sursilv">Sursilvan</ion-select-option>
-            <ion-select-option value="sutsilv">Sutsilvan</ion-select-option>
-            <ion-select-option value="surm">Surmiran</ion-select-option>
-            <ion-select-option value="puter">Puter</ion-select-option>
+            <ion-select-option value="sursilv" disabled="true">Sursilvan</ion-select-option>
+            <ion-select-option value="sutsilv" disabled="true">Sutsilvan</ion-select-option>
+            <ion-select-option value="surm" disabled="true">Surmiran</ion-select-option>
+            <ion-select-option value="puter" disabled="true">Puter</ion-select-option>
             <ion-select-option value="vall">Vallader</ion-select-option>
           </ion-select>
         </ion-col>
@@ -31,7 +31,7 @@
 <ion-content [fullscreen]="true" *ngIf="pleds.length > 0">
   <ion-list>
     <ng-container *ngFor="let pled of pleds">
-      <app-search-result [lemmaD]="pled.DStichwort" [lemmaR]="pled.RStichwort" [searchString]="lemma"></app-search-result>
+      <app-search-result [lemmaD]="pled.DStichwort" [lemmaR]="pled.RStichwort" [isVerb]="!!pled.preschentsing3" [searchString]="lemma"></app-search-result>
     </ng-container>
   </ion-list>
 
