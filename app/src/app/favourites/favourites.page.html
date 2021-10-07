@@ -11,14 +11,44 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-item *ngFor="let favuorite of favourites">
-    <ion-label>
-      <h2>{{ favuorite.DStichwort }}</h2>
-      <h2>{{ favuorite.RStichwort }}</h2>
-    </ion-label>
-    <ion-note slot="end">
-      <ion-button size="small">V</ion-button>
-      <ion-icon name="star-outline"></ion-icon>
-    </ion-note>
-  </ion-item>
+
+
+  <ion-list>
+    <ion-item-group>
+      <ion-item-divider color="light" sticky>Rumantsch Grischun</ion-item-divider>
+      <ng-container *ngFor="let favuorite of favourites">
+        <app-favourite-item [lemmaD]="favuorite.DStichwort" [lemmaR]="favuorite.RStichwort"></app-favourite-item>
+      </ng-container>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider color="light" sticky>Sursilvan</ion-item-divider>
+      <ng-container *ngFor="let favuorite of favourites">
+        <app-favourite-item [lemmaD]="favuorite.DStichwort" [lemmaR]="favuorite.RStichwort"></app-favourite-item>
+      </ng-container>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider color="light" sticky>Sutsilvan</ion-item-divider>
+      <ng-container *ngFor="let favuorite of favourites">
+        <app-favourite-item [lemmaD]="favuorite.DStichwort" [lemmaR]="favuorite.RStichwort"></app-favourite-item>
+      </ng-container>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider color="light" sticky>Surmiran</ion-item-divider>
+      <ng-container *ngFor="let favuorite of favourites">
+        <app-favourite-item [lemmaD]="favuorite.DStichwort" [lemmaR]="favuorite.RStichwort"></app-favourite-item>
+      </ng-container>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider color="light" sticky>Puter</ion-item-divider>
+      <ng-container *ngFor="let favuorite of favourites">
+        <app-favourite-item [lemmaD]="favuorite.DStichwort" [lemmaR]="favuorite.RStichwort"></app-favourite-item>
+      </ng-container>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider color="light" sticky>Vallader</ion-item-divider>
+      <ng-container *ngFor="let favuorite of favourites">
+        <app-favourite-item [lemmaD]="favuorite.DStichwort" [lemmaR]="favuorite.RStichwort"></app-favourite-item>
+      </ng-container>
+    </ion-item-group>
+  </ion-list>
 </ion-content>
