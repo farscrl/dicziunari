@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { Platform, IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
@@ -13,6 +13,7 @@ import { ColorModeService } from './services/color-mode.service';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
   imports: [IonApp, IonRouterOutlet],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent {
   private translateService = inject(TranslateService);
@@ -32,10 +33,20 @@ export class AppComponent {
       setTimeout(() => {
         SplashScreen.hide();
       }, 2000);
-    });
-    this.initTranslateService();
-    this.sqliteService.initializePlugin().then((ret) => {
-      this.sqlitePluginInitialized = ret;
+      this.initTranslateService();
+      this.sqliteService.initializePlugin().then(async (ret) => {
+        this.sqlitePluginInitialized = ret;
+        if (Capacitor.getPlatform() === 'web') {
+          await customElements.whenDefined('jeep-sqlite');
+          const jeepSqliteEl = document.querySelector('jeep-sqlite');
+          if (jeepSqliteEl != null) {
+            await this.sqliteService.initWebStore();
+          } else {
+            console.log('$$ jeepSqliteEl is null');
+          }
+        }
+        console.log('ok');
+      });
     });
     this.initColorMode();
   }

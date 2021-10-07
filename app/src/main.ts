@@ -8,11 +8,13 @@ import { provideTranslateService } from '@ngx-translate/core';
 import { AppComponent } from './app/app.component';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { routes } from './app/app.routes';
+import { defineCustomElements as jeepSqlite } from 'jeep-sqlite/loader';
 
 if (environment.production) {
   enableProdMode();
 }
 
+jeepSqlite(window);
 bootstrapApplication(AppComponent, {
   providers: [
     provideIonicAngular(),
