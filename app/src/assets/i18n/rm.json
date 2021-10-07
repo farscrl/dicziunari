@@ -15,6 +15,12 @@
     "RESULTS": {
       "SAVE": "Speichern",
       "COPY": "Kopieren"
+    },
+    "NO_RESULTS": {
+      "TITLE": "Hopla!",
+      "INTRO": "Nagins resultats per tia tschertga. Vuls ti midar il modus da tschertgar?",
+      "BUTTON_CHANGE_SEARCH_MODE": "Midar modus da tschertgar",
+      "NOTE": "Il modus da tschertgar pos ti era adina midar en las preferenzas"
     }
   },
   "FAVOURITES": {

@@ -11,54 +11,10 @@ import { IonInfiniteScroll } from '@ionic/angular';
 export class SearchPage implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
-  public lemma = 'arbeiten';
+  public lemma = '';
   public selectedDictionary;
   public searchDirection;
-
-  public pleds = [
-    {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      DStichwort: 'arbeiten',
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      RStichwort: 'lavurar',
-    },
-    {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      DStichwort: 'arbeiten (krampfen)',
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      RStichwort: 'travagliar',
-    },
-    {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      DStichwort: 'arbeiten (hantieren)',
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      RStichwort: 'truschar',
-    },
-    {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      DStichwort: 'arbeiten',
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      RStichwort: 'traffitgar',
-    },
-    {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      DStichwort: 'arbeiten (als Taglöhner)',
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      RStichwort: 'ir a schurnada',
-    },
-    {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      DStichwort: 'arbeiten',
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      RStichwort: 'ir a dis',
-    },
-    {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      DStichwort: 'Teilzeit arbeiten  ',
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      RStichwort: 'lavurar a temp parzial',
-    },
-  ];
+  public pleds = [];
 
   constructor(private searchService: SearchService, private configService: ConfigService) {}
 
@@ -69,7 +25,9 @@ export class SearchPage implements OnInit {
 
   search() {
     console.log('===> search');
-    this.infiniteScroll.disabled = false;
+    if (this.infiniteScroll) {
+      this.infiniteScroll.disabled = false;
+    }
     this.searchService.newSearch(this.lemma).then((pleds) => {
       this.pleds = pleds;
     });

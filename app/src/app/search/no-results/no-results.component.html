@@ -1,0 +1,25 @@
+<ion-content>
+  <div class="main-content">
+    <ion-text class="headers">
+      <h1>
+        {{ 'SEARCH.NO_RESULTS.TITLE' | translate }}
+      </h1>
+    </ion-text>
+
+    <div class="texts">
+      <p style="flex-grow: 1;">
+        {{ 'SEARCH.NO_RESULTS.INTRO' | translate }}
+      </p>
+    </div>
+
+    <div>
+      <ion-button expand="block" (click)="changeSearchMode()">{{ 'SEARCH.NO_RESULTS.BUTTON_CHANGE_SEARCH_MODE' | translate }}</ion-button>
+    </div>
+
+    <div>
+      <p>
+        {{ 'SEARCH.NO_RESULTS.NOTE' | translate }}
+      </p>
+    </div>
+  </div>
+</ion-content>

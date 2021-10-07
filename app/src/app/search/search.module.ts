@@ -7,7 +7,8 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { TranslateModule } from '@ngx-translate/core';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { SharedModule } from './../shared/shared.module';
-
+import { NoResultsComponent } from './no-results/no-results.component';
+import { PlaceholderComponent } from './placeholder/placeholder.component';
 import { SearchPageRoutingModule } from './search-routing.module';
 
 @NgModule({
@@ -20,6 +21,6 @@ import { SearchPageRoutingModule } from './search-routing.module';
     TranslateModule,
     SharedModule,
   ],
-  declarations: [SearchPage, SearchResultComponent],
+  declarations: [SearchPage, SearchResultComponent, NoResultsComponent, PlaceholderComponent],
 })
 export class SearchPageModule {}

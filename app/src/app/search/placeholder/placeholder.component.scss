@@ -1,0 +1,14 @@
+.main-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 52px;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    max-width: 480px;
+    align-self: center;
+  }
+}

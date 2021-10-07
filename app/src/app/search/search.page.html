@@ -28,7 +28,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" *ngIf="pleds.length > 0">
   <ion-list>
     <ng-container *ngFor="let pled of pleds">
       <app-search-result [lemmaD]="pled.DStichwort" [lemmaR]="pled.RStichwort" [searchString]="lemma"></app-search-result>
@@ -41,4 +41,9 @@
       loadingText="Loading more data...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
+</ion-content>
+
+<ion-content [fullscreen]="true" *ngIf="pleds.length === 0">
+  <app-placeholder *ngIf="lemma === ''"></app-placeholder>
+  <app-no-results *ngIf="lemma !== ''"></app-no-results>
 </ion-content>
