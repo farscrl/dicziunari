@@ -11,13 +11,15 @@ import {
   capEchoResult,
   capSQLiteResult,
 } from '@capacitor-community/sqlite';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SQLiteService {
   sqlite: SQLiteConnection;
-  isService: boolean = false;
+  isInitializedSubject = new BehaviorSubject<boolean>(false);
+  isService = false;
   platform: string;
 
   constructor() {}
@@ -31,10 +33,20 @@ export class SQLiteService {
       const sqlitePlugin: any = CapacitorSQLite;
       this.sqlite = new SQLiteConnection(sqlitePlugin);
       this.isService = true;
+      this.isInitializedSubject.next(true);
       console.log('$$$ in service this.isService ' + this.isService + ' $$$');
       resolve(true);
     });
   }
+
+  initWebStore(): Promise<void> {
+    return this.sqlite.initWebStore();
+  }
+
+  isInitialized(): Observable<boolean> {
+    return this.isInitializedSubject.asObservable();
+  }
+
   /**
    * Echo a value
    * @param value

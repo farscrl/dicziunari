@@ -5,3 +5,4 @@ android
 ios
 node_modules
 www
+src/app/util/query.util.ts

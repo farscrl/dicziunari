@@ -68,7 +68,10 @@ export class ConfigService {
   }
 
   public getSearchMode(): 'start' | 'substring' | 'end' | 'match' {
-    return this.searchMode;
+    if (this.searchMode) {
+      return this.searchMode;
+    }
+    return 'start';
   }
 
   public setSearchMode(mode: 'start' | 'substring' | 'end' | 'match') {
