@@ -4,6 +4,7 @@ import { SplashScreen } from '@capacitor/splash-screen';
 import { Platform } from '@ionic/angular';
 import { ConfigService } from './services/config.service';
 import { SQLiteService } from './services/sqlite.service';
+import { Capacitor } from '@capacitor/core';
 
 @Component({
   selector: 'app-root',
@@ -24,11 +25,21 @@ export class AppComponent {
       setTimeout(() => {
         SplashScreen.hide();
       }, 5000);
+      this.sqliteService.initializePlugin().then(async (ret) => {
+        this.sqlitePluginInitialized = ret;
+        if (Capacitor.getPlatform() === 'web') {
+          await customElements.whenDefined('jeep-sqlite');
+          const jeepSqliteEl = document.querySelector('jeep-sqlite');
+          if (jeepSqliteEl != null) {
+            await this.sqliteService.initWebStore();
+          } else {
+            console.log('$$ jeepSqliteEl is null');
+          }
+        }
+        console.log('ok');
+      });
     });
     this.initTranslateService();
-    this.sqliteService.initializePlugin().then((ret) => {
-      this.sqlitePluginInitialized = ret;
-    });
   }
 
   private initTranslateService() {

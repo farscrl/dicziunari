@@ -11,14 +11,18 @@ import {
   capEchoResult,
   capSQLiteResult,
 } from '@capacitor-community/sqlite';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SQLiteService {
   sqlite: SQLiteConnection;
-  isService: boolean = false;
+  isInitializedSubject = new BehaviorSubject<boolean>(false);
+  isService = false;
   platform: string;
+  sqlitePlugin: any;
+  native = false;
 
   constructor() {}
   /**
@@ -27,26 +31,84 @@ export class SQLiteService {
   initializePlugin(): Promise<boolean> {
     return new Promise((resolve) => {
       this.platform = Capacitor.getPlatform();
-      console.log('*** platform ' + this.platform);
-      const sqlitePlugin: any = CapacitorSQLite;
-      this.sqlite = new SQLiteConnection(sqlitePlugin);
+      if (this.platform === 'ios' || this.platform === 'android') this.native = true;
+      console.log('*** native ' + this.native);
+      this.sqlitePlugin = CapacitorSQLite;
+      this.sqlite = new SQLiteConnection(this.sqlitePlugin);
       this.isService = true;
+      this.isInitializedSubject.next(true);
       console.log('$$$ in service this.isService ' + this.isService + ' $$$');
       resolve(true);
     });
   }
+
+  initWebStore(): Promise<void> {
+    return this.sqlite.initWebStore();
+  }
+
+  isInitialized(): Observable<boolean> {
+    return this.isInitializedSubject.asObservable();
+  }
+
   /**
    * Echo a value
    * @param value
    */
   async echo(value: string): Promise<capEchoResult> {
-    console.log('&&&& in echo this.sqlite ' + this.sqlite + ' &&&&');
     if (this.sqlite != null) {
-      return await this.sqlite.echo(value);
+      try {
+        return await this.sqlite.echo(value);
+      } catch (err) {
+        return Promise.reject(new Error(err));
+      }
     } else {
-      return null;
+      return Promise.reject(new Error('no connection open'));
     }
   }
+  async isSecretStored(): Promise<capSQLiteResult> {
+    if (!this.native) {
+      return Promise.reject(new Error(`Not implemented for ${this.platform} platform`));
+    }
+    if (this.sqlite != null) {
+      try {
+        return Promise.resolve(await this.sqlite.isSecretStored());
+      } catch (err) {
+        return Promise.reject(new Error(err));
+      }
+    } else {
+      return Promise.reject(new Error(`no connection open`));
+    }
+  }
+  async setEncryptionSecret(passphrase: string): Promise<void> {
+    if (!this.native) {
+      return Promise.reject(new Error(`Not implemented for ${this.platform} platform`));
+    }
+    if (this.sqlite != null) {
+      try {
+        return Promise.resolve(await this.sqlite.setEncryptionSecret(passphrase));
+      } catch (err) {
+        return Promise.reject(new Error(err));
+      }
+    } else {
+      return Promise.reject(new Error(`no connection open`));
+    }
+  }
+
+  async changeEncryptionSecret(passphrase: string, oldpassphrase: string): Promise<void> {
+    if (!this.native) {
+      return Promise.reject(new Error(`Not implemented for ${this.platform} platform`));
+    }
+    if (this.sqlite != null) {
+      try {
+        return Promise.resolve(await this.sqlite.changeEncryptionSecret(passphrase, oldpassphrase));
+      } catch (err) {
+        return Promise.reject(new Error(err));
+      }
+    } else {
+      return Promise.reject(new Error(`no connection open`));
+    }
+  }
+
   /**
    * addUpgradeStatement
    * @param database
@@ -134,10 +196,12 @@ export class SQLiteService {
     if (this.sqlite != null) {
       try {
         const myConns = await this.sqlite.retrieveAllConnections();
-        let keys = [...myConns.keys()];
-        keys.forEach((value) => {
-          console.log('Connection: ' + value);
-        });
+        /*
+              let keys = [...myConns.keys()];
+              keys.forEach( (value) => {
+                  console.log("Connection: " + value);
+              });
+              */
         return Promise.resolve(myConns);
       } catch (err) {
         return Promise.reject(new Error(err));
@@ -182,8 +246,8 @@ export class SQLiteService {
   async checkConnectionsConsistency(): Promise<capSQLiteResult> {
     if (this.sqlite != null) {
       try {
-        console.log(`in Service checkConnectionsConsistency`);
-        return Promise.resolve(await this.sqlite.checkConnectionsConsistency());
+        const res = await this.sqlite.checkConnectionsConsistency();
+        return Promise.resolve(res);
       } catch (err) {
         return Promise.reject(new Error(err));
       }
@@ -224,11 +288,13 @@ export class SQLiteService {
    * Add "SQLite" suffix to old database's names
    */
   async addSQLiteSuffix(folderPath?: string): Promise<void> {
+    if (!this.native) {
+      return Promise.reject(new Error(`Not implemented for ${this.platform} platform`));
+    }
     if (this.sqlite != null) {
       try {
         const path: string = folderPath ? folderPath : 'default';
-        console.log(`in service path: ${path} `);
-        return Promise.resolve(await this.sqlite.addSQLiteSuffix(folderPath));
+        return Promise.resolve(await this.sqlite.addSQLiteSuffix(path));
       } catch (err) {
         return Promise.reject(new Error(err));
       }
@@ -240,11 +306,13 @@ export class SQLiteService {
    * Delete old databases
    */
   async deleteOldDatabases(folderPath?: string): Promise<void> {
+    if (!this.native) {
+      return Promise.reject(new Error(`Not implemented for ${this.platform} platform`));
+    }
     if (this.sqlite != null) {
       try {
         const path: string = folderPath ? folderPath : 'default';
-        console.log(`in service path: ${path} `);
-        return Promise.resolve(await this.sqlite.deleteOldDatabases(folderPath));
+        return Promise.resolve(await this.sqlite.deleteOldDatabases(path));
       } catch (err) {
         return Promise.reject(new Error(err));
       }
@@ -268,10 +336,12 @@ export class SQLiteService {
       return Promise.reject(new Error(`no connection open`));
     }
   }
+
   /**
    * Is Json Object Valid
    * @param jsonstring Check the validity of a given Json Object
    */
+
   async isJsonValid(jsonstring: string): Promise<capSQLiteResult> {
     if (this.sqlite != null) {
       try {
@@ -283,6 +353,7 @@ export class SQLiteService {
       return Promise.reject(new Error(`no connection open`));
     }
   }
+
   /**
    * Copy databases from public/assets/databases folder to application databases folder
    */
