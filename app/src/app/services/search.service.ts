@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/quotes */
 import { Injectable } from '@angular/core';
 import { Device } from '@capacitor/device';
-import { HttpClient } from '@angular/common/http';
 import { AlertController } from '@ionic/angular';
 import { CapacitorSQLite, SQLiteConnection } from '@capacitor-community/sqlite';
 import { SQLiteService } from './sqlite.service';
@@ -12,7 +12,12 @@ const DB_NAME_KEY = 'dicziunari';
 export class SearchService {
   private isReady = false;
 
-  constructor(private http: HttpClient, private alertCtrl: AlertController, private sqliteService: SQLiteService) {
+  private searchLemma = '';
+  private currentPage = 0;
+  private pageSize = 10;
+  private hasMoreResults = true;
+
+  constructor(private alertCtrl: AlertController, private sqliteService: SQLiteService) {
     this.init();
   }
 
@@ -37,20 +42,45 @@ export class SearchService {
     }
   }
 
-  async searchTerm(lemma: string) {
+  async newSearch(lemma: string): Promise<any[]> {
+    this.currentPage = 0;
+    this.hasMoreResults = true;
+    this.searchLemma = lemma;
     if (!this.isReady) {
-      return [];
+      return Promise.resolve([]);
     }
-    const statement =
+    return this.getNextPage();
+  }
+
+  async getNextResults(): Promise<any[]> {
+    this.currentPage++;
+    if (!this.hasMoreResults) {
+      return Promise.resolve([]);
+    }
+
+    return this.getNextPage();
+  }
+
+  getSearchStatement() {
+    return (
       "SELECT c.id, c.RStichwort, c.DStichwort FROM rumgr c, rumgr_idx idx WHERE idx.lemma match '" +
-      lemma +
-      "' and idx.rowId = c.id LIMIT 0,10;";
+      this.searchLemma +
+      "' and idx.rowId = c.id"
+    );
+  }
+
+  async getNextPage(): Promise<any[]> {
+    const statement = this.getSearchStatement() + ' LIMIT ' + this.currentPage * this.pageSize + ',' + this.pageSize + ';';
+
     console.warn(statement);
     const values = await CapacitorSQLite.query({
       database: DB_NAME_KEY,
       statement,
       values: [],
     });
+    if (values.values.length < 1) {
+      this.hasMoreResults = false;
+    }
     return values.values;
   }
 
