@@ -45,9 +45,6 @@ export class SQLiteService {
   }
 
 
-
-
-
   isInitialized(): Observable<boolean> {
     return this.isInitializedSubject.asObservable();
   }
