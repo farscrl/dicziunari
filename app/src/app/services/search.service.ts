@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { Device } from '@capacitor/device';
 import { AlertController } from '@ionic/angular';
-import { CapacitorSQLite, SQLiteConnection } from '@capacitor-community/sqlite';
+import { CapacitorSQLite } from '@capacitor-community/sqlite';
 import { SQLiteService } from './sqlite.service';
 import { QueryUtil } from '../util/query.util';
 import { ConfigService } from './config.service';
