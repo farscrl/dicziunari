@@ -1,5 +1,5 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -16,22 +16,23 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-    declarations: [AppComponent],
-    imports: [
-        SharedModule,
-        BrowserModule,
-        IonicModule.forRoot(),
-        AppRoutingModule,
-        HttpClientModule,
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: HttpLoaderFactory,
-                deps: [HttpClient],
-            },
-        }),
-    ],
-    providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
-    bootstrap: [AppComponent]
+  declarations: [AppComponent],
+  imports: [
+    SharedModule,
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
+  ],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}
