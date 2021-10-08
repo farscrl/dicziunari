@@ -23,7 +23,7 @@ export class FavouriteItemComponent implements OnInit {
   public searchString: string;
 
   @Input()
-  private searchDirection: string;
+  private searchDirection: 'fromDe' | 'fromRm' | 'both' = 'both';
 
   constructor(private copyService: CopyService) {}
 
