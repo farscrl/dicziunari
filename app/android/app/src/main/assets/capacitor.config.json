@@ -1,6 +1,6 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "app",
+	"appId": "ch.dicziunari.app",
+	"appName": "Dicziunari",
 	"bundledWebRuntime": false,
 	"npmClient": "npm",
 	"webDir": "www",
