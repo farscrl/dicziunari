@@ -22,7 +22,8 @@
       "INTRO": "Ihre Suche führte zu keinem Resultat. Möchten Sie den Suchmodus ändern?",
       "BUTTON_CHANGE_SEARCH_MODE": "Suchmodus ändern",
       "NOTE": "Der Suchmodus kann jederzeit in den Einstellungen geändert werden"
-    }
+    },
+    "LOADING_DATA": "Weitere Ergebnisse werden geladen"
   },
   "FAVOURITES": {
     "TITLE": "Gespeichert"
