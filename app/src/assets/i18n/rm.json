@@ -61,5 +61,16 @@
     "INFO": {
       "TITLE": "Infurmaziuns"
     }
+  },
+  "CONJUGATION": {
+    "TITLE": "Conjugaziun",
+    "PRESENT_TENSE": "Preschent",
+    "PAST_TENSE": "Imperfect",
+    "PAST_PARTICIPLE": "Particip Perfect",
+    "SUBJUNCTIVE": "Conjunctiv",
+    "CONDITIONAL": "Cundiziunal",
+    "FUTUR_TENSE": "Futur",
+    "IMPERATIVE": "Imperativ",
+    "GERUND": "Gerundi"
   }
 }

@@ -31,7 +31,7 @@
 <ion-content [fullscreen]="true" *ngIf="pleds.length > 0">
   <ion-list>
     <ng-container *ngFor="let pled of pleds">
-      <app-search-result [lemmaD]="pled.DStichwort" [lemmaR]="pled.RStichwort" [isVerb]="!!pled.preschentsing3" [searchString]="lemma"></app-search-result>
+      <app-search-result [lemmaD]="pled.DStichwort" [lemmaR]="pled.RStichwort" [lemmaId]="pled.id" [isVerb]="!!pled.preschentsing3" [searchString]="lemma"></app-search-result>
     </ng-container>
   </ion-list>
 

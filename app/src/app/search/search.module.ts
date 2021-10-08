@@ -10,6 +10,7 @@ import { SharedModule } from './../shared/shared.module';
 import { NoResultsComponent } from './no-results/no-results.component';
 import { PlaceholderComponent } from './placeholder/placeholder.component';
 import { SearchPageRoutingModule } from './search-routing.module';
+import { SearchDetailPage } from './search-detail/search-detail.page';
 
 @NgModule({
   imports: [
@@ -21,6 +22,6 @@ import { SearchPageRoutingModule } from './search-routing.module';
     TranslateModule,
     SharedModule,
   ],
-  declarations: [SearchPage, SearchResultComponent, NoResultsComponent, PlaceholderComponent],
+  declarations: [SearchPage, SearchResultComponent, NoResultsComponent, PlaceholderComponent, SearchDetailPage],
 })
 export class SearchPageModule {}

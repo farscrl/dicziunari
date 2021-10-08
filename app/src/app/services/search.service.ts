@@ -72,6 +72,24 @@ export class SearchService {
     return this.getNextPage();
   }
 
+  async getDetails(id: string): Promise<any> {
+    if (!this.isReady) {
+      return Promise.resolve({});
+    }
+
+    const statement = this.queryUtil.getDetailQuery(this.configService.getSelectedDictionary(), id) + ' LIMIT 0,1;';
+    console.warn(statement);
+    const values = await CapacitorSQLite.query({
+      database: DB_NAME_KEY,
+      statement,
+      values: [],
+    });
+    if (values.values.length < 1) {
+      return Promise.resolve({});
+    }
+    return values.values[0];
+  }
+
   getSearchStatement() {
     return this.queryUtil.getQuery(
       this.configService.getSelectedDictionary(),
