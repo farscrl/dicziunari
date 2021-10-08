@@ -35,6 +35,11 @@ export class QueryUtil {
     }
   }
 
+  getDetailQuery(dictionary: Dictionary, id: string) {
+    // eslint-disable-next-line max-len
+    return 'SELECT * FROM rumgr WHERE id LIKE "' + id + '"';
+  }
+
   private getRumgrischunQuery(
     searchDirection: SearchDirection,
     searchMode: SearchMode,

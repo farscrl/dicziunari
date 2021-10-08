@@ -61,5 +61,16 @@
     "INFO": {
       "TITLE": "Informationen"
     }
+  },
+  "CONJUGATION": {
+    "TITLE": "Konjugation",
+    "PRESENT_TENSE": "Präsens",
+    "PAST_TENSE": "Präteritum",
+    "PAST_PARTICIPLE": "Partizip Perfekt",
+    "SUBJUNCTIVE": "Konjunktiv",
+    "CONDITIONAL": "Konditional",
+    "FUTUR_TENSE": "Futur",
+    "IMPERATIVE": "Imperativ",
+    "GERUND": "Gerundium"
   }
 }

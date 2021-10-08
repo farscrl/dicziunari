@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CopyService } from '../../services/copy.service';
 import { SearchDirection } from 'src/data/search';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-result',
@@ -26,9 +27,13 @@ export class SearchResultComponent implements OnInit {
   @Input()
   private searchDirection: SearchDirection = SearchDirection.both;
 
-  constructor(private copyService: CopyService) {}
+  constructor(private copyService: CopyService, private router: Router) {}
 
   ngOnInit() {}
+
+  goToDetail() {
+    this.router.navigate(['/tabs/search/detail/' + this.lemmaId]);
+  }
 
   addFavorite() {
     console.log('implement me. add favorite: ' + this.lemmaD);
