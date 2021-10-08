@@ -13,8 +13,9 @@
     },
     "DE": "Tudestg",
     "RESULTS": {
-      "SAVE": "Speichern",
-      "COPY": "Kopieren"
+      "SAVE": "Memorisar",
+      "COPY": "Copiar",
+      "COPIED": "Copià l'endataziun"
     },
     "NO_RESULTS": {
       "TITLE": "Hopla!",

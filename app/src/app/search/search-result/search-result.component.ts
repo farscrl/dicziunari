@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CopyService } from '../../services/copy.service';
 
 @Component({
   selector: 'app-search-result',
@@ -22,9 +23,9 @@ export class SearchResultComponent implements OnInit {
   public searchString: string;
 
   @Input()
-  private searchDirection: string;
+  private searchDirection: 'fromDe' | 'fromRm' | 'both' = 'both';
 
-  constructor() {}
+  constructor(private copyService: CopyService) {}
 
   ngOnInit() {}
 
@@ -32,7 +33,7 @@ export class SearchResultComponent implements OnInit {
     console.log('implement me. add favorite: ' + this.lemmaD);
   }
 
-  copy() {
-    console.log('implement me. copy: ' + this.lemmaD);
+  async copy() {
+    this.copyService.copyItem(this.lemmaD, this.lemmaR);
   }
 }

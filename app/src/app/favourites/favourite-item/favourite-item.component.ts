@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CopyService } from '../../services/copy.service';
 
 @Component({
   selector: 'app-favourite-item',
@@ -22,9 +23,9 @@ export class FavouriteItemComponent implements OnInit {
   public searchString: string;
 
   @Input()
-  private searchDirection: string;
+  private searchDirection: 'fromDe' | 'fromRm' | 'both' = 'both';
 
-  constructor() {}
+  constructor(private copyService: CopyService) {}
 
   ngOnInit() {}
 
@@ -33,6 +34,6 @@ export class FavouriteItemComponent implements OnInit {
   }
 
   copy() {
-    console.log('implement me. copy: ' + this.lemmaD);
+    this.copyService.copyItem(this.lemmaD, this.lemmaR);
   }
 }
