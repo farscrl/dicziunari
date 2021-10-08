@@ -22,6 +22,15 @@ export class SearchPage implements OnInit {
   ngOnInit() {
     this.selectedDictionary = this.configService.getSelectedDictionary();
     this.searchDirection = this.configService.getSearchDirection();
+    this.configService.getDictionaryObservable().subscribe((dictionary) => {
+      this.search();
+    });
+    this.configService.getSearchDirectionObservable().subscribe((searchDirection) => {
+      this.search();
+    });
+    this.configService.getSearchModeObservable().subscribe((searchMode) => {
+      this.search();
+    });
   }
 
   search() {
@@ -51,7 +60,6 @@ export class SearchPage implements OnInit {
 
   dictionaryChanged(value) {
     this.configService.setSelectedDictionary(value.detail.value);
-    this.search();
   }
 
   changeSearchDirection() {
@@ -70,6 +78,5 @@ export class SearchPage implements OnInit {
         this.searchDirection = this.configService.getSearchDirection();
         break;
     }
-    this.search();
   }
 }
