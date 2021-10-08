@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Clipboard } from '@capacitor/clipboard';
-import { ToastController } from '@ionic/angular';
-import { TranslateService } from '@ngx-translate/core';
+import { CopyService } from '../../services/copy.service';
 
 @Component({
   selector: 'app-search-result',
@@ -27,7 +25,7 @@ export class SearchResultComponent implements OnInit {
   @Input()
   private searchDirection: string;
 
-  constructor(private toastController: ToastController, private translateService: TranslateService) {}
+  constructor(private copyService: CopyService) {}
 
   ngOnInit() {}
 
@@ -36,17 +34,6 @@ export class SearchResultComponent implements OnInit {
   }
 
   async copy() {
-    await Clipboard.write({
-      // eslint-disable-next-line id-blacklist
-      string: this.lemmaR + ' / ' + this.lemmaD,
-    });
-
-    const toast = await this.toastController.create({
-      color: 'dark',
-      duration: 2000,
-      message: this.translateService.instant('SEARCH.RESULTS.COPIED'),
-    });
-
-    await toast.present();
+    this.copyService.copyItem(this.lemmaD, this.lemmaR);
   }
 }
