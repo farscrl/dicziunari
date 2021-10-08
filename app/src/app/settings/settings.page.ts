@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfigService } from '../services/config.service';
 import { TranslateService } from '@ngx-translate/core';
-import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import { Locale, SearchMode } from 'src/data/search';
 
 @Component({
   selector: 'app-settings',
@@ -10,16 +10,16 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['settings.page.scss'],
 })
 export class SettingsPage implements OnInit {
-  appLanguage: 'de' | 'rm';
-  searchMode: 'start' | 'substring' | 'end' | 'match';
+  appLanguage: Locale | undefined;
+  searchMode: SearchMode;
   includeVerbs: boolean;
 
   constructor(private configService: ConfigService, private translateService: TranslateService, private navCtrl: NavController) {}
 
   ngOnInit() {
-    this.appLanguage = this.configService.getSelectedLocale() ? this.configService.getSelectedLocale() : undefined;
-    this.searchMode = this.configService.getSearchMode() ? this.configService.getSearchMode() : 'start';
-    this.includeVerbs = this.configService.isIncludeVerbs() ? this.configService.isIncludeVerbs() : false;
+    this.appLanguage = this.configService.getSelectedLocale();
+    this.searchMode = this.configService.getSearchMode();
+    this.includeVerbs = this.configService.isIncludeVerbs();
   }
 
   languageChanged() {
