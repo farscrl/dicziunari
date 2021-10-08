@@ -35,10 +35,10 @@
     </ng-container>
   </ion-list>
 
-  <ion-infinite-scroll threshold="500px" (ionInfinite)="loadMoreData()">
+  <ion-infinite-scroll threshold="50%" (ionInfinite)="loadMoreData()">
     <ion-infinite-scroll-content
       loadingSpinner="bubbles"
-      loadingText="Loading more data...">
+      loadingText="{{ 'SEARCH.LOADING_DATA' | translate }}">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
