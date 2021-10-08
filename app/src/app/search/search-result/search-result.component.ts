@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CopyService } from '../../services/copy.service';
+import { SearchDirection } from 'src/data/search';
 
 @Component({
   selector: 'app-search-result',
@@ -23,7 +24,7 @@ export class SearchResultComponent implements OnInit {
   public searchString: string;
 
   @Input()
-  private searchDirection: 'fromDe' | 'fromRm' | 'both' = 'both';
+  private searchDirection: SearchDirection = SearchDirection.both;
 
   constructor(private copyService: CopyService) {}
 

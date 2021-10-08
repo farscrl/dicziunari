@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { ConfigService } from '../services/config.service';
 import { IonInfiniteScroll } from '@ionic/angular';
+import { Dictionary, SearchDirection } from 'src/data/search';
 
 @Component({
   selector: 'app-search',
@@ -12,8 +13,8 @@ export class SearchPage implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
   public lemma = '';
-  public selectedDictionary;
-  public searchDirection;
+  public selectedDictionary: Dictionary;
+  public searchDirection: SearchDirection;
   public pleds = [];
 
   constructor(private searchService: SearchService, private configService: ConfigService) {}
@@ -55,17 +56,17 @@ export class SearchPage implements OnInit {
 
   changeSearchDirection() {
     switch (this.searchDirection) {
-      case 'fromDe':
-        this.configService.setSearchDirection('fromRm');
+      case SearchDirection.fromDe:
+        this.configService.setSearchDirection(SearchDirection.fromRm);
         this.searchDirection = this.configService.getSearchDirection();
         break;
-      case 'fromRm':
-        this.configService.setSearchDirection('both');
+      case SearchDirection.fromRm:
+        this.configService.setSearchDirection(SearchDirection.both);
         this.searchDirection = this.configService.getSearchDirection();
         break;
-      case 'both':
+      case SearchDirection.both:
       default:
-        this.configService.setSearchDirection('fromDe');
+        this.configService.setSearchDirection(SearchDirection.fromDe);
         this.searchDirection = this.configService.getSearchDirection();
         break;
     }
