@@ -4,7 +4,7 @@ const XmlStream = require('xml-stream');
 
 const DB_NAME = 'build/dicziunariSQLite.db';
 const TABLE_SURMIRAN = 'surmiran';
-const TABLE_SURMIRAN_IDX = 'surmiran_idx';
+// const TABLE_SURMIRAN_IDX = 'surmiran_idx';
 const FILE_PATH = 'data/maalr_db_dump_all_versions_3_surmiran.xml';
 // const FILE_PATH = 'data/maalr_db_dump_all_versions_3_surmiran_short.xml';
 
@@ -78,7 +78,7 @@ function prepareAndCleanDb() {
     db.pragma("temp_store=MEMORY");
 
     db.exec("DROP TABLE IF EXISTS " + TABLE_SURMIRAN +" ;");
-    db.exec("DROP TABLE IF EXISTS " + TABLE_SURMIRAN_IDX + ";")
+    //db.exec("DROP TABLE IF EXISTS " + TABLE_SURMIRAN_IDX + ";")
 
     // create used columns
     const columnDef = columnList.map(column => column.colName + ' ' + column.colType).join(", ");
@@ -86,13 +86,13 @@ function prepareAndCleanDb() {
 
     // creating virtual fts5 table. Used options:
     // lemma is the search term. content sets the content to another table, content_rowid defines what column that identifies the data in the data-table, columsize defines, that values are not stored seperately in the virtual table
-    db.exec("CREATE VIRTUAL TABLE " + TABLE_SURMIRAN_IDX + " using fts5(lemma, content = '" + TABLE_SURMIRAN + "', content_rowid = 'id', columnsize=0);");
+    //db.exec("CREATE VIRTUAL TABLE " + TABLE_SURMIRAN_IDX + " using fts5(lemma, content = '" + TABLE_SURMIRAN + "', content_rowid = 'id', columnsize=0);");
 
     // create prepared statement to add each lemma
     insertStatementLemma = db.prepare(
         "INSERT INTO " + TABLE_SURMIRAN + " ("+ columnList.map(col => col.colName).join(", ")+") " + 
         "VALUES (" + Array.from(columnList).map(column => "$"+column.colName).join(", ")+");");
-    insertStatementIdx = db.prepare("INSERT INTO " + TABLE_SURMIRAN_IDX + " (rowId, lemma) VALUES ($rowId, $lemma);");
+    //insertStatementIdx = db.prepare("INSERT INTO " + TABLE_SURMIRAN_IDX + " (rowId, lemma) VALUES ($rowId, $lemma);");
     
     // start transaction
     db.exec("BEGIN TRANSACTION;");
@@ -346,15 +346,6 @@ function insertLemma(lemma) {
     binds['weight'] = calculateWeight(lemma);
     columnList.forEach(column => binds[column.colName] = lemma[column.colName]);
     insertStatementLemma.run(binds);
-}
-
-function insertIndex(lemma) {
-    var binds = {};
-    binds["rowId"] = id;
-    binds["lemma"] = lemma.StichwortR;
-    insertStatementIdx.run(binds);
-    binds["lemma"] = lemma.StichwortD;
-    insertStatementIdx.run(binds);
 }
 
 module.exports = {
