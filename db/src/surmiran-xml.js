@@ -359,7 +359,7 @@ function insertIndex(lemma) {
 
 module.exports = {
     main: function () {
-        console.log('Start converting HTML file for Surmiran...');
+        console.log('Start converting XML file for Surmiran...');
         prepareAndCleanDb();
         parseData();
         
