@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonSelect } from '@ionic/angular';
+import { ConfigService } from '../../services/config.service';
+import { SearchMode } from 'src/data/search';
 
 @Component({
   selector: 'app-no-results',
@@ -6,11 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./no-results.component.scss'],
 })
 export class NoResultsComponent implements OnInit {
-  constructor() {}
+  @ViewChild('searchModeSelect', { static: false }) searchModeSelectRef: IonSelect;
 
-  ngOnInit() {}
+  searchMode: SearchMode;
+
+  constructor(private configService: ConfigService) {}
+
+  ngOnInit() {
+    this.searchMode = this.configService.getSearchMode();
+  }
 
   changeSearchMode() {
-    console.log('change search mode');
+    if (this.searchModeSelectRef) {
+      this.searchModeSelectRef.open();
+    }
+  }
+
+  valueChanged(event) {
+    this.configService.setSearchMode(event.detail.value);
+    this.searchMode = event.detail.value;
   }
 }
