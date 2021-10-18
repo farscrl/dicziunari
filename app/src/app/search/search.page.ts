@@ -23,9 +23,11 @@ export class SearchPage implements OnInit {
     this.selectedDictionary = this.configService.getSelectedDictionary();
     this.searchDirection = this.configService.getSearchDirection();
     this.configService.getDictionaryObservable().subscribe((dictionary) => {
+      this.selectedDictionary = dictionary;
       this.search();
     });
     this.configService.getSearchDirectionObservable().subscribe((searchDirection) => {
+      this.searchDirection = searchDirection;
       this.search();
     });
     this.configService.getSearchModeObservable().subscribe((searchMode) => {
