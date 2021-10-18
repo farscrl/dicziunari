@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-grid class="ion-no-padding">
-      <ion-row class="ion-no-padding" style="align-items: center;">
+      <ion-row class="ion-no-padding search-direction">
         <ion-col size="5">
           <ion-label>{{ "SEARCH.DE" | translate}}</ion-label>
         </ion-col>
@@ -12,7 +12,7 @@
         </ion-col>
         <ion-col size="5">
           <ion-select (ionChange)="dictionaryChanged($event)" [value]="selectedDictionary">
-            <ion-select-option value="rumgrischun">Rumantsch Grischun</ion-select-option>
+            <ion-select-option value="rumgrischun">R. Grischun</ion-select-option>
             <ion-select-option value="sursilv" disabled="true">Sursilvan</ion-select-option>
             <ion-select-option value="sutsilv" disabled="true">Sutsilvan</ion-select-option>
             <ion-select-option value="surm" disabled="true">Surmiran</ion-select-option>
@@ -24,7 +24,7 @@
     </ion-grid>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-searchbar showCancelButton="focus" [(ngModel)]="lemma" (ngModelChange)="search()"></ion-searchbar>
+    <ion-searchbar showCancelButton="focus" [(ngModel)]="lemma" (ngModelChange)="search()" [placeholder]="'SEARCH.SEARCHFIELD.LABEL' | translate"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 

@@ -4,7 +4,7 @@ const parser = require('node-html-parser');
 
 const DB_NAME = 'build/dicziunariSQLite.db';
 const TABLE_PUTER = 'puter';
-const TABLE_PUTER_IDX = 'puter_idx';
+// const TABLE_PUTER_IDX = 'puter_idx';
 const FILE_PATH = 'data/puter.htm';
 // const FILE_PATH = 'data/puter_short.htm';
 
@@ -38,7 +38,7 @@ const columnList = [
 
 let db;
 let insertStatementLemma;
-let insertStatementIdx;
+// let insertStatementIdx;
 let id = 1;
 
 function prepareAndCleanDb() {
@@ -52,7 +52,7 @@ function prepareAndCleanDb() {
     db.pragma("temp_store=MEMORY");
 
     db.exec("DROP TABLE IF EXISTS " + TABLE_PUTER +" ;");
-    db.exec("DROP TABLE IF EXISTS " + TABLE_PUTER_IDX + ";")
+    //db.exec("DROP TABLE IF EXISTS " + TABLE_PUTER_IDX + ";")
 
     // create used columns
     const columnDef = columnList.map(column => column.colName + ' ' + column.colType).join(", ");
@@ -60,13 +60,13 @@ function prepareAndCleanDb() {
 
     // creating virtual fts5 table. Used options:
     // lemma is the search term. content sets the content to another table, content_rowid defines what column that identifies the data in the data-table, columsize defines, that values are not stored seperately in the virtual table
-    db.exec("CREATE VIRTUAL TABLE " + TABLE_PUTER_IDX + " using fts5(lemma, content = '" + TABLE_PUTER + "', content_rowid = 'id', columnsize=0);");
+    //db.exec("CREATE VIRTUAL TABLE " + TABLE_PUTER_IDX + " using fts5(lemma, content = '" + TABLE_PUTER + "', content_rowid = 'id', columnsize=0);");
 
     // create prepared statement to add each lemma
     insertStatementLemma = db.prepare(
         "INSERT INTO " + TABLE_PUTER + " ("+ columnList.map(col => col.colName).join(", ")+") " + 
         "VALUES (" + Array.from(columnList).map(column => "$"+column.colName).join(", ")+");");
-    insertStatementIdx = db.prepare("INSERT INTO " + TABLE_PUTER_IDX + " (rowId, lemma) VALUES ($rowId, $lemma);");
+    //insertStatementIdx = db.prepare("INSERT INTO " + TABLE_PUTER_IDX + " (rowId, lemma) VALUES ($rowId, $lemma);");
     
     // start transaction
     db.exec("BEGIN TRANSACTION;");
@@ -166,7 +166,7 @@ function parseData() {
         });
 
         insertLemma(lemma);
-        insertIndex(lemma);
+        // insertIndex(lemma);
 
         processedEntries++;
         if (processedEntries % 100 === 0) {
@@ -186,15 +186,6 @@ function insertLemma(lemma) {
     binds['weight'] = calculateWeight(lemma);
     columnList.forEach(column => binds[column.colName] = lemma[column.colName]);
     insertStatementLemma.run(binds);
-}
-
-function insertIndex(lemma) {
-    var binds = {};
-    binds["rowId"] = id;
-    binds["lemma"] = lemma.StichwortR;
-    insertStatementIdx.run(binds);
-    binds["lemma"] = lemma.StichwortD;
-    insertStatementIdx.run(binds);
 }
 
 module.exports = {

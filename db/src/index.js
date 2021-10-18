@@ -2,7 +2,8 @@ var rumgrJson = require('./rumgr-json');
 var sursilvanJson = require('./sursilvan-json');
 var valladerHtml = require('./vallader-html');
 var puterHtml = require('./puter-html');
-
+var surmiranXml = require('./surmiran-xml');
+var sutsilvanXml = require('./sutsilvan-xml');
 
 switch (process.argv[2]) {
     case "rumantschgrischun":
@@ -14,11 +15,11 @@ switch (process.argv[2]) {
         break;
 
     case "sutsilvan":
-        console.log("Not implemented yet");
+        sutsilvanXml.main();
         break;
 
     case "surmiran":
-        console.log("Not implemented yet");
+        surmiranXml.main();
         break;
     
     case "puter":
@@ -33,8 +34,8 @@ switch (process.argv[2]) {
     default:
         rumgrJson.main();
         sursilvanJson.main();
-        // todo: sutsilvan
-        // todo: surmiran
+        sutsilvanXml.main();
+        surmiranXml.main();
         puterHtml.main();
         valladerHtml.main();
 }

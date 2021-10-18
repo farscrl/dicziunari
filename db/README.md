@@ -12,7 +12,9 @@ It starts from an export of www.pledarigrond.ch and transforms it into a SQLite 
 
 ## DB structure
 
-We create two tables in the database: The one (`rumgr`) contains all the data, including conjugations. The other one (`rumgr_idx`) is a virtual [FTS5](https://www.sqlite.org/fts5.html) table used for fast search and lookup.
+We create two tables in the database: The one (`rumgr`) contains all the data, including conjugations.
+
+There is code commented out to create a table (`rumgr_idx`). This is a virtual [FTS5](https://www.sqlite.org/fts5.html) table that could be used for fast text search and lookup.
 
 # Memory
 
