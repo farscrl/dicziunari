@@ -1,17 +1,23 @@
 <ion-item-sliding>
   <ion-item>
-    <ion-grid>
-      <ion-row>
-        <ion-col size="6" [innerHtml]="lemmaD | highlight: searchString">
-        </ion-col>
-        <ion-col size="5" [innerHtml]="lemmaR | highlight: searchString">
+    <ng-container *ngIf="!isSursilvan">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6" [innerHtml]="lemmaD | highlight: searchString"></ion-col>
+          <ion-col size="5" [innerHtml]="lemmaR | highlight: searchString"></ion-col>
+          <ion-col size="1" *ngIf="isVerb">
+            <ion-button size="small" (click)="goToDetail()">V</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
-        </ion-col>
-        <ion-col size="1" *ngIf="isVerb">
-          <ion-button size="small" (click)="goToDetail()">V</ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    </ng-container>
+    <ng-container *ngIf="isSursilvan">
+      <ion-col size="11" [innerHtml]="('<b><u>' + lemmaR + '</u></b> ' + completeLemma) | highlight: searchString"></ion-col>
+      <ion-col size="1" *ngIf="isVerb">
+        <ion-button size="small" (click)="goToDetail()">V</ion-button>
+      </ion-col>
+    </ng-container>
   </ion-item>
 
   <ion-item-options side="end">

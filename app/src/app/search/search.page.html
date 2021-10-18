@@ -13,7 +13,7 @@
         <ion-col size="5">
           <ion-select (ionChange)="dictionaryChanged($event)" [value]="selectedDictionary">
             <ion-select-option value="rumgrischun">R. Grischun</ion-select-option>
-            <ion-select-option value="sursilv" disabled="true">Sursilvan</ion-select-option>
+            <ion-select-option value="sursilv">Sursilvan</ion-select-option>
             <ion-select-option value="sutsilv">Sutsilvan</ion-select-option>
             <ion-select-option value="surm">Surmiran</ion-select-option>
             <ion-select-option value="puter">Puter</ion-select-option>
@@ -31,7 +31,14 @@
 <ion-content [fullscreen]="true" *ngIf="pleds.length > 0">
   <ion-list>
     <ng-container *ngFor="let pled of pleds">
-      <app-search-result [lemmaD]="pled.DStichwort" [lemmaR]="pled.RStichwort" [lemmaId]="pled.id" [isVerb]="!!pled.preschentsing3" [searchString]="lemma"></app-search-result>
+      <app-search-result
+        [lemmaD]="isSursilvan ? pled.StichwortD : pled.DStichwort"
+        [lemmaR]="isSursilvan ? pled.Stichwort : pled.RStichwort"
+        [completeLemma]="isSursilvan ? pled.Corp : ''"
+        [lemmaId]="pled.id"
+        [isVerb]="!!pled.preschentsing3"
+        [searchString]="lemma"
+        [isSursilvan]="isSursilvan"></app-search-result>
     </ng-container>
   </ion-list>
 

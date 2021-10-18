@@ -19,13 +19,19 @@ export class SearchResultComponent implements OnInit {
   public lemmaR: string;
 
   @Input()
+  public completeLemma: string;
+
+  @Input()
   public isVerb: boolean;
 
   @Input()
   public searchString: string;
 
   @Input()
-  private searchDirection: SearchDirection = SearchDirection.both;
+  public searchDirection: SearchDirection = SearchDirection.both;
+
+  @Input()
+  public isSursilvan: boolean;
 
   constructor(private copyService: CopyService, private router: Router) {}
 

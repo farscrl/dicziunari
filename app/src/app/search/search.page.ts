@@ -79,4 +79,8 @@ export class SearchPage implements OnInit {
         break;
     }
   }
+
+  get isSursilvan() {
+    return this.selectedDictionary === Dictionary.sursilv;
+  }
 }
