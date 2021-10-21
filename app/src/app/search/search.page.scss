@@ -28,3 +28,14 @@ ion-select::part(text) {
 ion-select::part(icon) {
   display: none !important;
 }
+
+// android specific searchbar
+.md ion-toolbar.toolbar-searchbar {
+  padding: 0 16px 16px 16px;
+}
+
+.md ion-searchbar {
+  --box-shadow: none;
+  border: 1px solid rgb(187, 187, 187);
+  border-radius: 5px;
+}
