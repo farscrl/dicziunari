@@ -6,10 +6,11 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { ConjugationPersonalComponent } from './components/conjugation-personal/conjugation-personal.component';
 import { ConjugationImpersonalComponent } from './components/conjugation-impersonal/conjugation-impersonal.component';
+import { ResultTextComponent } from './components/result-text/result-text.component';
 
 @NgModule({
   imports: [IonicModule, CommonModule, TranslateModule],
-  declarations: [HighlightPipe, ConjugationComponent, ConjugationPersonalComponent, ConjugationImpersonalComponent],
-  exports: [HighlightPipe, ConjugationComponent, TranslateModule],
+  declarations: [HighlightPipe, ConjugationComponent, ConjugationPersonalComponent, ConjugationImpersonalComponent, ResultTextComponent],
+  exports: [HighlightPipe, ConjugationComponent, ResultTextComponent, TranslateModule],
 })
 export class SharedModule {}

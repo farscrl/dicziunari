@@ -1,0 +1,19 @@
+.env {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+
+  ion-icon {
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+
+  span {
+    overflow-wrap: break-word;
+    max-width: calc(100% - 24px);
+  }
+}
+
+.link {
+  color: #3880ff;
+}

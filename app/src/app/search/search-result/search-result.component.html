@@ -3,15 +3,15 @@
     <ng-container *ngIf="!isSursilvan">
       <ion-grid>
         <ion-row *ngIf="(searchDirection === 'fromDe') || (searchDirection === 'both' && selectedLocale === 'de')">
-          <ion-col size="6" [innerHtml]="lemmaD | highlight: searchString"></ion-col>
-          <ion-col [size]="isVerb ? 5 : 6" [innerHtml]="lemmaR | highlight: searchString"></ion-col>
+          <ion-col size="6"><app-result-text [text]="lemmaD" [searchString]="searchString" (changeSearchTerm)="changeTerm($event)"></app-result-text></ion-col>
+          <ion-col [size]="isVerb ? 5 : 6"><app-result-text [text]="lemmaR" [searchString]="searchString" (changeSearchTerm)="changeTerm($event)"></app-result-text></ion-col>
           <ion-col size="1" *ngIf="isVerb">
             <div class="verb-button" (click)="goToDetail()">V</div>
           </ion-col>
         </ion-row>
         <ion-row *ngIf="(searchDirection === 'fromRm') || (searchDirection === 'both' && selectedLocale === 'rm')">
-          <ion-col size="6" [innerHtml]="lemmaR | highlight: searchString"></ion-col>
-          <ion-col [size]="isVerb ? 5 : 6" [innerHtml]="lemmaD | highlight: searchString"></ion-col>
+          <ion-col size="6"><app-result-text [text]="lemmaR" [searchString]="searchString" (changeSearchTerm)="changeTerm($event)"></app-result-text></ion-col>
+          <ion-col [size]="isVerb ? 5 : 6"><app-result-text [text]="lemmaD" [searchString]="searchString" (changeSearchTerm)="changeTerm($event)"></app-result-text></ion-col>
           <ion-col size="1" *ngIf="isVerb">
             <div class="verb-button" (click)="goToDetail()">V</div>
           </ion-col>
@@ -20,7 +20,7 @@
 
     </ng-container>
     <ng-container *ngIf="isSursilvan">
-      <ion-col [size]="isVerb ? 11 : 12" [innerHtml]="('<b>' + lemmaR + '</b> ' + completeLemma) | highlight: searchString"></ion-col>
+      <ion-col [size]="isVerb ? 11 : 12"><app-result-text [text]="('<b>' + lemmaR + '</b> ' + completeLemma)" [searchString]="searchString" (changeSearchTerm)="changeTerm($event)"></app-result-text></ion-col>
       <ion-col size="1" *ngIf="isVerb">
         <div class="verb-button" (click)="goToDetail()">V</div>
       </ion-col>

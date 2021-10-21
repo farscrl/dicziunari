@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CopyService } from '../../services/copy.service';
 import { SearchDirection, Locale } from 'src/data/search';
 import { Router } from '@angular/router';
@@ -34,6 +34,9 @@ export class SearchResultComponent implements OnInit {
   @Input()
   public isSursilvan: boolean;
 
+  @Output()
+  public changeSearchTerm = new EventEmitter<string>();
+
   public selectedLocale: Locale = Locale.rm;
 
   constructor(private copyService: CopyService, private router: Router, private configService: ConfigService) {}
@@ -54,5 +57,9 @@ export class SearchResultComponent implements OnInit {
 
   async copy() {
     this.copyService.copyItem(this.lemmaD, this.lemmaR);
+  }
+
+  changeTerm(term: string) {
+    this.changeSearchTerm.emit(term);
   }
 }
