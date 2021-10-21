@@ -39,6 +39,7 @@
         [isVerb]="!!pled.preschentsing3"
         [searchString]="lemma"
         [searchDirection]="searchDirection"
+        (changeSearchTerm)="changeSearchTerm($event)"
         [isSursilvan]="isSursilvan"></app-search-result>
     </ng-container>
   </ion-list>

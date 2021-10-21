@@ -85,4 +85,9 @@ export class SearchPage implements OnInit {
   get isSursilvan() {
     return this.selectedDictionary === Dictionary.sursilv;
   }
+
+  changeSearchTerm(term: string) {
+    this.lemma = term;
+    this.search();
+  }
 }

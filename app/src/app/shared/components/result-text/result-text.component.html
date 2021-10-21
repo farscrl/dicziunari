@@ -1,0 +1,5 @@
+<div class="env">
+  <ion-icon name="arrow-forward-outline" *ngIf="isRedirect"></ion-icon>
+  <span *ngIf="isRedirect" [innerHtml]="displayText | highlight: searchString" class="link" (click)="changeSearchTerm.emit(displayText)"></span>
+  <span *ngIf="!isRedirect" [innerHtml]="displayText | highlight: searchString"></span>
+</div>
