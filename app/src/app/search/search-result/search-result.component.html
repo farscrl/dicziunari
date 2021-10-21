@@ -13,7 +13,7 @@
 
     </ng-container>
     <ng-container *ngIf="isSursilvan">
-      <ion-col size="11" [innerHtml]="('<b><u>' + lemmaR + '</u></b> ' + completeLemma) | highlight: searchString"></ion-col>
+      <ion-col size="11" [innerHtml]="('<b>' + lemmaR + '</b> ' + completeLemma) | highlight: searchString"></ion-col>
       <ion-col size="1" *ngIf="isVerb">
         <ion-button size="small" (click)="goToDetail()">V</ion-button>
       </ion-col>
