@@ -2,9 +2,16 @@
   <ion-item>
     <ng-container *ngIf="!isSursilvan">
       <ion-grid>
-        <ion-row>
+        <ion-row *ngIf="searchDirection !== 'fromRm'">
           <ion-col size="6" [innerHtml]="lemmaD | highlight: searchString"></ion-col>
           <ion-col size="5" [innerHtml]="lemmaR | highlight: searchString"></ion-col>
+          <ion-col size="1" *ngIf="isVerb">
+            <ion-button size="small" (click)="goToDetail()">V</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="searchDirection === 'fromRm'">
+          <ion-col size="6" [innerHtml]="lemmaR | highlight: searchString"></ion-col>
+          <ion-col size="5" [innerHtml]="lemmaD | highlight: searchString"></ion-col>
           <ion-col size="1" *ngIf="isVerb">
             <ion-button size="small" (click)="goToDetail()">V</ion-button>
           </ion-col>
