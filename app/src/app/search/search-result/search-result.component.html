@@ -4,25 +4,25 @@
       <ion-grid>
         <ion-row *ngIf="searchDirection !== 'fromRm'">
           <ion-col size="6" [innerHtml]="lemmaD | highlight: searchString"></ion-col>
-          <ion-col size="5" [innerHtml]="lemmaR | highlight: searchString"></ion-col>
+          <ion-col [size]="isVerb ? 5 : 6" [innerHtml]="lemmaR | highlight: searchString"></ion-col>
           <ion-col size="1" *ngIf="isVerb">
-            <ion-button size="small" (click)="goToDetail()">V</ion-button>
+            <div class="verb-button" (click)="goToDetail()">V</div>
           </ion-col>
         </ion-row>
         <ion-row *ngIf="searchDirection === 'fromRm'">
           <ion-col size="6" [innerHtml]="lemmaR | highlight: searchString"></ion-col>
-          <ion-col size="5" [innerHtml]="lemmaD | highlight: searchString"></ion-col>
+          <ion-col [size]="isVerb ? 5 : 6" [innerHtml]="lemmaD | highlight: searchString"></ion-col>
           <ion-col size="1" *ngIf="isVerb">
-            <ion-button size="small" (click)="goToDetail()">V</ion-button>
+            <div class="verb-button" (click)="goToDetail()">V</div>
           </ion-col>
         </ion-row>
       </ion-grid>
 
     </ng-container>
     <ng-container *ngIf="isSursilvan">
-      <ion-col size="11" [innerHtml]="('<b>' + lemmaR + '</b> ' + completeLemma) | highlight: searchString"></ion-col>
+      <ion-col [size]="isVerb ? 11 : 12" [innerHtml]="('<b>' + lemmaR + '</b> ' + completeLemma) | highlight: searchString"></ion-col>
       <ion-col size="1" *ngIf="isVerb">
-        <ion-button size="small" (click)="goToDetail()">V</ion-button>
+        <div class="verb-button" (click)="goToDetail()">V</div>
       </ion-col>
     </ng-container>
   </ion-item>
