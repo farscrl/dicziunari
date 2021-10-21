@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CopyService } from '../../services/copy.service';
-import { SearchDirection } from 'src/data/search';
+import { SearchDirection, Locale } from 'src/data/search';
 import { Router } from '@angular/router';
+import { ConfigService } from '../../services/config.service';
 
 @Component({
   selector: 'app-search-result',
@@ -33,9 +34,15 @@ export class SearchResultComponent implements OnInit {
   @Input()
   public isSursilvan: boolean;
 
-  constructor(private copyService: CopyService, private router: Router) {}
+  public selectedLocale: Locale = Locale.rm;
 
-  ngOnInit() {}
+  constructor(private copyService: CopyService, private router: Router, private configService: ConfigService) {}
+
+  ngOnInit() {
+    this.configService.getLocaleObservable().subscribe((locale) => {
+      this.selectedLocale = locale;
+    });
+  }
 
   goToDetail() {
     this.router.navigate(['/tabs/search/detail/' + this.lemmaId]);
