@@ -30,3 +30,8 @@ mark {
   background-color: #b5dbff;
   // font-weight: bold;
 }
+
+// make radio group overlays bigger
+.alert-radio-group {
+  max-height: 300px !important;
+}
