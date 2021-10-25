@@ -101,14 +101,6 @@ function calculateWeight(lemma) {
     return 1;
 }
 
-function insertLemma(lemma) {
-    var binds = {};
-    binds['id'] = id;
-    binds['weight'] = calculateWeight(lemma);
-    columnList.forEach(column => binds[column.colName] = lemma[column.colName]);
-    insertStatementLemma.run(binds);
-}
-
 function finalizeDb() {
     console.log('Processed ' + processedEntries + ' lemmas');
     console.log('file ended');
