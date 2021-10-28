@@ -4,29 +4,9 @@
   font-weight: 500;
 }
 
-.first {
-  --background: #ddd;
-
-  ion-icon {
-    padding-top: 3px;
-  }
-}
-.last {
-  border-bottom: 1px solid #aaa;
-}
-
-ion-select {
-  --padding-end: 0;
-  color: #11769d;
-}
-
-ion-select::part(text) {
+.idiom {
   text-align: right;
-}
-
-// hide the icon for the select drop-down
-ion-select::part(icon) {
-  display: none !important;
+  color: #11769d;
 }
 
 // android specific searchbar
