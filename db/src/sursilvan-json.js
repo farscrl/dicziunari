@@ -11,11 +11,8 @@ let processedEntries = 0;
 const columnList = [
     { colName: 'id',                 colType: 'INTEGER PRIMARY KEY' },
     { colName: 'weight',             colType: 'INTEGER' },
-    { colName: 'cn_DS',              colType: 'INTEGER' },
     { colName: 'Etymologie',         colType: 'TEXT' },
     { colName: 'Corp',               colType: 'TEXT' },
-    { colName: 'Phonetik',           colType: 'TEXT' },
-    { colName: 'Phonetik2',          colType: 'TEXT' },
     { colName: 'Redewendung',        colType: 'TEXT' },
     { colName: 'Stichwort',          colType: 'TEXT' },
     { colName: 'StichwortD',         colType: 'TEXT' }, 
@@ -86,6 +83,7 @@ function parseData() {
 
     lemmas.forEach(lemma => {
         lemma['id'] = lemma['cn_DS'];
+        normalizeLemma(lemma);
         insertLemma(lemma);
         // insertIndex(lemma);
 
@@ -94,6 +92,26 @@ function parseData() {
             console.log('Processed ' + processedEntries + ' lemmas');
         }
     });
+}
+
+function normalizeLemma(lemma) {
+    lemma['Stichwort'] = replaceEnding(lemma['Stichwort'], ' I');
+    lemma['Stichwort'] = replaceEnding(lemma['Stichwort'], ' II');
+    lemma['Stichwort'] = replaceEnding(lemma['Stichwort'], ' III');
+    lemma['Stichwort'] = replaceEnding(lemma['Stichwort'], ' VI');
+    lemma['Stichwort'] = replaceEnding(lemma['Stichwort'], ' V');
+    lemma['Stichwort'] = replaceEnding(lemma['Stichwort'], '*');
+
+    lemma['Corp'] = lemma['Corp'].replace(/~/g, lemma['Stichwort']);
+}
+
+
+function replaceEnding(string, ending) {
+    if (string.endsWith(ending)) {
+        return string.slice(0, -ending.length);
+    }
+
+    return string;
 }
 
 function calculateWeight(lemma) {
