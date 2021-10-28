@@ -4,6 +4,8 @@
   flex-direction: column;
   height: 100%;
   padding: 16px;
+  max-width: 600px;
+  margin: 0 auto;
 
   * {
     flex-grow: 1;
@@ -28,4 +30,6 @@
 
 ion-button {
   margin-bottom: 16px;
+  max-width: 250px;
+  margin: 16px auto;
 }
