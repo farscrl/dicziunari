@@ -18,7 +18,9 @@ export class SettingsPage implements OnInit {
 
   ngOnInit() {
     this.appLanguage = this.configService.getSelectedLocale();
-    this.searchMode = this.configService.getSearchMode();
+    this.configService.getSearchModeObservable().subscribe((value) => {
+      this.searchMode = value;
+    });
     this.includeVerbs = this.configService.isIncludeVerbs();
   }
 
