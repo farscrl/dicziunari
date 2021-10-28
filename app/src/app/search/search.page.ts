@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { ConfigService } from '../services/config.service';
-import { IonInfiniteScroll } from '@ionic/angular';
+import { IonInfiniteScroll, IonSelect } from '@ionic/angular';
 import { Dictionary, SearchDirection } from 'src/data/search';
 
 @Component({
@@ -11,6 +11,7 @@ import { Dictionary, SearchDirection } from 'src/data/search';
 })
 export class SearchPage implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+  @ViewChild(IonSelect, { static: false }) dictionarySelect: IonSelect;
 
   public lemma = '';
   public selectedDictionary: Dictionary;
@@ -33,6 +34,10 @@ export class SearchPage implements OnInit {
     this.configService.getSearchModeObservable().subscribe((searchMode) => {
       this.search();
     });
+  }
+
+  changeDictionary() {
+    this.dictionarySelect.open();
   }
 
   search() {

@@ -11,14 +11,26 @@
           <ion-icon src="assets/icon/direction-both.svg" size="large" *ngIf="searchDirection === 'both'" (click)="changeSearchDirection()"></ion-icon>
         </ion-col>
         <ion-col size="5">
-          <ion-select (ionChange)="dictionaryChanged($event)" [value]="selectedDictionary">
-            <ion-select-option value="rumgrischun">R. Grischun</ion-select-option>
-            <ion-select-option value="sursilv">Sursilvan</ion-select-option>
-            <ion-select-option value="sutsilv">Sutsilvan</ion-select-option>
-            <ion-select-option value="surm">Surmiran</ion-select-option>
-            <ion-select-option value="puter">Puter</ion-select-option>
-            <ion-select-option value="vall">Vallader</ion-select-option>
-          </ion-select>
+          <ng-container>
+            <div class="idiom" *ngIf="selectedDictionary === 'rumgrischun'" (click)="changeDictionary()">Rumantsch Grischun</div>
+            <div class="idiom" *ngIf="selectedDictionary === 'sursilv'" (click)="changeDictionary()">Sursilvan</div>
+            <div class="idiom" *ngIf="selectedDictionary === 'sutsilv'" (click)="changeDictionary()">Sutsilvan</div>
+            <div class="idiom" *ngIf="selectedDictionary === 'surm'" (click)="changeDictionary()">Surmiran</div>
+            <div class="idiom" *ngIf="selectedDictionary === 'puter'" (click)="changeDictionary()">Puter</div>
+            <div class="idiom" *ngIf="selectedDictionary === 'vall'" (click)="changeDictionary()">Vallader</div>
+          </ng-container>
+
+          <ion-item lines="none" style="display: none;">
+            <ion-label>{{ 'SEARCH.DICTIONARY' | translate }}</ion-label>
+            <ion-select (ionChange)="dictionaryChanged($event)" [value]="selectedDictionary">
+              <ion-select-option value="rumgrischun">Rumantsch Grischun</ion-select-option>
+              <ion-select-option value="sursilv">Sursilvan</ion-select-option>
+              <ion-select-option value="sutsilv">Sutsilvan</ion-select-option>
+              <ion-select-option value="surm">Surmiran</ion-select-option>
+              <ion-select-option value="puter">Puter</ion-select-option>
+              <ion-select-option value="vall">Vallader</ion-select-option>
+            </ion-select>
+          </ion-item>
         </ion-col>
       </ion-row>
     </ion-grid>
