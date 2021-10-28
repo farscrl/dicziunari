@@ -6,9 +6,9 @@
           <ion-label>{{ "SEARCH.DE" | translate}}</ion-label>
         </ion-col>
         <ion-col size="2" style="text-align: center;">
-          <ion-icon name="arrow-forward-outline" *ngIf="searchDirection === 'fromDe'" (click)="changeSearchDirection()"></ion-icon>
-          <ion-icon name="arrow-back-outline" *ngIf="searchDirection === 'fromRm'" (click)="changeSearchDirection()"></ion-icon>
-          <ion-icon name="arrow-up-outline" *ngIf="searchDirection === 'both'" (click)="changeSearchDirection()"></ion-icon>
+          <ion-icon src="assets/icon/direction-from-de.svg" size="large" *ngIf="searchDirection === 'fromDe'" (click)="changeSearchDirection()"></ion-icon>
+          <ion-icon src="assets/icon/direction-from-rm.svg" size="large" *ngIf="searchDirection === 'fromRm'" (click)="changeSearchDirection()"></ion-icon>
+          <ion-icon src="assets/icon/direction-both.svg" size="large" *ngIf="searchDirection === 'both'" (click)="changeSearchDirection()"></ion-icon>
         </ion-col>
         <ion-col size="5">
           <ion-select (ionChange)="dictionaryChanged($event)" [value]="selectedDictionary">
