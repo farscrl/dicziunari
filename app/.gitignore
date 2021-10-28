@@ -31,3 +31,6 @@ npm-debug.log*
 /www
 
 /src/assets/databases/dicziunariSQLite.db
+/resources/android/icon/*
+/resources/android/splash/*
+/resources/ios/*
