@@ -165,8 +165,10 @@ function parseData() {
             }
         });
 
-        insertLemma(lemma);
-        // insertIndex(lemma);
+        if (!!lemma['StichwortR'] && !!lemma['StichwortD']) {
+            insertLemma(lemma);
+            // insertIndex(lemma);
+        }
 
         processedEntries++;
         if (processedEntries % 100 === 0) {

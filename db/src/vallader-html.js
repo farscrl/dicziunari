@@ -164,9 +164,10 @@ function parseData() {
                     lemma['StatusR'] = value.rawText;
             }
         });
-
-        insertLemma(lemma);
-        // insertIndex(lemma);
+        if (!!lemma['StichwortR'] && !!lemma['StichwortD']) {
+            insertLemma(lemma);
+            // insertIndex(lemma);
+        }
 
         processedEntries++;
         if (processedEntries % 100 === 0) {
