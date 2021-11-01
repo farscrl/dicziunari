@@ -1,84 +1,77 @@
 {
-  "MENU": {
-    "SEARCH": "Suche",
-    "FAVOURITES": "Gespeichert",
-    "SETTINGS": "Einstellungen"
-  },
-  "SEARCH": {
-    "TITLE": "Suchen",
-    "DICTIONARY": "Idiom",
-    "SEARCHFIELD": {
-      "LABEL": "Suchen",
-      "CANCEL": "Abbrechen"
+    "MENU": {
+        "SEARCH": "Suche",
+        "FAVOURITES": "Gespeichert",
+        "SETTINGS": "Einstellungen"
     },
-    "DE": "Deutsch",
-    "RESULTS": {
-      "SAVE": "Speichern",
-      "COPY": "Kopieren",
-      "DELETE": "Löschen",
-      "COPIED": "Eintrag kopiert",
-      "SAVED": "Eintrag gespeichert",
-      "DELETED": "Eintrag gelöscht"
+    "SEARCH": {
+        "TITLE": "Suchen",
+        "DICTIONARY": "Idiom",
+        "SEARCHFIELD": {
+            "LABEL": "Suchen",
+            "CANCEL": "Abbrechen"
+        },
+        "DE": "Deutsch",
+        "RESULTS": {
+            "SAVE": "Speichern",
+            "COPY": "Kopieren",
+            "COPIED": "Eintrag kopiert"
+        },
+        "NO_RESULTS": {
+            "TITLE": "Hoppla!",
+            "INTRO": "Ihre Suche führte zu keinem Resultat. Möchten Sie den Suchmodus ändern?",
+            "BUTTON_CHANGE_SEARCH_MODE": "Suchmodus ändern",
+            "NOTE": "Der Suchmodus kann jederzeit in den Einstellungen geändert werden"
+        },
+        "LOADING_DATA": "Weitere Ergebnisse werden geladen"
     },
-    "NO_RESULTS": {
-      "TITLE": "Hoppla!",
-      "INTRO": "Ihre Suche führte zu keinem Resultat. Möchten Sie den Suchmodus ändern?",
-      "BUTTON_CHANGE_SEARCH_MODE": "Suchmodus ändern",
-      "NOTE": "Der Suchmodus kann jederzeit in den Einstellungen geändert werden"
+    "FAVOURITES": {
+        "TITLE": "Gespeichert"
     },
-    "LOADING_DATA": "Weitere Ergebnisse werden geladen"
-  },
-  "FAVOURITES": {
-    "TITLE": "Gespeichert",
-    "NO_FAVOURITES": {
-      "TITLE": "Es ist noch leer hier",
-      "INTRO": "Es wurden noch keine Einträge gespeichert. Auf der Suchseite können diese mittels einer Fingergeste dieser Liste hier hinzugefügt werden."
+    "SETTINGS": {
+        "TITLE": "Einstellungen",
+        "LANGUAGE": {
+            "TITLE": "App-Sprache"
+        },
+        "MODE": {
+            "TITLE": "Suchmodus",
+            "START": "Wortanfang",
+            "MATCH": "Exakte Übereinstimmung",
+            "SUBSTRING": "Teilstring",
+            "END": "Wortende"
+        },
+        "VERBS": {
+            "TITLE": "Konjugierte Verben",
+            "INCLUDE": "In die Suche einbeziehen"
+        },
+        "OTHER": {
+            "TITLE": "Sonstiges",
+            "FEEDBACK": "Feedback",
+            "HELP": "Hilfe",
+            "INFO": "Info"
+        }
+    },
+    "PAGES": {
+        "BACK": "Zurück",
+        "FEEDBACK": {
+            "TITLE": "Feedback"
+        },
+        "HELP": {
+            "TITLE": "Hilfe"
+        },
+        "INFO": {
+            "TITLE": "Informationen"
+        }
+    },
+    "CONJUGATION": {
+        "TITLE": "Konjugation",
+        "PRESENT_TENSE": "Präsens",
+        "PAST_TENSE": "Präteritum",
+        "PAST_PARTICIPLE": "Partizip Perfekt",
+        "SUBJUNCTIVE": "Konjunktiv",
+        "CONDITIONAL": "Konditional",
+        "FUTUR_TENSE": "Futur",
+        "IMPERATIVE": "Imperativ",
+        "GERUND": "Gerundium"
     }
-  },
-  "SETTINGS": {
-    "TITLE": "Einstellungen",
-    "LANGUAGE": {
-      "TITLE": "App-Sprache"
-    },
-    "MODE": {
-      "TITLE": "Suchmodus",
-      "START": "Wortanfang",
-      "MATCH": "Exakte Übereinstimmung",
-      "SUBSTRING": "Teilstring",
-      "END": "Wortende"
-    },
-    "VERBS": {
-      "TITLE": "Konjugierte Verben",
-      "INCLUDE": "In die Suche einbeziehen"
-    },
-    "OTHER": {
-      "TITLE": "Sonstiges",
-      "FEEDBACK": "Feedback",
-      "HELP": "Hilfe",
-      "INFO": "Info"
-    }
-  },
-  "PAGES": {
-    "BACK": "Zurück",
-    "FEEDBACK": {
-      "TITLE": "Feedback"
-    },
-    "HELP": {
-      "TITLE": "Hilfe"
-    },
-    "INFO": {
-      "TITLE": "Informationen"
-    }
-  },
-  "CONJUGATION": {
-    "TITLE": "Konjugation",
-    "PRESENT_TENSE": "Präsens",
-    "PAST_TENSE": "Präteritum",
-    "PAST_PARTICIPLE": "Partizip Perfekt",
-    "SUBJUNCTIVE": "Konjunktiv",
-    "CONDITIONAL": "Konditional",
-    "FUTUR_TENSE": "Futur",
-    "IMPERATIVE": "Imperativ",
-    "GERUND": "Gerundium"
-  }
 }
