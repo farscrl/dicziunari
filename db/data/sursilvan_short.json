@@ -15,8 +15,8 @@
                 "Phonetik": "$",
                 "Phonetik2": "(<f>$<\/f>)",
                 "Redewendung": "wer A sagt, muss auch B sagen",
-                "Stichwort": "a I",
-                "StichwortD": "a-dur, A-Dur"
+                "RStichwort": "a I",
+                "DStichwort": "a-dur, A-Dur"
             },
             {
                 "cn_DS": "2",
@@ -25,8 +25,8 @@
                 "Phonetik": "$",
                 "Phonetik2": "(<f>$<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "a II",
-                "StichwortD": "ah"
+                "RStichwort": "a II",
+                "DStichwort": "ah"
             },
             {
                 "cn_DS": "3",
@@ -35,8 +35,8 @@
                 "Phonetik": "a, at",
                 "Phonetik2": "(<f>a, at, <\/f>vereinz. redupl. <f>3d<\/f>; verb. mit Art., geschr.: al\/agl, alla\/allas, pl. als; vor Vokal ad)",
                 "Redewendung": "",
-                "Stichwort": "a III",
-                "StichwortD": "bei, in, nach, bis, zu, um, je, für"
+                "RStichwort": "a III",
+                "DStichwort": "bei, in, nach, bis, zu, um, je, für"
             },
             {
                 "cn_DS": "4",
@@ -45,8 +45,8 @@
                 "Phonetik": "b6",
                 "Phonetik2": "(<f>b6<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "aba",
-                "StichwortD": "ach was!"
+                "RStichwort": "aba",
+                "DStichwort": "ach was!"
             },
             {
                 "cn_DS": "5",
@@ -55,8 +55,8 @@
                 "Phonetik": "bnd©n",
                 "Phonetik2": "(<f>bnd©n<\/f>)",
                 "Redewendung": "im Stiche lassen",
-                "Stichwort": "abandun",
-                "StichwortD": "Hingabe, Ergebenheit, Verlassen, Preisgabe, Aufgabe, Verlassenheit, Einsamkeit"
+                "RStichwort": "abandun",
+                "DStichwort": "Hingabe, Ergebenheit, Verlassen, Preisgabe, Aufgabe, Verlassenheit, Einsamkeit"
             },
             {
                 "cn_DS": "6",
@@ -65,8 +65,8 @@
                 "Phonetik": "bndun6",
                 "Phonetik2": "(<f>bndun6<\/f>)",
                 "Redewendung": "im Stiche lassen",
-                "Stichwort": "abandunar",
-                "StichwortD": "verlassen, preisgeben, im Stiche lassen"
+                "RStichwort": "abandunar",
+                "DStichwort": "verlassen, preisgeben, im Stiche lassen"
             },
             {
                 "cn_DS": "7",
@@ -75,8 +75,8 @@
                 "Phonetik": "bndun3u",
                 "Phonetik2": "(<f>bndun3u,<\/f> f. <f>-6d<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abandunau",
-                "StichwortD": "verlassen, einsam, herrenlos"
+                "RStichwort": "abandunau",
+                "DStichwort": "verlassen, einsam, herrenlos"
             },
             {
                 "cn_DS": "8",
@@ -85,8 +85,8 @@
                 "Phonetik": "b3s",
                 "Phonetik2": "(<f>b3s<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abass",
-                "StichwortD": "unten, zuunterst, abwärts, tief, niedrig"
+                "RStichwort": "abass",
+                "DStichwort": "unten, zuunterst, abwärts, tief, niedrig"
             },
             {
                 "cn_DS": "9",
@@ -95,8 +95,8 @@
                 "Phonetik": "bdDs",
                 "Phonetik2": "(<f>bdDs<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abbadessa",
-                "StichwortD": "Äbtissin"
+                "RStichwort": "abbadessa",
+                "DStichwort": "Äbtissin"
             },
             {
                 "cn_DS": "10",
@@ -105,8 +105,8 @@
                 "Phonetik": "btsè",
                 "Phonetik2": "(<f>btsè<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abbazia",
-                "StichwortD": "Abtei"
+                "RStichwort": "abbazia",
+                "DStichwort": "Abtei"
             },
             {
                 "cn_DS": "11",
@@ -115,8 +115,8 @@
                 "Phonetik": "btsj6l",
                 "Phonetik2": "(<f>btsj6l<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abbazial",
-                "StichwortD": "die Abtei betreffend, den Abt betreffend"
+                "RStichwort": "abbazial",
+                "DStichwort": "die Abtei betreffend, den Abt betreffend"
             },
             {
                 "cn_DS": "12",
@@ -125,8 +125,8 @@
                 "Phonetik": "abetsP",
                 "Phonetik2": "(<f>abetsP<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abc",
-                "StichwortD": "Abc-Buch, Fibel, Abc"
+                "RStichwort": "abc",
+                "DStichwort": "Abc-Buch, Fibel, Abc"
             },
             {
                 "cn_DS": "13",
@@ -135,8 +135,8 @@
                 "Phonetik": "pdik6",
                 "Phonetik2": "(<f>pdik6<\/f>; geschr. 3.: abdichescha)",
                 "Redewendung": "",
-                "Stichwort": "abdicar",
-                "StichwortD": "absagen, abdanken, ein Amt niederlegen, auf ein Amt verzichten, absetzen, zum Rücktritt zwingen"
+                "RStichwort": "abdicar",
+                "DStichwort": "absagen, abdanken, ein Amt niederlegen, auf ein Amt verzichten, absetzen, zum Rücktritt zwingen"
             },
             {
                 "cn_DS": "14",
@@ -145,8 +145,8 @@
                 "Phonetik": "pdiktsj©n",
                 "Phonetik2": "(<f>pdiktsj©n<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abdicaziun",
-                "StichwortD": "Abdankung, Rücktritt, Entsagung"
+                "RStichwort": "abdicaziun",
+                "DStichwort": "Abdankung, Rücktritt, Entsagung"
             },
             {
                 "cn_DS": "15",
@@ -155,8 +155,8 @@
                 "Phonetik": "pd~mÕn",
                 "Phonetik2": "(<f>pd~mÕn<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abdomen",
-                "StichwortD": "Abdomen, Hinterleib"
+                "RStichwort": "abdomen",
+                "DStichwort": "Abdomen, Hinterleib"
             },
             {
                 "cn_DS": "16",
@@ -165,8 +165,8 @@
                 "Phonetik": "pdomin6l",
                 "Phonetik2": "(<f>pdomin6l<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abdominal",
-                "StichwortD": "den Hinterleib betreffend"
+                "RStichwort": "abdominal",
+                "DStichwort": "den Hinterleib betreffend"
             },
             {
                 "cn_DS": "17",
@@ -175,8 +175,8 @@
                 "Phonetik": "",
                 "Phonetik2": "",
                 "Redewendung": "",
-                "Stichwort": "abece",
-                "StichwortD": ""
+                "RStichwort": "abece",
+                "DStichwort": ""
             },
             {
                 "cn_DS": "18",
@@ -185,8 +185,8 @@
                 "Phonetik": "betsed6",
                 "Phonetik2": "(<f>betsed6<\/f>, 3. <f>-D≈<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abecedar",
-                "StichwortD": "buchstabieren"
+                "RStichwort": "abecedar",
+                "DStichwort": "buchstabieren"
             },
             {
                 "cn_DS": "19",
@@ -195,8 +195,8 @@
                 "Phonetik": "betsed6ri",
                 "Phonetik2": "(<f>betsed6ri<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abecedari",
-                "StichwortD": "Abc-Buch"
+                "RStichwort": "abecedari",
+                "DStichwort": "Abc-Buch"
             },
             {
                 "cn_DS": "20",
@@ -205,8 +205,8 @@
                 "Phonetik": "3bÕr",
                 "Phonetik2": "(<f>3bÕr, <\/f>älter vereinz. auch: <f>3vÕr<\/f>; umgangsspr.)",
                 "Redewendung": "",
-                "Stichwort": "aber",
-                "StichwortD": "aber, hingegen, dagegen, jedoch"
+                "RStichwort": "aber",
+                "DStichwort": "aber, hingegen, dagegen, jedoch"
             },
             {
                 "cn_DS": "21",
@@ -215,8 +215,8 @@
                 "Phonetik": "bertsj©n",
                 "Phonetik2": "(<f>bertsj©n<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "aberraziun",
-                "StichwortD": "Abweichung, Aberration, Abirrung"
+                "RStichwort": "aberraziun",
+                "DStichwort": "Abweichung, Aberration, Abirrung"
             },
             {
                 "cn_DS": "22",
@@ -225,8 +225,8 @@
                 "Phonetik": "ber~nt",
                 "Phonetik2": "(<f>ber~nt<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "aberront",
-                "StichwortD": "abweichend, abirrend, unsinnig"
+                "RStichwort": "aberront",
+                "DStichwort": "abweichend, abirrend, unsinnig"
             },
             {
                 "cn_DS": "23",
@@ -235,8 +235,8 @@
                 "Phonetik": "bÕrs3k",
                 "Phonetik2": "(<f>bÕrs3k<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abersac",
-                "StichwortD": "Militärtornister, Schustersack, Schulsack, Tragsack, Rucksack, Buckel"
+                "RStichwort": "abersac",
+                "DStichwort": "Militärtornister, Schustersack, Schulsack, Tragsack, Rucksack, Buckel"
             },
             {
                 "cn_DS": "24",
@@ -245,8 +245,8 @@
                 "Phonetik": "pˆudik6",
                 "Phonetik2": "(<f>pˆudik6, <\/f>geschr. 3.: abgiudichescha)",
                 "Redewendung": "",
-                "Stichwort": "abgiudicar",
-                "StichwortD": "aberkennen, absprechen"
+                "RStichwort": "abgiudicar",
+                "DStichwort": "aberkennen, absprechen"
             },
             {
                 "cn_DS": "25",
@@ -255,8 +255,8 @@
                 "Phonetik": "pˆudiktsj©n",
                 "Phonetik2": "(<f>pˆudiktsj©n<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abgiudicaziun",
-                "StichwortD": "Aberkennung"
+                "RStichwort": "abgiudicaziun",
+                "DStichwort": "Aberkennung"
             },
             {
                 "cn_DS": "26",
@@ -265,8 +265,8 @@
                 "Phonetik": "bás",
                 "Phonetik2": "(<f>bás<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abiss",
-                "StichwortD": "Abyssus, Abgrund, Tiefe, Schlund"
+                "RStichwort": "abiss",
+                "DStichwort": "Abyssus, Abgrund, Tiefe, Schlund"
             },
             {
                 "cn_DS": "27",
@@ -275,8 +275,8 @@
                 "Phonetik": "bis6l",
                 "Phonetik2": "(<f>bis6l<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abissal",
-                "StichwortD": "abgründig, abgrundtief"
+                "RStichwort": "abissal",
+                "DStichwort": "abgründig, abgrundtief"
             },
             {
                 "cn_DS": "28",
@@ -285,8 +285,8 @@
                 "Phonetik": "biturjDnt",
                 "Phonetik2": "(<f>biturjDnt<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abiturient",
-                "StichwortD": "Abiturient, Maturand"
+                "RStichwort": "abiturient",
+                "DStichwort": "Abiturient, Maturand"
             },
             {
                 "cn_DS": "29",
@@ -295,8 +295,8 @@
                 "Phonetik": "bltáf",
                 "Phonetik2": "(<f>bltáf<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "ablativ",
-                "StichwortD": "Ablativ"
+                "RStichwort": "ablativ",
+                "DStichwort": "Ablativ"
             },
             {
                 "cn_DS": "30",
@@ -305,8 +305,8 @@
                 "Phonetik": "blutsj©n",
                 "Phonetik2": "(<f>blutsj©n<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abluziun",
-                "StichwortD": "Waschung, Waschungsgefäss"
+                "RStichwort": "abluziun",
+                "DStichwort": "Waschung, Waschungsgefäss"
             },
             {
                 "cn_DS": "31",
@@ -315,8 +315,8 @@
                 "Phonetik": "pnegtsj©n",
                 "Phonetik2": "(<f>pnegtsj©n<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abnegaziun",
-                "StichwortD": "Verleugnung, Entsagung"
+                "RStichwort": "abnegaziun",
+                "DStichwort": "Verleugnung, Entsagung"
             },
             {
                 "cn_DS": "32",
@@ -325,8 +325,8 @@
                 "Phonetik": "bolè",
                 "Phonetik2": "(<f>bolè,<\/f> 3. <f>-B≈<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abolir",
-                "StichwortD": "abschaffen, aufheben"
+                "RStichwort": "abolir",
+                "DStichwort": "abschaffen, aufheben"
             },
             {
                 "cn_DS": "33",
@@ -335,8 +335,8 @@
                 "Phonetik": "bolitsj©n",
                 "Phonetik2": "(<f>bolitsj©n<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "aboliziun",
-                "StichwortD": "Abschaffung, Aufhebung"
+                "RStichwort": "aboliziun",
+                "DStichwort": "Abschaffung, Aufhebung"
             },
             {
                 "cn_DS": "34",
@@ -345,8 +345,8 @@
                 "Phonetik": "bomin6bÕl",
                 "Phonetik2": "(<f>bomin6bÕl,<\/f> f. <f>-bl<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abominabel",
-                "StichwortD": "verabscheuungswürdig, abscheulich"
+                "RStichwort": "abominabel",
+                "DStichwort": "verabscheuungswürdig, abscheulich"
             },
             {
                 "cn_DS": "35",
@@ -355,8 +355,8 @@
                 "Phonetik": "bominabld6t",
                 "Phonetik2": "(<f>bominabld6t<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abominabladad",
-                "StichwortD": "Abscheulichkeit, Scheusslichkeit"
+                "RStichwort": "abominabladad",
+                "DStichwort": "Abscheulichkeit, Scheusslichkeit"
             },
             {
                 "cn_DS": "36",
@@ -365,8 +365,8 @@
                 "Phonetik": "bomin6",
                 "Phonetik2": "(<f>bomin6, <\/f>3.<f> -D≈<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abominar",
-                "StichwortD": "verabscheuen"
+                "RStichwort": "abominar",
+                "DStichwort": "verabscheuen"
             },
             {
                 "cn_DS": "37",
@@ -375,8 +375,8 @@
                 "Phonetik": "bomintsj©n",
                 "Phonetik2": "(<f>bomintsj©n<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abominaziun",
-                "StichwortD": "Abscheu"
+                "RStichwort": "abominaziun",
+                "DStichwort": "Abscheu"
             },
             {
                 "cn_DS": "38",
@@ -385,8 +385,8 @@
                 "Phonetik": "bonmDn",
                 "Phonetik2": "(<f>bonmDn<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abonnament",
-                "StichwortD": "Abonnement, Bezugspreis, Zeitungsabonnement, Generalabonnement, Halbtaxabonnement"
+                "RStichwort": "abonnament",
+                "DStichwort": "Abonnement, Bezugspreis, Zeitungsabonnement, Generalabonnement, Halbtaxabonnement"
             },
             {
                 "cn_DS": "39",
@@ -395,8 +395,8 @@
                 "Phonetik": "bon6",
                 "Phonetik2": "(<f>bon6, <\/f>3. <f>-D≈<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abonnar",
-                "StichwortD": "abonnieren"
+                "RStichwort": "abonnar",
+                "DStichwort": "abonnieren"
             },
             {
                 "cn_DS": "40",
@@ -405,8 +405,8 @@
                 "Phonetik": "bon3u",
                 "Phonetik2": "(<f>bon3u<\/f>, pl. <f>abon3i<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abonnau",
-                "StichwortD": "Abonnent"
+                "RStichwort": "abonnau",
+                "DStichwort": "Abonnent"
             },
             {
                 "cn_DS": "41",
@@ -415,8 +415,8 @@
                 "Phonetik": "bonDnt",
                 "Phonetik2": "(<f>bonDnt<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abonnent",
-                "StichwortD": "Abonnent, Abnehmer  (einer Zeitung, einer Dienstleistung)"
+                "RStichwort": "abonnent",
+                "DStichwort": "Abonnent, Abnehmer  (einer Zeitung, einer Dienstleistung)"
             },
             {
                 "cn_DS": "42",
@@ -425,8 +425,8 @@
                 "Phonetik": "boriˆDn",
                 "Phonetik2": "(<f>boriˆDn<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "aborigen",
-                "StichwortD": "Urbewohner, Ureinwohner"
+                "RStichwort": "aborigen",
+                "DStichwort": "Urbewohner, Ureinwohner"
             },
             {
                 "cn_DS": "43",
@@ -435,8 +435,8 @@
                 "Phonetik": "b~rt",
                 "Phonetik2": "(<f>b~rt<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abort",
-                "StichwortD": "Abort, Fehlgeburt, Fruchtabtreibung"
+                "RStichwort": "abort",
+                "DStichwort": "Abort, Fehlgeburt, Fruchtabtreibung"
             },
             {
                 "cn_DS": "44",
@@ -445,8 +445,8 @@
                 "Phonetik": "bort6",
                 "Phonetik2": "(<f>bort6, <\/f>nbf. <f>abortè,<\/f> 3. <f>-D≈<\/f>; geschr.: abortir)",
                 "Redewendung": "",
-                "Stichwort": "abortar",
-                "StichwortD": "abortieren, abtreiben"
+                "RStichwort": "abortar",
+                "DStichwort": "abortieren, abtreiben"
             },
             {
                 "cn_DS": "45",
@@ -455,8 +455,8 @@
                 "Phonetik": "",
                 "Phonetik2": "",
                 "Redewendung": "",
-                "Stichwort": "abortir",
-                "StichwortD": ""
+                "RStichwort": "abortir",
+                "DStichwort": ""
             },
             {
                 "cn_DS": "46",
@@ -465,8 +465,8 @@
                 "Phonetik": "bortáf",
                 "Phonetik2": "(<f>bortáf,<\/f> f. <f>-èv<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abortiv",
-                "StichwortD": "den Abort betreffend, Abtreibungsmittel"
+                "RStichwort": "abortiv",
+                "DStichwort": "den Abort betreffend, Abtreibungsmittel"
             },
             {
                 "cn_DS": "47",
@@ -475,8 +475,8 @@
                 "Phonetik": "",
                 "Phonetik2": "",
                 "Redewendung": "",
-                "Stichwort": "abortus",
-                "StichwortD": ""
+                "RStichwort": "abortus",
+                "DStichwort": ""
             },
             {
                 "cn_DS": "48",
@@ -485,8 +485,8 @@
                 "Phonetik": "brevj6",
                 "Phonetik2": "(<f>brevj6,<\/f> 3. <f>-D≈<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abreviar",
-                "StichwortD": "abkürzen, verkürzen"
+                "RStichwort": "abreviar",
+                "DStichwort": "abkürzen, verkürzen"
             },
             {
                 "cn_DS": "49",
@@ -495,8 +495,8 @@
                 "Phonetik": "brevjtsj©n",
                 "Phonetik2": "(<f>brevjtsj©n<\/f>)",
                 "Redewendung": "",
-                "Stichwort": "abreviaziun",
-                "StichwortD": "Kürzung, Abkürzung"
+                "RStichwort": "abreviaziun",
+                "DStichwort": "Kürzung, Abkürzung"
             },
             {
                 "cn_DS": "50",
@@ -505,8 +505,8 @@
                 "Phonetik": "prog6",
                 "Phonetik2": "(<f>prog6,<\/f> geschr. 3: abroghescha)",
                 "Redewendung": "ausser Kraft setzen",
-                "Stichwort": "abrogar",
-                "StichwortD": "abschaffen, aufheben"
+                "RStichwort": "abrogar",
+                "DStichwort": "abschaffen, aufheben"
             }
         ]
     }

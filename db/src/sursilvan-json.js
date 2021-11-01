@@ -14,8 +14,8 @@ const columnList = [
     { colName: 'Etymologie',         colType: 'TEXT' },
     { colName: 'Corp',               colType: 'TEXT' },
     { colName: 'Redewendung',        colType: 'TEXT' },
-    { colName: 'Stichwort',          colType: 'TEXT' },
-    { colName: 'StichwortD',         colType: 'TEXT' }, 
+    { colName: 'RStichwort',         colType: 'TEXT' },
+    { colName: 'DStichwort',         colType: 'TEXT' }, 
 ];
 
 let db;
@@ -95,14 +95,14 @@ function parseData() {
 }
 
 function normalizeLemma(lemma) {
-    lemma['Stichwort'] = replaceEnding(lemma['Stichwort'], ' I');
-    lemma['Stichwort'] = replaceEnding(lemma['Stichwort'], ' II');
-    lemma['Stichwort'] = replaceEnding(lemma['Stichwort'], ' III');
-    lemma['Stichwort'] = replaceEnding(lemma['Stichwort'], ' VI');
-    lemma['Stichwort'] = replaceEnding(lemma['Stichwort'], ' V');
-    lemma['Stichwort'] = replaceEnding(lemma['Stichwort'], '*');
+    lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], ' I');
+    lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], ' II');
+    lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], ' III');
+    lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], ' VI');
+    lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], ' V');
+    lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], '*');
 
-    lemma['Corp'] = lemma['Corp'].replace(/~/g, lemma['Stichwort']);
+    lemma['Corp'] = lemma['Corp'].replace(/~/g, lemma['RStichwort']);
 }
 
 
