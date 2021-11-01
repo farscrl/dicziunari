@@ -15,7 +15,10 @@
     "RESULTS": {
       "SAVE": "Speichern",
       "COPY": "Kopieren",
-      "COPIED": "Eintrag kopiert"
+      "DELETE": "Löschen",
+      "COPIED": "Eintrag kopiert",
+      "SAVED": "Eintrag gespeichert",
+      "DELETED": "Eintrag gelöscht"
     },
     "NO_RESULTS": {
       "TITLE": "Hoppla!",

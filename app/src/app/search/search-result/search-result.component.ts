@@ -1,8 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CopyService } from '../../services/copy.service';
-import { SearchDirection, Locale } from 'src/data/search';
+import { SearchDirection, Locale, Dictionary } from 'src/data/search';
 import { Router } from '@angular/router';
 import { ConfigService } from '../../services/config.service';
+import { FavouritesService } from '../../services/favourites.service';
+import { ToastService } from '../../services/toast.service';
 
 @Component({
   selector: 'app-search-result',
@@ -10,6 +12,9 @@ import { ConfigService } from '../../services/config.service';
   styleUrls: ['./search-result.component.scss'],
 })
 export class SearchResultComponent implements OnInit {
+  @Input()
+  public lemma: any;
+
   @Input()
   public lemmaId: string;
 
@@ -39,11 +44,22 @@ export class SearchResultComponent implements OnInit {
 
   public selectedLocale: Locale = Locale.rm;
 
-  constructor(private copyService: CopyService, private router: Router, private configService: ConfigService) {}
+  private selectedDictionary: Dictionary = Dictionary.rumgrischun;
+
+  constructor(
+    private copyService: CopyService,
+    private router: Router,
+    private configService: ConfigService,
+    private favouritesService: FavouritesService,
+    private toastService: ToastService,
+  ) {}
 
   ngOnInit() {
     this.configService.getLocaleObservable().subscribe((locale) => {
       this.selectedLocale = locale;
+    });
+    this.configService.getDictionaryObservable().subscribe((dictionary) => {
+      this.selectedDictionary = dictionary;
     });
   }
 
@@ -51,8 +67,9 @@ export class SearchResultComponent implements OnInit {
     this.router.navigate(['/tabs/search/detail/' + this.lemmaId]);
   }
 
-  addFavorite() {
-    console.log('implement me. add favorite: ' + this.lemmaD);
+  async addFavorite() {
+    this.favouritesService.addFavorite(this.selectedDictionary, this.lemma);
+    await this.toastService.showNotification('SEARCH.RESULTS.COPIED');
   }
 
   async copy() {

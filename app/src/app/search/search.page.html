@@ -44,6 +44,7 @@
   <ion-list>
     <ng-container *ngFor="let pled of pleds">
       <app-search-result
+        [lemma]="pled"
         [lemmaD]="isSursilvan ? pled.StichwortD : pled.DStichwort"
         [lemmaR]="isSursilvan ? pled.Stichwort : pled.RStichwort"
         [completeLemma]="isSursilvan ? pled.Corp : ''"

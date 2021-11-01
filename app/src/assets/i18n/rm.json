@@ -15,7 +15,10 @@
     "RESULTS": {
       "SAVE": "Memorisar",
       "COPY": "Copiar",
-      "COPIED": "Copià l'endataziun"
+      "DELETE": "Stizzar",
+      "COPIED": "Copià l'endataziun",
+      "SAVED": "Memorisà l'endataziun",
+      "DELETED": "Stizzà l'endataziun"
     },
     "NO_RESULTS": {
       "TITLE": "Hopla!",
