@@ -34,7 +34,11 @@
   </ion-item>
 
   <ion-item-options side="end">
-    <ion-item-option color="warning" (click)="addFavorite();">
+    <ion-item-option color="danger" (click)="deleteFavourite();" *ngIf="isSaved">
+      <ion-icon slot="top" name="star"></ion-icon>
+      {{ 'SEARCH.RESULTS.DELETE' | translate}}
+    </ion-item-option>
+    <ion-item-option color="warning" (click)="addFavorite();" *ngIf="!isSaved">
       <ion-icon slot="top" name="star"></ion-icon>
       {{ 'SEARCH.RESULTS.SAVE' | translate}}
     </ion-item-option>

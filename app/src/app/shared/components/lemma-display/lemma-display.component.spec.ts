@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { SearchResultComponent } from './search-result.component';
+import { LemmaDisplayComponent } from './lemma-display.component';
 
-describe('SearchResultComponent', () => {
-  let component: SearchResultComponent;
-  let fixture: ComponentFixture<SearchResultComponent>;
+describe('LemmaDisplayComponent', () => {
+  let component: LemmaDisplayComponent;
+  let fixture: ComponentFixture<LemmaDisplayComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchResultComponent ],
+      declarations: [ LemmaDisplayComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SearchResultComponent);
+    fixture = TestBed.createComponent(LemmaDisplayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
