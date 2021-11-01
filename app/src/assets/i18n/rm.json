@@ -29,7 +29,11 @@
     "LOADING_DATA": "Chargiar ulteriurs resultats"
   },
   "FAVOURITES": {
-    "TITLE": "Memorisà"
+    "TITLE": "Memorisà",
+    "NO_FAVOURITES": {
+      "TITLE": "Anc vid...",
+      "INTRO": "Ti n'has anc memorisà naginas endataziuns. Ti pos agiuntar endataziuns a questa glista cun ina gesta cun il det sin la pagina da tschertgar."
+    }
   },
   "SETTINGS": {
     "TITLE": "Preferenzas",
