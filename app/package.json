@@ -30,6 +30,7 @@
     "@ionic/angular": "^6.0.0-beta.6",
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
+    "cordova-plugin-ios-disableshaketoedit": "^1.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
