@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SearchPage } from './search.page';
 import { TranslateModule } from '@ngx-translate/core';
-import { SearchResultComponent } from './search-result/search-result.component';
 import { SharedModule } from './../shared/shared.module';
 import { NoResultsComponent } from './no-results/no-results.component';
 import { PlaceholderComponent } from './placeholder/placeholder.component';
@@ -13,6 +12,6 @@ import { SearchDetailPage } from './search-detail/search-detail.page';
 
 @NgModule({
   imports: [IonicModule, CommonModule, FormsModule, SearchPageRoutingModule, TranslateModule, SharedModule],
-  declarations: [SearchPage, SearchResultComponent, NoResultsComponent, PlaceholderComponent, SearchDetailPage],
+  declarations: [SearchPage, NoResultsComponent, PlaceholderComponent, SearchDetailPage],
 })
 export class SearchPageModule {}

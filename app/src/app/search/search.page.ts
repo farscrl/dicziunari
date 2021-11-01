@@ -13,7 +13,7 @@ export class SearchPage implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
   @ViewChild(IonSelect, { static: false }) dictionarySelect: IonSelect;
 
-  public lemma = '';
+  public searchString = '';
   public selectedDictionary: Dictionary;
   public searchDirection: SearchDirection;
   public pleds = [];
@@ -45,11 +45,11 @@ export class SearchPage implements OnInit {
     if (this.infiniteScroll) {
       this.infiniteScroll.disabled = false;
     }
-    if (this.lemma === '') {
+    if (this.searchString === '') {
       this.pleds = [];
       return;
     }
-    this.searchService.newSearch(this.lemma).then((pleds) => {
+    this.searchService.newSearch(this.searchString).then((pleds) => {
       this.pleds = pleds;
     });
   }
@@ -92,7 +92,7 @@ export class SearchPage implements OnInit {
   }
 
   changeSearchTerm(term: string) {
-    this.lemma = term;
+    this.searchString = term;
     this.search();
   }
 }

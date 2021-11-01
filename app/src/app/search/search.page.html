@@ -36,24 +36,19 @@
     </ion-grid>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-searchbar showCancelButton="focus" [(ngModel)]="lemma" (ngModelChange)="search()" [placeholder]="'SEARCH.SEARCHFIELD.LABEL' | translate"></ion-searchbar>
+    <ion-searchbar showCancelButton="focus" [(ngModel)]="searchString" (ngModelChange)="search()" [placeholder]="'SEARCH.SEARCHFIELD.LABEL' | translate"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" *ngIf="pleds.length > 0">
   <ion-list>
     <ng-container *ngFor="let pled of pleds">
-      <app-search-result
+      <app-lemma-display
         [lemma]="pled"
-        [lemmaD]="isSursilvan ? pled.StichwortD : pled.DStichwort"
-        [lemmaR]="isSursilvan ? pled.Stichwort : pled.RStichwort"
-        [completeLemma]="isSursilvan ? pled.Corp : ''"
-        [lemmaId]="pled.id"
-        [isVerb]="!!pled.preschentsing3"
-        [searchString]="lemma"
+        [searchString]="searchString"
         [searchDirection]="searchDirection"
-        (changeSearchTerm)="changeSearchTerm($event)"
-        [isSursilvan]="isSursilvan"></app-search-result>
+        [dictionary]="selectedDictionary"
+        (changeSearchTerm)="changeSearchTerm($event)"></app-lemma-display>
     </ng-container>
   </ion-list>
 
@@ -66,6 +61,6 @@
 </ion-content>
 
 <ion-content [fullscreen]="true" *ngIf="pleds.length === 0">
-  <app-placeholder *ngIf="lemma === ''"></app-placeholder>
-  <app-no-results *ngIf="lemma !== ''"></app-no-results>
+  <app-placeholder *ngIf="searchString === ''"></app-placeholder>
+  <app-no-results *ngIf="searchString !== ''"></app-no-results>
 </ion-content>
