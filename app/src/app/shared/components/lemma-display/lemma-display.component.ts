@@ -35,10 +35,6 @@ export class LemmaDisplayComponent implements OnInit {
 
   public completeLemma: string;
 
-  public lemmaD: string;
-
-  public lemmaR: string;
-
   public selectedLocale: Locale = Locale.rm;
 
   constructor(
@@ -54,8 +50,6 @@ export class LemmaDisplayComponent implements OnInit {
       this.selectedLocale = locale;
     });
 
-    this.lemmaD = this.isSursilvan ? this.lemma.StichwortD : this.lemma.DStichwort;
-    this.lemmaR = this.isSursilvan ? this.lemma.Stichwort : this.lemma.RStichwort;
     this.completeLemma = this.isSursilvan ? this.lemma.Corp : '';
   }
 
@@ -69,7 +63,7 @@ export class LemmaDisplayComponent implements OnInit {
   }
 
   async copy() {
-    this.copyService.copyItem(this.lemmaD, this.lemmaR);
+    this.copyService.copyItem(this.lemma.DStichwort, this.lemma.RStichwort);
   }
 
   async deleteFavourite() {
