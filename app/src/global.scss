@@ -35,3 +35,8 @@ mark {
 .alert-radio-group {
   max-height: 300px !important;
 }
+
+// make letter spacing for buttons smaller
+.ios ion-button {
+  letter-spacing: 0 !important;
+}
