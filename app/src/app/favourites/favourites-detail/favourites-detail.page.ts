@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-favourites-detail-page',
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./favourites-detail.page.scss'],
 })
 export class FavouritesDetailPage implements OnInit {
-  constructor() {}
+  public lemma;
 
-  ngOnInit() {}
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.lemma = this.router.getCurrentNavigation().extras.state.data;
+    console.log(this.lemma);
+  }
 }

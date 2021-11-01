@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ConfigService } from '../../../services/config.service';
 import { FavouritesService } from '../../../services/favourites.service';
 import { ToastService } from '../../../services/toast.service';
+import { SearchService } from '../../../services/search.service';
 
 @Component({
   selector: 'app-lemma-display',
@@ -43,9 +44,11 @@ export class LemmaDisplayComponent implements OnInit {
     private configService: ConfigService,
     private favouritesService: FavouritesService,
     private toastService: ToastService,
+    private searchService: SearchService,
   ) {}
 
   ngOnInit() {
+    console.log(this.lemma);
     this.configService.getLocaleObservable().subscribe((locale) => {
       this.selectedLocale = locale;
     });
@@ -54,12 +57,26 @@ export class LemmaDisplayComponent implements OnInit {
   }
 
   goToDetail() {
-    this.router.navigate(['/tabs/search/detail/' + this.lemma.id]);
+    if (this.isSaved) {
+      this.router.navigate(['/tabs/favourites/detail/' + this.lemma.id], { state: { data: this.lemma } });
+    } else {
+      this.router.navigate(['/tabs/search/detail/' + this.lemma.id]);
+    }
   }
 
   async addFavorite() {
-    this.favouritesService.addFavorite(this.dictionary, this.lemma);
-    await this.toastService.showNotification('SEARCH.RESULTS.COPIED');
+    this.searchService.getDetails(this.lemma.id).then(async (lemma) => {
+      if (lemma.StichwortR) {
+        lemma.RStichwort = lemma.StichwortR;
+      }
+      if (lemma.StichwortD) {
+        lemma.DStichwort = lemma.StichwortD;
+      }
+
+      this.favouritesService.addFavorite(this.dictionary, lemma);
+      console.log(lemma);
+      await this.toastService.showNotification('SEARCH.RESULTS.COPIED');
+    });
   }
 
   async copy() {
