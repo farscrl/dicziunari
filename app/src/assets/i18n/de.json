@@ -29,7 +29,11 @@
     "LOADING_DATA": "Weitere Ergebnisse werden geladen"
   },
   "FAVOURITES": {
-    "TITLE": "Gespeichert"
+    "TITLE": "Gespeichert",
+    "NO_FAVOURITES": {
+      "TITLE": "Es ist noch leer hier",
+      "INTRO": "Es wurden noch keine Einträge gespeichert. Auf der Suchseite können diese mittels einer Fingergeste dieser Liste hier hinzugefügt werden."
+    }
   },
   "SETTINGS": {
     "TITLE": "Einstellungen",

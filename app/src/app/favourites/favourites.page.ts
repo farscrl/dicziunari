@@ -14,6 +14,8 @@ export class FavouritesPage implements OnInit {
   public favouritesPuter = [];
   public favouritesVallader = [];
 
+  public isEmpty = false;
+
   constructor(private favouritesService: FavouritesService) {}
 
   ngOnInit(): void {
@@ -39,6 +41,11 @@ export class FavouritesPage implements OnInit {
       if (ready) {
         this.favouritesService.loadFavourites().then((data) => {
           this.reset();
+          if (data.length < 1) {
+            this.isEmpty = true;
+          } else {
+            this.isEmpty = false;
+          }
           data.forEach((pled) => {
             switch (pled.dictionary) {
               case 'rumgrischun':
