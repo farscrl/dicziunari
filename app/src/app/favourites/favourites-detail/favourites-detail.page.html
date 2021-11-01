@@ -1,3 +1,12 @@
-<p>
-  favourites-detail-page works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ 'CONJUGATION.TITLE' | translate }}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-conjugation [lemma]="lemma"></app-conjugation>
+</ion-content>

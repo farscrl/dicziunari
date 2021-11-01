@@ -1,23 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { SearchService } from '../../../services/search.service';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-conjugation',
   templateUrl: './conjugation.component.html',
   styleUrls: ['./conjugation.component.scss'],
 })
-export class ConjugationComponent implements OnInit {
+export class ConjugationComponent {
   @Input()
-  public id: string;
-
   public lemma;
 
-  constructor(private searchService: SearchService) {}
-
-  ngOnInit() {
-    this.searchService.getDetails(this.id).then((lemma) => {
-      this.lemma = lemma;
-      console.log(lemma);
-    });
-  }
+  constructor() {}
 }

@@ -1,8 +1,6 @@
-<ion-item lines="none">
-  <ion-text>
-    <h1>{{ (lemma && lemma.infinitiv) ? lemma.infinitiv : '' }}</h1>
-  </ion-text>
-</ion-item>
+<ion-text>
+  <h1>{{ (lemma && lemma.infinitiv) ? lemma.infinitiv : '' }}</h1>
+</ion-text>
 
 <ion-grid *ngIf="lemma">
   <ion-row>
@@ -84,15 +82,15 @@
     <ion-col size="12" sizeMd="6">
       <ion-text><h2>{{ 'CONJUGATION.IMPERATIVE' | translate }}</h2></ion-text>
       <app-conjugation-impersonal
-        [form1]="lemma.gerundium">
+        [form1]="lemma.imperativ1"
+        [form2]="lemma.imperativ2">
       </app-conjugation-impersonal>
     </ion-col>
     <ion-col size="12" sizeMd="6">
       <ion-text><h2>{{ 'CONJUGATION.GERUND' | translate }}</h2></ion-text>
       <app-conjugation-impersonal
-      [form1]="lemma.imperativ1"
-      [form2]="lemma.imperativ2">
-    </app-conjugation-impersonal>
+        [form1]="lemma.gerundium">
+      </app-conjugation-impersonal>
     </ion-col>
   </ion-row>
 </ion-grid>

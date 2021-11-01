@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-search-detail-page',
@@ -9,11 +10,17 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class SearchDetailPage implements OnInit {
   public id: string;
 
-  constructor(private route: ActivatedRoute) {}
+  public lemma;
+
+  constructor(private route: ActivatedRoute, private searchService: SearchService) {}
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
       this.id = params.id;
+      this.searchService.getDetails(this.id).then((lemma) => {
+        this.lemma = lemma;
+        console.log(lemma);
+      });
     });
   }
 }
