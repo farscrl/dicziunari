@@ -1,6 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { SearchDirection } from 'src/data/search';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ConfigService } from 'src/app/services/config.service';
+import { Locale, SearchDirection } from 'src/data/search';
 import { CopyService } from '../../services/copy.service';
+import { FavouritesService } from '../../services/favourites.service';
+import { ToastService } from '../../services/toast.service';
 
 @Component({
   selector: 'app-favourite-item',
@@ -8,6 +11,9 @@ import { CopyService } from '../../services/copy.service';
   styleUrls: ['./favourite-item.component.scss'],
 })
 export class FavouriteItemComponent implements OnInit {
+  @Input()
+  public lemma: any;
+
   @Input()
   public lemmaId: string;
 
@@ -18,20 +24,42 @@ export class FavouriteItemComponent implements OnInit {
   public lemmaR: string;
 
   @Input()
+  public completeLemma: string;
+
+  @Input()
   public isVerb: boolean;
 
   @Input()
   public searchString: string;
 
   @Input()
-  private searchDirection: SearchDirection = SearchDirection.both;
+  public searchDirection: SearchDirection = SearchDirection.both;
 
-  constructor(private copyService: CopyService) {}
+  @Input()
+  public isSursilvan: boolean;
 
-  ngOnInit() {}
+  @Output()
+  public deleteItem = new EventEmitter<any>();
 
-  addFavorite() {
-    console.log('implement me. add favorite: ' + this.lemmaD);
+  public selectedLocale: Locale = Locale.rm;
+
+  constructor(
+    private copyService: CopyService,
+    private configService: ConfigService,
+    private favouritesService: FavouritesService,
+    private toastService: ToastService,
+  ) {}
+
+  ngOnInit() {
+    this.configService.getLocaleObservable().subscribe((locale) => {
+      this.selectedLocale = locale;
+    });
+  }
+
+  async deleteFavourite() {
+    this.favouritesService.deleteFavorite(this.lemma.id);
+    this.deleteItem.emit(this.lemma);
+    await this.toastService.showNotification('SEARCH.RESULTS.DELETED');
   }
 
   copy() {

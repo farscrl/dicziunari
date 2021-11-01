@@ -15,9 +15,9 @@
   </ion-item>
 
   <ion-item-options side="end">
-    <ion-item-option color="warning" (click)="addFavorite();">
+    <ion-item-option color="danger" (click)="deleteFavourite();">
       <ion-icon slot="top" name="star"></ion-icon>
-      {{ 'SEARCH.RESULTS.SAVE' | translate}}
+      {{ 'SEARCH.RESULTS.DELETE' | translate}}
     </ion-item-option>
     <ion-item-option color="primary" (click)="copy()">
       <ion-icon slot="top" name="copy"></ion-icon>

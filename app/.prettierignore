@@ -6,3 +6,4 @@ ios
 node_modules
 www
 src/app/util/query.util.ts
+src/app/services/favourites.service.ts

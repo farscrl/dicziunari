@@ -11,43 +11,41 @@
     </ion-toolbar>
   </ion-header>
 
-
-
   <ion-list>
-    <ion-item-group>
+    <ion-item-group *ngIf="favouritesRumantschGrischun.length > 0">
       <ion-item-divider color="light" sticky>Rumantsch Grischun</ion-item-divider>
-      <ng-container *ngFor="let favuorite of favourites">
-        <app-favourite-item [lemmaD]="favuorite.DStichwort" [lemmaR]="favuorite.RStichwort"></app-favourite-item>
+      <ng-container *ngFor="let favuorite of favouritesRumantschGrischun">
+        <app-favourite-item [lemma]="favuorite" [lemmaD]="favuorite.DStichwort" [lemmaR]="favuorite.RStichwort" (deleteItem)="deleteLemma($event)"></app-favourite-item>
       </ng-container>
     </ion-item-group>
-    <ion-item-group>
+    <ion-item-group *ngIf="favouritesSursilvan.length > 0">
       <ion-item-divider color="light" sticky>Sursilvan</ion-item-divider>
-      <ng-container *ngFor="let favuorite of favourites">
-        <app-favourite-item [lemmaD]="favuorite.DStichwort" [lemmaR]="favuorite.RStichwort"></app-favourite-item>
+      <ng-container *ngFor="let favuorite of favouritesSursilvan">
+        <app-favourite-item [lemma]="favuorite" [lemmaD]="favuorite.DStichwort" [lemmaR]="favuorite.RStichwort" (deleteItem)="deleteLemma($event)"></app-favourite-item>
       </ng-container>
     </ion-item-group>
-    <ion-item-group>
+    <ion-item-group *ngIf="favouritesSutsilvan.length > 0">
       <ion-item-divider color="light" sticky>Sutsilvan</ion-item-divider>
-      <ng-container *ngFor="let favuorite of favourites">
-        <app-favourite-item [lemmaD]="favuorite.DStichwort" [lemmaR]="favuorite.RStichwort"></app-favourite-item>
+      <ng-container *ngFor="let favuorite of favouritesSutsilvan">
+        <app-favourite-item [lemma]="favuorite" [lemmaD]="favuorite.DStichwort" [lemmaR]="favuorite.RStichwort" (deleteItem)="deleteLemma($event)"></app-favourite-item>
       </ng-container>
     </ion-item-group>
-    <ion-item-group>
+    <ion-item-group *ngIf="favouritesSurmiran.length > 0">
       <ion-item-divider color="light" sticky>Surmiran</ion-item-divider>
-      <ng-container *ngFor="let favuorite of favourites">
-        <app-favourite-item [lemmaD]="favuorite.DStichwort" [lemmaR]="favuorite.RStichwort"></app-favourite-item>
+      <ng-container *ngFor="let favuorite of favouritesSurmiran">
+        <app-favourite-item [lemma]="favuorite" [lemmaD]="favuorite.DStichwort" [lemmaR]="favuorite.RStichwort" (deleteItem)="deleteLemma($event)"></app-favourite-item>
       </ng-container>
     </ion-item-group>
-    <ion-item-group>
+    <ion-item-group *ngIf="favouritesPuter.length > 0">
       <ion-item-divider color="light" sticky>Puter</ion-item-divider>
-      <ng-container *ngFor="let favuorite of favourites">
-        <app-favourite-item [lemmaD]="favuorite.DStichwort" [lemmaR]="favuorite.RStichwort"></app-favourite-item>
+      <ng-container *ngFor="let favuorite of favouritesPuter">
+        <app-favourite-item [lemma]="favuorite" [lemmaD]="favuorite.DStichwort" [lemmaR]="favuorite.RStichwort" (deleteItem)="deleteLemma($event)"></app-favourite-item>
       </ng-container>
     </ion-item-group>
-    <ion-item-group>
+    <ion-item-group *ngIf="favouritesVallader.length > 0">
       <ion-item-divider color="light" sticky>Vallader</ion-item-divider>
-      <ng-container *ngFor="let favuorite of favourites">
-        <app-favourite-item [lemmaD]="favuorite.DStichwort" [lemmaR]="favuorite.RStichwort"></app-favourite-item>
+      <ng-container *ngFor="let favuorite of favouritesVallader">
+        <app-favourite-item [lemma]="favuorite" [lemmaD]="favuorite.DStichwort" [lemmaR]="favuorite.RStichwort" (deleteItem)="deleteLemma($event)"></app-favourite-item>
       </ng-container>
     </ion-item-group>
   </ion-list>
