@@ -4,6 +4,7 @@ import { SplashScreen } from '@capacitor/splash-screen';
 import { Platform } from '@ionic/angular';
 import { ConfigService } from './services/config.service';
 import { SQLiteService } from './services/sqlite.service';
+import { Keyboard } from '@capacitor/keyboard';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ export class AppComponent {
   ) {
     this.platform.ready().then(() => {
       SplashScreen.show();
+      Keyboard.setAccessoryBarVisible({ isVisible: false });
       setTimeout(() => {
         SplashScreen.hide();
       }, 5000);
