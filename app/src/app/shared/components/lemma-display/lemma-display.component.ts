@@ -48,7 +48,6 @@ export class LemmaDisplayComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log(this.lemma);
     this.configService.getLocaleObservable().subscribe((locale) => {
       this.selectedLocale = locale;
     });
@@ -74,7 +73,6 @@ export class LemmaDisplayComponent implements OnInit {
       }
 
       this.favouritesService.addFavorite(this.dictionary, lemma);
-      console.log(lemma);
       await this.toastService.showNotification('SEARCH.RESULTS.COPIED');
     });
   }

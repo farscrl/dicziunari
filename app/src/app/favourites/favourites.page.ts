@@ -27,7 +27,6 @@ export class FavouritesPage implements OnInit {
   }
 
   deleteLemma(lemma) {
-    console.log(lemma);
     this.favouritesRumantschGrischun = this.removeLemma(this.favouritesRumantschGrischun, lemma.id);
     this.favouritesSursilvan = this.removeLemma(this.favouritesSursilvan, lemma.id);
     this.favouritesSutsilvan = this.removeLemma(this.favouritesSutsilvan, lemma.id);

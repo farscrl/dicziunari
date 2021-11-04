@@ -44,7 +44,6 @@ export class SearchPage implements OnInit {
   }
 
   search() {
-    console.log('===> search');
     if (this.infiniteScroll) {
       this.infiniteScroll.disabled = false;
     }
@@ -59,7 +58,6 @@ export class SearchPage implements OnInit {
   }
 
   loadMoreData() {
-    console.log('===> loadMoreData', event);
     this.searchService.getNextResults().then((pleds) => {
       this.infiniteScroll.complete();
       if (pleds.length === 0) {
