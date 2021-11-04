@@ -1,77 +1,84 @@
 {
-    "MENU": {
-        "SEARCH": "Tschertgar",
-        "FAVOURITES": "Memorisà",
-        "SETTINGS": "Preferenzas"
+  "MENU": {
+    "SEARCH": "Tschertgar",
+    "FAVOURITES": "Memorisà",
+    "SETTINGS": "Preferenzas"
+  },
+  "SEARCH": {
+    "TITLE": "Tschertgar",
+    "DICTIONARY": "Idiom",
+    "SEARCHFIELD": {
+      "LABEL": "Tschertgar",
+      "CANCEL": "Interrumper"
     },
-    "SEARCH": {
-        "TITLE": "Tschertgar",
-        "DICTIONARY": "Idiom",
-        "SEARCHFIELD": {
-            "LABEL": "Tschertgar",
-            "CANCEL": "Interrumper"
-        },
-        "DE": "Tudestg",
-        "RESULTS": {
-            "SAVE": "Memorisar",
-            "COPY": "Copiar",
-            "COPIED": "Copià l'endataziun"
-        },
-        "NO_RESULTS": {
-            "TITLE": "Hopla!",
-            "INTRO": "Nagins resultats per tia tschertga. Vuls ti midar il modus da tschertgar?",
-            "BUTTON_CHANGE_SEARCH_MODE": "Midar modus da tschertgar",
-            "NOTE": "Il modus da tschertgar pos ti era adina midar en las preferenzas"
-        },
-        "LOADING_DATA": "Chargiar ulteriurs resultats"
+    "DE": "Tudestg",
+    "RESULTS": {
+      "SAVE": "Memorisar",
+      "COPY": "Copiar",
+      "DELETE": "Stizzar",
+      "COPIED": "Copià l'endataziun",
+      "SAVED": "Memorisà l'endataziun",
+      "DELETED": "Stizzà l'endataziun"
     },
-    "FAVOURITES": {
-        "TITLE": "Memorisà"
+    "NO_RESULTS": {
+      "TITLE": "Hopla!",
+      "INTRO": "Nagins resultats per tia tschertga. Vuls ti midar il modus da tschertgar?",
+      "BUTTON_CHANGE_SEARCH_MODE": "Midar modus da tschertgar",
+      "NOTE": "Il modus da tschertgar pos ti era adina midar en las preferenzas"
     },
-    "SETTINGS": {
-        "TITLE": "Preferenzas",
-        "LANGUAGE": {
-            "TITLE": "Lingua da l'app"
-        },
-        "MODE": {
-            "TITLE": "Modus da tschertgar",
-            "START": "Cumenzament dal pled",
-            "MATCH": "Exact",
-            "SUBSTRING": "Part",
-            "END": "Fin dal pled"
-        },
-        "VERBS": {
-            "TITLE": "Verbs conjugads",
-            "INCLUDE": "Includer en la tschertga"
-        },
-        "OTHER": {
-            "TITLE": "Auter",
-            "FEEDBACK": "Resun",
-            "HELP": "Agid",
-            "INFO": "Info"
-        }
-    },
-    "PAGES": {
-        "BACK": "Turnar",
-        "FEEDBACK": {
-            "TITLE": "Resun"
-        },
-        "HELP": {
-            "TITLE": "Agid"
-        },
-        "INFO": {
-            "TITLE": "Impressum"
-        }
-    },
-    "CONJUGATION": {
-        "TITLE": "Conjugaziun",
-        "PRESENT_TENSE": "Preschent",
-        "PAST_TENSE": "Imperfect",
-        "PAST_PARTICIPLE": "Particip Perfect",
-        "SUBJUNCTIVE": "Conjunctiv",
-        "CONDITIONAL": "Cundiziunal",
-        "FUTUR_TENSE": "Futur",
-        "IMPERATIVE": "Imperativ",
-        "GERUND": "Gerundi"
+    "LOADING_DATA": "Chargiar ulteriurs resultats"
+  },
+  "FAVOURITES": {
+    "TITLE": "Memorisà",
+    "NO_FAVOURITES": {
+      "TITLE": "Anc vid...",
+      "INTRO": "Ti n'has anc memorisà naginas endataziuns. Ti pos agiuntar endataziuns a questa glista cun ina gesta cun il det sin la pagina da tschertgar."
     }
+  },
+  "SETTINGS": {
+    "TITLE": "Preferenzas",
+    "LANGUAGE": {
+      "TITLE": "Lingua da l'app"
+    },
+    "MODE": {
+      "TITLE": "Modus da tschertgar",
+      "START": "Cumenzament dal pled",
+      "MATCH": "Exact",
+      "SUBSTRING": "Part",
+      "END": "Fin dal pled"
+    },
+    "VERBS": {
+      "TITLE": "Verbs conjugads",
+      "INCLUDE": "Includer en la tschertga"
+    },
+    "OTHER": {
+      "TITLE": "Auter",
+      "FEEDBACK": "Resun",
+      "HELP": "Agid",
+      "INFO": "Info"
+    }
+  },
+  "PAGES": {
+    "BACK": "Turnar",
+    "FEEDBACK": {
+      "TITLE": "Resun"
+    },
+    "HELP": {
+      "TITLE": "Agid"
+    },
+    "INFO": {
+      "TITLE": "Impressum"
+    }
+  },
+  "CONJUGATION": {
+    "TITLE": "Conjugaziun",
+    "PRESENT_TENSE": "Preschent",
+    "PAST_TENSE": "Imperfect",
+    "PAST_PARTICIPLE": "Particip Perfect",
+    "SUBJUNCTIVE": "Conjunctiv",
+    "CONDITIONAL": "Cundiziunal",
+    "FUTUR_TENSE": "Futur",
+    "IMPERATIVE": "Imperativ",
+    "GERUND": "Gerundi"
+  }
 }
