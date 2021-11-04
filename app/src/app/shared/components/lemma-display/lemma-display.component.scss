@@ -4,7 +4,8 @@
   cursor: pointer;
 
   div {
-    max-height: 32px;
+    height: 100%;
+    display: flex;
   }
 }
 
@@ -28,10 +29,6 @@ ion-item {
   ion-grid {
     padding: 0;
   }
-
-  ion-col {
-    padding: 16px;
-  }
 }
 
 ion-icon {
@@ -40,6 +37,7 @@ ion-icon {
   width: 36px;
   height: 36px;
   padding: 0px;
+  align-self: center;
 
   &.delete {
     background-color: #cc0000;
