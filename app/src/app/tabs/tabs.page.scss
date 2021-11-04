@@ -1,0 +1,15 @@
+ion-tab-button.tab-selected .tab-active {
+  display: block;
+}
+
+ion-tab-button.tab-selected .tab-inactive {
+  display: none;
+}
+
+ion-tab-button:not(.tab-selected) .tab-active {
+  display: none;
+}
+
+ion-tab-button:not(.tab-selected) .tab-inactive {
+  display: block;
+}
