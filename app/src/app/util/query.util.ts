@@ -171,16 +171,16 @@ export class QueryUtil {
     switch (searchMode) {
       case SearchMode.start:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "'  + lemma + '%" OR `DStichwort` LIKE "%, ' + lemma + '%" ORDER BY RStichwort';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "'  + lemma + '%" OR `DStichwort` LIKE "%, ' + lemma + '%" ORDER BY RStichwort COLLATE NOCASE ASC';
       case SearchMode.substring:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "%' + lemma + '%" ORDER BY RStichwort';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "%' + lemma + '%" ORDER BY RStichwort COLLATE NOCASE ASC';
       case SearchMode.end:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "%' + lemma + '" OR `DStichwort` LIKE "%' + lemma + ', %" ORDER BY RStichwort';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "%' + lemma + '" OR `DStichwort` LIKE "%' + lemma + ', %" ORDER BY RStichwort COLLATE NOCASE ASC';
       case SearchMode.match:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "' + lemma + '" OR `DStichwort` LIKE "' + lemma + ', %" OR `DStichwort` LIKE "%,' + lemma + '" OR `DStichwort` LIKE "%, ' + lemma + ', %" ORDER BY RStichwort';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "' + lemma + '" OR `DStichwort` LIKE "' + lemma + ', %" OR `DStichwort` LIKE "%,' + lemma + '" OR `DStichwort` LIKE "%, ' + lemma + ', %" ORDER BY RStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -191,16 +191,16 @@ export class QueryUtil {
     switch (searchMode) {
       case SearchMode.start:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `RStichwort` LIKE "' + lemma + '%" OR `RStichwort` LIKE "%, ' + lemma + '%" ORDER BY RStichwort';
+        return 'SELECT * FROM `sursilvan` WHERE `RStichwort` LIKE "' + lemma + '%" OR `RStichwort` LIKE "%, ' + lemma + '%" ORDER BY RStichwort COLLATE NOCASE ASC';
       case SearchMode.substring:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `RStichwort` LIKE "%' + lemma + '%" ORDER BY RStichwort';
+        return 'SELECT * FROM `sursilvan` WHERE `RStichwort` LIKE "%' + lemma + '%" ORDER BY RStichwort COLLATE NOCASE ASC';
       case SearchMode.end:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `RStichwort` LIKE "%' + lemma + '" OR `RStichwort` LIKE "%' + lemma + ', %" ORDER BY RStichwort';
+        return 'SELECT * FROM `sursilvan` WHERE `RStichwort` LIKE "%' + lemma + '" OR `RStichwort` LIKE "%' + lemma + ', %" ORDER BY RStichwort COLLATE NOCASE ASC';
       case SearchMode.match:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan`WHERE `RStichwort` LIKE "' + lemma + '" OR `RStichwort` LIKE "' + lemma + ', %" OR `RStichwort` LIKE "%, ' + lemma + '" OR `RStichwort` LIKE "%, ' + lemma + ', %" ORDER BY RStichwort';
+        return 'SELECT * FROM `sursilvan`WHERE `RStichwort` LIKE "' + lemma + '" OR `RStichwort` LIKE "' + lemma + ', %" OR `RStichwort` LIKE "%, ' + lemma + '" OR `RStichwort` LIKE "%, ' + lemma + ', %" ORDER BY RStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -211,16 +211,16 @@ export class QueryUtil {
     switch (searchMode) {
       case SearchMode.start:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "' + lemma + '%" OR `DStichwort` LIKE "%, ' + lemma + '%" OR `RStichwort` LIKE "' + lemma + '%" OR `RStichwort` LIKE "%, ' + lemma + '%" ORDER BY RStichwort';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "' + lemma + '%" OR `DStichwort` LIKE "%, ' + lemma + '%" OR `RStichwort` LIKE "' + lemma + '%" OR `RStichwort` LIKE "%, ' + lemma + '%" ORDER BY RStichwort COLLATE NOCASE ASC';
       case SearchMode.substring:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "%' + lemma + '%" OR `RStichwort` LIKE "%' + lemma + '%" OR `Corp` LIKE "%' + lemma + '%" ORDER BY RStichwort';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "%' + lemma + '%" OR `RStichwort` LIKE "%' + lemma + '%" OR `Corp` LIKE "%' + lemma + '%" ORDER BY RStichwort COLLATE NOCASE ASC';
       case SearchMode.end:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "%' + lemma + '" OR `DStichwort` LIKE "%' + lemma + ', %" OR `RStichwort` LIKE "%' + lemma + '" OR `RStichwort` LIKE "%' + lemma + ', %" ORDER BY RStichwort';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "%' + lemma + '" OR `DStichwort` LIKE "%' + lemma + ', %" OR `RStichwort` LIKE "%' + lemma + '" OR `RStichwort` LIKE "%' + lemma + ', %" ORDER BY RStichwort COLLATE NOCASE ASC';
       case SearchMode.match:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "' + lemma + '" OR `DStichwort` LIKE "' + lemma + ', %" OR `DStichwort` LIKE "%, ' + lemma + '" OR `DStichwort` LIKE "%, ' + lemma + ', %" OR `RStichwort` LIKE "' + lemma + '" OR `RStichwort` LIKE "%, ' + lemma + '" ORDER BY RStichwort';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "' + lemma + '" OR `DStichwort` LIKE "' + lemma + ', %" OR `DStichwort` LIKE "%, ' + lemma + '" OR `DStichwort` LIKE "%, ' + lemma + ', %" OR `RStichwort` LIKE "' + lemma + '" OR `RStichwort` LIKE "%, ' + lemma + '" ORDER BY RStichwort COLLATE NOCASE ASC';
     }
   }
 
