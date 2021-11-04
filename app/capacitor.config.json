@@ -1,12 +1,12 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "app",
+  "appId": "ch.dicziunari.app",
+  "appName": "Dicziunari",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
   "plugins": {
     "SplashScreen": {
-      "launchShowDuration": 0
+      "launchShowDuration": 5000
     }
   },
   "cordova": {}
