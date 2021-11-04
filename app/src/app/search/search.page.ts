@@ -3,6 +3,8 @@ import { SearchService } from '../services/search.service';
 import { ConfigService } from '../services/config.service';
 import { IonContent, IonInfiniteScroll, IonSelect } from '@ionic/angular';
 import { Dictionary, SearchDirection } from 'src/data/search';
+import { Capacitor } from '@capacitor/core';
+import { Keyboard } from '@capacitor/keyboard';
 
 @Component({
   selector: 'app-search',
@@ -55,6 +57,12 @@ export class SearchPage implements OnInit {
       this.pleds = pleds;
       this.checkIfScreenIsFull();
     });
+  }
+
+  enterHit() {
+    if (Capacitor.isNativePlatform()) {
+      Keyboard.hide();
+    }
   }
 
   loadMoreData() {

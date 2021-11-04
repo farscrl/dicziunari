@@ -36,7 +36,17 @@
     </ion-grid>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-searchbar showCancelButton="focus" [(ngModel)]="searchString" (ngModelChange)="search()" [placeholder]="'SEARCH.SEARCHFIELD.LABEL' | translate" [cancelButtonText]="'SEARCH.SEARCHFIELD.CANCEL' | translate"></ion-searchbar>
+    <form action="#" (submit)="enterHit()">
+    <ion-searchbar
+      showCancelButton="focus"
+      [(ngModel)]="searchString"
+      (ngModelChange)="search()"
+      [ngModelOptions]="{standalone: true}"
+      [placeholder]="'SEARCH.SEARCHFIELD.LABEL' | translate"
+      [cancelButtonText]="'SEARCH.SEARCHFIELD.CANCEL' | translate"
+      (keyup.enter)="enterHit()"
+    ></ion-searchbar>
+  </form>
   </ion-toolbar>
 </ion-header>
 
