@@ -34,17 +34,14 @@
   </ion-item>
 
   <ion-item-options side="end">
-    <ion-item-option color="danger" (click)="deleteFavourite();" *ngIf="isSaved">
-      <ion-icon slot="top" name="star"></ion-icon>
-      {{ 'SEARCH.RESULTS.DELETE' | translate}}
+    <ion-item-option color="white" size="small" (click)="deleteFavourite();" *ngIf="isSaved">
+      <ion-icon src="assets/icon/save-remove.svg" slot="icon-only" name="star" class="delete"></ion-icon>
     </ion-item-option>
-    <ion-item-option color="warning" (click)="addFavorite();" *ngIf="!isSaved">
-      <ion-icon slot="top" name="star"></ion-icon>
-      {{ 'SEARCH.RESULTS.SAVE' | translate}}
+    <ion-item-option color="white" size="small" (click)="addFavorite();" *ngIf="!isSaved">
+      <ion-icon src="assets/icon/save.svg" slot="icon-only" name="star" class="save"></ion-icon>
     </ion-item-option>
-    <ion-item-option color="primary" (click)="copy()">
-      <ion-icon slot="top" name="copy"></ion-icon>
-      {{ 'SEARCH.RESULTS.COPY' | translate}}
+    <ion-item-option color="white" size="small" (click)="copy()">
+      <ion-icon src="assets/icon/copy.svg" slot="icon-only" name="copy" class="copy"></ion-icon>
     </ion-item-option>
   </ion-item-options>
 </ion-item-sliding>
