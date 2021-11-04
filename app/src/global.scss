@@ -28,7 +28,9 @@
 // highlight lemmas
 mark {
   background-color: #b5dbff;
-  // font-weight: bold;
+}
+.link mark {
+  color: #11769d;
 }
 
 // make radio group overlays bigger
