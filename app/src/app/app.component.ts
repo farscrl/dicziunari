@@ -4,7 +4,6 @@ import { SplashScreen } from '@capacitor/splash-screen';
 import { Platform } from '@ionic/angular';
 import { ConfigService } from './services/config.service';
 import { SQLiteService } from './services/sqlite.service';
-import { Capacitor } from '@capacitor/core';
 import { Keyboard } from '@capacitor/keyboard';
 import { Capacitor } from '@capacitor/core';
 
