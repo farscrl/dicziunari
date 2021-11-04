@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { ConfigService } from '../services/config.service';
-import { IonInfiniteScroll, IonSelect } from '@ionic/angular';
+import { IonContent, IonInfiniteScroll, IonSelect } from '@ionic/angular';
 import { Dictionary, SearchDirection } from 'src/data/search';
 
 @Component({
@@ -12,11 +12,14 @@ import { Dictionary, SearchDirection } from 'src/data/search';
 export class SearchPage implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
   @ViewChild(IonSelect, { static: false }) dictionarySelect: IonSelect;
+  @ViewChild(IonContent, { static: false }) private content: IonContent;
 
   public searchString = '';
   public selectedDictionary: Dictionary;
   public searchDirection: SearchDirection;
   public pleds = [];
+
+  private hasScrollbar = false;
 
   constructor(private searchService: SearchService, private configService: ConfigService) {}
 
@@ -41,7 +44,6 @@ export class SearchPage implements OnInit {
   }
 
   search() {
-    console.log('===> search');
     if (this.infiniteScroll) {
       this.infiniteScroll.disabled = false;
     }
@@ -49,19 +51,23 @@ export class SearchPage implements OnInit {
       this.pleds = [];
       return;
     }
-    this.searchService.newSearch(this.searchString).then((pleds) => {
+    this.searchService.newSearch(this.searchString).then(async (pleds) => {
       this.pleds = pleds;
+      this.checkIfScreenIsFull();
     });
   }
 
   loadMoreData() {
-    console.log('===> loadMoreData', event);
     this.searchService.getNextResults().then((pleds) => {
       this.infiniteScroll.complete();
       if (pleds.length === 0) {
         this.infiniteScroll.disabled = true;
       }
       this.pleds.push(...pleds);
+
+      if (pleds.length > 0) {
+        this.checkIfScreenIsFull();
+      }
     });
   }
 
@@ -94,5 +100,20 @@ export class SearchPage implements OnInit {
   changeSearchTerm(term: string) {
     this.searchString = term;
     this.search();
+  }
+
+  checkIfScreenIsFull() {
+    const that = this;
+    window.setTimeout(async () => {
+      await that.checkForScrollbar();
+      if (!that.hasScrollbar) {
+        that.loadMoreData();
+      }
+    }, 1);
+  }
+
+  async checkForScrollbar() {
+    const scrollElement = await this.content.getScrollElement();
+    this.hasScrollbar = scrollElement.scrollHeight > scrollElement.clientHeight;
   }
 }

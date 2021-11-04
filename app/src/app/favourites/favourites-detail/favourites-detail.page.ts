@@ -13,6 +13,5 @@ export class FavouritesDetailPage implements OnInit {
 
   ngOnInit() {
     this.lemma = this.router.getCurrentNavigation().extras.state.data;
-    console.log(this.lemma);
   }
 }

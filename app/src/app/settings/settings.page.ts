@@ -31,12 +31,10 @@ export class SettingsPage implements OnInit {
 
   searchModeChanged() {
     this.configService.setSearchMode(this.searchMode);
-    console.log(this.searchMode);
   }
 
   includeVerbsChanged() {
     this.configService.setIncludeVerbs(this.includeVerbs);
-    console.log(this.includeVerbs);
   }
 
   openPage(page: string) {

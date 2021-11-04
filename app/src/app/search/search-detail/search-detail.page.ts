@@ -19,7 +19,6 @@ export class SearchDetailPage implements OnInit {
       this.id = params.id;
       this.searchService.getDetails(this.id).then((lemma) => {
         this.lemma = lemma;
-        console.log(lemma);
       });
     });
   }
