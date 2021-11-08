@@ -14,25 +14,17 @@ const columnList = [
 
     // R
     { colName: 'FlexR',              colType: 'TEXT' },
-    { colName: 'fStichwortRAnzeige', colType: 'TEXT' },
     { colName: 'GenusR',             colType: 'TEXT' },
     { colName: 'GrammatikR',         colType: 'TEXT' },
-    { colName: 'SemindR',            colType: 'TEXT' },
     { colName: 'SempraezR',          colType: 'TEXT' },
-    { colName: 'SortR',              colType: 'TEXT' },
     { colName: 'StichwortR',         colType: 'TEXT' },
-    { colName: 'StatusR',            colType: 'TEXT' },
 
     // D
     { colName: 'FlexD',                colType: 'TEXT' },
     { colName: 'GenusD',               colType: 'TEXT' },
-    { colName: 'Grammatik_kategorieD', colType: 'TEXT' },
     { colName: 'GrammatikD',           colType: 'TEXT' },
-    { colName: 'SemindD',              colType: 'TEXT' },
     { colName: 'SempraezD',            colType: 'TEXT' },
-    { colName: 'SortD',                colType: 'TEXT' },
     { colName: 'StichwortD',           colType: 'TEXT' },
-    { colName: 'StatusD',              colType: 'TEXT' },
 ];
 
 let db;
