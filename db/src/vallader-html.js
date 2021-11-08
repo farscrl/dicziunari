@@ -48,6 +48,8 @@ function prepareAndCleanDb() {
     // create used columns
     const columnDef = columnList.map(column => column.colName + ' ' + column.colType).join(", ");
     db.exec("CREATE TABLE " + TABLE_VALLADER + "(" +columnDef + ");");
+    db.exec("CREATE INDEX vallader_StichwortR_index ON vallader (StichwortR COLLATE NOCASE);");
+    db.exec("CREATE INDEX vallader_StichwortD_index ON vallader (StichwortD COLLATE NOCASE);");
 
     // creating virtual fts5 table. Used options:
     // lemma is the search term. content sets the content to another table, content_rowid defines what column that identifies the data in the data-table, columsize defines, that values are not stored seperately in the virtual table

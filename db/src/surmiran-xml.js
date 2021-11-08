@@ -82,6 +82,8 @@ function prepareAndCleanDb() {
     // create used columns
     const columnDef = columnList.map(column => column.colName + ' ' + column.colType).join(", ");
     db.exec("CREATE TABLE " + TABLE_SURMIRAN + "(" +columnDef + ");");
+    db.exec("CREATE INDEX surmiran_RStichwort_index ON surmiran (RStichwort COLLATE NOCASE);");
+    db.exec("CREATE INDEX surmiran_DStichwort_index ON surmiran (DStichwort COLLATE NOCASE);");
 
     // creating virtual fts5 table. Used options:
     // lemma is the search term. content sets the content to another table, content_rowid defines what column that identifies the data in the data-table, columsize defines, that values are not stored seperately in the virtual table
