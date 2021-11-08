@@ -11,29 +11,20 @@ const FILE_PATH = 'data/puter.htm';
 let processedEntries = 0;
 const columnList = [
     { colName: 'id',                 colType: 'INTEGER PRIMARY KEY' },
-    { colName: 'weight',             colType: 'INTEGER' },
 
     // R
     { colName: 'FlexR',              colType: 'TEXT' },
-    { colName: 'fStichwortRAnzeige', colType: 'TEXT' },
     { colName: 'GenusR',             colType: 'TEXT' },
     { colName: 'GrammatikR',         colType: 'TEXT' },
-    { colName: 'SemindR',            colType: 'TEXT' },
     { colName: 'SempraezR',          colType: 'TEXT' },
-    { colName: 'SortR',              colType: 'TEXT' },
     { colName: 'StichwortR',         colType: 'TEXT' },
-    { colName: 'StatusR',            colType: 'TEXT' },
 
     // D
     { colName: 'FlexD',                colType: 'TEXT' },
     { colName: 'GenusD',               colType: 'TEXT' },
-    { colName: 'Grammatik_kategorieD', colType: 'TEXT' },
     { colName: 'GrammatikD',           colType: 'TEXT' },
-    { colName: 'SemindD',              colType: 'TEXT' },
     { colName: 'SempraezD',            colType: 'TEXT' },
-    { colName: 'SortD',                colType: 'TEXT' },
     { colName: 'StichwortD',           colType: 'TEXT' },
-    { colName: 'StatusD',              colType: 'TEXT' },
 ];
 
 let db;
@@ -57,6 +48,8 @@ function prepareAndCleanDb() {
     // create used columns
     const columnDef = columnList.map(column => column.colName + ' ' + column.colType).join(", ");
     db.exec("CREATE TABLE " + TABLE_PUTER + "(" +columnDef + ");");
+    db.exec("CREATE INDEX puter_StichwortR_index ON puter (StichwortR COLLATE NOCASE);");
+    db.exec("CREATE INDEX puter_StichwortD_index ON puter (StichwortD COLLATE NOCASE);");
 
     // creating virtual fts5 table. Used options:
     // lemma is the search term. content sets the content to another table, content_rowid defines what column that identifies the data in the data-table, columsize defines, that values are not stored seperately in the virtual table
@@ -72,15 +65,9 @@ function prepareAndCleanDb() {
     db.exec("BEGIN TRANSACTION;");
 }
 
-function calculateWeight(lemma) {
-    // TODO: implement algorithm for weight
-    return 1;
-}
-
 function insertLemma(lemma) {
     var binds = {};
     binds['id'] = id;
-    binds['weight'] = calculateWeight(lemma);
     columnList.forEach(column => binds[column.colName] = lemma[column.colName]);
     insertStatementLemma.run(binds);
 }
@@ -175,19 +162,6 @@ function parseData() {
             console.log('Processed ' + processedEntries + ' lemmas');
         }
     });
-}
-
-function calculateWeight(lemma) {
-    // TODO: implement algorithm for weight
-    return 1;
-}
-
-function insertLemma(lemma) {
-    var binds = {};
-    binds['id'] = id;
-    binds['weight'] = calculateWeight(lemma);
-    columnList.forEach(column => binds[column.colName] = lemma[column.colName]);
-    insertStatementLemma.run(binds);
 }
 
 module.exports = {

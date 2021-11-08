@@ -10,7 +10,6 @@ const FILE_PATH = 'data/sursilvan.json';
 let processedEntries = 0;
 const columnList = [
     { colName: 'id',                 colType: 'INTEGER PRIMARY KEY' },
-    { colName: 'weight',             colType: 'INTEGER' },
     { colName: 'Etymologie',         colType: 'TEXT' },
     { colName: 'Corp',               colType: 'TEXT' },
     { colName: 'Redewendung',        colType: 'TEXT' },
@@ -39,6 +38,9 @@ function prepareAndCleanDb() {
     // create used columns
     const columnDef = columnList.map(column => column.colName + ' ' + column.colType).join(", ");
     db.exec("CREATE TABLE " + TABLE_SURSILVAN + "(" +columnDef + ");");
+    db.exec("CREATE INDEX sursilvan_RStichwort_index ON sursilvan (RStichwort COLLATE NOCASE);");
+    db.exec("CREATE INDEX sursilvan_DStichwort_index ON sursilvan (DStichwort COLLATE NOCASE);");
+    db.exec("CREATE INDEX sursilvan_Corp_index ON sursilvan (Corp COLLATE NOCASE);");
 
     // creating virtual fts5 table. Used options:
     // lemma is the search term. content sets the content to another table, content_rowid defines what column that identifies the data in the data-table, columsize defines, that values are not stored seperately in the virtual table
@@ -54,15 +56,9 @@ function prepareAndCleanDb() {
     db.exec("BEGIN TRANSACTION;");
 }
 
-function calculateWeight(lemma) {
-    // TODO: implement algorithm for weight
-    return 1;
-}
-
 function insertLemma(lemma) {
     var binds = {};
     binds['id'] = id;
-    binds['weight'] = calculateWeight(lemma);
     columnList.forEach(column => binds[column.colName] = lemma[column.colName]);
     insertStatementLemma.run(binds);
 }
@@ -112,11 +108,6 @@ function replaceEnding(string, ending) {
     }
 
     return string;
-}
-
-function calculateWeight(lemma) {
-    // TODO: implement algorithm for weight
-    return 1;
 }
 
 function finalizeDb() {

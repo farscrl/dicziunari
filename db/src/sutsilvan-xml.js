@@ -11,7 +11,6 @@ const FILE_PATH = 'data/maalr_db_dump_all_versions_3_sutsilvan.xml';
 let processedEntries = 0;
 const columnList = [
     { colName: 'id',                 colType: 'INTEGER PRIMARY KEY' },
-    { colName: 'weight',             colType: 'INTEGER' },
 
     // R
     { colName: 'RStichwort',         colType: 'TEXT' },
@@ -85,6 +84,8 @@ function prepareAndCleanDb() {
     // create used columns
     const columnDef = columnList.map(column => column.colName + ' ' + column.colType).join(", ");
     db.exec("CREATE TABLE " + TABLE_SUTSILVAN + "(" +columnDef + ");");
+    db.exec("CREATE INDEX sutsilvan_RStichwort_index ON sutsilvan (RStichwort COLLATE NOCASE);");
+    db.exec("CREATE INDEX sutsilvan_DStichwort_index ON sutsilvan (DStichwort COLLATE NOCASE);");
 
     // creating virtual fts5 table. Used options:
     // lemma is the search term. content sets the content to another table, content_rowid defines what column that identifies the data in the data-table, columsize defines, that values are not stored seperately in the virtual table
@@ -100,15 +101,9 @@ function prepareAndCleanDb() {
     db.exec("BEGIN TRANSACTION;");
 }
 
-function calculateWeight(lemma) {
-    // TODO: implement algorithm for weight
-    return 1;
-}
-
 function insertLemma(lemma) {
     var binds = {};
     binds['id'] = id;
-    binds['weight'] = calculateWeight(lemma);
     columnList.forEach(column => binds[column.colName] = lemma[column.colName]);
     insertStatementLemma.run(binds);
 }
@@ -344,19 +339,6 @@ function parseData() {
     xml.on('end', function(item) {
         finalizeDb();
     });
-}
-
-function calculateWeight(lemma) {
-    // TODO: implement algorithm for weight
-    return 1;
-}
-
-function insertLemma(lemma) {
-    var binds = {};
-    binds['id'] = id;
-    binds['weight'] = calculateWeight(lemma);
-    columnList.forEach(column => binds[column.colName] = lemma[column.colName]);
-    insertStatementLemma.run(binds);
 }
 
 module.exports = {
