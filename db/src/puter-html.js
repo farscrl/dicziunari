@@ -170,13 +170,6 @@ function parseData() {
     });
 }
 
-function insertLemma(lemma) {
-    var binds = {};
-    binds['id'] = id;
-    columnList.forEach(column => binds[column.colName] = lemma[column.colName]);
-    insertStatementLemma.run(binds);
-}
-
 module.exports = {
     main: function () {
         console.log('Start converting HTML file for Puter...');
