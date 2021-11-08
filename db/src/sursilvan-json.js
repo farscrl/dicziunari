@@ -10,7 +10,6 @@ const FILE_PATH = 'data/sursilvan.json';
 let processedEntries = 0;
 const columnList = [
     { colName: 'id',                 colType: 'INTEGER PRIMARY KEY' },
-    { colName: 'weight',             colType: 'INTEGER' },
     { colName: 'Etymologie',         colType: 'TEXT' },
     { colName: 'Corp',               colType: 'TEXT' },
     { colName: 'Redewendung',        colType: 'TEXT' },
@@ -54,15 +53,9 @@ function prepareAndCleanDb() {
     db.exec("BEGIN TRANSACTION;");
 }
 
-function calculateWeight(lemma) {
-    // TODO: implement algorithm for weight
-    return 1;
-}
-
 function insertLemma(lemma) {
     var binds = {};
     binds['id'] = id;
-    binds['weight'] = calculateWeight(lemma);
     columnList.forEach(column => binds[column.colName] = lemma[column.colName]);
     insertStatementLemma.run(binds);
 }
@@ -112,11 +105,6 @@ function replaceEnding(string, ending) {
     }
 
     return string;
-}
-
-function calculateWeight(lemma) {
-    // TODO: implement algorithm for weight
-    return 1;
 }
 
 function finalizeDb() {

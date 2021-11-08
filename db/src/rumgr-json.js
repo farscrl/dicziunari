@@ -16,7 +16,6 @@ const FILE_PATH = 'data/rumantschgrischun_data_json.json';
 let processedEntries = 0;
 const columnList = [
     { colName: 'id',                 colType: 'INTEGER PRIMARY KEY' },
-    { colName: 'weight',             colType: 'INTEGER' },
 
     // R
     { colName: 'RStichwort',         colType: 'TEXT' },
@@ -131,15 +130,9 @@ function searchColumnNames(lemma) {
     }
 }
 
-function calculateWeight(lemma) {
-    // TODO: implement algorithm for weight
-    return 1;
-}
-
 function insertLemma(lemma) {
     var binds = {};
     binds['id'] = id;
-    binds['weight'] = calculateWeight(lemma);
     columnList.forEach(column => binds[column.colName] = lemma[column.colName]);
     insertStatementLemma.run(binds);
 }

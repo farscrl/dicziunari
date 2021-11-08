@@ -11,7 +11,6 @@ const FILE_PATH = 'data/maalr_db_dump_all_versions_3_sutsilvan.xml';
 let processedEntries = 0;
 const columnList = [
     { colName: 'id',                 colType: 'INTEGER PRIMARY KEY' },
-    { colName: 'weight',             colType: 'INTEGER' },
 
     // R
     { colName: 'RStichwort',         colType: 'TEXT' },
@@ -100,15 +99,9 @@ function prepareAndCleanDb() {
     db.exec("BEGIN TRANSACTION;");
 }
 
-function calculateWeight(lemma) {
-    // TODO: implement algorithm for weight
-    return 1;
-}
-
 function insertLemma(lemma) {
     var binds = {};
     binds['id'] = id;
-    binds['weight'] = calculateWeight(lemma);
     columnList.forEach(column => binds[column.colName] = lemma[column.colName]);
     insertStatementLemma.run(binds);
 }
@@ -346,15 +339,9 @@ function parseData() {
     });
 }
 
-function calculateWeight(lemma) {
-    // TODO: implement algorithm for weight
-    return 1;
-}
-
 function insertLemma(lemma) {
     var binds = {};
     binds['id'] = id;
-    binds['weight'] = calculateWeight(lemma);
     columnList.forEach(column => binds[column.colName] = lemma[column.colName]);
     insertStatementLemma.run(binds);
 }
