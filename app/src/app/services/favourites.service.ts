@@ -82,7 +82,7 @@ export class FavouritesService {
     if (!this.isReadySubject.value) {
       return Promise.resolve([]);
     }
-    const statement = 'SELECT * from favorites;';
+    const statement = 'SELECT * from favorites ORDER BY id DESC;';
     console.warn(statement);
     const values = await CapacitorSQLite.query({
       database: DB_NAME_KEY,
