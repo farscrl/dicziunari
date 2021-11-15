@@ -63,25 +63,28 @@ export class LemmaDisplayComponent implements OnInit {
     }
   }
 
-  async addFavorite() {
+  async addFavorite(slider) {
     this.searchService.getDetails(this.lemma.id).then(async (lemma) => {
       await this.favouritesService.addFavorite(this.dictionary, lemma);
       await this.toastService.showNotification('SEARCH.RESULTS.SAVED');
+      slider.close();
     });
   }
 
-  async copy() {
+  async copy(slider) {
     if (this.isSursilvan) {
-      this.copyService.copyItem(this.lemma.DStichwort, this.lemma.Corp);
+      await this.copyService.copyItem(this.lemma.DStichwort, this.lemma.Corp);
     } else {
-      this.copyService.copyItem(this.lemma.DStichwort, this.lemma.RStichwort);
+      await this.copyService.copyItem(this.lemma.DStichwort, this.lemma.RStichwort);
     }
+    slider.close();
   }
 
-  async deleteFavourite() {
+  async deleteFavourite(slider) {
     this.favouritesService.deleteFavorite(this.lemma.id);
     this.deleteItem.emit(this.lemma);
     await this.toastService.showNotification('SEARCH.RESULTS.DELETED');
+    slider.close();
   }
 
   changeTerm(term: string) {
