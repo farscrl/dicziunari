@@ -65,13 +65,17 @@ export class LemmaDisplayComponent implements OnInit {
 
   async addFavorite() {
     this.searchService.getDetails(this.lemma.id).then(async (lemma) => {
-      this.favouritesService.addFavorite(this.dictionary, lemma);
-      await this.toastService.showNotification('SEARCH.RESULTS.COPIED');
+      await this.favouritesService.addFavorite(this.dictionary, lemma);
+      await this.toastService.showNotification('SEARCH.RESULTS.SAVED');
     });
   }
 
   async copy() {
-    this.copyService.copyItem(this.lemma.DStichwort, this.lemma.RStichwort);
+    if (this.isSursilvan) {
+      this.copyService.copyItem(this.lemma.DStichwort, this.lemma.Corp);
+    } else {
+      this.copyService.copyItem(this.lemma.DStichwort, this.lemma.RStichwort);
+    }
   }
 
   async deleteFavourite() {
