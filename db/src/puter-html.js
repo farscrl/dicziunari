@@ -13,18 +13,18 @@ const columnList = [
     { colName: 'id',                 colType: 'INTEGER PRIMARY KEY' },
 
     // R
-    { colName: 'FlexR',              colType: 'TEXT' },
-    { colName: 'GenusR',             colType: 'TEXT' },
-    { colName: 'GrammatikR',         colType: 'TEXT' },
-    { colName: 'SempraezR',          colType: 'TEXT' },
-    { colName: 'StichwortR',         colType: 'TEXT' },
+    { colName: 'RFlex',                colType: 'TEXT' },
+    { colName: 'RGenus',               colType: 'TEXT' },
+    { colName: 'RGrammatik',           colType: 'TEXT' },
+    { colName: 'RSempraez',            colType: 'TEXT' },
+    { colName: 'RStichwort',           colType: 'TEXT' },
 
     // D
-    { colName: 'FlexD',                colType: 'TEXT' },
-    { colName: 'GenusD',               colType: 'TEXT' },
-    { colName: 'GrammatikD',           colType: 'TEXT' },
-    { colName: 'SempraezD',            colType: 'TEXT' },
-    { colName: 'StichwortD',           colType: 'TEXT' },
+    { colName: 'DFlex',                colType: 'TEXT' },
+    { colName: 'DGenus',               colType: 'TEXT' },
+    { colName: 'DGrammatik',           colType: 'TEXT' },
+    { colName: 'DSempraez',            colType: 'TEXT' },
+    { colName: 'DStichwort',           colType: 'TEXT' },
 ];
 
 let db;
@@ -48,8 +48,8 @@ function prepareAndCleanDb() {
     // create used columns
     const columnDef = columnList.map(column => column.colName + ' ' + column.colType).join(", ");
     db.exec("CREATE TABLE " + TABLE_PUTER + "(" +columnDef + ");");
-    db.exec("CREATE INDEX puter_StichwortR_index ON puter (StichwortR COLLATE NOCASE);");
-    db.exec("CREATE INDEX puter_StichwortD_index ON puter (StichwortD COLLATE NOCASE);");
+    db.exec("CREATE INDEX puter_RStichwort_index ON puter (RStichwort COLLATE NOCASE);");
+    db.exec("CREATE INDEX puter_DStichwort_index ON puter (DStichwort COLLATE NOCASE);");
 
     // creating virtual fts5 table. Used options:
     // lemma is the search term. content sets the content to another table, content_rowid defines what column that identifies the data in the data-table, columsize defines, that values are not stored seperately in the virtual table
@@ -114,45 +114,45 @@ function parseData() {
             
             switch(idx) {
                 case 1:
-                    lemma['FlexD'] = value.rawText;
+                    lemma['DFlex'] = value.rawText;
                 case 3:
-                    lemma['FlexR'] = value.rawText;
+                    lemma['RFlex'] = value.rawText;
                 case 5:
                     lemma['fStichwortRAnzeige'] = value.rawText;
                 case 7:
-                    lemma['GenusD'] = value.rawText;
+                    lemma['DGenus'] = value.rawText;
                 case 9:
-                    lemma['GenusR'] = value.rawText;
+                    lemma['RGenus'] = value.rawText;
                 case 11:
                     lemma['Grammatik_kategorieD'] = value.rawText;
                 case 13:
-                    lemma['GrammatikD'] = value.rawText;
+                    lemma['DGrammatik'] = value.rawText;
                 case 15:
-                    lemma['GrammatikR'] = value.rawText;
+                    lemma['RGrammatik'] = value.rawText;
                 case 17:
-                    lemma['SemindD'] = value.rawText;
+                    lemma['DSemind'] = value.rawText;
                 case 19:
-                    lemma['SemindR'] = value.rawText;
+                    lemma['RSemind'] = value.rawText;
                 case 21:
-                    lemma['SempraezD'] = value.rawText;
+                    lemma['DSempraez'] = value.rawText;
                 case 23:
-                    lemma['SempraezR'] = value.rawText;
+                    lemma['RSempraez'] = value.rawText;
                 case 25:
-                    lemma['SortD'] = value.rawText;
+                    lemma['DSort'] = value.rawText;
                 case 27:
-                    lemma['SortR'] = value.rawText;
+                    lemma['RSort'] = value.rawText;
                 case 29:
-                    lemma['StichwortD'] = value.rawText;
+                    lemma['DStichwort'] = value.rawText;
                 case 31:
-                    lemma['StichwortR'] = value.rawText;
+                    lemma['RStichwort'] = value.rawText;
                 case 33:
-                    lemma['StatusD'] = value.rawText;
+                    lemma['DStatus'] = value.rawText;
                 case 35:
-                    lemma['StatusR'] = value.rawText;
+                    lemma['RStatus'] = value.rawText;
             }
         });
 
-        if (!!lemma['StichwortR'] && !!lemma['StichwortD']) {
+        if (!!lemma['RStichwort'] && !!lemma['DStichwort']) {
             insertLemma(lemma);
             // insertIndex(lemma);
         }
