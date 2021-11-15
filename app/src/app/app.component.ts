@@ -28,7 +28,7 @@ export class AppComponent {
       }
       setTimeout(() => {
         SplashScreen.hide();
-      }, 5000);
+      }, 2000);
       this.sqliteService.initializePlugin().then(async (ret) => {
         this.sqlitePluginInitialized = ret;
         if (Capacitor.getPlatform() === 'web') {
