@@ -42,9 +42,9 @@
     },
     "MODE": {
       "TITLE": "Modus da tschertgar",
-      "START": "Cumenzament dal pled",
+      "START": "Cumenzament dal pled (Standard)",
       "MATCH": "Exact",
-      "SUBSTRING": "Part",
+      "SUBSTRING": "Dapertut (il pli blers resultats)",
       "END": "Fin dal pled"
     },
     "VERBS": {
@@ -52,10 +52,10 @@
       "INCLUDE": "Includer en la tschertga"
     },
     "OTHER": {
-      "TITLE": "Auter",
+      "TITLE": "Info",
       "FEEDBACK": "Resun",
       "HELP": "Agid",
-      "INFO": "Info"
+      "INFO": "Impressum"
     }
   },
   "PAGES": {
