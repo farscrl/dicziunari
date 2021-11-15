@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { CopyService } from '../../../services/copy.service';
 import { SearchDirection, Locale, Dictionary } from 'src/data/search';
 import { Router } from '@angular/router';
@@ -6,13 +6,14 @@ import { ConfigService } from '../../../services/config.service';
 import { FavouritesService } from '../../../services/favourites.service';
 import { ToastService } from '../../../services/toast.service';
 import { SearchService } from '../../../services/search.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-lemma-display',
   templateUrl: './lemma-display.component.html',
   styleUrls: ['./lemma-display.component.scss'],
 })
-export class LemmaDisplayComponent implements OnInit {
+export class LemmaDisplayComponent implements OnInit, OnDestroy {
   @Input()
   public lemma: any;
 
@@ -38,6 +39,8 @@ export class LemmaDisplayComponent implements OnInit {
 
   public selectedLocale: Locale = Locale.rm;
 
+  private localeSubscription: Subscription;
+
   constructor(
     private copyService: CopyService,
     private router: Router,
@@ -48,11 +51,15 @@ export class LemmaDisplayComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.configService.getLocaleObservable().subscribe((locale) => {
+    this.localeSubscription = this.configService.getLocaleObservable().subscribe((locale) => {
       this.selectedLocale = locale;
     });
 
     this.completeLemma = this.isSursilvan ? this.lemma.Corp : '';
+  }
+
+  ngOnDestroy(): void {
+    this.localeSubscription.unsubscribe();
   }
 
   goToDetail() {

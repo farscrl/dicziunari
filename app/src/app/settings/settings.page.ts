@@ -1,27 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ConfigService } from '../services/config.service';
 import { TranslateService } from '@ngx-translate/core';
 import { NavController } from '@ionic/angular';
 import { Locale, SearchMode } from 'src/data/search';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-settings',
   templateUrl: 'settings.page.html',
   styleUrls: ['settings.page.scss'],
 })
-export class SettingsPage implements OnInit {
+export class SettingsPage implements OnInit, OnDestroy {
   appLanguage: Locale | undefined;
   searchMode: SearchMode;
   includeVerbs: boolean;
+
+  private searchModeSubscription: Subscription;
 
   constructor(private configService: ConfigService, private translateService: TranslateService, private navCtrl: NavController) {}
 
   ngOnInit() {
     this.appLanguage = this.configService.getSelectedLocale();
-    this.configService.getSearchModeObservable().subscribe((value) => {
+    this.searchModeSubscription = this.configService.getSearchModeObservable().subscribe((value) => {
       this.searchMode = value;
     });
     this.includeVerbs = this.configService.isIncludeVerbs();
+  }
+
+  ngOnDestroy(): void {
+    this.searchModeSubscription.unsubscribe();
   }
 
   languageChanged() {

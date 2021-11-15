@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { FavouritesService } from '../services/favourites.service';
 
 @Component({
@@ -6,7 +7,7 @@ import { FavouritesService } from '../services/favourites.service';
   templateUrl: 'favourites.page.html',
   styleUrls: ['favourites.page.scss'],
 })
-export class FavouritesPage implements OnInit {
+export class FavouritesPage implements OnInit, OnDestroy {
   public favouritesRumantschGrischun = [];
   public favouritesSursilvan = [];
   public favouritesSutsilvan = [];
@@ -16,10 +17,16 @@ export class FavouritesPage implements OnInit {
 
   public isEmpty = false;
 
+  private favouritesReadySubscription: Subscription;
+
   constructor(private favouritesService: FavouritesService) {}
 
   ngOnInit(): void {
     this.reloadFavourites();
+  }
+
+  ngOnDestroy(): void {
+    this.favouritesReadySubscription.unsubscribe();
   }
 
   ionViewWillEnter() {
@@ -36,7 +43,7 @@ export class FavouritesPage implements OnInit {
   }
 
   private reloadFavourites() {
-    this.favouritesService.isReadyObservable().subscribe((ready) => {
+    this.favouritesReadySubscription = this.favouritesService.isReadyObservable().subscribe((ready) => {
       if (ready) {
         this.favouritesService.loadFavourites().then((data) => {
           this.reset();

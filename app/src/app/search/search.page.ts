@@ -1,17 +1,18 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { ConfigService } from '../services/config.service';
 import { IonContent, IonInfiniteScroll, IonSelect } from '@ionic/angular';
 import { Dictionary, SearchDirection } from 'src/data/search';
 import { Capacitor } from '@capacitor/core';
 import { Keyboard } from '@capacitor/keyboard';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-search',
   templateUrl: 'search.page.html',
   styleUrls: ['search.page.scss'],
 })
-export class SearchPage implements OnInit {
+export class SearchPage implements OnInit, OnDestroy {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
   @ViewChild(IonSelect, { static: false }) dictionarySelect: IonSelect;
   @ViewChild(IonContent, { static: false }) private content: IonContent;
@@ -23,22 +24,32 @@ export class SearchPage implements OnInit {
 
   private hasScrollbar = false;
 
+  private dictionarySubscription: Subscription;
+  private searchDirectionSubscription: Subscription;
+  private searchModeSubscription: Subscription;
+
   constructor(private searchService: SearchService, private configService: ConfigService) {}
 
   ngOnInit() {
     this.selectedDictionary = this.configService.getSelectedDictionary();
     this.searchDirection = this.configService.getSearchDirection();
-    this.configService.getDictionaryObservable().subscribe((dictionary) => {
+    this.dictionarySubscription = this.configService.getDictionaryObservable().subscribe((dictionary) => {
       this.selectedDictionary = dictionary;
       this.search();
     });
-    this.configService.getSearchDirectionObservable().subscribe((searchDirection) => {
+    this.searchDirectionSubscription = this.configService.getSearchDirectionObservable().subscribe((searchDirection) => {
       this.searchDirection = searchDirection;
       this.search();
     });
-    this.configService.getSearchModeObservable().subscribe((searchMode) => {
+    this.searchModeSubscription = this.configService.getSearchModeObservable().subscribe((searchMode) => {
       this.search();
     });
+  }
+
+  ngOnDestroy(): void {
+    this.dictionarySubscription.unsubscribe();
+    this.searchDirectionSubscription.unsubscribe();
+    this.searchModeSubscription.unsubscribe();
   }
 
   changeDictionary() {
