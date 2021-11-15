@@ -28,7 +28,7 @@ export class AppComponent {
       }
       setTimeout(() => {
         SplashScreen.hide();
-      }, 5000);
+      }, 2000);
     });
     this.initTranslateService();
     this.sqliteService.initializePlugin().then((ret) => {
