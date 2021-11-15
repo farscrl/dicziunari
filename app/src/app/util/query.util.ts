@@ -39,23 +39,23 @@ export class QueryUtil {
     switch(dictionary) {
       case Dictionary.sursilv:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM sursilvan WHERE id LIKE "' + id + '"';
+        return 'SELECT * FROM sursilvan WHERE id = ' + id;
       case Dictionary.sutsilv:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM sutsilvan WHERE id LIKE "' + id + '"';
+        return 'SELECT * FROM sutsilvan WHERE id = ' + id;
       case Dictionary.surm:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM surmiran WHERE id LIKE "' + id + '"';
+        return 'SELECT * FROM surmiran WHERE id = ' + id;
       case Dictionary.puter:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM puter WHERE id LIKE "' + id + '"';
+        return 'SELECT * FROM puter WHERE id = ' + id;
       case Dictionary.vall:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM vallader WHERE id LIKE "' + id + '"';
+        return 'SELECT * FROM vallader WHERE id = ' + id;
       case Dictionary.rumgrischun:
       default:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM rumgr WHERE id LIKE "' + id + '"';
+        return 'SELECT * FROM rumgr WHERE id = ' + id;
     }
   }
 
