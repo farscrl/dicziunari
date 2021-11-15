@@ -42,9 +42,9 @@
     },
     "MODE": {
       "TITLE": "Suchmodus",
-      "START": "Wortanfang",
+      "START": "Wortanfang (Standard)",
       "MATCH": "Exakte Übereinstimmung",
-      "SUBSTRING": "Teilstring",
+      "SUBSTRING": "Überall (am meisten Resultate)",
       "END": "Wortende"
     },
     "VERBS": {
@@ -52,10 +52,10 @@
       "INCLUDE": "In die Suche einbeziehen"
     },
     "OTHER": {
-      "TITLE": "Sonstiges",
+      "TITLE": "Info",
       "FEEDBACK": "Feedback",
       "HELP": "Hilfe",
-      "INFO": "Info"
+      "INFO": "Impressum"
     }
   },
   "PAGES": {
