@@ -65,13 +65,6 @@ export class LemmaDisplayComponent implements OnInit {
 
   async addFavorite() {
     this.searchService.getDetails(this.lemma.id).then(async (lemma) => {
-      if (lemma.StichwortR) {
-        lemma.RStichwort = lemma.StichwortR;
-      }
-      if (lemma.StichwortD) {
-        lemma.DStichwort = lemma.StichwortD;
-      }
-
       this.favouritesService.addFavorite(this.dictionary, lemma);
       await this.toastService.showNotification('SEARCH.RESULTS.COPIED');
     });
@@ -97,5 +90,27 @@ export class LemmaDisplayComponent implements OnInit {
 
   get isVerb() {
     return !!this.lemma.preschentsing3;
+  }
+
+  get dGramm() {
+    let dGramm = '';
+    if (this.lemma.DGenus) {
+      dGramm += this.lemma.DGenus + ' ';
+    }
+    if (this.lemma.DGrammatik) {
+      dGramm += this.lemma.DGrammatik + ' ';
+    }
+    return dGramm.trim();
+  }
+
+  get rGramm() {
+    let rGramm = '';
+    if (this.lemma.RGenus) {
+      rGramm += this.lemma.RGenus + ' ';
+    }
+    if (this.lemma.RGrammatik) {
+      rGramm += this.lemma.RGrammatik + ' ';
+    }
+    return rGramm.trim();
   }
 }

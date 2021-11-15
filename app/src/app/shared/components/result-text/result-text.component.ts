@@ -10,6 +10,12 @@ export class ResultTextComponent implements OnInit {
   public text: string;
 
   @Input()
+  public flex: string;
+
+  @Input()
+  public grammar: string;
+
+  @Input()
   public searchString: string;
 
   @Output()

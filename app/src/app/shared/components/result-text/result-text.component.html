@@ -1,5 +1,9 @@
 <div class="env">
   <ion-icon src="assets/icon/redirect.svg" *ngIf="isRedirect"></ion-icon>
-  <span *ngIf="isRedirect" [innerHtml]="displayText | highlight: searchString" class="link" (click)="changeSearchTerm.emit(displayText)"></span>
-  <span *ngIf="!isRedirect" [innerHtml]="displayText | highlight: searchString"></span>
+  <div>
+    <span *ngIf="isRedirect" [innerHtml]="displayText | highlight: searchString" class="link" (click)="changeSearchTerm.emit(displayText)"></span>
+    <span *ngIf="!isRedirect" [innerHtml]="displayText | highlight: searchString"></span>
+    <span *ngIf="flex"> {{ flex }}</span>
+    <span class="grammar" *ngIf="grammar && grammar.replace(' ', '') != ''"> [{{ grammar }}]</span>
+  </div>
 </div>
