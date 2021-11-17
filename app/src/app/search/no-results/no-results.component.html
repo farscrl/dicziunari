@@ -12,7 +12,7 @@
       <ion-button (click)="changeSearchMode()">{{ 'SEARCH.NO_RESULTS.BUTTON_CHANGE_SEARCH_MODE' | translate }}</ion-button>
       <ion-item style="display: none;">
         <ion-label>{{ "SETTINGS.MODE.TITLE" | translate}}</ion-label>
-        <ion-select [value]="searchMode" #searchModeSelect (ionChange)="valueChanged($event)">
+        <ion-select [value]="searchMode" #searchModeSelect (ionChange)="valueChanged($event)" [cancelText]="'LABELS.CANCEL' | translate" [okText]="'LABELS.OK' | translate">
           <ion-select-option value="start">{{ "SETTINGS.MODE.START" | translate}}</ion-select-option>
           <ion-select-option value="match">{{ "SETTINGS.MODE.MATCH" | translate}}</ion-select-option>
           <ion-select-option value="substring">{{ "SETTINGS.MODE.SUBSTRING" | translate}}</ion-select-option>
