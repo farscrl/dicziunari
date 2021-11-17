@@ -80,5 +80,9 @@
     "FUTUR_TENSE": "Futur",
     "IMPERATIVE": "Imperativ",
     "GERUND": "Gerundi"
+  },
+  "LABELS": {
+    "OK": "OK",
+    "CANCEL": "Interrumper"
   }
 }
