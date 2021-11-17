@@ -31,8 +31,8 @@
   "FAVOURITES": {
     "TITLE": "Gespeichert",
     "NO_FAVOURITES": {
-      "TITLE": "Es ist noch leer hier",
-      "INTRO": "Es wurden noch keine Einträge gespeichert. Auf der Suchseite können diese mittels einer Fingergeste dieser Liste hier hinzugefügt werden."
+      "PART1": "Sie haben noch keine Wörter in den Favoriten gespeichert.",
+      "PART2": "Um ein Wort zu speichern, swipen Sie das gewünschte Wort in den Suchresultaten nach links und drücken Sie dann auf das Stern-Symbol."
     }
   },
   "SETTINGS": {

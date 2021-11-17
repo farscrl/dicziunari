@@ -31,8 +31,8 @@
   "FAVOURITES": {
     "TITLE": "Memorisà",
     "NO_FAVOURITES": {
-      "TITLE": "Anc vid...",
-      "INTRO": "Ti n'has anc memorisà naginas endataziuns. Ti pos agiuntar endataziuns a questa glista cun ina gesta cun il det sin la pagina da tschertgar."
+      "PART1": "Ti n'has anc memorisà nagins pleds en ils favorits.",
+      "PART2": "Per memorisar in pled, swipar a sanestra sin il pled giavischà en ils resultats da tschertgar e tutgar l'icona da la staila."
     }
   },
   "SETTINGS": {
