@@ -23,8 +23,14 @@ export class ToastService {
   private async showToast(stringId: string, color: string) {
     const toast = await this.toastController.create({
       color,
-      duration: 3000,
+      duration: 2000,
       message: this.translateService.instant(stringId),
+      buttons: [
+        {
+          text: 'OK',
+          role: 'cancel',
+        },
+      ],
     });
 
     await toast.present();
