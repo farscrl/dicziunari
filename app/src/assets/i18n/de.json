@@ -1,7 +1,7 @@
 {
   "MENU": {
     "SEARCH": "Suche",
-    "FAVOURITES": "Gespeichert",
+    "FAVOURITES": "Favoriten",
     "SETTINGS": "Einstellungen"
   },
   "SEARCH": {
@@ -13,26 +13,26 @@
     },
     "DE": "Deutsch",
     "RESULTS": {
-      "SAVE": "Speichern",
+      "SAVE": "Merken",
       "COPY": "Kopieren",
       "DELETE": "Löschen",
-      "COPIED": "Eintrag kopiert",
-      "SAVED": "Eintrag gespeichert",
+      "COPIED": "Eintrag in die Zwischenablage kopiert",
+      "SAVED": "Eintrag zu den Favoriten kopiert",
       "DELETED": "Eintrag gelöscht"
     },
     "NO_RESULTS": {
       "TITLE": "Hoppla!",
-      "INTRO": "Ihre Suche führte zu keinem Resultat. Möchten Sie den Suchmodus ändern?",
+      "INTRO": "Diese Suche führt zu keinem Resultat. Soll der Suchmodus geändert werden?",
       "BUTTON_CHANGE_SEARCH_MODE": "Suchmodus ändern",
-      "NOTE": "Der Suchmodus kann jederzeit in den Einstellungen geändert werden"
+      "NOTE": "Der Suchmodus kann jederzeit in den Einstellungen geändert werden."
     },
     "LOADING_DATA": "Weitere Ergebnisse werden geladen"
   },
   "FAVOURITES": {
-    "TITLE": "Gespeichert",
+    "TITLE": "Favoriten",
     "NO_FAVOURITES": {
-      "PART1": "Sie haben noch keine Wörter in den Favoriten gespeichert.",
-      "PART2": "Um ein Wort zu speichern, swipen Sie das gewünschte Wort in den Suchresultaten nach links und drücken Sie dann auf das Stern-Symbol."
+      "PART1": "Es wurden noch keine Wörter in den Favoriten gespeichert.",
+      "PART2": "Um ein Wort hinzuzufügen, das gewünschte Wort in den Suchresultaten nach links swipen und dann auf das Stern-Symbol drücken."
     }
   },
   "SETTINGS": {
@@ -67,13 +67,13 @@
       "TITLE": "Hilfe"
     },
     "INFO": {
-      "TITLE": "Informationen"
+      "TITLE": "Info"
     }
   },
   "CONJUGATION": {
     "TITLE": "Konjugation",
     "PRESENT_TENSE": "Präsens",
-    "PAST_TENSE": "Präteritum",
+    "PAST_TENSE": "Ïmperfekt",
     "PAST_PARTICIPLE": "Partizip Perfekt",
     "SUBJUNCTIVE": "Konjunktiv",
     "CONDITIONAL": "Konditional",
