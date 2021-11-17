@@ -16,7 +16,7 @@ export class SearchService {
 
   private searchLemma = '';
   private currentPage = 0;
-  private pageSize = 10;
+  private pageSize = 20;
   private hasMoreResults = true;
 
   constructor(
