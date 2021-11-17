@@ -133,6 +133,7 @@ export class SearchPage implements OnInit, OnDestroy {
 
   async checkForScrollbar() {
     const scrollElement = await this.content.getScrollElement();
-    this.hasScrollbar = scrollElement.scrollHeight > scrollElement.clientHeight;
+    // 100 is the height of the ion-infinite-scroll-content
+    this.hasScrollbar = scrollElement.scrollHeight > scrollElement.clientHeight + 100;
   }
 }
