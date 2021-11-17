@@ -1,8 +1,8 @@
 {
   "MENU": {
     "SEARCH": "Tschertgar",
-    "FAVOURITES": "Memorisà",
-    "SETTINGS": "Preferenzas"
+    "FAVOURITES": "Favurits",
+    "SETTINGS": "Parameters"
   },
   "SEARCH": {
     "TITLE": "Tschertgar",
@@ -13,38 +13,38 @@
     },
     "DE": "Tudestg",
     "RESULTS": {
-      "SAVE": "Memorisar",
+      "SAVE": "Favurisar",
       "COPY": "Copiar",
       "DELETE": "Stizzar",
       "COPIED": "Copià l'endataziun",
-      "SAVED": "Memorisà l'endataziun",
+      "SAVED": "Favurisà l'endataziun",
       "DELETED": "Stizzà l'endataziun"
     },
     "NO_RESULTS": {
       "TITLE": "Hopla!",
-      "INTRO": "Nagins resultats per tia tschertga. Vuls ti midar il modus da tschertgar?",
+      "INTRO": "Nagins resultats per questa tschertga. Midar il modus da tschertgar?",
       "BUTTON_CHANGE_SEARCH_MODE": "Midar modus da tschertgar",
-      "NOTE": "Il modus da tschertgar pos ti era adina midar en las preferenzas"
+      "NOTE": "Il modus da tschertgar pon ins adina era midar en ils parameters."
     },
     "LOADING_DATA": "Chargiar ulteriurs resultats"
   },
   "FAVOURITES": {
-    "TITLE": "Memorisà",
+    "TITLE": "Favurits",
     "NO_FAVOURITES": {
-      "PART1": "Ti n'has anc memorisà nagins pleds en ils favorits.",
-      "PART2": "Per memorisar in pled, swipar a sanestra sin il pled giavischà en ils resultats da tschertgar e tutgar l'icona da la staila."
+      "PART1": "I n'èn anc vegnids favurisads nagins pleds per questa glista.",
+      "PART2": "Per favurisar in pled, stuschar a sanestra il pled giavischà en ils resultats da tschertgar e smatgar sin l'icona cun la staila."
     }
   },
   "SETTINGS": {
-    "TITLE": "Preferenzas",
+    "TITLE": "Parameters",
     "LANGUAGE": {
       "TITLE": "Lingua da l'app"
     },
     "MODE": {
       "TITLE": "Modus da tschertgar",
-      "START": "Cumenzament dal pled (Standard)",
-      "MATCH": "Exact",
-      "SUBSTRING": "Dapertut (il pli blers resultats)",
+      "START": "Cumenzament dal pled (standard)",
+      "MATCH": "Correspundenza exacta",
+      "SUBSTRING": "Dapertut (ils pli blers resultats)",
       "END": "Fin dal pled"
     },
     "VERBS": {
@@ -74,7 +74,7 @@
     "TITLE": "Conjugaziun",
     "PRESENT_TENSE": "Preschent",
     "PAST_TENSE": "Imperfect",
-    "PAST_PARTICIPLE": "Particip Perfect",
+    "PAST_PARTICIPLE": "Particip perfect",
     "SUBJUNCTIVE": "Conjunctiv",
     "CONDITIONAL": "Cundiziunal",
     "FUTUR_TENSE": "Futur",
