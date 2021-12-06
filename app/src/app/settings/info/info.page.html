@@ -9,12 +9,93 @@
 </ion-header>
 
 <ion-content>
-  <div class="main-content">
+  <div class="main-content" *ngIf="selectedLocale === 'de'">
     <p>
-      Team / Kontakte / Rechtliches
+      Version: {{ appVersion }}
     </p>
     <p>
-      App-Version: {{ appVersion }}
+      «Dicziunari» wurde von <a href="https://www.fardigital.ch" target="_blank">far GmbH</a> (Programmierung) und <a
+        href="https://www.davidbuehler.ch" target="_blank">David Bühler – Visuelle Gestaltung</a> (Design) erstellt.
+    </p>
+    <p>
+      Programmierung und Konzept: Gion-Andri Cantieni<br>
+      UI/Grafik und Konzept: David Bühler<br>
+      Projektleitung und Konzept: Martin Cantieni
+    </p>
+    <p>
+      Die Entwicklung dieser App wurde ermöglicht durch die finanzielle Unterstützung von:<br>
+      – Sprachenförderung des Kantons Graubünden<br>
+      – Lia Rumantscha<br>
+      – Uniun Rumantscha Grischun Central<br>
+      – Uniun da las Rumantschas e dals Rumantschs en la Bassa<br>
+      – Biblioteca Engiadinaisa<br>
+      – Graubündner Kantonalbank<br>
+      – Willi Muntwyler-Stiftung<br>
+      – Stiftung Jacques Bischofberger<br>
+      – Quarta Lingua<br>
+      – Fundaziun Anton Cadonau pil romontsch en Surselva
+    </p>
+
+    <h2>Quellcode und rechtliche Hinweise</h2>
+    <p>
+      Der Quellcode der App «Dicziunari» steht auf <a href="https://github.com/farscrl/dicziunari"
+        target="_blank">GitHub</a> als freie Software unter der MIT-Lizenz zur Verfügung.
+    </p>
+    <p>
+      Für die Wörterbücher gilt folgendes:<br><br>
+      Rumantsch Grischun, Version 6.12.2021<br>
+      © Lia Rumantscha / pledarigrond.ch / CC BY 4.0<br><br>
+      Surmiran und Sutsilvan, Version 3.12.2021<br>
+      © Lia Rumantscha / pledarigrond.ch<br><br>
+      Sursilvan, Version 2008<br>
+      © Lia Rumantscha / vocabularisursilvan.ch<br><br>
+      Vallader und Puter, Version 2011<br>
+      © 2021 Lehrmittel Graubünden<br><br>
+    </p>
+  </div>
+
+  <div class="main-content" *ngIf="selectedLocale === 'rm'">
+    <p>
+      Version: {{ appVersion }}
+    </p>
+    <p>
+      «Dicziunari» è vegnì creà da <a href="https://www.fardigital.ch" target="_blank">far ScRL</a> (programmaziun) e
+      <a href="https://www.davidbuehler.ch" target="_blank">David Bühler – Visuelle Gestaltung</a> (design).
+    </p>
+    <p>
+      Programmaziun e concept: Gion-Andri Cantieni<br>
+      UI/grafica e concept: David Bühler<br>
+      Manader dal project e concept: Martin Cantieni
+    </p>
+    <p>
+      Il svilup da questa app è stà pussaivel grazia al sustegn finanzial da:<br>
+      – Promoziun da linguas dal chantun Grischun<br>
+      – Lia Rumantscha<br>
+      – Uniun Rumantscha Grischun Central<br>
+      – Uniun da las Rumantschas e dals Rumantschs en la Bassa<br>
+      – Biblioteca Engiadinaisa<br>
+      – Banca Chantunala Grischuna<br>
+      – Fundaziun Willi Muntwyler<br>
+      – Fundaziun Jacques Bischofberger<br>
+      – Quarta Lingua<br>
+      – Fundaziun Anton Cadonau pil romontsch en Surselva
+    </p>
+
+    <h2>Code da funtauna ed indicaziuns giuridicas</h2>
+    <p>
+      Il code da funtauna da l’app «Dicziunari» stat a disposiziun sco software libra tenor la licenza MIT sin <a
+        href="https://github.com/farscrl/dicziunari" target="_blank">GitHub</a>.
+    </p>
+    <p>
+      Per ils dicziunaris vala il suandant:<br><br>
+      Rumantsch Grischun, versiun 6-12-2021<br>
+      © Lia Rumantscha / pledarigrond.ch / CC BY 4.0<br><br>
+      Surmiran e Sutsilvan, versiun 3-12-2021<br>
+      © Lia Rumantscha / pledarigrond.ch<br><br>
+      Sursilvan, versiun 2008<br>
+      © Lia Rumantscha / vocabularisursilvan.ch<br><br>
+      Vallader e Puter, versiun 2011<br>
+      © 2021 Meds d'instrucziun dal Grischun<br><br>
     </p>
   </div>
 </ion-content>

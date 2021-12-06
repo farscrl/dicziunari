@@ -9,22 +9,49 @@
 </ion-header>
 
 <ion-content>
-  <div class="main-content">
+  <div class="main-content" *ngIf="selectedLocale === 'de'">
     <p>
-      Wir freuen uns über <a href="mailto:gion-andri@cantieni.info">Rückmeldungen</a> und Verbesserungsvorschläge zur App «Dicziunari».
+      Wir freuen uns über Rückmeldungen und Verbesserungsvorschläge zur App «Dicziunari» via <a
+        href="mailto:app@dicziunari.ch?subject=Feedback zur App «Dicziunari»">app@dicziunari.ch</a>.
     </p>
     <p>
-      Die Lia Rumantscha und der Lehrmittelverlag Graubünden haben freundlicherweise die Daten der Wörterbücher zur Verfügung gestellt.
-      Für inhaltliche Änderungsvorschläge, die die Sprachdaten betreffen, bitte direkt die Verantwortlichen der Wörterbücher kontaktieren.
+      Die Lia Rumantscha und der Lehrmittelverlag Graubünden haben freundlicherweise die Daten der Wörterbücher zur
+      Verfügung gestellt. Für inhaltliche Änderungsvorschläge, die die Sprachdaten betreffen, bitte direkt die
+      Verantwortlichen der Wörterbücher kontaktieren.
     </p>
     <p>
-      Für die Wörterbücher in Rumantsch Grischun, sowie für die Idiome Sursilvan, Sutsilvan und Surmiran ist die Lia Rumantscha zuständig.
-      Allfällige Änderungsvorschläge und Korrekturen können über das entsprechende Formular auf pledarigrond.ch eingereicht werden.<br>
-      Änderungen an den Daten des Pledari Grond werden jedoch erst mit dem nächsten Update der App im «Dicziunari» verfügbar sein.
+      Für die Wörterbücher in Rumantsch Grischun, sowie für die Idiome Sursilvan, Sutsilvan und Surmiran ist die Lia
+      Rumantscha zuständig. Allfällige Änderungsvorschläge und Korrekturen können über das entsprechende Formular auf
+      <a href="http://www.pledarigrond.ch" target="_blank">www.pledarigrond.ch</a> eingereicht werden.<br>
+      Änderungen an den Daten des Pledari Grond werden jedoch erst mit dem nächsten Update der App im «Dicziunari»
+      verfügbar sein.
+
     </p>
     <p>
       Die Wörterbücher der Idiome Puter und Vallader werden in dieser App aus rechtlichen Gründen nicht aktualisiert.
     </p>
   </div>
-</ion-content>
 
+  <div class="main-content" *ngIf="selectedLocale === 'rm'">
+    <p>
+      Nus ans allegrain da resuns e propostas per optimaziuns da l’app «Dicziunari» via <a
+        href="mailto:app@dicziunari.ch?subject=Resun app «Dicziunari»">app@dicziunari.ch</a>.
+    </p>
+    <p>
+      La Lia Rumantscha e la chasa editura per meds d'instrucziun dal Grischun han mess a disposiziun las datas dals
+      dicziunaris. Per propostas da midadas che concernan las datas linguisticas, supplitgain nus da contactar
+      directamain las persunas responsablas per ils dicziunaris.
+    </p>
+    <p>
+      Per ils dicziunaris dal rumantsch grischun ed ils idioms sursilvan, sutsilvan e surmiran è la Lia Rumantscha
+      responsabla. Eventualas propostas per midadas e correcturas pon ins inoltrar cun agid dal formular correspundent
+      sin <a href="http://www.pledarigrond.ch" target="_blank">www.pledarigrond.ch</a>.<br>
+      Midadas en il Pledari Grond vegnan dentant pir integradas en l’app «Dicziunari» cun la proxima actualisaziun da
+      l’app.
+
+    </p>
+    <p>
+      Ils dicziunaris dals idioms puter e vallader na vegnan per motivs giurics betg actualisads en questa app.
+    </p>
+  </div>
+</ion-content>
