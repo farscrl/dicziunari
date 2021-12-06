@@ -22,7 +22,8 @@
     },
     "NO_RESULTS": {
       "TITLE": "Hopla!",
-      "INTRO": "Nagins resultats per questa tschertga. Midar il modus da tschertgar?",
+      "INTRO": "Nagins resultats per questa tschertga. Midar la direcziun da tschertgar",
+      "INTRO2": "u midar il modus da tschertgar po dar dapli resultats.",
       "BUTTON_CHANGE_SEARCH_MODE": "Midar modus da tschertgar",
       "NOTE": "Il modus da tschertgar pon ins adina era midar en ils parameters."
     },
