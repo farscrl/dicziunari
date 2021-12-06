@@ -15,7 +15,8 @@
         </ion-col>
         <ion-col size="5">
           <ng-container>
-            <div class="idiom" *ngIf="selectedDictionary === 'rumgrischun'" (click)="changeDictionary()">Rumantsch Grischun</div>
+            <div class="idiom" *ngIf="selectedDictionary === 'rumgrischun'" (click)="changeDictionary()">Rumantsch
+              Grischun</div>
             <div class="idiom" *ngIf="selectedDictionary === 'sursilv'" (click)="changeDictionary()">Sursilvan</div>
             <div class="idiom" *ngIf="selectedDictionary === 'sutsilv'" (click)="changeDictionary()">Sutsilvan</div>
             <div class="idiom" *ngIf="selectedDictionary === 'surm'" (click)="changeDictionary()">Surmiran</div>
@@ -25,7 +26,8 @@
 
           <ion-item lines="none" style="display: none;">
             <ion-label>{{ 'SEARCH.DICTIONARY' | translate }}</ion-label>
-            <ion-select (ionChange)="dictionaryChanged($event)" [value]="selectedDictionary" [cancelText]="'LABELS.CANCEL' | translate" [okText]="'LABELS.OK' | translate">
+            <ion-select (ionChange)="dictionaryChanged($event)" [value]="selectedDictionary"
+              [cancelText]="'LABELS.CANCEL' | translate" [okText]="'LABELS.OK' | translate">
               <ion-select-option value="rumgrischun">Rumantsch Grischun</ion-select-option>
               <ion-select-option value="sursilv">Sursilvan</ion-select-option>
               <ion-select-option value="sutsilv">Sutsilvan</ion-select-option>
@@ -40,35 +42,23 @@
   </ion-toolbar>
   <ion-toolbar>
     <form action="#" (submit)="enterHit()">
-    <ion-searchbar
-      showCancelButton="focus"
-      [(ngModel)]="searchString"
-      (ngModelChange)="search()"
-      [ngModelOptions]="{standalone: true}"
-      [placeholder]="'SEARCH.SEARCHFIELD.LABEL' | translate"
-      [cancelButtonText]="'SEARCH.SEARCHFIELD.CANCEL' | translate"
-      (keyup.enter)="enterHit()"
-    ></ion-searchbar>
-  </form>
+      <ion-searchbar showCancelButton="focus" [(ngModel)]="searchString" (ngModelChange)="search()"
+        [ngModelOptions]="{standalone: true}" [placeholder]="'SEARCH.SEARCHFIELD.LABEL' | translate"
+        [cancelButtonText]="'SEARCH.SEARCHFIELD.CANCEL' | translate" (keyup.enter)="enterHit()"></ion-searchbar>
+    </form>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" *ngIf="pleds.length > 0">
   <ion-list>
     <ng-container *ngFor="let pled of pleds">
-      <app-lemma-display
-        [lemma]="pled"
-        [searchString]="searchString"
-        [searchDirection]="searchDirection"
-        [dictionary]="selectedDictionary"
-        (changeSearchTerm)="changeSearchTerm($event)"></app-lemma-display>
+      <app-lemma-display [lemma]="pled" [searchString]="searchString" [searchDirection]="searchDirection"
+        [dictionary]="selectedDictionary" (changeSearchTerm)="changeSearchTerm($event)"></app-lemma-display>
     </ng-container>
   </ion-list>
 
   <ion-infinite-scroll threshold="10px" (ionInfinite)="loadMoreData()">
-    <ion-infinite-scroll-content
-      loadingSpinner="bubbles"
-      loadingText="{{ 'SEARCH.LOADING_DATA' | translate }}">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{ 'SEARCH.LOADING_DATA' | translate }}">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
