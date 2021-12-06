@@ -11,7 +11,7 @@ export class ConfigService {
 
   private dictionarySubject = new BehaviorSubject<Dictionary>(Dictionary.rumgrischun);
 
-  private searchDirectionSubject = new BehaviorSubject<SearchDirection>(SearchDirection.fromDe);
+  private searchDirectionSubject = new BehaviorSubject<SearchDirection>(SearchDirection.both);
 
   private searchModeSubject = new BehaviorSubject<SearchMode>(SearchMode.start);
 
