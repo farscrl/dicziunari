@@ -23,19 +23,6 @@
             <div class="idiom" *ngIf="selectedDictionary === 'puter'" (click)="changeDictionary()">Puter</div>
             <div class="idiom" *ngIf="selectedDictionary === 'vall'" (click)="changeDictionary()">Vallader</div>
           </ng-container>
-
-          <ion-item lines="none" style="display: none;">
-            <ion-label>{{ 'SEARCH.DICTIONARY' | translate }}</ion-label>
-            <ion-select (ionChange)="dictionaryChanged($event)" [value]="selectedDictionary"
-              [cancelText]="'LABELS.CANCEL' | translate" [okText]="'LABELS.OK' | translate">
-              <ion-select-option value="rumgrischun">Rumantsch Grischun</ion-select-option>
-              <ion-select-option value="sursilv">Sursilvan</ion-select-option>
-              <ion-select-option value="sutsilv">Sutsilvan</ion-select-option>
-              <ion-select-option value="surm">Surmiran</ion-select-option>
-              <ion-select-option value="puter">Puter</ion-select-option>
-              <ion-select-option value="vall">Vallader</ion-select-option>
-            </ion-select>
-          </ion-item>
         </ion-col>
       </ion-row>
     </ion-grid>

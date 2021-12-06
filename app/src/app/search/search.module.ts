@@ -9,9 +9,10 @@ import { NoResultsComponent } from './no-results/no-results.component';
 import { PlaceholderComponent } from './placeholder/placeholder.component';
 import { SearchPageRoutingModule } from './search-routing.module';
 import { SearchDetailPage } from './search-detail/search-detail.page';
+import { SearchModeModalComponent } from './search-mode-modal/search-mode-modal.component';
 
 @NgModule({
   imports: [IonicModule, CommonModule, FormsModule, SearchPageRoutingModule, TranslateModule, SharedModule],
-  declarations: [SearchPage, NoResultsComponent, PlaceholderComponent, SearchDetailPage],
+  declarations: [SearchPage, NoResultsComponent, PlaceholderComponent, SearchDetailPage, SearchModeModalComponent],
 })
-export class SearchPageModule {}
+export class SearchPageModule { }
