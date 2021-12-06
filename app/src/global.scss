@@ -42,3 +42,13 @@ mark {
 .ios ion-button {
   letter-spacing: 0 !important;
 }
+
+// width of search mode overlay
+.md .search-mode .alert-wrapper {
+  max-width: 340px !important;
+  width: 340px;
+}
+.ios .search-mode .alert-wrapper {
+  max-width: 270px !important;
+  width: 270px;
+}

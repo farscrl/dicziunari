@@ -13,7 +13,11 @@ export class NoResultsComponent implements OnInit {
 
   searchMode: SearchMode;
 
-  constructor(private configService: ConfigService) {}
+  interfaceOptions = {
+    cssClass: 'search-mode',
+  };
+
+  constructor(private configService: ConfigService) { }
 
   ngOnInit() {
     this.searchMode = this.configService.getSearchMode();
