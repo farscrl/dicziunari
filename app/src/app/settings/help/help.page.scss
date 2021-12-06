@@ -6,3 +6,44 @@ h2 {
   margin-top: 32px;
   font-weight: bold;
 }
+
+// icons in titles
+.search-direction-icon {
+  background-color: #11769d;
+  border-radius: 5px;
+  max-height: 32px;
+  width: 46px;
+  margin-bottom: -10px;
+  margin-left: 12px;
+}
+
+.favorite-icon {
+  border-radius: 30px;
+  color: white;
+  width: 36px;
+  height: 36px;
+  padding: 0px;
+  align-self: center;
+  background-color: #ffcc00;
+  margin-bottom: -10px;
+  margin-left: 12px;
+}
+
+.copy-icon {
+  border-radius: 30px;
+  color: white;
+  width: 36px;
+  height: 36px;
+  padding: 0px;
+  align-self: center;
+  background-color: #11769d;
+  margin-bottom: -10px;
+  margin-left: 12px;
+}
+
+.verb-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: -18px;
+  margin-left: 12px;
+}
