@@ -22,7 +22,8 @@
     },
     "NO_RESULTS": {
       "TITLE": "Hoppla!",
-      "INTRO": "Diese Suche führt zu keinem Resultat. Soll der Suchmodus geändert werden?",
+      "INTRO": "Diese Suche führt zu keinem Resultat. Die Änderung der Suchrichtung",
+      "INTRO2": "oder Suchmodus kann zu mehr Resultaten führen.",
       "BUTTON_CHANGE_SEARCH_MODE": "Suchmodus ändern",
       "NOTE": "Der Suchmodus kann jederzeit in den Einstellungen geändert werden."
     },

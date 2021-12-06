@@ -6,6 +6,13 @@
 
     <p>
       {{ 'SEARCH.NO_RESULTS.INTRO' | translate }}
+      <ion-icon class="search-direction-icon" src="assets/icon/direction-from-de.svg" size="large"
+        *ngIf="searchDirection === 'fromDe'"></ion-icon>
+      <ion-icon class="search-direction-icon" src="assets/icon/direction-from-rm.svg" size="large"
+        *ngIf="searchDirection === 'fromRm'"></ion-icon>
+      <ion-icon class="search-direction-icon" src="assets/icon/direction-both.svg" size="large"
+        *ngIf="searchDirection === 'both'"></ion-icon>
+      {{ 'SEARCH.NO_RESULTS.INTRO2' | translate }}
     </p>
 
     <span>
