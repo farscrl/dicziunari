@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { ConfigService } from 'src/app/services/config.service';
+import { Locale } from 'src/data/search';
 
 @Component({
   selector: 'app-help',
@@ -6,7 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./help.page.scss'],
 })
 export class HelpPage implements OnInit {
-  constructor() {}
+  public selectedLocale: Locale = Locale.rm;
 
-  ngOnInit() {}
+  private localeSubscription: Subscription;
+
+  constructor(
+    private configService: ConfigService
+  ) { }
+
+  ngOnInit() {
+    this.localeSubscription = this.configService.getLocaleObservable().subscribe((locale) => {
+      this.selectedLocale = locale;
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.localeSubscription.unsubscribe();
+  }
 }

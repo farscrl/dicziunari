@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { App } from '@capacitor/app';
 import { Capacitor } from '@capacitor/core';
+import { Subscription } from 'rxjs';
+import { ConfigService } from 'src/app/services/config.service';
+import { Locale } from 'src/data/search';
 
 @Component({
   selector: 'app-info',
@@ -10,7 +13,13 @@ import { Capacitor } from '@capacitor/core';
 export class InfoPage implements OnInit {
   public appVersion = '-';
 
-  constructor() {}
+  public selectedLocale: Locale = Locale.rm;
+
+  private localeSubscription: Subscription;
+
+  constructor(
+    private configService: ConfigService
+  ) { }
 
   ngOnInit() {
     if (Capacitor.isNativePlatform()) {
@@ -18,5 +27,13 @@ export class InfoPage implements OnInit {
         this.appVersion = info.version;
       });
     }
+
+    this.localeSubscription = this.configService.getLocaleObservable().subscribe((locale) => {
+      this.selectedLocale = locale;
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.localeSubscription.unsubscribe();
   }
 }
