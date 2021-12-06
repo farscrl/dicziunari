@@ -21,3 +21,7 @@ There is code commented out to create a table (`rumgr_idx`). This is a virtual [
 The HTML parser needs a lot of memory to run. If the node process is out of memory, it throws an error like this: `FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory`. The memory can be incresed with this command:
 
 - `export NODE_OPTIONS="--max-old-space-size=8192"` (export NODE_OPTIONS="--max-old-space-size=(X \* 1024)" #increase to Xgb)
+
+
+# Troubleshooting
+- `libtool: unrecognized option -static when building`: Libtool had a breaking change from version 2.4.2 to 2.4.6. Make sure, you have version 2.4.2 in your $PATH. See: https://github.com/nodejs/node/issues/2341 
