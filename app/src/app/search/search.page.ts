@@ -1,11 +1,12 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { ConfigService } from '../services/config.service';
-import { IonContent, IonInfiniteScroll, IonSelect } from '@ionic/angular';
+import { IonContent, IonInfiniteScroll, IonSelect, ModalController } from '@ionic/angular';
 import { Dictionary, SearchDirection } from 'src/data/search';
 import { Capacitor } from '@capacitor/core';
 import { Keyboard } from '@capacitor/keyboard';
 import { Subscription } from 'rxjs';
+import { SearchModeModalComponent } from './search-mode-modal/search-mode-modal.component';
 
 @Component({
   selector: 'app-search',
@@ -14,7 +15,6 @@ import { Subscription } from 'rxjs';
 })
 export class SearchPage implements OnInit, OnDestroy {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
-  @ViewChild(IonSelect, { static: false }) dictionarySelect: IonSelect;
   @ViewChild(IonContent, { static: false }) private content: IonContent;
 
   public searchString = '';
@@ -28,7 +28,7 @@ export class SearchPage implements OnInit, OnDestroy {
   private searchDirectionSubscription: Subscription;
   private searchModeSubscription: Subscription;
 
-  constructor(private searchService: SearchService, private configService: ConfigService) {}
+  constructor(private searchService: SearchService, private configService: ConfigService, private modalController: ModalController) { }
 
   ngOnInit() {
     this.selectedDictionary = this.configService.getSelectedDictionary();
@@ -52,8 +52,17 @@ export class SearchPage implements OnInit, OnDestroy {
     this.searchModeSubscription.unsubscribe();
   }
 
-  changeDictionary() {
-    this.dictionarySelect.open();
+  async changeDictionary() {
+    const modal = await this.modalController.create({
+      component: SearchModeModalComponent,
+      cssClass: 'search-mode',
+      componentProps: {
+        'firstName': 'Douglas',
+        'lastName': 'Adams',
+        'middleInitial': 'N'
+      }
+    });
+    return await modal.present();
   }
 
   search() {
@@ -88,10 +97,6 @@ export class SearchPage implements OnInit, OnDestroy {
         this.checkIfScreenIsFull();
       }
     });
-  }
-
-  dictionaryChanged(value) {
-    this.configService.setSelectedDictionary(value.detail.value);
   }
 
   changeSearchDirection() {

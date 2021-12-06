@@ -43,6 +43,21 @@ mark {
   letter-spacing: 0 !important;
 }
 
+// dictionary selection modal
+ion-modal {
+  --width: 270px;
+  --height: 360px;
+  --background: unset;
+
+  app-search-mode-modal{
+    border-radius: 10px !important;
+  }
+}
+.ios ion-modal {
+  --width: 250px;
+  --height: 320px;
+}
+
 // width of search mode overlay
 .md .search-mode .alert-wrapper {
   max-width: 340px !important;

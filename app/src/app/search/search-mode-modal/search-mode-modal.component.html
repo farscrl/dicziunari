@@ -1,0 +1,39 @@
+<ion-content>
+  <ion-item class="title">
+    <ion-title>{{ 'SEARCH.DICTIONARY' | translate }}</ion-title>
+  </ion-item>
+
+  <ion-list>
+    <ion-radio-group [(ngModel)]="selectedDictionary" (ionChange)="onChange($event)">
+      <ion-item lines="none">
+        <ion-label>Rumantsch Grischun</ion-label>
+        <ion-radio value="rumgrischun" [slot]="slot"></ion-radio>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Sursilvan</ion-label>
+        <ion-radio value="sursilv" [slot]="slot"></ion-radio>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Sutsilvan</ion-label>
+        <ion-radio value="sutsilv" [slot]="slot"></ion-radio>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Surmiran</ion-label>
+        <ion-radio value="surm" [slot]="slot"></ion-radio>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Puter</ion-label>
+        <ion-radio value="puter" [slot]="slot"></ion-radio>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Vallader</ion-label>
+        <ion-radio value="vall" [slot]="slot"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+</ion-content>
