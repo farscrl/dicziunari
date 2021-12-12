@@ -16,6 +16,9 @@ export class ResultTextComponent implements OnInit {
   public grammar: string;
 
   @Input()
+  public semantics: string;
+
+  @Input()
   public searchString: string;
 
   @Output()

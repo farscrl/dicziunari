@@ -3,10 +3,10 @@ const Database = require('better-sqlite3');
 const XmlStream = require('xml-stream');
 
 const DB_NAME = 'build/dicziunariSQLite.db';
-const TABLE_SUTSILVAN = 'sutsilvan';
-// const TABLE_SUTSILVAN_IDX = 'sutsilvan_idx';
-const FILE_PATH = 'data/maalr_db_dump_all_versions_3_sutsilvan.xml';
-// const FILE_PATH = 'data/maalr_db_dump_all_versions_3_sutsilvan_short.xml';
+const TABLE_RUMGR = 'rumgr';
+// const TABLE_RUMGR_IDX = 'rumgr_idx';
+const FILE_PATH = 'data/maalr_db_dump_all_versions_3_rumantschgrischun.xml';
+// const FILE_PATH = 'data/maalr_db_dump_all_versions_3_rumantschgrischun_short.xml';
 
 let processedEntries = 0;
 const columnList = [
@@ -78,24 +78,24 @@ function prepareAndCleanDb() {
     db.pragma("journal_mode=MEMORY");
     db.pragma("temp_store=MEMORY");
 
-    db.exec("DROP TABLE IF EXISTS " + TABLE_SUTSILVAN +" ;");
-    // db.exec("DROP TABLE IF EXISTS " + TABLE_SUTSILVAN_IDX + ";")
+    db.exec("DROP TABLE IF EXISTS " + TABLE_RUMGR +" ;");
+    //db.exec("DROP TABLE IF EXISTS " + TABLE_RUMGR_IDX + ";")
 
     // create used columns
     const columnDef = columnList.map(column => column.colName + ' ' + column.colType).join(", ");
-    db.exec("CREATE TABLE " + TABLE_SUTSILVAN + "(" +columnDef + ");");
-    db.exec("CREATE INDEX sutsilvan_RStichwort_index ON sutsilvan (RStichwort COLLATE NOCASE);");
-    db.exec("CREATE INDEX sutsilvan_DStichwort_index ON sutsilvan (DStichwort COLLATE NOCASE);");
+    db.exec("CREATE TABLE " + TABLE_RUMGR + "(" +columnDef + ");");
+    db.exec("CREATE INDEX rumgr_RStichwort_index ON rumgr (RStichwort COLLATE NOCASE);");
+    db.exec("CREATE INDEX rumgr_DStichwort_index ON rumgr (DStichwort COLLATE NOCASE);");
 
     // creating virtual fts5 table. Used options:
     // lemma is the search term. content sets the content to another table, content_rowid defines what column that identifies the data in the data-table, columsize defines, that values are not stored seperately in the virtual table
-    // db.exec("CREATE VIRTUAL TABLE " + TABLE_SUTSILVAN_IDX + " using fts5(lemma, content = '" + TABLE_SUTSILVAN + "', content_rowid = 'id', columnsize=0);");
+    //db.exec("CREATE VIRTUAL TABLE " + TABLE_RUMGR_IDX + " using fts5(lemma, content = '" + TABLE_RUMGR + "', content_rowid = 'id', columnsize=0);");
 
     // create prepared statement to add each lemma
     insertStatementLemma = db.prepare(
-        "INSERT INTO " + TABLE_SUTSILVAN + " ("+ columnList.map(col => col.colName).join(", ")+") " + 
+        "INSERT INTO " + TABLE_RUMGR + " ("+ columnList.map(col => col.colName).join(", ")+") " + 
         "VALUES (" + Array.from(columnList).map(column => "$"+column.colName).join(", ")+");");
-    // insertStatementIdx = db.prepare("INSERT INTO " + TABLE_SUTSILVAN_IDX + " (rowId, lemma) VALUES ($rowId, $lemma);");
+    //insertStatementIdx = db.prepare("INSERT INTO " + TABLE_RUMGR_IDX + " (rowId, lemma) VALUES ($rowId, $lemma);");
     
     // start transaction
     db.exec("BEGIN TRANSACTION;");
@@ -177,12 +177,6 @@ function parseData() {
                         break;
                     case "DFlex":
                         lemma["DFlex"] = entry["value"];
-                        break;
-                    case "RSemantik":
-                        lemma["RSemantik"] = entry["value"];
-                        break;
-                    case "DSemantik":
-                        lemma["DSemantik"] = entry["value"];
                         break;
 
                     case "preschentsing1":
@@ -317,9 +311,6 @@ function parseData() {
                     case "maalr_email":
                     case "maalr_comment":
                     case "redirect_a":
-                    case "DTags":
-                    case "RTags":
-                    case "_id":
                         // ignore fields
                         break;
                     default:
@@ -343,7 +334,7 @@ function parseData() {
 
 module.exports = {
     main: function () {
-        console.log('Start converting XML file for Sutsilvan...');
+        console.log('Start converting XML file for Rumantsch Grischun...');
         prepareAndCleanDb();
         parseData();
         
