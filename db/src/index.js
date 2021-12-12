@@ -1,4 +1,5 @@
 var rumgrJson = require('./rumgr-json');
+var rumgrXml= require('./rumgr-xml');
 var sursilvanJson = require('./sursilvan-json');
 var valladerHtml = require('./vallader-html');
 var puterHtml = require('./puter-html');
@@ -7,7 +8,7 @@ var sutsilvanXml = require('./sutsilvan-xml');
 
 switch (process.argv[2]) {
     case "rumantschgrischun":
-        rumgrJson.main();
+        rumgrXml.main();
         break;
 
     case "sursilvan":

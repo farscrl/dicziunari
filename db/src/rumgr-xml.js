@@ -179,6 +179,9 @@ function parseData() {
                         lemma["DFlex"] = entry["value"];
                         break;
 
+                    case "infinitiv":
+                        lemma["infinitiv"] = entry["value"];
+                        break;
                     case "preschentsing1":
                         lemma["preschentsing1"] = entry["value"];
                         break;
@@ -311,6 +314,9 @@ function parseData() {
                     case "maalr_email":
                     case "maalr_comment":
                     case "redirect_a":
+                    case "Bearbeitungshinweis":
+                    case "type":
+                    case "_id":
                         // ignore fields
                         break;
                     default:
