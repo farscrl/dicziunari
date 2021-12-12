@@ -15,10 +15,12 @@ const columnList = [
     // R
     { colName: 'RStichwort',         colType: 'TEXT' },
     { colName: 'RGenus',             colType: 'TEXT' },
+    { colName: 'RSempraez',          colType: 'TEXT' },
 
     // D
     { colName: 'DStichwort',         colType: 'TEXT' },
     { colName: 'DGenus',             colType: 'TEXT' },
+    { colName: 'DSempraez',          colType: 'TEXT' },
 
     // R conj
     { colName: 'infinitiv',          colType: 'TEXT' },
@@ -159,10 +161,10 @@ function parseData() {
                         lemma["RGrammatik"] = entry["value"];
                         break;
                     case "DSubsemantik":
-                        lemma["DSubsemantik"] = entry["value"];
+                        lemma["DSempraez"] = entry["value"];
                         break;
                     case "RSubsemantik":
-                        lemma["RSubsemantik"] = entry["value"];
+                        lemma["RSempraez"] = entry["value"];
                         break;
                     case "RGenus":
                         lemma["RGenus"] = entry["value"];

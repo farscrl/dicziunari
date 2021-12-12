@@ -5,11 +5,11 @@
         <ion-row *ngIf="(searchDirection === 'fromDe') || (searchDirection === 'both' && selectedLocale === 'de')">
           <ion-col size="6">
             <app-result-text [text]="lemma.DStichwort" [flex]="lemma.DFlex" [grammar]="dGramm"
-              [searchString]="searchString" (changeSearchTerm)="changeTerm($event)"></app-result-text>
+              [semantics]="lemma.DSempraez" [searchString]="searchString" (changeSearchTerm)="changeTerm($event)"></app-result-text>
           </ion-col>
           <ion-col [size]="isVerb ? 5 : 6">
             <app-result-text [text]="lemma.RStichwort" [flex]="lemma.RFlex" [grammar]="rGramm"
-              [searchString]="searchDirection === 'both' ? searchString : ''" (changeSearchTerm)="changeTerm($event)">
+              [semantics]="lemma.RSempraez" [searchString]="searchDirection === 'both' ? searchString : ''" (changeSearchTerm)="changeTerm($event)">
             </app-result-text>
           </ion-col>
           <ion-col size="1" *ngIf="isVerb" (click)="goToDetail()" class="verb">
@@ -21,11 +21,11 @@
         <ion-row *ngIf="(searchDirection === 'fromRm') || (searchDirection === 'both' && selectedLocale === 'rm')">
           <ion-col size="6">
             <app-result-text [text]="lemma.RStichwort" [flex]="lemma.RFlex" [grammar]="rGramm"
-              [searchString]="searchString" (changeSearchTerm)="changeTerm($event)"></app-result-text>
+              [semantics]="lemma.RSempraez" [searchString]="searchString" (changeSearchTerm)="changeTerm($event)"></app-result-text>
           </ion-col>
           <ion-col [size]="isVerb ? 5 : 6">
             <app-result-text [text]="lemma.DStichwort" [flex]="lemma.DFlex" [grammar]="dGramm"
-              [searchString]="searchDirection === 'both' ? searchString : ''" (changeSearchTerm)="changeTerm($event)">
+              [semantics]="lemma.DSempraez" [searchString]="searchDirection === 'both' ? searchString : ''" (changeSearchTerm)="changeTerm($event)">
             </app-result-text>
           </ion-col>
           <ion-col size="1" *ngIf="isVerb" (click)="goToDetail()" class="verb">

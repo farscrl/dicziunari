@@ -20,10 +20,12 @@ const columnList = [
     // R
     { colName: 'RStichwort',         colType: 'TEXT' },
     { colName: 'RGenus',             colType: 'TEXT' },
+    { colName: 'RSempraez',          colType: 'TEXT' },
 
     // D
     { colName: 'DStichwort',         colType: 'TEXT' },
     { colName: 'DGenus',             colType: 'TEXT' },
+    { colName: 'DSempraez',          colType: 'TEXT' },
 
     // R conj
     { colName: 'infinitiv',          colType: 'TEXT' },
