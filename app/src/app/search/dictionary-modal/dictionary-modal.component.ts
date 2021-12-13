@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ConfigService } from 'src/app/services/config.service';
-import { SearchMode } from 'src/data/search';
+import { Dictionary } from 'src/data/search';
 import { Config } from "@ionic/angular";
 
 @Component({
-  selector: 'app-search-mode-modal',
-  templateUrl: './search-mode-modal.component.html',
-  styleUrls: ['./search-mode-modal.component.scss'],
+  selector: 'app-dictionary-modal',
+  templateUrl: './dictionary-modal.component.html',
+  styleUrls: ['./dictionary-modal.component.scss'],
 })
-export class SearchModeModalComponent implements OnInit {
-  public selectedSearchMode: SearchMode;
+export class DictionaryModalComponent implements OnInit {
+
+  public selectedDictionary: Dictionary;
 
   constructor(
     private configService: ConfigService,
@@ -19,11 +20,11 @@ export class SearchModeModalComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.selectedSearchMode = this.configService.getSearchMode();
+    this.selectedDictionary = this.configService.getSelectedDictionary();
   }
 
-  onChange(searchMode) {
-    this.configService.setSearchMode(searchMode);
+  onChange(dictionary) {
+    this.configService.setSelectedDictionary(dictionary);
     this.modalController.dismiss();
   }
 

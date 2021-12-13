@@ -1,38 +1,28 @@
 <ion-content>
   <ion-item class="title">
-    <ion-title>{{ 'SEARCH.DICTIONARY' | translate }}</ion-title>
+    <ion-title>{{ 'SETTINGS.MODE.TITLE' | translate }}</ion-title>
   </ion-item>
 
   <ion-list>
-    <ion-radio-group [(ngModel)]="selectedDictionary" (ionChange)="onChange($event)">
-      <ion-item lines="none">
-        <ion-label>Rumantsch Grischun</ion-label>
-        <ion-radio value="rumgrischun" [slot]="slot"></ion-radio>
+    <ion-radio-group [(ngModel)]="selectedSearchMode">
+      <ion-item lines="none" (click)="onChange('start')">
+        <ion-label>{{ "SETTINGS.MODE.START" | translate}}</ion-label>
+        <ion-radio value="start" [slot]="slot"></ion-radio>
       </ion-item>
 
-      <ion-item lines="none">
-        <ion-label>Sursilvan</ion-label>
-        <ion-radio value="sursilv" [slot]="slot"></ion-radio>
+      <ion-item lines="none" (click)="onChange('match')">
+        <ion-label>{{ "SETTINGS.MODE.MATCH" | translate }}</ion-label>
+        <ion-radio value="match" [slot]="slot"></ion-radio>
       </ion-item>
 
-      <ion-item lines="none">
-        <ion-label>Sutsilvan</ion-label>
-        <ion-radio value="sutsilv" [slot]="slot"></ion-radio>
+      <ion-item lines="none" (click)="onChange('substring')">
+        <ion-label>{{ "SETTINGS.MODE.SUBSTRING" | translate }}</ion-label>
+        <ion-radio value="substring" [slot]="slot"></ion-radio>
       </ion-item>
 
-      <ion-item lines="none">
-        <ion-label>Surmiran</ion-label>
-        <ion-radio value="surm" [slot]="slot"></ion-radio>
-      </ion-item>
-
-      <ion-item lines="none">
-        <ion-label>Puter</ion-label>
-        <ion-radio value="puter" [slot]="slot"></ion-radio>
-      </ion-item>
-
-      <ion-item lines="none">
-        <ion-label>Vallader</ion-label>
-        <ion-radio value="vall" [slot]="slot"></ion-radio>
+      <ion-item lines="none" (click)="onChange('end')">
+        <ion-label>{{ "SETTINGS.MODE.END" | translate}}</ion-label>
+        <ion-radio value="end" [slot]="slot"></ion-radio>
       </ion-item>
     </ion-radio-group>
   </ion-list>
