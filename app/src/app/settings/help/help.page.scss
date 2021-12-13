@@ -47,3 +47,14 @@ h2 {
   margin-bottom: -18px;
   margin-left: 12px;
 }
+
+ul {
+  list-style-type: none;
+  padding-left: 18px;
+
+  li:before { 
+    content: "–" " ";
+    margin-left: -16px;
+    margin-right: 4px;
+  }
+}
