@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonSelect } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { ConfigService } from '../../services/config.service';
 import { SearchDirection, SearchMode } from 'src/data/search';
 import { Subscription } from 'rxjs';
+import { SearchModeModalComponent } from '../search-mode-modal/search-mode-modal.component';
 
 @Component({
   selector: 'app-no-results',
@@ -10,7 +11,6 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./no-results.component.scss'],
 })
 export class NoResultsComponent implements OnInit {
-  @ViewChild('searchModeSelect', { static: false }) searchModeSelectRef: IonSelect;
 
   searchMode: SearchMode;
   public searchDirection: SearchDirection;
@@ -21,7 +21,7 @@ export class NoResultsComponent implements OnInit {
 
   private searchDirectionSubscription: Subscription;
 
-  constructor(private configService: ConfigService) { }
+  constructor(private configService: ConfigService, private modalController: ModalController) { }
 
   ngOnInit() {
     this.searchMode = this.configService.getSearchMode();
@@ -34,10 +34,12 @@ export class NoResultsComponent implements OnInit {
     this.searchDirectionSubscription.unsubscribe();
   }
 
-  changeSearchMode() {
-    if (this.searchModeSelectRef) {
-      this.searchModeSelectRef.open();
-    }
+  async changeSearchMode() {
+    const modal = await this.modalController.create({
+      component: SearchModeModalComponent,
+      cssClass: 'search-mode',
+    });
+    return await modal.present();
   }
 
   valueChanged(event) {

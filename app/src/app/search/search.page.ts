@@ -6,7 +6,7 @@ import { Dictionary, SearchDirection } from 'src/data/search';
 import { Capacitor } from '@capacitor/core';
 import { Keyboard } from '@capacitor/keyboard';
 import { Subscription } from 'rxjs';
-import { SearchModeModalComponent } from './search-mode-modal/search-mode-modal.component';
+import { DictionaryModalComponent } from './dictionary-modal/dictionary-modal.component';
 
 @Component({
   selector: 'app-search',
@@ -54,13 +54,8 @@ export class SearchPage implements OnInit, OnDestroy {
 
   async changeDictionary() {
     const modal = await this.modalController.create({
-      component: SearchModeModalComponent,
-      cssClass: 'search-mode',
-      componentProps: {
-        'firstName': 'Douglas',
-        'lastName': 'Adams',
-        'middleInitial': 'N'
-      }
+      component: DictionaryModalComponent,
+      cssClass: 'dictionary',
     });
     return await modal.present();
   }

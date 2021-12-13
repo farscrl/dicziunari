@@ -44,26 +44,33 @@ mark {
 }
 
 // dictionary selection modal
-ion-modal {
+ion-modal.dictionary {
   --width: 270px;
-  --height: 360px;
+  --height: 330px;
   --background: unset;
+
+  &.md {
+    --width: 250px;
+    --height: 320px;
+  }
+
+  app-dictionary-modal {
+    border-radius: 10px !important;
+  }
+}
+
+// search mode selection modal
+ion-modal.search-mode {
+  --width: 300px;
+  --height: 260px;
+  --background: unset;
+
+  &.md {
+    --width: 340px;
+    --height: 270px;
+  }
 
   app-search-mode-modal{
     border-radius: 10px !important;
   }
-}
-.ios ion-modal {
-  --width: 250px;
-  --height: 320px;
-}
-
-// width of search mode overlay
-.md .search-mode .alert-wrapper {
-  max-width: 340px !important;
-  width: 340px;
-}
-.ios .search-mode .alert-wrapper {
-  max-width: 270px !important;
-  width: 270px;
 }
