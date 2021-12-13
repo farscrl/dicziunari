@@ -9,8 +9,8 @@
 </ion-header>
 
 <ion-content>
-  <div class="main-content">
-    <h2>Wahl des Idioms:</h2>
+  <div class="main-content" *ngIf="selectedLocale === 'de'">
+    <h2>Wahl des Idioms</h2>
     <p>
       Durch Tippen auf das Idiom öffnet sich eine Dialogbox, in der das gewünschte Idiom gewählt werden kann. Eine
       Übersetzung von Idiom zu Idiom, z.B. Vallader – Sursilvan, ist leider nicht möglich, da keine entsprechenden Daten
@@ -22,11 +22,13 @@
       <ion-icon class="search-direction-icon" src="assets/icon/direction-both.svg" size="large"></ion-icon>
     </h2>
     <p>
-      Durch Tippen auf die Pfeile am oberen Bildschirmrand kann zwischen folgenden Suchrichtungen gewechselt werden:<br>
-      – beide Richtungen<br>
-      – Deutsch zu Rumantsch<br>
-      – Rumantsch zu Deutsch<br>
+      Durch Tippen auf die Pfeile am oberen Bildschirmrand kann zwischen folgenden Suchrichtungen gewechselt werden:
     </p>
+    <ul>
+      <li>beide Richtungen</li>
+      <li>Deutsch zu Rumantsch</li>
+      <li>Rumantsch zu Deutsch</li>
+    </ul>
 
     <h2>Suchmodus</h2>
     <p>
@@ -65,7 +67,61 @@
 
     <h2>App-Sprache</h2>
     <p>
-      Die App kann entweder in Deutsch oder Rumantsch Grischun verwendet werden.
+      Die App kann entweder in Deutsch oder Rumantsch Grischun verwendet werden. Eine entsprechende Auswahl steht in den Einstellungen zur Verfügung.
+    </p>
+  </div>
+
+  <div class="main-content" *ngIf="selectedLocale === 'rm'">
+    <h2>Tscherna da l’idiom</h2>
+    <p>
+      Cun tutgar l’idiom s’avra in dialog per tscherner l’idiom. Ina translaziun da idiom ad idiom, p.ex. dal vallader en sursilvan n’è betg pussaivla perquai che las datas correspundentas mancan. 
+    </p>
+
+    <h2>
+      Direcziun da tschertgar
+      <ion-icon class="search-direction-icon" src="assets/icon/direction-both.svg" size="large"></ion-icon>
+    </h2>
+    <p>
+      Cun tutgar las frizzas a l’ur superiur dal visur pon ins midar tranter las suandantas direcziuns da tschertgar:
+    </p>
+    <ul>
+      <li>omaduas direcziuns</li>
+      <li>dal tudestg en rumantsch</li>
+      <li>dal rumantsch en tudestg</li>
+    </ul>
+
+    <h2>Modus da tschertga</h2>
+    <p>
+      En ils parameters da l’app datti differents modus da tschertgar che furneschan differents resultats. Sch’ina tschertga porta memia blers u memia paucs resultats, pon ins reducir u augmentar ils resultats cun tscherner in auter modus.
+    </p>
+
+    <h2>
+      Favurits
+      <ion-icon src="assets/icon/save.svg" slot="icon-only" class="favorite-icon"></ion-icon>
+    </h2>
+    <p>
+      Singulas translaziuns pon ins memorisar en ils favurits cun stuschar a sanestra il pled chattà e lura tutgar la staila melna. En il tab «Favurits» pon ins puspè allontanar ils pleds cun als stuschar a sanestra e tscherner la staila cotschna. 
+    </p>
+
+    <h2>
+      Copiar
+      <ion-icon src="assets/icon/copy.svg" slot="icon-only" class="favorite-icon"></ion-icon>
+    </h2>
+    <p>
+      Singulas translaziuns pon ins copiar en l’archiv provisoric (per exempel per il diever en in’autra app) cun stuschar a sanestra il pled chattà e lura tutgar il simbol da copiar.
+    </p>
+
+    <h2>
+      Verbs conjugads
+      <ion-icon src="assets/icon/verb.svg" size="large" class="verb-icon"></ion-icon>
+    </h2>
+    <p>
+      Cun tippar sin il «V» grisch pon ins laschar mussar las furmas conjugadas da verbs (mo disponibel per rumantsch grischun, sutsilvan e surmiran).
+    </p>
+
+    <h2>Lingua da l’app</h2>
+    <p>
+      Ins po utilisar l’app en rumantsch grischun u tudestg cun tscherner l’opziun correspundenta en ils parameters.
     </p>
   </div>
 </ion-content>
