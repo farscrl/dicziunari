@@ -13,12 +13,12 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "~11.2.0",
-    "@angular/core": "~11.2.0",
-    "@angular/forms": "~11.2.0",
-    "@angular/platform-browser": "~11.2.0",
-    "@angular/platform-browser-dynamic": "~11.2.0",
-    "@angular/router": "~11.2.0",
+    "@angular/common": "~12.2.15",
+    "@angular/core": "~12.2.15",
+    "@angular/forms": "~12.2.15",
+    "@angular/platform-browser": "~12.2.15",
+    "@angular/platform-browser-dynamic": "~12.2.15",
+    "@angular/router": "~12.2.15",
     "@capacitor-community/sqlite": "^3.2.3-1",
     "@capacitor/android": "^3.2.4",
     "@capacitor/app": "^1.0.6",
@@ -35,18 +35,18 @@
     "cordova-plugin-ios-disableshaketoedit": "^1.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1102.4",
+    "@angular-devkit/build-angular": "~12.2.14",
     "@angular-eslint/builder": "2.0.2",
     "@angular-eslint/eslint-plugin": "2.0.2",
     "@angular-eslint/eslint-plugin-template": "2.0.2",
     "@angular-eslint/template-parser": "2.0.2",
-    "@angular/cli": "~11.2.4",
-    "@angular/compiler": "~11.2.0",
-    "@angular/compiler-cli": "~11.2.0",
-    "@angular/language-service": "~11.2.0",
+    "@angular/cli": "~12.2.14",
+    "@angular/compiler": "~12.2.15",
+    "@angular/compiler-cli": "~12.2.15",
+    "@angular/language-service": "~12.2.15",
     "@capacitor/cli": "^3.2.4",
     "@ionic/angular-toolkit": "^3.1.1",
     "@types/jasmine": "~3.6.0",
@@ -61,7 +61,7 @@
     "eslint-plugin-prefer-arrow": "1.2.2",
     "jasmine-core": "~3.7.1",
     "jasmine-spec-reporter": "~5.0.0",
-    "karma": "~5.2.0",
+    "karma": "~6.3.9",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
     "karma-coverage-istanbul-reporter": "~3.0.2",
@@ -70,7 +70,7 @@
     "prettier": "2.3.2",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
-    "typescript": "~4.0.2"
+    "typescript": "~4.3.5"
   },
   "description": "An Ionic project"
 }
