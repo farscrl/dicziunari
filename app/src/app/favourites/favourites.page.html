@@ -15,37 +15,37 @@
     <ion-item-group *ngIf="favouritesRumantschGrischun.length > 0">
       <ion-item-divider color="light" sticky>Rumantsch Grischun</ion-item-divider>
       <ng-container *ngFor="let favuorite of favouritesRumantschGrischun">
-        <app-lemma-display [lemma]="favuorite" [dictionary]="'rumgrischun'" [isSaved]="true" (deleteItem)="deleteLemma($event)"></app-lemma-display>
+        <app-lemma-display [lemma]="favuorite" [dictionary]="dictionaryValues.rumgrischun" [isSaved]="true" (deleteItem)="deleteLemma($event)"></app-lemma-display>
       </ng-container>
     </ion-item-group>
     <ion-item-group *ngIf="favouritesSursilvan.length > 0">
       <ion-item-divider color="light" sticky>Sursilvan</ion-item-divider>
       <ng-container *ngFor="let favuorite of favouritesSursilvan">
-        <app-lemma-display [lemma]="favuorite" [dictionary]="'sursilv'" [isSaved]="true" (deleteItem)="deleteLemma($event)"></app-lemma-display>
+        <app-lemma-display [lemma]="favuorite" [dictionary]="dictionaryValues.sursilv" [isSaved]="true" (deleteItem)="deleteLemma($event)"></app-lemma-display>
       </ng-container>
     </ion-item-group>
     <ion-item-group *ngIf="favouritesSutsilvan.length > 0">
       <ion-item-divider color="light" sticky>Sutsilvan</ion-item-divider>
       <ng-container *ngFor="let favuorite of favouritesSutsilvan">
-        <app-lemma-display [lemma]="favuorite" [dictionary]="'sutsilv'" [isSaved]="true" (deleteItem)="deleteLemma($event)"></app-lemma-display>
+        <app-lemma-display [lemma]="favuorite" [dictionary]="dictionaryValues.sutsilv" [isSaved]="true" (deleteItem)="deleteLemma($event)"></app-lemma-display>
       </ng-container>
     </ion-item-group>
     <ion-item-group *ngIf="favouritesSurmiran.length > 0">
       <ion-item-divider color="light" sticky>Surmiran</ion-item-divider>
       <ng-container *ngFor="let favuorite of favouritesSurmiran">
-        <app-lemma-display [lemma]="favuorite" [dictionary]="'surm'" [isSaved]="true" (deleteItem)="deleteLemma($event)"></app-lemma-display>
+        <app-lemma-display [lemma]="favuorite" [dictionary]="dictionaryValues.surm" [isSaved]="true" (deleteItem)="deleteLemma($event)"></app-lemma-display>
       </ng-container>
     </ion-item-group>
     <ion-item-group *ngIf="favouritesPuter.length > 0">
       <ion-item-divider color="light" sticky>Puter</ion-item-divider>
       <ng-container *ngFor="let favuorite of favouritesPuter">
-        <app-lemma-display [lemma]="favuorite" [dictionary]="'puter'" [isSaved]="true" (deleteItem)="deleteLemma($event)"></app-lemma-display>
+        <app-lemma-display [lemma]="favuorite" [dictionary]="dictionaryValues.puter" [isSaved]="true" (deleteItem)="deleteLemma($event)"></app-lemma-display>
       </ng-container>
     </ion-item-group>
     <ion-item-group *ngIf="favouritesVallader.length > 0">
       <ion-item-divider color="light" sticky>Vallader</ion-item-divider>
       <ng-container *ngFor="let favuorite of favouritesVallader">
-        <app-lemma-display [lemma]="favuorite" [dictionary]="'vall'" [isSaved]="true" (deleteItem)="deleteLemma($event)"></app-lemma-display>
+        <app-lemma-display [lemma]="favuorite" [dictionary]="dictionaryValues.vall" [isSaved]="true" (deleteItem)="deleteLemma($event)"></app-lemma-display>
       </ng-container>
     </ion-item-group>
   </ion-list>

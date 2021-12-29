@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Dictionary } from 'src/data/search';
 import { FavouritesService } from '../services/favourites.service';
 
 @Component({
@@ -8,6 +9,8 @@ import { FavouritesService } from '../services/favourites.service';
   styleUrls: ['favourites.page.scss'],
 })
 export class FavouritesPage implements OnInit, OnDestroy {
+  public dictionaryValues = Dictionary;       
+
   public favouritesRumantschGrischun = [];
   public favouritesSursilvan = [];
   public favouritesSutsilvan = [];

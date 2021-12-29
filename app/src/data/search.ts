@@ -1,9 +1,9 @@
-export const enum Locale {
+export enum Locale {
   de = 'de',
   rm = 'rm',
 }
 
-export const enum Dictionary {
+export enum Dictionary {
   rumgrischun = 'rumgrischun',
   sursilv = 'sursilv',
   sutsilv = 'sutsilv',
@@ -12,13 +12,13 @@ export const enum Dictionary {
   vall = 'vall',
 }
 
-export const enum SearchDirection {
+export enum SearchDirection {
   fromDe = 'fromDe',
   fromRm = 'fromRm',
   both = 'both',
 }
 
-export const enum SearchMode {
+export enum SearchMode {
   start = 'start',
   substring = 'substring',
   end = 'end',
