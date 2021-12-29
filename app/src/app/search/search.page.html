@@ -36,21 +36,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" *ngIf="pleds.length > 0">
-  <ion-list>
-    <ng-container *ngFor="let pled of pleds">
-      <app-lemma-display [lemma]="pled" [searchString]="searchString" [searchDirection]="searchDirection"
-        [dictionary]="selectedDictionary" (changeSearchTerm)="changeSearchTerm($event)"></app-lemma-display>
-    </ng-container>
-  </ion-list>
+<ion-content [fullscreen]="true">
+  <ng-container *ngIf="pleds.length > 0">
+    <ion-list>
+      <ng-container *ngFor="let pled of pleds">
+        <app-lemma-display [lemma]="pled" [searchString]="searchString" [searchDirection]="searchDirection"
+          [dictionary]="selectedDictionary" (changeSearchTerm)="changeSearchTerm($event)"></app-lemma-display>
+      </ng-container>
+    </ion-list>
+  </ng-container>
 
-  <ion-infinite-scroll threshold="10px" (ionInfinite)="loadMoreData()">
+  <ion-infinite-scroll threshold="10px" (ionInfinite)="loadMoreData()" [style.display]="pleds.length === 0 ? 'none' : ''">
     <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{ 'SEARCH.LOADING_DATA' | translate }}">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
-</ion-content>
 
-<ion-content [fullscreen]="true" *ngIf="pleds.length === 0">
-  <app-placeholder *ngIf="searchString === ''"></app-placeholder>
-  <app-no-results *ngIf="searchString !== ''"></app-no-results>
+  <ng-container *ngIf="pleds.length === 0">
+    <app-placeholder *ngIf="searchString === ''"></app-placeholder>
+    <app-no-results *ngIf="searchString !== ''"></app-no-results>
+  </ng-container>
 </ion-content>
