@@ -10,6 +10,8 @@ import { Locale } from 'src/data/search';
   styleUrls: ['./language-selection.page.scss'],
 })
 export class LanguageSelectionPage implements OnInit {
+  public localesValues = Locale;      
+
   constructor(private configService: ConfigService, private router: Router, private translateService: TranslateService) {}
 
   ngOnInit() {}
