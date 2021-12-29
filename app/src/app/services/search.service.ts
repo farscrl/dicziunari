@@ -57,9 +57,6 @@ export class SearchService {
     this.currentPage = 0;
     this.hasMoreResults = true;
     this.searchLemma = lemma;
-    if (!this.isReady) {
-      return Promise.resolve([]);
-    }
     return this.getNextPage();
   }
 
@@ -73,10 +70,6 @@ export class SearchService {
   }
 
   async getDetails(id: string): Promise<any> {
-    if (!this.isReady) {
-      return Promise.resolve({});
-    }
-
     const statement = this.queryUtil.getDetailQuery(this.configService.getSelectedDictionary(), id) + ' LIMIT 0,1;';
     console.warn(statement);
     const values = await CapacitorSQLite.query({
