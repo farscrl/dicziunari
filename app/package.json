@@ -29,7 +29,7 @@
     "@capacitor/keyboard": "^1.1.2",
     "@capacitor/splash-screen": "^0.3.10",
     "@capacitor/status-bar": "^0.4.10",
-    "@ionic/angular": "^6.0.0-beta.6",
+    "@ionic/angular": "^6.0.1",
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
     "cordova-plugin-ios-disableshaketoedit": "^1.0.0",
