@@ -9,6 +9,8 @@ This folder contains the sources needed to build the app. It is a [Capacitor](ht
 - Capacitor CLI
 - Angular CLI
 
+Note: Currently we are not yet allowed to publish the final database, that is included in the App, here on GitHub. Thus, you have to build a database with the build-scripts in the `db/` folder of the repository. If you just want to run the app, you can rename the file `app/src/assets/databases/dicziunariSQLite_sample.db` to `dicziunariSQLite.db` to have an empty db with the expected structure.
+
 # Build the project
 
 - `ionic capacitor build android`
