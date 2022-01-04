@@ -2,19 +2,18 @@
 
 This folder contains the scripts needed, to build the db for the dicziunari App.
 
-It starts from an export of www.pledarigrond.ch and transforms it into a SQLite Database.
+It starts from an export of www.pledarigrond.ch and the other publishers and transforms it into a SQLite Database.
 
 ## Generate db
 
-1. Place the export into the data folder
-2. Run `npm run convert`
-3. Copy the result into the dicziunari project
+1. The scripts expects an empty db in the `db/build` directory. You can rename the file `db/build/dicziunariSQLite_sample.db` to `dicziunariSQLite.db` to have an empty db file.
+1. Place the export into the data folder and name them like the example data, but without the `_short` suffix
+1. Run `npm run convert`
+1. Copy the result into the databases folder of the `app` project (`app/src/assets/databases`)
 
 ## DB structure
 
-We create two tables in the database: The one (`rumgr`) contains all the data, including conjugations.
-
-There is code commented out to create a table (`rumgr_idx`). This is a virtual [FTS5](https://www.sqlite.org/fts5.html) table that could be used for fast text search and lookup.
+We create a table in the database for each language.
 
 # Memory
 
