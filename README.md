@@ -1,6 +1,6 @@
 # Dicziunari Rumantsch
 
-"Dicziunari Rumantsch" is a Romansh dictionary app and combines six different dictionaries with over half a million entries in one app. It was created by [far GmbH](https://www.fardigital.ch) (programming) and [David Bühler - Visuelle Gestaltung](https://www.davidbuehler.ch/) (design).
+"Dicziunari Rumantsch" is a Romansh dictionary app and combines six different dictionaries with over half a million entries in one app. It was created by [far GmbH](https://www.far.ch) (programming) and [David Bühler - Visuelle Gestaltung](https://www.davidbuehler.ch/) (design).
 
 This project consists of two parts: 
 - `db`: These scripts can be used to compile a database from the exports from the dictionaries, which can be used in the app.
