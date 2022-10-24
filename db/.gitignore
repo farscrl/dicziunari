@@ -4,5 +4,7 @@ data/vallader.htm
 /data/pledarigrond_export_json_rumantschgrischun.json
 /data/pledarigrond_export_json_surmiran.json
 /data/pledarigrond_export_json_sutsilvan.json
+/data/sursilvan.json
+/data/sursilvan_verbs.json
 build/*
 tmp/*

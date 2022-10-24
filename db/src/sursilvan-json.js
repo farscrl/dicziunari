@@ -5,7 +5,9 @@ const DB_NAME = 'build/dicziunariSQLite.db';
 const TABLE_SURSILVAN = 'sursilvan';
 // const TABLE_SURSILVAN_IDX = 'sursilvan_idx';
 const FILE_PATH = 'data/sursilvan.json';
+const VERB_FILE_PATH = 'data/sursilvan_verbs.json';
 // const FILE_PATH = 'data/sursilvan_short.json';
+// const VERB_FILE_PATH = 'data/sursilvan_verbs_short.json';
 
 let processedEntries = 0;
 const columnList = [
@@ -14,7 +16,47 @@ const columnList = [
     { colName: 'Corp',               colType: 'TEXT' },
     { colName: 'Redewendung',        colType: 'TEXT' },
     { colName: 'RStichwort',         colType: 'TEXT' },
-    { colName: 'DStichwort',         colType: 'TEXT' }, 
+    { colName: 'DStichwort',         colType: 'TEXT' },
+
+    // R conj
+    { colName: 'infinitiv',          colType: 'TEXT' },
+    { colName: 'preschentsing1',     colType: 'TEXT' },
+    { colName: 'preschentsing2',     colType: 'TEXT' },
+    { colName: 'preschentsing3',     colType: 'TEXT' },
+    { colName: 'preschentplural1',   colType: 'TEXT' },
+    { colName: 'preschentplural2',   colType: 'TEXT' },
+    { colName: 'preschentplural3',   colType: 'TEXT' },
+    { colName: 'imperfectsing1',     colType: 'TEXT' },
+    { colName: 'imperfectsing2',     colType: 'TEXT' },
+    { colName: 'imperfectsing3',     colType: 'TEXT' },
+    { colName: 'imperfectplural1',   colType: 'TEXT' },
+    { colName: 'imperfectplural2',   colType: 'TEXT' },
+    { colName: 'imperfectplural3',   colType: 'TEXT' },
+    { colName: 'participperfectfs',  colType: 'TEXT' },
+    { colName: 'participperfectms',  colType: 'TEXT' },
+    { colName: 'participperfectfp',  colType: 'TEXT' },
+    { colName: 'participperfectmp',  colType: 'TEXT' },
+    { colName: 'futursing1',         colType: 'TEXT' },
+    { colName: 'futursing2',         colType: 'TEXT' },
+    { colName: 'futursing3',         colType: 'TEXT' },
+    { colName: 'futurplural1',       colType: 'TEXT' },
+    { colName: 'futurplural2',       colType: 'TEXT' },
+    { colName: 'futurplural3',       colType: 'TEXT' },
+    { colName: 'conjunctivsing1',    colType: 'TEXT' },
+    { colName: 'conjunctivsing2',    colType: 'TEXT' },
+    { colName: 'conjunctivsing3',    colType: 'TEXT' },
+    { colName: 'conjunctivplural1',  colType: 'TEXT' },
+    { colName: 'conjunctivplural2',  colType: 'TEXT' },
+    { colName: 'conjunctivplural3',  colType: 'TEXT' },
+    { colName: 'cundizionalsing1',   colType: 'TEXT' },
+    { colName: 'cundizionalsing2',   colType: 'TEXT' },
+    { colName: 'cundizionalsing3',   colType: 'TEXT' },
+    { colName: 'cundizionalplural1', colType: 'TEXT' },
+    { colName: 'cundizionalplural2', colType: 'TEXT' },
+    { colName: 'cundizionalplural3', colType: 'TEXT' },
+    { colName: 'imperativ1',         colType: 'TEXT' },
+    { colName: 'imperativ2',         colType: 'TEXT' },
+    { colName: 'gerundium',          colType: 'TEXT' },
 ];
 
 let db;
@@ -90,6 +132,24 @@ function parseData() {
     });
 }
 
+function parseVerbData() {
+    const data = fs.readFileSync(VERB_FILE_PATH, 'utf8');
+    const lemmas = JSON.parse(data);
+    // console.log(lemmas);
+
+    lemmas.forEach((lemma, idx) => {
+        lemma['id'] = 100000 + idx;
+        normalizeVerb(lemma);
+        insertLemma(lemma);
+        // insertIndex(lemma);
+
+        processedEntries++;
+        if (processedEntries % 100 === 0) {
+            console.log('Processed ' + processedEntries + ' lemmas');
+        }
+    });
+}
+
 function normalizeLemma(lemma) {
     lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], ' I');
     lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], ' II');
@@ -99,6 +159,11 @@ function normalizeLemma(lemma) {
     lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], '*');
 
     lemma['Corp'] = lemma['Corp'].replace(/~/g, lemma['RStichwort']);
+}
+
+function normalizeVerb(lemma) {
+    lemma['DStichwort'] = lemma['DStichwortList'];
+    delete lemma['DStichwortList'];
 }
 
 
@@ -125,6 +190,7 @@ module.exports = {
 
         prepareAndCleanDb();
         parseData();
+        parseVerbData();
         finalizeDb();
     }
 }
