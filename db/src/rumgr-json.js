@@ -5,13 +5,12 @@ const { pick }   = require('stream-json/filters/Pick');
 const { ignore } = require('stream-json/filters/Ignore');
 const { streamArray } = require('stream-json/streamers/StreamArray');
 const Database = require('better-sqlite3');
-const { exception } = require('console');
 
 const DB_NAME = 'build/dicziunariSQLite.db';
 const TABLE_RUMGR = 'rumgr';
 // const TABLE_RUMGR_IDX = 'rumgr_idx';
-const FILE_PATH = 'data/rumantschgrischun_data_json.json';
-// const FILE_PATH = 'data/rumantschgrischun_data_json_short.json';
+const FILE_PATH = 'data/pledarigrond_export_json_rumantschgrischun.json';
+// const FILE_PATH = 'data/pledarigrond_export_json_rumantschgrischun_short.json';
 
 let processedEntries = 0;
 const columnList = [

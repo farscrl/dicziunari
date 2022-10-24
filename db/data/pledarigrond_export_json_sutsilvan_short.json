@@ -1,0 +1,578 @@
+[
+ {
+  "RStichwort": "ani",
+  "RGenus": "m",
+  "DStichwort": "Fingerring",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "ani",
+  "RGenus": "m",
+  "DStichwort": "Ring",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "ani",
+  "RGenus": "m",
+  "DStichwort": "Trauring",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "ani",
+  "RGenus": "m",
+  "DStichwort": "Zwinge",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "ani clavs",
+  "RGenus": "m",
+  "DStichwort": "Schlüsselbund",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "ani",
+  "RGenus": "m",
+  "DStichwort": "Kettenglied",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "ani da letg",
+  "RGenus": "m",
+  "DStichwort": "Ehering",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "ani da spus",
+  "RGenus": "m",
+  "DStichwort": "Verlobungsring",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "animal",
+  "RGenus": "m",
+  "DStichwort": "Tier",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "animal da duas ùnglas",
+  "RGenus": "m",
+  "DStichwort": "Paarzeher",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "animal da raza spira",
+  "RGenus": "m",
+  "DStichwort": "Vollblut",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "animal da tgea",
+  "RGenus": "m",
+  "DStichwort": "Haustier",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "animal lactànt",
+  "RGenus": "m",
+  "DStichwort": "Säugetier",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "animal nuncruscho",
+  "RGenus": "m",
+  "DStichwort": "Vollblut",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "animalic",
+  "RGrammatik": "adj",
+  "DStichwort": "tierisch",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "animar",
+  "RGrammatik": "tr",
+  "DStichwort": "anfeuern",
+  "DGrammatik": "tr"
+ },
+ {
+  "RStichwort": "animar",
+  "RGrammatik": "tr",
+  "DStichwort": "animieren",
+  "DGrammatik": "tr"
+ },
+ {
+  "RStichwort": "animar",
+  "RGrammatik": "tr",
+  "DStichwort": "ankurbeln",
+  "DGrammatik": "tr"
+ },
+ {
+  "RStichwort": "animar",
+  "RGrammatik": "tr",
+  "DStichwort": "anregen",
+  "DGrammatik": "tr"
+ },
+ {
+  "RStichwort": "animar",
+  "RGrammatik": "tr",
+  "DStichwort": "anspornen",
+  "DGrammatik": "tr"
+ },
+ {
+  "RStichwort": "animar",
+  "RGrammatik": "tr",
+  "DStichwort": "antreiben",
+  "DGrammatik": "tr"
+ },
+ {
+  "RStichwort": "animar",
+  "RGrammatik": "tr",
+  "DStichwort": "beflügeln",
+  "DGrammatik": "tr"
+ },
+ {
+  "RStichwort": "animar",
+  "RGrammatik": "tr",
+  "DStichwort": "ermuntern",
+  "DGrammatik": "tr"
+ },
+ {
+  "RStichwort": "animaziùn",
+  "RGenus": "f",
+  "DStichwort": "Animation",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "animaziùn",
+  "RGenus": "f",
+  "DStichwort": "Ansporn",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "animaziùn",
+  "RGenus": "f",
+  "DStichwort": "Belebung",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "animaziùn",
+  "RGenus": "f",
+  "DStichwort": "Ermunterung",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "academic",
+  "RGrammatik": "adj",
+  "DStichwort": "akademisch",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "aniversari",
+  "RGenus": "m",
+  "DStichwort": "Jahresfeier",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "aniversari",
+  "RGenus": "m",
+  "DStichwort": "Jahrestag",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "aniversari",
+  "RGenus": "m",
+  "DStichwort": "Wiegenfest",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "anlatir anzatge",
+  "DStichwort": "etwas mit Latten versehen"
+ },
+ {
+  "RStichwort": "anlatschar",
+  "RGrammatik": "tr",
+  "DStichwort": "knüpfen",
+  "DGrammatik": "tr"
+ },
+ {
+  "RStichwort": "anlatschar",
+  "RGrammatik": "tr",
+  "DStichwort": "verknüpfen",
+  "DGrammatik": "tr"
+ },
+ {
+  "RStichwort": "annà",
+  "RGrammatik": "adv",
+  "DStichwort": "herüber",
+  "DGrammatik": "adv"
+ },
+ {
+  "RStichwort": "anoda",
+  "RGenus": "f",
+  "DStichwort": "Anode",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "anonim",
+  "RGrammatik": "adj",
+  "DStichwort": "anonym",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "anonim",
+  "RGrammatik": "adj",
+  "DStichwort": "namenlos",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "anonimitad",
+  "RGenus": "f",
+  "DStichwort": "Anonymität",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "anonimitad",
+  "RGenus": "f",
+  "DStichwort": "Namenlosigkeit",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "anor(a)",
+  "RGrammatik": "adv",
+  "DStichwort": "auswärts",
+  "DGrammatik": "adv"
+ },
+ {
+  "RStichwort": "anor(a)",
+  "RGrammatik": "adv",
+  "DStichwort": "hinaus",
+  "DGrammatik": "adv"
+ },
+ {
+  "RStichwort": "anor(a)",
+  "RGrammatik": "adv",
+  "DStichwort": "talauswärts",
+  "DGrammatik": "adv"
+ },
+ {
+  "RStichwort": "anorac",
+  "RGenus": "m",
+  "DStichwort": "Windbluse",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "anorac",
+  "RGenus": "m",
+  "DStichwort": "Windjacke",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "academicer, academicra",
+  "RGenus": "m,f",
+  "DStichwort": "Akademiker(in)",
+  "DGenus": "m(f)"
+ },
+ {
+  "RStichwort": "acla",
+  "RGenus": "f",
+  "DStichwort": "Maiensäss",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "anoragiou",
+  "RGrammatik": "adv",
+  "DStichwort": "abwärts",
+  "DGrammatik": "adv"
+ },
+ {
+  "RStichwort": "anoragiou",
+  "RGrammatik": "adv",
+  "DStichwort": "im Unterland",
+  "DGrammatik": "adv"
+ },
+ {
+  "RStichwort": "anoragiou",
+  "RGrammatik": "adv",
+  "DStichwort": "talauswärts hinunter",
+  "DGrammatik": "adv"
+ },
+ {
+  "RStichwort": "anorasei",
+  "RGrammatik": "adv",
+  "DStichwort": "aufwärts",
+  "DGrammatik": "adv"
+ },
+ {
+  "RStichwort": "anorasei",
+  "RGrammatik": "adv",
+  "DStichwort": "talauswärts hinauf",
+  "DGrammatik": "adv"
+ },
+ {
+  "RStichwort": "anormal",
+  "RGrammatik": "adj",
+  "DStichwort": "abnorm",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "anormal",
+  "RGrammatik": "adj",
+  "DStichwort": "abnormal",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "anormal",
+  "RGrammatik": "adj",
+  "DStichwort": "anormal",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "anormalitad",
+  "RGenus": "f",
+  "DStichwort": "Abnormität",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "anor(vearz)",
+  "RGrammatik": "adv",
+  "DStichwort": "auswärts",
+  "DGrammatik": "adv"
+ },
+ {
+  "RStichwort": "anor(vearz)",
+  "RGrammatik": "adv",
+  "DStichwort": "nach aussen",
+  "DGrammatik": "adv"
+ },
+ {
+  "RStichwort": "anotaziùn",
+  "RGenus": "f",
+  "DStichwort": "Fussnote",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "anquagl",
+  "RGenus": "m",
+  "DStichwort": "Blutgerinnsel",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "anqual",
+  "RGrammatik": "pron indef",
+  "DStichwort": "hie und da einer",
+  "DGrammatik": "pron indef"
+ },
+ {
+  "RStichwort": "anqual",
+  "RGrammatik": "pron indef",
+  "DStichwort": "manch einer",
+  "DGrammatik": "pron indef"
+ },
+ {
+  "RStichwort": "anqual",
+  "RGrammatik": "pron indef",
+  "DStichwort": "mancher",
+  "DGrammatik": "pron indef"
+ },
+ {
+  "RStichwort": "anqualegn",
+  "RGrammatik": "pron indef",
+  "DStichwort": "hie und da einer",
+  "DGrammatik": "pron indef"
+ },
+ {
+  "RStichwort": "anqualegn",
+  "RGrammatik": "pron indef",
+  "DStichwort": "manch einer",
+  "DGrammatik": "pron indef"
+ },
+ {
+  "RStichwort": "anqualegn",
+  "RGrammatik": "pron indef",
+  "DStichwort": "mancher",
+  "DGrammatik": "pron indef"
+ },
+ {
+  "RStichwort": "anqualegns",
+  "RGrammatik": "pron indef",
+  "DStichwort": "einzelne",
+  "DGrammatik": "pron indef"
+ },
+ {
+  "RStichwort": "anqualgea(das)",
+  "RGrammatik": "adv",
+  "DStichwort": "dann und wann",
+  "DGrammatik": "adv"
+ },
+ {
+  "RStichwort": "anqualgea(das)",
+  "RGrammatik": "adv",
+  "DStichwort": "hie und da",
+  "DGrammatik": "adv"
+ },
+ {
+  "RStichwort": "anqualgea(das)",
+  "RGrammatik": "adv",
+  "DStichwort": "manchmal",
+  "DGrammatik": "adv"
+ },
+ {
+  "RStichwort": "anqualgea(das)",
+  "RGrammatik": "adv",
+  "DStichwort": "mitunter",
+  "DGrammatik": "adv"
+ },
+ {
+  "RStichwort": "anqualgea(das)",
+  "RGrammatik": "adv",
+  "DStichwort": "zuweilen",
+  "DGrammatik": "adv"
+ },
+ {
+  "RStichwort": "anqualgea(das)",
+  "RGrammatik": "adv",
+  "DStichwort": "zuzeiten",
+  "DGrammatik": "adv"
+ },
+ {
+  "RStichwort": "anragischieu, anragischeada",
+  "RGrammatik": "adj",
+  "DStichwort": "verwurzelt",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "anramar",
+  "RGrammatik": "tr",
+  "DStichwort": "einrahmen",
+  "DGrammatik": "tr"
+ },
+ {
+  "RStichwort": "anramar",
+  "RGrammatik": "tr",
+  "DStichwort": "rahmen",
+  "DGrammatik": "tr"
+ },
+ {
+  "RStichwort": "anramar",
+  "RGrammatik": "tr",
+  "DStichwort": "umrahmen",
+  "DGrammatik": "tr"
+ },
+ {
+  "RStichwort": "anramaziùn",
+  "RGenus": "f",
+  "DStichwort": "Einrahmung",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "anraschar",
+  "RGrammatik": "tr",
+  "DStichwort": "pichen",
+  "DGrammatik": "tr"
+ },
+ {
+  "RStichwort": "anraschar",
+  "RGrammatik": "tr",
+  "DStichwort": "verpichen",
+  "DGrammatik": "tr"
+ },
+ {
+  "RStichwort": "anraschar anzatge",
+  "RGrammatik": "tr",
+  "DStichwort": "etwas mit Harz bestreichen",
+  "DGrammatik": "tr"
+ },
+ {
+  "RStichwort": "anrihimaint",
+  "RGenus": "m",
+  "DStichwort": "Bereicherung",
+  "DGenus": "f"
+ },
+ {
+  "conjunctivsing1": "ca jou anriheschi",
+  "futurplural2": "vus vagnez ad anrihir",
+  "futurplural3": "els/ellas vignan ad anrihir",
+  "gerundium": "anrihànd",
+  "conjunctivsing3": "c'el/ella anriheschi",
+  "conjunctivsing2": "ca tei anrihesch(i)as",
+  "futurplural1": "nus vagnagn ad anrihir",
+  "imperativ2": "anrihed!",
+  "imperativ1": "anrihescha!",
+  "DStichwort": "anreichern",
+  "DGrammatik": "tr",
+  "participperfectfs": "anrihida",
+  "preschentplural1": "nus anrihagn",
+  "participperfectfp": "anrihidas",
+  "RGrammatik": "tr",
+  "cundizionalsing1": "jou anrihess",
+  "cundizionalsing2": "tei anrihessas",
+  "preschentplural3": "els/ellas anriheschan",
+  "conjunctivplural1": "ca nus anriheian",
+  "cundizionalsing3": "el/ella anrihess",
+  "preschentplural2": "vus anrihez",
+  "conjunctivplural2": "ca vus anriheias",
+  "preschentsing3": "el/ella anrihescha",
+  "preschentsing2": "tei anriheschas",
+  "preschentsing1": "jou anrihesch[el]",
+  "cundizionalplural3": "els/ellas anrihessan",
+  "cundizionalplural2": "vus anrihessas",
+  "conjunctivplural3": "c'els/ellas anrihesch(i)an",
+  "cundizionalplural1": "nus anrihessan",
+  "RStichwort": "anrehir",
+  "participperfectmp": "anrihieus",
+  "futursing2": "tei veans ad anrihir",
+  "futursing1": "jou vignt ad anrihir",
+  "participperfectms": "anrihieu",
+  "futursing3": "el/ella vean ad anrihir",
+  "imperfectplural2": "vus anrihevas",
+  "imperfectsing1": "jou anriheva",
+  "imperfectplural1": "nus anrihevan",
+  "imperfectsing2": "tei anrihevas",
+  "imperfectsing3": "el/ella anriheva",
+  "imperfectplural3": "els/ellas anrihevan"
+ },
+ {
+  "conjunctivsing1": "ca jou anriheschi",
+  "futurplural2": "vus vagnez ad anrihir",
+  "futurplural3": "els/ellas vignan ad anrihir",
+  "gerundium": "anrihànd",
+  "conjunctivsing3": "c'el/ella anriheschi",
+  "conjunctivsing2": "ca tei anrihesch(i)as",
+  "futurplural1": "nus vagnagn ad anrihir",
+  "imperativ2": "anrihed!",
+  "imperativ1": "anrihescha!",
+  "DStichwort": "bereichern",
+  "DGrammatik": "tr",
+  "participperfectfs": "anrihida",
+  "preschentplural1": "nus anrihagn",
+  "participperfectfp": "anrihidas",
+  "RGrammatik": "tr",
+  "cundizionalsing1": "jou anrihess",
+  "cundizionalsing2": "tei anrihessas",
+  "preschentplural3": "els/ellas anriheschan",
+  "conjunctivplural1": "ca nus anriheian",
+  "cundizionalsing3": "el/ella anrihess",
+  "preschentplural2": "vus anrihez",
+  "conjunctivplural2": "ca vus anriheias",
+  "preschentsing3": "el/ella anrihescha",
+  "preschentsing2": "tei anriheschas",
+  "preschentsing1": "jou anrihesch[el]",
+  "cundizionalplural3": "els/ellas anrihessan",
+  "cundizionalplural2": "vus anrihessas",
+  "conjunctivplural3": "c'els/ellas anrihesch(i)an",
+  "cundizionalplural1": "nus anrihessan",
+  "RStichwort": "anrehir",
+  "participperfectmp": "anrihieus",
+  "futursing2": "tei veans ad anrihir",
+  "futursing1": "jou vignt ad anrihir",
+  "participperfectms": "anrihieu",
+  "futursing3": "el/ella vean ad anrihir",
+  "imperfectplural2": "vus anrihevas",
+  "imperfectsing1": "jou anriheva",
+  "imperfectplural1": "nus anrihevan",
+  "imperfectsing2": "tei anrihevas",
+  "imperfectsing3": "el/ella anriheva",
+  "imperfectplural3": "els/ellas anrihevan"
+ }
+]

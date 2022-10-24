@@ -1,0 +1,188 @@
+[
+ {
+  "RStichwort": "A, a",
+  "RGenus": "m",
+  "DStichwort": "A, a",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "anguilla",
+  "RGrammatik": "subst",
+  "RGenus": "f",
+  "DStichwort": "Aal",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "leischen scu en pesch",
+  "DStichwort": "aalglatt",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "Argovia",
+  "RGrammatik": "subst",
+  "RGenus": "f",
+  "DStichwort": "Aargau",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "Argoves, -a",
+  "RGrammatik": "subst",
+  "RGenus": "m,f",
+  "DStichwort": "Aargauer, -in",
+  "DGenus": "m,f"
+ },
+ {
+  "RStichwort": "carogna",
+  "RGrammatik": "subst",
+  "RGenus": "f",
+  "DStichwort": "Aas",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "coga",
+  "RGrammatik": "subst",
+  "RGenus": "f",
+  "DStichwort": "Aas",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "zèpla",
+  "RGrammatik": "subst",
+  "RGenus": "f",
+  "DStichwort": "Aas",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "carpisch",
+  "RGrammatik": "subst",
+  "RGenus": "m",
+  "DStichwort": "Aas",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "davent da",
+  "RGrammatik": "II. prep",
+  "DStichwort": "ab",
+  "DGrammatik": "I. Präposition"
+ },
+ {
+  "RStichwort": "a parteir da",
+  "DStichwort": "ab"
+ },
+ {
+  "RStichwort": "davent digl amprem da schaner",
+  "DStichwort": "ab ersten Januar"
+ },
+ {
+  "RStichwort": "a parteir digl amprem da schaner",
+  "DStichwort": "ab ersten Januar"
+ },
+ {
+  "RStichwort": "giu",
+  "DStichwort": "ab",
+  "DGrammatik": "adv"
+ },
+ {
+  "RStichwort": "giu cun tot!",
+  "DStichwort": "ab damit!"
+ },
+ {
+  "RStichwort": "tot respect!",
+  "DStichwort": "Hut ab!"
+ },
+ {
+  "RStichwort": "mintgatant",
+  "DStichwort": "ab und zu"
+ },
+ {
+  "RStichwort": "da taimp an taimp",
+  "DStichwort": "ab und zu"
+ },
+ {
+  "RStichwort": "tscho e lò",
+  "DStichwort": "ab und zu"
+ },
+ {
+  "conjunctivsing1": "tg'ia meida",
+  "futurplural2": "vous midarossas",
+  "futurplural3": "els/ellas midaron",
+  "gerundium": "midond",
+  "conjunctivsing3": "tg'el/ella meida",
+  "conjunctivsing2": "tgi te meidas",
+  "futurplural1": "nous midaron",
+  "imperativ2": "mide!",
+  "imperativ1": "meida!",
+  "DStichwort": "abändern",
+  "DGrammatik": "tr",
+  "participperfectfs": "midada",
+  "preschentplural1": "nous midagn",
+  "participperfectfp": "midadas",
+  "cundizionalsing1": "ia midess",
+  "cundizionalsing2": "te midessas",
+  "preschentplural3": "els/ellas meidan",
+  "conjunctivplural1": "tgi nous meidan",
+  "cundizionalsing3": "el/ella midess",
+  "preschentplural2": "vous midez",
+  "conjunctivplural2": "tgi vous meidas",
+  "preschentsing3": "el/ella meida",
+  "preschentsing2": "te meidas",
+  "preschentsing1": "ia meid",
+  "cundizionalplural3": "els/ellas midessan",
+  "cundizionalplural2": "vous midessas",
+  "conjunctivplural3": "tg'els/ellas meidan",
+  "cundizionalplural1": "nous midessan",
+  "RStichwort": "midar",
+  "participperfectmp": "midos",
+  "futursing2": "te midarossas",
+  "futursing1": "ia midaro",
+  "participperfectms": "mido",
+  "futursing3": "el/ella midaro",
+  "imperfectplural2": "vous midavas",
+  "imperfectsing1": "ia midava",
+  "imperfectplural1": "nous midavan",
+  "imperfectsing2": "te midavas",
+  "imperfectsing3": "el/ella midava",
+  "imperfectplural3": "els/ellas midavan"
+ },
+ {
+  "conjunctivsing1": "tg'ia currigia",
+  "futurplural2": "vous currigiarossas",
+  "futurplural3": "els/ellas currigiaron",
+  "gerundium": "currigiond",
+  "conjunctivsing3": "tg'el/ella currigia",
+  "conjunctivsing2": "tgi te currigias",
+  "futurplural1": "nous currigiaron",
+  "imperativ2": "currige!",
+  "imperativ1": "currigia!",
+  "DStichwort": "abändern",
+  "participperfectfs": "currigeida",
+  "preschentplural1": "nous currigiagn",
+  "participperfectfp": "currigeidas",
+  "cundizionalsing1": "ia currigess",
+  "cundizionalsing2": "te currigessas",
+  "preschentplural3": "els/ellas currigian",
+  "conjunctivplural1": "tgi nous currigian",
+  "cundizionalsing3": "el/ella currigess",
+  "preschentplural2": "vous currigez",
+  "conjunctivplural2": "tgi vous currigias",
+  "preschentsing3": "el/ella currigia",
+  "preschentsing2": "te currigias",
+  "preschentsing1": "ia curritg",
+  "cundizionalplural3": "els/ellas currigessan",
+  "cundizionalplural2": "vous currigessas",
+  "conjunctivplural3": "tg'els/ellas currigian",
+  "cundizionalplural1": "nous currigessan",
+  "RStichwort": "curriger",
+  "participperfectmp": "currigias",
+  "futursing2": "te currigiarossas",
+  "futursing1": "ia currigiaro",
+  "participperfectms": "currigia",
+  "futursing3": "el/ella currigiaro",
+  "imperfectplural2": "vous currigivas",
+  "imperfectsing1": "ia currigiva",
+  "imperfectplural1": "nous currigivan",
+  "imperfectsing2": "te currigivas",
+  "imperfectsing3": "el/ella currigiva",
+  "imperfectplural3": "els/ellas currigivan"
+ }
+]

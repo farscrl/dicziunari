@@ -1,0 +1,521 @@
+[
+ {
+  "RStichwort": "supplement da regulaziun",
+  "RGenus": "m",
+  "DStichwort": "Regulierungsnachtrag",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "agiunta da regulaziun",
+  "RGenus": "f",
+  "DStichwort": "Regulierungsnachtrag",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "armament",
+  "RGenus": "m",
+  "DStichwort": "Bewaffnung",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "armaziun",
+  "RGenus": "f",
+  "DStichwort": "Bewaffnung",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "armas",
+  "RGenus": "f.pl",
+  "DStichwort": "Bewaffnung",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "valur da cumparegliaziun",
+  "RGenus": "f",
+  "DStichwort": "Vergleichswert",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "mesiraziun electronica da distanzas",
+  "RGenus": "f",
+  "DStichwort": "elektronische Distanzmessung",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "forza da l'olma",
+  "RGenus": "f",
+  "DStichwort": "Seelenstärke",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "forza interna",
+  "RGenus": "f",
+  "DStichwort": "Seelenstärke",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "surpli da la bilantscha dals pajaments",
+  "RGenus": "m",
+  "DStichwort": "Zahlungsbilanzüberschuss",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "lescha federala davart la scolaziun universitara en las professiuns medicinalas",
+  "RGenus": "f",
+  "DStichwort": "Bundesgesetz über die universitäre Ausbildung in den medizinischen Berufen",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "insusceptibel",
+  "RGrammatik": "adj",
+  "DStichwort": "unempfänglich",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "betg susceptibel",
+  "RGrammatik": "adj",
+  "DStichwort": "unempfänglich",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "insensibel",
+  "DStichwort": "unempfänglich",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "aria currenta",
+  "RGenus": "f",
+  "DStichwort": "Luftabzug",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "ventilaziun",
+  "RGenus": "f",
+  "DStichwort": "Luftabzug",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "eveniment accumpagnant",
+  "RGenus": "m",
+  "DStichwort": "Nebenereignis",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "tripel (f. tripla)",
+  "RGrammatik": "adj",
+  "DStichwort": "dreifach",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "traidubel (traidubla)",
+  "RGrammatik": "adj",
+  "DStichwort": "dreifach",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "mastergn da ferrer",
+  "RGenus": "m",
+  "DStichwort": "Schmiedehandwerk",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "entrada en l'uniun",
+  "RGenus": "f",
+  "DStichwort": "Unionsbeitritt",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "participaziun a l'uniun",
+  "RGenus": "f",
+  "DStichwort": "Unionsbeitritt",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "Giuvna partida socialdemocratica dal Grischun",
+  "RGenus": "f",
+  "DStichwort": "Junge Sozialdemokratische Partei Graubünden",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "plan da sanaziun",
+  "RGenus": "m",
+  "DStichwort": "Sanierungsplan",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "calumnia",
+  "RGenus": "f",
+  "DStichwort": "Ehrabschneiderei",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "denigraziun",
+  "RGenus": "f",
+  "DStichwort": "Ehrabschneiderei",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "disfamaziun",
+  "RGenus": "f",
+  "DStichwort": "Ehrabschneiderei",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "cuppetta cun rum",
+  "RGenus": "f",
+  "DStichwort": "Rum-Töpfli",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "lingia da navigaziun",
+  "RGenus": "f",
+  "DStichwort": "Schifffahrtslinie",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "supplement per il surpli da la lunghezza",
+  "RGenus": "m",
+  "DStichwort": "Mehrlängenzuschlag",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "suga da raiver",
+  "RGenus": "f",
+  "DStichwort": "Kletterseil",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "squama (da pesch)",
+  "RGenus": "f",
+  "DStichwort": "Fischschuppe",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "congedi en accumpagnament",
+  "RGenus": "m",
+  "DStichwort": "begleiteter Urlaub"
+ },
+ {
+  "RStichwort": "tgira da di",
+  "RGenus": "f",
+  "DStichwort": "Tagespflege",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "temp d'introducziun en la nova lavur",
+  "RGenus": "m",
+  "DStichwort": "Einarbeitungszeit",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "temp d'adattaziun a la nova lavur",
+  "RGenus": "m",
+  "DStichwort": "Einarbeitungszeit",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "text per l'emprima lectura",
+  "RGenus": "m",
+  "DStichwort": "Erstlesetext",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "autoritads che fan da sabiuts",
+  "DStichwort": "behördliche Besserwisserei"
+ },
+ {
+  "RStichwort": "vivifitgant",
+  "RGrammatik": "adj",
+  "DStichwort": "belebend",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "stimulant",
+  "RGrammatik": "adj",
+  "DStichwort": "belebend",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "pront per l'adiever",
+  "DStichwort": "abrufbereit"
+ },
+ {
+  "RStichwort": "cf. Rundsteuerempfänger",
+  "DStichwort": "Rundsteuerungsempfänger"
+ },
+ {
+  "RStichwort": "angular",
+  "DStichwort": "kantig"
+ },
+ {
+  "RStichwort": "chantunus",
+  "RGrammatik": "adj",
+  "DStichwort": "kantig",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "squadrà",
+  "RGrammatik": "adj",
+  "DStichwort": "kantig",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "energic",
+  "RGrammatik": "adj",
+  "DStichwort": "kantig",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "sistem da regulaziun",
+  "RGenus": "m",
+  "DStichwort": "Regelungssystem",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "cun in impediment corporal",
+  "RGrammatik": "adj",
+  "DStichwort": "körperbehindert",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "recidiva",
+  "RGenus": "f",
+  "DStichwort": "Rezidiv",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "polizia mobila",
+  "RGenus": "f",
+  "DStichwort": "Überfallkommando",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "taxa per chavar la fossa",
+  "RGenus": "f",
+  "DStichwort": "Grabtaxe",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "protecziun da la populaziun",
+  "RGenus": "f",
+  "DStichwort": "Bevölkerungsschutz",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "maletg da las curvas",
+  "RGenus": "m",
+  "DStichwort": "Kurvenbild",
+  "DGenus": "n"
+ },
+ {
+  "RStichwort": "conto da valutas estras",
+  "RGenus": "m",
+  "DStichwort": "Sortenkonto",
+  "DGenus": "n"
+ },
+ {
+  "conjunctivsing1": "che jau appelleschia",
+  "futurplural2": "vus vegnis ad appellar",
+  "futurplural3": "els/ellas vegnan ad appellar",
+  "gerundium": "appellond",
+  "conjunctivsing3": "ch'el/ella appelleschia",
+  "conjunctivsing2": "che ti appelleschias",
+  "futurplural1": "nus vegnin ad appellar",
+  "imperativ2": "appellai!",
+  "imperativ1": "appellescha!",
+  "DStichwort": "Appellation einlegen",
+  "participperfectfs": "appellada",
+  "infinitiv": "appellar",
+  "preschentplural1": "nus appellain",
+  "participperfectfp": "appelladas",
+  "RGrammatik": "int",
+  "cundizionalsing1": "jau appellass",
+  "cundizionalsing2": "ti appellassas",
+  "preschentplural3": "els/ellas appelleschan",
+  "conjunctivplural1": "che nus appelleschian",
+  "cundizionalsing3": "el/ella appellass",
+  "preschentplural2": "vus appellais",
+  "conjunctivplural2": "che vus appelleschias",
+  "preschentsing3": "el/ella appellescha",
+  "preschentsing2": "ti appelleschas",
+  "preschentsing1": "jau appellesch",
+  "cundizionalplural3": "els/ellas appellassan",
+  "cundizionalplural2": "vus appellassas",
+  "conjunctivplural3": "ch'els/ellas appelleschian",
+  "cundizionalplural1": "nus appellassan",
+  "RStichwort": "appellar",
+  "participperfectmp": "appellads",
+  "futursing2": "ti vegns ad appellar",
+  "futursing1": "jau vegn ad appellar",
+  "participperfectms": "appellà",
+  "futursing3": "el/ella vegn ad appellar",
+  "imperfectplural2": "vus appellavas",
+  "imperfectsing1": "jau appellava",
+  "imperfectplural1": "nus appellavan",
+  "imperfectsing2": "ti appellavas",
+  "imperfectsing3": "el/ella appellava",
+  "imperfectplural3": "els/ellas appellavan"
+ },
+ {
+  "RStichwort": "minoritolog",
+  "RGenus": "m",
+  "DStichwort": "Minoritologe",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "o",
+  "DStichwort": "O",
+  "DGrammatik": "interj"
+ },
+ {
+  "RStichwort": "pajass",
+  "RGenus": "m",
+  "DStichwort": "Spassmacher",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "clown",
+  "RGenus": "m",
+  "DStichwort": "Spassmacher",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "cumediant",
+  "RGenus": "m",
+  "DStichwort": "Spassmacher",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "Cuminanza da vallada da la regiun da Sargans",
+  "RGrammatik": "n.p",
+  "RGenus": "f",
+  "DStichwort": "Sarganserländische Talgemeinschaft",
+  "DGrammatik": "n.p",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "cf. Unmenge",
+  "DStichwort": "Unmasse"
+ },
+ {
+  "RStichwort": "ballistica da destinaziun",
+  "RGenus": "f",
+  "DStichwort": "Endballistik",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "nivlus",
+  "RGrammatik": "adj",
+  "DStichwort": "bewölkt",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "cuvert",
+  "RGrammatik": "adj",
+  "DStichwort": "bewölkt",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "surtratg",
+  "RGrammatik": "adj",
+  "DStichwort": "bewölkt",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "citostatic",
+  "DStichwort": "zytostatisch"
+ },
+ {
+  "RStichwort": "surpassament da (la) lescha",
+  "RGenus": "m",
+  "DStichwort": "Gesetzesverstoss",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "mesirar il temp",
+  "DStichwort": "timen",
+  "DGrammatik": "tr"
+ },
+ {
+  "RStichwort": "fixar il termin",
+  "DStichwort": "timen",
+  "DGrammatik": "tr"
+ },
+ {
+  "RStichwort": "construcziun d'autostradas",
+  "RGenus": "f",
+  "DStichwort": "Autobahnanbau",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "cf. vonnöten sein",
+  "DStichwort": "vonnöten"
+ },
+ {
+  "RStichwort": "mez marsch",
+  "DStichwort": "angefault",
+  "DGrammatik": "adj"
+ },
+ {
+  "RStichwort": "admiraziun",
+  "RGenus": "f",
+  "DStichwort": "Bewunderung",
+  "DGenus": "f"
+ },
+ {
+  "RStichwort": "indemnisaziun",
+  "RGenus": "f",
+  "DStichwort": "Schadenersatz",
+  "DGenus": "m"
+ },
+ {
+  "RStichwort": "reparaziun dal donn",
+  "RGenus": "f",
+  "DStichwort": "Schadenersatz",
+  "DGenus": "m"
+ },
+ {
+  "conjunctivsing1": "che jau pudria/pudreschia",
+  "futurplural2": "vus vegnis a pudrar",
+  "futurplural3": "els/ellas vegnan a pudrar",
+  "gerundium": "pudrond",
+  "conjunctivsing3": "ch'el/ella pudria",
+  "conjunctivsing2": "che ti pudrias",
+  "futurplural1": "nus vegnin a pudrar",
+  "imperativ2": "pudrai!",
+  "imperativ1": "pudra/-escha!",
+  "DStichwort": "bepudern",
+  "DGrammatik": "tr",
+  "participperfectfs": "pudrada",
+  "infinitiv": "pudrar",
+  "preschentplural1": "nus pudrain",
+  "participperfectfp": "pudradas",
+  "RGrammatik": "tr",
+  "cundizionalsing1": "jau pudrass",
+  "cundizionalsing2": "ti pudrassas",
+  "preschentplural3": "els/ellas pudran/pudreschan",
+  "conjunctivplural1": "che nus pudrian",
+  "cundizionalsing3": "el/ella pudrass",
+  "preschentplural2": "vus pudrais",
+  "conjunctivplural2": "che vus pudrias",
+  "preschentsing3": "el/ella pudra/pudrescha",
+  "preschentsing2": "ti pudras/pudreschas",
+  "preschentsing1": "jau pudr(el)/pudresch",
+  "cundizionalplural3": "els/ellas pudrassan",
+  "cundizionalplural2": "vus pudrassas",
+  "conjunctivplural3": "ch'els/ellas pudrian",
+  "cundizionalplural1": "nus pudrassan",
+  "RStichwort": "pudrar",
+  "participperfectmp": "pudrads",
+  "futursing2": "ti vegns a pudrar",
+  "futursing1": "jau vegn a pudrar",
+  "participperfectms": "pudrà",
+  "futursing3": "el/ella vegn a pudrar",
+  "imperfectplural2": "vus pudravas",
+  "imperfectsing1": "jau pudrava",
+  "imperfectplural1": "nus pudravan",
+  "imperfectsing2": "ti pudravas",
+  "imperfectsing3": "el/ella pudrava",
+  "imperfectplural3": "els/ellas pudravan"
+ }
+]

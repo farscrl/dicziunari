@@ -6,7 +6,7 @@ It starts from an export of www.pledarigrond.ch and the other publishers and tra
 
 ## Generate db
 
-1. The scripts expects an empty db in the `db/build` directory. You can rename the file `db/build/dicziunariSQLite_sample.db` to `dicziunariSQLite.db` to have an empty db file.
+1. The script expects an empty db in the `db/build` directory. You can rename the file `db/build/dicziunariSQLite_sample.db` to `dicziunariSQLite.db` to have an empty db file.
 1. Place the export into the data folder and name them like the example data, but without the `_short` suffix
 1. Run `npm run convert`
 1. Copy the result into the databases folder of the `app` project (`app/src/assets/databases`)
