@@ -76,7 +76,6 @@ export class ConjugationComponent {
 
   private addPrefix(value: string, prefix: string, suffix: string): string {
     const elements = value.split(/[\n|,]/);
-    console.log(elements);
     elements.forEach((e, idx) => {
       elements[idx] = prefix + e + suffix;
     });
