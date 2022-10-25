@@ -48,6 +48,12 @@
       "SUBSTRING": "Überall (am meisten Resultate)",
       "END": "Wortende"
     },
+    "COLOR": {
+      "TITLE": "Darstellung",
+      "LIGHT": "Hell",
+      "DARK": "Dunkel",
+      "AUTO": "Vom System übernehmen"
+    },
     "VERBS": {
       "TITLE": "Konjugierte Verben",
       "INCLUDE": "In die Suche einbeziehen"

@@ -62,6 +62,26 @@
     </ion-item>
     -->
 
+    <ion-radio-group [(ngModel)]="currentColorMode" (ionChange)="changeColorScheme($event)">
+      <ion-list-header>
+        <ion-label>{{ "SETTINGS.COLOR.TITLE" | translate}}</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>{{ "SETTINGS.COLOR.LIGHT" | translate}}</ion-label>
+        <ion-radio slot="start" [value]="'light'"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>{{ "SETTINGS.COLOR.DARK" | translate}}</ion-label>
+        <ion-radio slot="start" [value]="'dark'"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>{{ "SETTINGS.COLOR.AUTO" | translate}}</ion-label>
+        <ion-radio slot="start" [value]="'auto'"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
     <ion-list-header>
       <ion-label>{{ "SETTINGS.OTHER.TITLE" | translate}}</ion-label>
     </ion-list-header>

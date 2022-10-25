@@ -6,6 +6,7 @@ import { ConfigService } from './services/config.service';
 import { SQLiteService } from './services/sqlite.service';
 import { Keyboard } from '@capacitor/keyboard';
 import { Capacitor } from '@capacitor/core';
+import { ColorModeService } from "./services/color-mode.service";
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,7 @@ export class AppComponent {
     private platform: Platform,
     private configService: ConfigService,
     private sqliteService: SQLiteService,
+    private colorMode: ColorModeService,
   ) {
     this.platform.ready().then(() => {
       SplashScreen.show();
@@ -34,6 +36,7 @@ export class AppComponent {
     this.sqliteService.initializePlugin().then((ret) => {
       this.sqlitePluginInitialized = ret;
     });
+    this.initColorMode();
   }
 
   private initTranslateService() {
@@ -45,5 +48,15 @@ export class AppComponent {
       this.translateService.setDefaultLang('de');
       this.translateService.use('de');
     }
+  }
+
+  private initColorMode() {
+    this.colorMode.isDarkModeSubject.subscribe((darkMode) => {
+      if (darkMode) {
+        document.documentElement.classList.add('dark-theme');
+      } else {
+        document.documentElement.classList.remove('dark-theme');
+      }
+    })
   }
 }

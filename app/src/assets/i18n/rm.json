@@ -48,6 +48,12 @@
       "SUBSTRING": "Dapertut (ils pli blers resultats)",
       "END": "Fin dal pled"
     },
+    "COLOR": {
+      "TITLE": "Visualisaziun",
+      "LIGHT": "Cler",
+      "DARK": "Stgir",
+      "AUTO": "Surprender dal sistem"
+    },
     "VERBS": {
       "TITLE": "Verbs conjugads",
       "INCLUDE": "Includer en la tschertga"

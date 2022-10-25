@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NavController } from '@ionic/angular';
 import { Locale, SearchMode } from 'src/data/search';
 import { Subscription } from 'rxjs';
+import { ColorMode, ColorModeService } from "../services/color-mode.service";
 
 @Component({
   selector: 'app-settings',
@@ -17,7 +18,10 @@ export class SettingsPage implements OnInit, OnDestroy {
 
   private searchModeSubscription: Subscription;
 
-  constructor(private configService: ConfigService, private translateService: TranslateService, private navCtrl: NavController) {}
+  public colorModes: ColorMode[] = ['auto', 'dark', 'light'];
+  public currentColorMode: ColorMode;
+
+  constructor(private configService: ConfigService, private translateService: TranslateService, private navCtrl: NavController, private colorMode: ColorModeService) {}
 
   ngOnInit() {
     this.appLanguage = this.configService.getSelectedLocale();
@@ -25,6 +29,7 @@ export class SettingsPage implements OnInit, OnDestroy {
       this.searchMode = value;
     });
     this.includeVerbs = this.configService.isIncludeVerbs();
+    this.currentColorMode = this.colorMode.getMode();
   }
 
   ngOnDestroy(): void {
@@ -58,5 +63,10 @@ export class SettingsPage implements OnInit, OnDestroy {
         this.navCtrl.navigateForward('tabs/settings/info');
         break;
     }
+  }
+
+  async changeColorScheme(event: any) {
+    const colorMode = event.detail.value;
+    this.colorMode.setMode(colorMode);
   }
 }
