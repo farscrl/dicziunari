@@ -112,18 +112,10 @@ export class SQLiteService {
   /**
    * addUpgradeStatement
    * @param database
-
    * @param toVersion
    * @param statements
-
    */
   async addUpgradeStatement(database: string, toVersion: number, statements: string[]): Promise<void> {
-
-
-
-
-
-
     if (this.sqlite != null) {
       try {
         const update: capSQLiteVersionUpgrade = { toVersion, statements};
@@ -322,7 +314,6 @@ export class SQLiteService {
                             console.log("Connection: " + value);
                         });
         */
-
         return Promise.resolve(myConns);
       } catch (err) {
         return Promise.reject(new Error(err));
