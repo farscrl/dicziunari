@@ -40,11 +40,12 @@ export class AppComponent {
           const jeepSqliteEl = document.querySelector('jeep-sqlite');
           if (jeepSqliteEl != null) {
             await this.sqliteService.initWebStore();
+            console.log(`>>>> isStoreOpen ${await jeepSqliteEl.isStoreOpen()}`);
           } else {
-            console.log('$$ jeepSqliteEl is null');
+            console.log('>>>> jeepSqliteEl is null');
           }
         }
-        console.log('ok');
+        console.log(`>>>> in App  this.initPlugin ${this.sqlitePluginInitialized}`);
       });
     });
     this.initColorMode();
