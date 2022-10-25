@@ -1,11 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Dictionary, SearchDirection, SearchMode } from 'src/data/search';
+import { ConfigService } from "../services/config.service";
 
 @Injectable({
   providedIn: 'root',
 })
 export class QueryUtil {
-  constructor() {}
+  searchInVerbs = false;
+  constructor(
+    private configService: ConfigService,
+  ) {
+    configService.getIncludeVerbsObservable().subscribe(value => {
+      this.searchInVerbs = value;
+    });
+  }
 
   getQuery(
     dictionary: Dictionary,
@@ -64,16 +72,17 @@ export class QueryUtil {
     searchMode: SearchMode,
     lemma: string,
   ): string {
+    const verbsQuery = this.getRumantschGrischunVerbQuery(searchMode, lemma);
     switch(searchDirection) {
       case SearchDirection.fromDe:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM rumgr WHERE DStichwort LIKE ' + this.getTerm(searchMode, lemma) +  ' ORDER BY DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM rumgr WHERE DStichwort LIKE ' + this.getTerm(searchMode, lemma) + ' ORDER BY DStichwort COLLATE NOCASE ASC';
       case SearchDirection.fromRm:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM rumgr WHERE RStichwort LIKE  ' + this.getTerm(searchMode, lemma) + ' ORDER BY RStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM rumgr WHERE RStichwort LIKE  ' + this.getTerm(searchMode, lemma) + verbsQuery + ' ORDER BY RStichwort COLLATE NOCASE ASC';
       case SearchDirection.both:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM rumgr WHERE RStichwort LIKE  ' + this.getTerm(searchMode, lemma) + ' OR DStichwort LIKE ' + this.getTerm(searchMode, lemma) +  ' ORDER BY DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM rumgr WHERE RStichwort LIKE  ' + this.getTerm(searchMode, lemma) + verbsQuery + ' OR DStichwort LIKE ' + this.getTerm(searchMode, lemma) +  ' ORDER BY DStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -235,5 +244,54 @@ export class QueryUtil {
       case SearchMode.match:
         return '"' + lemma + '"';
     }
+  }
+
+  private getRumantschGrischunVerbQuery(searchMode: SearchMode = SearchMode.start, lemma: string): string {
+    let query = '';
+
+    if (this.searchInVerbs) {
+      let term = this.getTerm(searchMode, lemma);
+      term = term.replace(/"/g, '');
+
+      query = `
+        OR \`infinitiv\` LIKE "${term}"
+        OR \`preschentsing1\` LIKE "jau ${term}"
+        OR \`preschentsing2\` LIKE "ti ${term}"
+        OR \`preschentsing3\` LIKE "el/ella ${term}"
+        OR \`preschentsing3\` LIKE "i ${term}"
+        OR \`preschentplural1\` LIKE "nus ${term}"
+        OR \`preschentplural2\` LIKE "vus ${term}"
+        OR \`preschentplural3\` LIKE "els/ellas ${term}"
+        OR \`imperfectsing1\` LIKE "jau ${term}"
+        OR \`imperfectsing2\` LIKE "ti ${term}"
+        OR \`imperfectsing3\` LIKE "el/ella ${term}"
+        OR \`imperfectsing3\` LIKE "i ${term}"
+        OR \`imperfectplural1\` LIKE "nus ${term}"
+        OR \`imperfectplural2\` LIKE "vus ${term}"
+        OR \`imperfectplural3\` LIKE "els/ellas ${term}"
+        OR \`participperfectfs\` LIKE "${term}"
+        OR \`participperfectms\` LIKE "${term}"
+        OR \`participperfectfp\` LIKE "${term}"
+        OR \`participperfectmp\` LIKE "${term}"
+        OR \`conjunctivsing1\` LIKE "che jau ${term}"
+        OR \`conjunctivsing2\` LIKE "che ti ${term}"
+        OR \`conjunctivsing3\` LIKE "ch'ell/ella ${term}"
+        OR \`conjunctivplural1\` LIKE "che nus ${term}"
+        OR \`conjunctivplural2\` LIKE "che vus ${term}"
+        OR \`conjunctivplural3\` LIKE "ch'els/ellas ${term}"
+        OR \`cundizionalsing1\` LIKE "jau ${term}"
+        OR \`cundizionalsing2\` LIKE "ti ${term}"
+        OR \`cundizionalsing3\` LIKE "el/ella ${term}"
+        OR \`cundizionalsing3\` LIKE "i ${term}"
+        OR \`cundizionalplural1\` LIKE "nus ${term}"
+        OR \`cundizionalplural2\` LIKE "vus ${term}"
+        OR \`cundizionalplural3\` LIKE "els/ellas ${term}"
+        OR \`imperativ1\` LIKE "${term}"
+        OR \`imperativ2\` LIKE "${term}"
+        OR \`gerundium\` LIKE "${term}"
+      `;
+    }
+
+    return query;
   }
 }
