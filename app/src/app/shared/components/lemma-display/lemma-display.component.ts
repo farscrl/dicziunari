@@ -55,7 +55,7 @@ export class LemmaDisplayComponent implements OnInit, OnDestroy {
       this.selectedLocale = locale;
     });
 
-    this.completeLemma = this.isSursilvan ? this.lemma.Corp : '';
+    this.completeLemma = this.isSursilvan ? (this.lemma.Corp ? this.lemma.Corp : this.lemma.DStichwort) : '';
   }
 
   ngOnDestroy(): void {
