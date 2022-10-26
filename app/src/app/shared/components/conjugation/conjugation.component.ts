@@ -22,8 +22,6 @@ export class ConjugationComponent {
   }
 
   private updateSursilvanLemma(lemma: any): any {
-    console.log(lemma);
-
     const infinitiv = lemma['infinitiv'];
 
     lemma['preschentsing1'] = this.addPrefix(lemma['preschentsing1'], 'jeu ', '');
