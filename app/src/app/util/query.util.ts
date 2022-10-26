@@ -76,13 +76,13 @@ export class QueryUtil {
     switch(searchDirection) {
       case SearchDirection.fromDe:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM rumgr WHERE DStichwort LIKE ' + this.getTerm(searchMode, lemma) + ' ORDER BY (case when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM rumgr WHERE DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
       case SearchDirection.fromRm:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM rumgr WHERE RStichwort LIKE  ' + this.getTerm(searchMode, lemma) + verbsQuery + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM rumgr WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchDirection.both:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM rumgr WHERE RStichwort LIKE  ' + this.getTerm(searchMode, lemma) + verbsQuery + ' OR DStichwort LIKE ' + this.getTerm(searchMode, lemma) +  ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM rumgr WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -94,13 +94,13 @@ export class QueryUtil {
     switch(searchDirection) {
       case SearchDirection.fromDe:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM surmiran WHERE DStichwort LIKE ' + this.getTerm(searchMode, lemma) +  ' ORDER BY  (case when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM surmiran WHERE DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
       case SearchDirection.fromRm:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM surmiran WHERE RStichwort LIKE  ' + this.getTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM surmiran WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchDirection.both:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM surmiran WHERE RStichwort LIKE  ' + this.getTerm(searchMode, lemma) + ' OR DStichwort LIKE ' + this.getTerm(searchMode, lemma) +  ' ORDER BY  (case when RStichwort = \'' + lemma + '\' then 1 when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM surmiran WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -112,13 +112,13 @@ export class QueryUtil {
     switch(searchDirection) {
       case SearchDirection.fromDe:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM sutsilvan WHERE DStichwort LIKE ' + this.getTerm(searchMode, lemma) +  ' ORDER BY  (case when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM sutsilvan WHERE DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
       case SearchDirection.fromRm:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM sutsilvan WHERE RStichwort LIKE  ' + this.getTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM sutsilvan WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchDirection.both:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM sutsilvan WHERE RStichwort LIKE  ' + this.getTerm(searchMode, lemma) + ' OR DStichwort LIKE ' + this.getTerm(searchMode, lemma) +  ' ORDER BY  (case when RStichwort = \'' + lemma + '\' then 1 when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM sutsilvan WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -130,13 +130,13 @@ export class QueryUtil {
     switch(searchDirection) {
       case SearchDirection.fromDe:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RGrammatik, DGrammatik, RFlex, DFlex, RSempraez, DSempraez, NULL as preschentsing3 FROM puter WHERE DStichwort LIKE ' + this.getTerm(searchMode, lemma) +  ' ORDER BY (case when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RGrammatik, DGrammatik, RFlex, DFlex, RSempraez, DSempraez, NULL as preschentsing3 FROM puter WHERE DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
       case SearchDirection.fromRm:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RGrammatik, DGrammatik, RFlex, DFlex, RSempraez, DSempraez, NULL as preschentsing3 FROM puter WHERE RStichwort LIKE  ' + this.getTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RGrammatik, DGrammatik, RFlex, DFlex, RSempraez, DSempraez, NULL as preschentsing3 FROM puter WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchDirection.both:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RGrammatik, DGrammatik, RFlex, DFlex, RSempraez, DSempraez, NULL as preschentsing3 FROM puter WHERE RStichwort LIKE  ' + this.getTerm(searchMode, lemma) + ' OR DStichwort LIKE ' + this.getTerm(searchMode, lemma) +  ' ORDER BY  (case when RStichwort = \'' + lemma + '\' then 1 when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RGrammatik, DGrammatik, RFlex, DFlex, RSempraez, DSempraez, NULL as preschentsing3 FROM puter WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -148,13 +148,13 @@ export class QueryUtil {
     switch(searchDirection) {
       case SearchDirection.fromDe:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RGrammatik, DGrammatik, RFlex, DFlex, RSempraez, DSempraez, NULL as preschentsing3 FROM vallader WHERE DStichwort LIKE ' + this.getTerm(searchMode, lemma) +  ' ORDER BY  (case when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RGrammatik, DGrammatik, RFlex, DFlex, RSempraez, DSempraez, NULL as preschentsing3 FROM vallader WHERE DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
       case SearchDirection.fromRm:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RGrammatik, DGrammatik, RFlex, DFlex, RSempraez, DSempraez, NULL as preschentsing3 FROM vallader WHERE RStichwort LIKE  ' + this.getTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RGrammatik, DGrammatik, RFlex, DFlex, RSempraez, DSempraez, NULL as preschentsing3 FROM vallader WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchDirection.both:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RGrammatik, DGrammatik, RFlex, DFlex, RSempraez, DSempraez, NULL as preschentsing3 FROM vallader WHERE RStichwort LIKE  ' + this.getTerm(searchMode, lemma) + ' OR DStichwort LIKE ' + this.getTerm(searchMode, lemma) +  ' ORDER BY  (case when RStichwort = \'' + lemma + '\' then 1 when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RGrammatik, DGrammatik, RFlex, DFlex, RSempraez, DSempraez, NULL as preschentsing3 FROM vallader WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -180,16 +180,16 @@ export class QueryUtil {
     switch (searchMode) {
       case SearchMode.start:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "'  + lemma + '%" OR `DStichwort` LIKE "%, ' + lemma + '%" ORDER BY (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1  else 2 end), RStichwort COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` GLOB "' + this.regexiseTerm(lemma) + '*" OR `DStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + '*" ORDER BY (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchMode.substring:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "%' + lemma + '%" ORDER BY (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1  else 2 end),  RStichwort COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` GLOB "*' + this.regexiseTerm(lemma) + '*" ORDER BY (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchMode.end:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "%' + lemma + '" OR `DStichwort` LIKE "%' + lemma + ', %" ORDER BY (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1  else 2 end),  RStichwort COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` GLOB "*' + this.regexiseTerm(lemma) + '" OR `DStichwort` GLOB "*' + this.regexiseTerm(lemma) + ', *" ORDER BY (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchMode.match:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "' + lemma + '" OR `DStichwort` LIKE "' + lemma + ', %" OR `DStichwort` LIKE "%,' + lemma + '" OR `DStichwort` LIKE "%, ' + lemma + ', %" ORDER BY (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1  else 2 end),  RStichwort COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` GLOB "' + this.regexiseTerm(lemma) + '" OR `DStichwort` GLOB "' + this.regexiseTerm(lemma) + ', *" OR `DStichwort` GLOB "*,' + this.regexiseTerm(lemma) + '" OR `DStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + ', *" ORDER BY (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -200,16 +200,16 @@ export class QueryUtil {
     switch (searchMode) {
       case SearchMode.start:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `RStichwort` LIKE "' + lemma + '%" OR `RStichwort` LIKE "%, ' + lemma + '%" ORDER BY (case when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1  else 2 end),  RStichwort COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan` WHERE `RStichwort` GLOB "' + this.regexiseTerm(lemma) + '*" OR `RStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + '*" ORDER BY (case when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchMode.substring:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `RStichwort` LIKE "%' + lemma + '%" ORDER BY (case when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1  else 2 end),  RStichwort COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan` WHERE `RStichwort` GLOB "*' + this.regexiseTerm(lemma) + '*" ORDER BY (case when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchMode.end:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `RStichwort` LIKE "%' + lemma + '" OR `RStichwort` LIKE "%' + lemma + ', %" ORDER BY (case when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1  else 2 end),  RStichwort COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan` WHERE `RStichwort` GLOB "*' + this.regexiseTerm(lemma) + '" OR `RStichwort` GLOB "*' + this.regexiseTerm(lemma) + ', *" ORDER BY (case when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchMode.match:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan`WHERE `RStichwort` LIKE "' + lemma + '" OR `RStichwort` LIKE "' + lemma + ', %" OR `RStichwort` LIKE "%, ' + lemma + '" OR `RStichwort` LIKE "%, ' + lemma + ', %" ORDER BY (case when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1  else 2 end),  RStichwort COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan`WHERE `RStichwort` GLOB "' + this.regexiseTerm(lemma) + '" OR `RStichwort` GLOB "' + this.regexiseTerm(lemma) + ', *" OR `RStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + '" OR `RStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + ', *" ORDER BY (case when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1  else 2 end),  RStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -220,16 +220,16 @@ export class QueryUtil {
     switch (searchMode) {
       case SearchMode.start:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "' + lemma + '%" OR `DStichwort` LIKE "%, ' + lemma + '%" OR `RStichwort` LIKE "' + lemma + '%" OR `RStichwort` LIKE "%, ' + lemma + '%" ORDER BY (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1  else 2 end),  RStichwort COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` GLOB "' + this.regexiseTerm(lemma) + '*" OR `DStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + '*" OR `RStichwort` GLOB "' + this.regexiseTerm(lemma) + '*" OR `RStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + '*" ORDER BY (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchMode.substring:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "%' + lemma + '%" OR `RStichwort` LIKE "%' + lemma + '%" OR `Corp` LIKE "%' + lemma + '%" ORDER BY RStichwort (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1  else 2 end),   COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` GLOB "*' + this.regexiseTerm(lemma) + '*" OR `RStichwort` GLOB "*' + this.regexiseTerm(lemma) + '*" OR `Corp` GLOB "*' + this.regexiseTerm(lemma) + '*" ORDER BY RStichwort (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), COLLATE NOCASE ASC';
       case SearchMode.end:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "%' + lemma + '" OR `DStichwort` LIKE "%' + lemma + ', %" OR `RStichwort` LIKE "%' + lemma + '" OR `RStichwort` LIKE "%' + lemma + ', %" ORDER BY RStichwort (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1  else 2 end),   COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` GLOB "*' + this.regexiseTerm(lemma) + '" OR `DStichwort` GLOB "*' + this.regexiseTerm(lemma) + ', *" OR `RStichwort` GLOB "*' + this.regexiseTerm(lemma) + '" OR `RStichwort` GLOB "*' + this.regexiseTerm(lemma) + ', *" ORDER BY RStichwort (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), COLLATE NOCASE ASC';
       case SearchMode.match:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` LIKE "' + lemma + '" OR `DStichwort` LIKE "' + lemma + ', %" OR `DStichwort` LIKE "%, ' + lemma + '" OR `DStichwort` LIKE "%, ' + lemma + ', %" OR `RStichwort` LIKE "' + lemma + '" OR `RStichwort` LIKE "%, ' + lemma + '" ORDER BY RStichwort (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1  else 2 end),   COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` GLOB "' + this.regexiseTerm(lemma) + '" OR `DStichwort` GLOB "' + this.regexiseTerm(lemma) + ', *" OR `DStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + '" OR `DStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + ', *" OR `RStichwort` GLOB "' + this.regexiseTerm(lemma) + '" OR `RStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + '" ORDER BY RStichwort (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), COLLATE NOCASE ASC';
     }
   }
 
@@ -244,6 +244,65 @@ export class QueryUtil {
       case SearchMode.match:
         return '"' + lemma + '"';
     }
+  }
+
+  private getRegexTerm(searchMode: SearchMode = SearchMode.start, lemma: string): string {
+    lemma = this.regexiseTerm(lemma);
+    switch(searchMode) {
+      case  SearchMode.start:
+        return '"' + lemma + '*"';
+      case  SearchMode.substring:
+        return '"*' + lemma + '*"';
+      case  SearchMode.end:
+        return '"*' + lemma + '"';
+      case SearchMode.match:
+        return '"' + lemma + '"';
+    }
+  }
+
+  private regexiseTerm(lemma: string): string {
+    lemma = lemma.replaceAll(/[äÄ]/ig, "[äÄ]")
+    lemma = lemma.replaceAll(/[àÀ]/ig, "[àÀ]")
+    lemma = lemma.replaceAll(/[âÂ]/ig, "[âÂ]")
+    lemma = lemma.replaceAll(/[a]/ig, "[aAäÄàÀâÂ]")
+    lemma = lemma.replaceAll(/[b]/ig, "[bB]")
+    lemma = lemma.replaceAll(/[c]/ig, "[cC]")
+    lemma = lemma.replaceAll(/[d]/ig, "[dD]")
+    lemma = lemma.replaceAll(/[èÈ]/ig, "[èÈ]")
+    lemma = lemma.replaceAll(/[éÉ]/ig, "[éÉ]")
+    lemma = lemma.replaceAll(/[êÊ]/ig, "[êÊ]")
+    lemma = lemma.replaceAll(/[ëË]/ig, "[ëË]")
+    lemma = lemma.replaceAll(/[e]/ig, "[eEèÈéÉêÊëË]")
+    lemma = lemma.replaceAll(/[f]/ig, "[fF]")
+    lemma = lemma.replaceAll(/[g]/ig, "[gG]")
+    lemma = lemma.replaceAll(/[h]/ig, "[hH]")
+    lemma = lemma.replaceAll(/[ìÌ]/ig, "[ìÌ]")
+    lemma = lemma.replaceAll(/[îÎ]/ig, "[îÎ]")
+    lemma = lemma.replaceAll(/[ïÏ]/ig, "[ïÏ]")
+    lemma = lemma.replaceAll(/[i]/ig, "[iIìÌîÎïÏ]")
+    lemma = lemma.replaceAll(/[j]/ig, "[jJ]")
+    lemma = lemma.replaceAll(/[k]/ig, "[kK]")
+    lemma = lemma.replaceAll(/[l]/ig, "[lL]")
+    lemma = lemma.replaceAll(/[m]/ig, "[mM]")
+    lemma = lemma.replaceAll(/[n]/ig, "[nN]")
+    lemma = lemma.replaceAll(/[Öö]/ig, "[Öö]")
+    lemma = lemma.replaceAll(/[ôÔ]/ig, "[ôÔ]")
+    lemma = lemma.replaceAll(/[òÒ]/ig, "[òÒ]")
+    lemma = lemma.replaceAll(/[o]/ig, "[oOÖöòÒôÔ]")
+    lemma = lemma.replaceAll(/[p]/ig, "[pP]")
+    lemma = lemma.replaceAll(/[q]/ig, "[qQ]")
+    lemma = lemma.replaceAll(/[r]/ig, "[rR]")
+    lemma = lemma.replaceAll(/[s]/ig, "[sS]")
+    lemma = lemma.replaceAll(/[t]/ig, "[tT]")
+    lemma = lemma.replaceAll(/[üÜ]/ig, "[üÜ]")
+    lemma = lemma.replaceAll(/[ùÙ]/ig, "[ùÙ]")
+    lemma = lemma.replaceAll(/[u]/ig, "[uUüÜùÙ]")
+    lemma = lemma.replaceAll(/[v]/ig, "[vV]")
+    lemma = lemma.replaceAll(/[w]/ig, "[wW]")
+    lemma = lemma.replaceAll(/[x]/ig, "[xX]")
+    lemma = lemma.replaceAll(/[y]/ig, "[yY]")
+    lemma = lemma.replaceAll(/[z]/ig, "[zZ]")
+    return lemma;
   }
 
   private getRumantschGrischunVerbQuery(searchMode: SearchMode = SearchMode.start, lemma: string): string {
