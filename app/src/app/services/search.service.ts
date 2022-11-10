@@ -6,6 +6,7 @@ import { CapacitorSQLite, SQLiteConnection } from '@capacitor-community/sqlite';
 import { SQLiteService } from './sqlite.service';
 import { QueryUtil } from '../util/query.util';
 import { ConfigService } from './config.service';
+import { IosHeaderCleanerUtil } from "../util/ios-header-cleaner.util";
 const DB_NAME_KEY = 'dicziunari';
 
 @Injectable({
@@ -24,6 +25,7 @@ export class SearchService {
     private sqlLiteService: SQLiteService,
     private configService: ConfigService,
     private queryUtil: QueryUtil,
+    private iosHeaderCleanerUtil: IosHeaderCleanerUtil,
   ) {
     this.sqlLiteService.isInitialized().subscribe((isInitialized) => {
       if (isInitialized) {
@@ -77,6 +79,7 @@ export class SearchService {
       statement,
       values: [],
     });
+    values.values = this.iosHeaderCleanerUtil.removeIosOnlyHeaderLine(values.values);
     if (values.values.length < 1) {
       return Promise.resolve({});
     }
@@ -101,6 +104,7 @@ export class SearchService {
       statement,
       values: [],
     });
+    values.values = this.iosHeaderCleanerUtil.removeIosOnlyHeaderLine(values.values);
     if (values.values.length < 1) {
       this.hasMoreResults = false;
     }

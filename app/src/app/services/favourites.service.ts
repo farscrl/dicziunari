@@ -4,6 +4,7 @@ import { SQLiteService } from './sqlite.service';
 import { CapacitorSQLite } from '@capacitor-community/sqlite';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Capacitor } from '@capacitor/core';
+import { IosHeaderCleanerUtil } from "../util/ios-header-cleaner.util";
 
 const DB_NAME_KEY = 'favourites';
 const initializationCommand = `
@@ -70,7 +71,10 @@ const initializationCommand = `
 export class FavouritesService {
   private isReadySubject = new BehaviorSubject(false);
 
-  constructor(private sqlLiteService: SQLiteService) {
+  constructor(
+    private sqlLiteService: SQLiteService,
+    private iosHeaderCleanerUtil: IosHeaderCleanerUtil,
+  ) {
     this.setupDatabase();
   }
 
@@ -86,7 +90,7 @@ export class FavouritesService {
       statement,
       values: [],
     });
-
+    values.values = this.iosHeaderCleanerUtil.removeIosOnlyHeaderLine(values.values);
     return values.values;
   }
 
@@ -115,6 +119,7 @@ export class FavouritesService {
       statement,
       values: [],
     });
+    values.values = this.iosHeaderCleanerUtil.removeIosOnlyHeaderLine(values.values);
 
     if (Capacitor.getPlatform() === 'web') {
       CapacitorSQLite.saveToStore({ database: DB_NAME_KEY });
@@ -136,6 +141,7 @@ export class FavouritesService {
       statement,
       values: [],
     });
+    values.values = this.iosHeaderCleanerUtil.removeIosOnlyHeaderLine(values.values);
 
     if (Capacitor.getPlatform() === 'web') {
       CapacitorSQLite.saveToStore({ database: DB_NAME_KEY });
