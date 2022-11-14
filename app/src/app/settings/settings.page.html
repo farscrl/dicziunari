@@ -57,7 +57,7 @@
     </ion-list-header>
     <ion-item>
       <ion-label>{{ "SETTINGS.VERBS.INCLUDE" | translate}}</ion-label>
-      <ion-toggle slot="start" name="blueberry" [(ngModel)]="includeVerbs" (ionChange)="includeVerbsChanged()"></ion-toggle>
+      <ion-toggle slot="start" [(ngModel)]="includeVerbs" (ionChange)="includeVerbsChanged()"></ion-toggle>
     </ion-item>
 
     <ion-radio-group [(ngModel)]="currentColorMode" (ionChange)="changeColorScheme($event)">
