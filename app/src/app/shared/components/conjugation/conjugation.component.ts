@@ -1,5 +1,6 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
 import { ConfigService } from "../../../services/config.service";
+import { Dictionary } from "../../../../data/search";
 
 @Component({
   selector: 'app-conjugation',
@@ -16,7 +17,7 @@ export class ConjugationComponent {
     if (!changes.lemma || ! changes.lemma.currentValue) {
       return;
     }
-    if (this.configService.getSelectedDictionary() === 'sursilv') {
+    if (this.isSursilvan) {
       this.lemma = this.updateSursilvanLemma(changes.lemma.currentValue);
     }
   }
@@ -83,5 +84,9 @@ export class ConjugationComponent {
   private startsWithVowel(word: string) {
     const vowelRegex = '^[aieouhAIEOUH].*'
     return word.match(vowelRegex)
+  }
+
+  get isSursilvan() {
+    return this.configService.getSelectedDictionary() === Dictionary.sursilv;
   }
 }

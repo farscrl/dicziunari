@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HighlightPipe } from '../pipes/highlight.pipe';
+import { TranslateCutPipe } from "../pipes/translate-cut.pipe";
 import { ConjugationComponent } from './components/conjugation/conjugation.component';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
@@ -14,6 +15,7 @@ import { LemmaDisplayComponent } from './components/lemma-display/lemma-display.
 
   declarations: [
     HighlightPipe,
+    TranslateCutPipe,
     ConjugationComponent,
     ConjugationPersonalComponent,
     ConjugationImpersonalComponent,
