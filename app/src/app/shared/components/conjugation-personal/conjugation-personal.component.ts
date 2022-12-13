@@ -29,6 +29,9 @@ export class ConjugationPersonalComponent implements OnInit {
   ngOnInit() {}
 
   public replaceComma(input: string) {
-    return input.replaceAll(", ", "\n");
+    const items = input.split(",");
+    return items.map(e => {
+      return e.trim();
+    }).join("\n")
   }
 }

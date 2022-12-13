@@ -1,6 +1,18 @@
-<p>
-  <ng-container *ngIf="form1">{{ form1 }}<br></ng-container>
-  <ng-container *ngIf="form2">{{ form2 }}<br></ng-container>
-  <ng-container *ngIf="form3">{{ form3 }}<br></ng-container>
-  <ng-container *ngIf="form4">{{ form4 }}</ng-container>
-</p>
+<table>
+  <tr *ngIf="form1">
+    <td class="pronoun"></td>
+    <td>{{ replaceComma(form1) }}</td>
+  </tr>
+  <tr *ngIf="form2">
+    <td class="pronoun"></td>
+    <td>{{ replaceComma(form2) }}</td>
+  </tr>
+  <tr *ngIf="form3">
+    <td class="pronoun"></td>
+    <td>{{ replaceComma(form3) }}</td>
+  </tr>
+  <tr *ngIf="form4">
+    <td class="pronoun"></td>
+    <td>{{ replaceComma(form4) }}</td>
+  </tr>
+</table>
