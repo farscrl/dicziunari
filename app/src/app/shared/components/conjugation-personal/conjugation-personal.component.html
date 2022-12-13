@@ -1,26 +1,26 @@
 <table>
-  <tr>
+  <tr *ngIf="sing1">
     <td class="pronoun">{{ sing1Pronoun }}</td>
-    <td>{{ sing1 }}</td>
+    <td>{{ replaceComma(sing1) }}</td>
   </tr>
-  <tr>
+  <tr *ngIf="sing2">
     <td class="pronoun">{{ sing2Pronoun }}</td>
-    <td>{{ sing2 }}</td>
+    <td>{{ replaceComma(sing2) }}</td>
   </tr>
-  <tr>
+  <tr *ngIf="sing3">
     <td class="pronoun">{{ sing3Pronoun }}</td>
-    <td>{{ sing3 }}</td>
+    <td>{{ replaceComma(sing3) }}</td>
   </tr>
-  <tr>
+  <tr *ngIf="plural1">
     <td class="pronoun">{{ plural1Pronoun }}</td>
-    <td>{{ plural1 }}</td>
+    <td>{{ replaceComma(plural1) }}</td>
   </tr>
-  <tr>
+  <tr *ngIf="plural2">
     <td class="pronoun">{{ plural2Pronoun }}</td>
-    <td>{{ plural2 }}</td>
+    <td>{{ replaceComma(plural2) }}</td>
   </tr>
-  <tr>
+  <tr *ngIf="plural3">
     <td class="pronoun">{{ plural3Pronoun }}</td>
-    <td>{{ plural3 }}</td>
+    <td>{{ replaceComma(plural3) }}</td>
   </tr>
 </table>
