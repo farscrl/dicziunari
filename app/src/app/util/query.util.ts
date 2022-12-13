@@ -338,6 +338,7 @@ export class QueryUtil {
         OR \`conjunctivplural1\` LIKE "che nus ${term}"
         OR \`conjunctivplural2\` LIKE "che vus ${term}"
         OR \`conjunctivplural3\` LIKE "ch'els/ellas ${term}"
+        OR \`conjunctivplural3\` LIKE "ch'i ${term}"
         OR \`cundizionalsing1\` LIKE "jau ${term}"
         OR \`cundizionalsing2\` LIKE "ti ${term}"
         OR \`cundizionalsing3\` LIKE "el/ella ${term}"
