@@ -91,16 +91,17 @@ export class QueryUtil {
     searchMode: SearchMode,
     lemma: string,
   ): string {
+    const verbsQuery = this.getSurmiranVerbQuery(searchMode, lemma);
     switch(searchDirection) {
       case SearchDirection.fromDe:
         // eslint-disable-next-line max-len
         return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM surmiran WHERE DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
       case SearchDirection.fromRm:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM surmiran WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM surmiran WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchDirection.both:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM surmiran WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM surmiran WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -109,16 +110,17 @@ export class QueryUtil {
     searchMode: SearchMode,
     lemma: string,
   ): string {
+    const verbsQuery = this.getSutsilvanVerbQuery(searchMode, lemma);
     switch(searchDirection) {
       case SearchDirection.fromDe:
         // eslint-disable-next-line max-len
         return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM sutsilvan WHERE DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
       case SearchDirection.fromRm:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM sutsilvan WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM sutsilvan WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchDirection.both:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM sutsilvan WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing3 FROM sutsilvan WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = \'' + lemma + '\' then 1 when DStichwort = \'' + lemma + '\' then 1 else 2 end), DStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -177,6 +179,7 @@ export class QueryUtil {
     searchMode: SearchMode,
     lemma: string,
   ): string {
+    const verbsQuery = this.getSursilvanVerbQuery(searchMode, lemma);
     switch (searchMode) {
       case SearchMode.start:
         // eslint-disable-next-line max-len
@@ -197,19 +200,20 @@ export class QueryUtil {
     searchMode: SearchMode,
     lemma: string,
   ): string {
+    const verbsQuery = this.getSursilvanVerbQuery(searchMode, lemma);
     switch (searchMode) {
       case SearchMode.start:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `RStichwort` GLOB "' + this.regexiseTerm(lemma) + '*" OR `RStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + '*" ORDER BY (case when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan` WHERE `RStichwort` GLOB "' + this.regexiseTerm(lemma) + '*" OR `RStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + '*" ' + verbsQuery + ' ORDER BY (case when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchMode.substring:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `RStichwort` GLOB "*' + this.regexiseTerm(lemma) + '*" ORDER BY (case when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan` WHERE `RStichwort` GLOB "*' + this.regexiseTerm(lemma) + '*" ' + verbsQuery + '  ORDER BY (case when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchMode.end:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `RStichwort` GLOB "*' + this.regexiseTerm(lemma) + '" OR `RStichwort` GLOB "*' + this.regexiseTerm(lemma) + ', *" ORDER BY (case when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan` WHERE `RStichwort` GLOB "*' + this.regexiseTerm(lemma) + '" OR `RStichwort` GLOB "*' + this.regexiseTerm(lemma) + ', *" ' + verbsQuery + '  ORDER BY (case when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchMode.match:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan`WHERE `RStichwort` GLOB "' + this.regexiseTerm(lemma) + '" OR `RStichwort` GLOB "' + this.regexiseTerm(lemma) + ', *" OR `RStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + '" OR `RStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + ', *" ORDER BY (case when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1  else 2 end),  RStichwort COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan`WHERE `RStichwort` GLOB "' + this.regexiseTerm(lemma) + '" OR `RStichwort` GLOB "' + this.regexiseTerm(lemma) + ', *" OR `RStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + '" OR `RStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + ', *" ' + verbsQuery + '  ORDER BY (case when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1  else 2 end),  RStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -217,19 +221,20 @@ export class QueryUtil {
     searchMode: SearchMode,
     lemma: string,
   ): string {
+    const verbsQuery = this.getSursilvanVerbQuery(searchMode, lemma);
     switch (searchMode) {
       case SearchMode.start:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` GLOB "' + this.regexiseTerm(lemma) + '*" OR `DStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + '*" OR `RStichwort` GLOB "' + this.regexiseTerm(lemma) + '*" OR `RStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + '*" ORDER BY (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` GLOB "' + this.regexiseTerm(lemma) + '*" OR `DStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + '*" OR `RStichwort` GLOB "' + this.regexiseTerm(lemma) + '*" OR `RStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + '*" ' + verbsQuery + '  ORDER BY (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchMode.substring:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` GLOB "*' + this.regexiseTerm(lemma) + '*" OR `RStichwort` GLOB "*' + this.regexiseTerm(lemma) + '*" OR `Corp` GLOB "*' + this.regexiseTerm(lemma) + '*" ORDER BY (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` GLOB "*' + this.regexiseTerm(lemma) + '*" OR `RStichwort` GLOB "*' + this.regexiseTerm(lemma) + '*" OR `Corp` GLOB "*' + this.regexiseTerm(lemma) + '*" ' + verbsQuery + '  ORDER BY (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchMode.end:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` GLOB "*' + this.regexiseTerm(lemma) + '" OR `DStichwort` GLOB "*' + this.regexiseTerm(lemma) + ', *" OR `RStichwort` GLOB "*' + this.regexiseTerm(lemma) + '" OR `RStichwort` GLOB "*' + this.regexiseTerm(lemma) + ', *" ORDER BY (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` GLOB "*' + this.regexiseTerm(lemma) + '" OR `DStichwort` GLOB "*' + this.regexiseTerm(lemma) + ', *" OR `RStichwort` GLOB "*' + this.regexiseTerm(lemma) + '" OR `RStichwort` GLOB "*' + this.regexiseTerm(lemma) + ', *" ' + verbsQuery + '  ORDER BY (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
       case SearchMode.match:
         // eslint-disable-next-line max-len
-        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` GLOB "' + this.regexiseTerm(lemma) + '" OR `DStichwort` GLOB "' + this.regexiseTerm(lemma) + ', *" OR `DStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + '" OR `DStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + ', *" OR `RStichwort` GLOB "' + this.regexiseTerm(lemma) + '" OR `RStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + '" ORDER BY (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
+        return 'SELECT * FROM `sursilvan` WHERE `DStichwort` GLOB "' + this.regexiseTerm(lemma) + '" OR `DStichwort` GLOB "' + this.regexiseTerm(lemma) + ', *" OR `DStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + '" OR `DStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + ', *" OR `RStichwort` GLOB "' + this.regexiseTerm(lemma) + '" OR `RStichwort` GLOB "*, ' + this.regexiseTerm(lemma) + '" ' + verbsQuery + '  ORDER BY (case when DStichwort LIKE \'' + lemma + '\' then 1 when DStichwort LIKE \'%,' + lemma + '\' then 1 when DStichwort LIKE \'' + lemma + ',%\' then 1 when DStichwort = \'%,' + lemma + ',%\' then 1 when RStichwort LIKE \'' + lemma + '\' then 1 when RStichwort LIKE \'%,' + lemma + '\' then 1 when RStichwort LIKE \'' + lemma + ',%\' then 1 when RStichwort = \'%,' + lemma + ',%\' then 1 else 2 end), RStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -314,38 +319,184 @@ export class QueryUtil {
 
       query = `
         OR \`infinitiv\` LIKE "${term}"
-        OR \`preschentsing1\` LIKE "jau ${term}"
-        OR \`preschentsing2\` LIKE "ti ${term}"
+        OR \`preschentsing1\` LIKE "jau ${term}" OR \`preschentsing1\` LIKE "jau ma ${term}" OR \`preschentsing1\` LIKE "jau m'${term}"
+        OR \`preschentsing2\` LIKE "ti ${term}" OR \`preschentsing2\` LIKE "ti ta ${term}" OR \`preschentsing2\` LIKE "ti t'${term}"
+        OR \`preschentsing3\` LIKE "el/ella ${term}" OR \`preschentsing3\` LIKE "el/ella sa ${term}" OR \`preschentsing3\` LIKE "el/ella s'${term}"
+        OR \`preschentsing3\` LIKE "i ${term}" OR \`preschentsing3\` LIKE "i sa ${term}" OR \`preschentsing3\` LIKE "i s'${term}"
+        OR \`preschentplural1\` LIKE "nus ${term}" OR \`preschentplural1\` LIKE "nus ans ${term}"
+        OR \`preschentplural2\` LIKE "vus ${term}" OR \`preschentplural2\` LIKE "vus as ${term}"
+        OR \`preschentplural3\` LIKE "els/ellas ${term}" OR \`preschentplural3\` LIKE "els/ellas sa ${term}" OR \`preschentplural3\` LIKE "els/ellas s'${term}"
+        OR \`imperfectsing1\` LIKE "jau ${term}" OR \`imperfectsing1\` LIKE "jau ma ${term}" OR \`imperfectsing1\` LIKE "jau m'${term}"
+        OR \`imperfectsing2\` LIKE "ti ${term}" OR \`imperfectsing2\` LIKE "ti ta ${term}" OR \`imperfectsing2\` LIKE "ti t'${term}"
+        OR \`imperfectsing3\` LIKE "el/ella ${term}" OR \`imperfectsing3\` LIKE "el/ella sa ${term}" OR \`imperfectsing3\` LIKE "el/ella s'${term}"
+        OR \`imperfectsing3\` LIKE "i ${term}" OR \`imperfectsing3\` LIKE "i sa ${term}" OR \`imperfectsing3\` LIKE "i s'${term}"
+        OR \`imperfectplural1\` LIKE "nus ${term}" OR \`imperfectplural1\` LIKE "nus ans ${term}"
+        OR \`imperfectplural2\` LIKE "vus ${term}" OR \`imperfectplural2\` LIKE "vus as ${term}"
+        OR \`imperfectplural3\` LIKE "els/ellas ${term}" OR \`imperfectplural3\` LIKE "els/ellas sa ${term}" OR \`imperfectplural3\` LIKE "els/ellas s'${term}"
+        OR \`participperfectfs\` LIKE "${term}"
+        OR \`participperfectms\` LIKE "${term}"
+        OR \`participperfectfp\` LIKE "${term}"
+        OR \`participperfectmp\` LIKE "${term}"
+        OR \`conjunctivsing1\` LIKE "che jau ${term}" OR \`conjunctivsing1\` LIKE "che jau ma ${term}" OR \`conjunctivsing1\` LIKE "che jau m'${term}"
+        OR \`conjunctivsing2\` LIKE "che ti ${term}" OR \`conjunctivsing2\` LIKE "che ti ta ta ${term}" OR \`conjunctivsing2\` LIKE "che ti t'${term}"
+        OR \`conjunctivsing3\` LIKE "ch'el/ella ${term}" OR \`conjunctivsing3\` LIKE "ch'el/ella sa ${term}" OR \`conjunctivsing3\` LIKE "ch'el/ella s'${term}"
+        OR \`conjunctivplural3\` LIKE "ch'i ${term}" OR \`conjunctivplural3\` LIKE "ch'i sa ${term}" OR \`conjunctivplural3\` LIKE "ch'i s'${term}"
+        OR \`conjunctivplural1\` LIKE "che nus ${term}" OR \`conjunctivplural1\` LIKE "che nus ans ${term}"
+        OR \`conjunctivplural2\` LIKE "che vus ${term}" OR \`conjunctivplural2\` LIKE "che vus as ${term}"
+        OR \`conjunctivplural3\` LIKE "ch'els/ellas ${term}" OR \`conjunctivplural3\` LIKE "ch'els/ellas sa ${term}" OR \`conjunctivplural3\` LIKE "ch'els/ellas s'${term}"
+        OR \`cundizionalsing1\` LIKE "jau ${term}" OR \`cundizionalsing1\` LIKE "jau ma ${term}" OR \`cundizionalsing1\` LIKE "jau m'${term}"
+        OR \`cundizionalsing2\` LIKE "ti ${term}" OR \`cundizionalsing2\` LIKE "ti ta ${term}" OR \`cundizionalsing2\` LIKE "ti t'${term}"
+        OR \`cundizionalsing3\` LIKE "el/ella ${term}" OR \`cundizionalsing3\` LIKE "el/ella sa ${term}" OR \`cundizionalsing3\` LIKE "el/ella s'${term}"
+        OR \`cundizionalsing3\` LIKE "i ${term}" OR \`cundizionalsing3\` LIKE "i sa ${term}" OR \`cundizionalsing3\` LIKE "i s'${term}"
+        OR \`cundizionalplural1\` LIKE "nus ${term}" OR \`cundizionalplural1\` LIKE "nus ans ${term}"
+        OR \`cundizionalplural2\` LIKE "vus ${term}" OR \`cundizionalplural2\` LIKE "vus as ${term}"
+        OR \`cundizionalplural3\` LIKE "els/ellas ${term}" OR \`cundizionalplural3\` LIKE "els/ellas sa ${term}" OR \`cundizionalplural3\` LIKE "els/ellas s'${term}"
+        OR \`imperativ1\` LIKE "${term}"
+        OR \`imperativ2\` LIKE "${term}"
+        OR \`gerundium\` LIKE "${term}"
+      `;
+    }
+
+    return query;
+  }
+
+  private getSurmiranVerbQuery(searchMode: SearchMode = SearchMode.start, lemma: string): string {
+    let query = '';
+
+    if (this.searchInVerbs) {
+      let term = this.getTerm(searchMode, lemma);
+      term = term.replace(/"/g, '');
+
+      query = `
+        OR \`infinitiv\` LIKE "${term}"
+        OR \`preschentsing1\` LIKE "ia ${term}" OR \`preschentsing1\` LIKE "ia ma ${term}" OR \`preschentsing1\` LIKE "ia m'${term}"
+        OR \`preschentsing2\` LIKE "te ${term}" OR \`preschentsing2\` LIKE "te ta ${term}" OR \`preschentsing2\` LIKE "te t'${term}"
+        OR \`preschentsing3\` LIKE "el/ella ${term}" OR \`preschentsing3\` LIKE "el/ella sa ${term}" OR \`preschentsing3\` LIKE "el/ella s'${term}"
+        OR \`preschentsing3\` LIKE "i ${term}" OR \`preschentsing3\` LIKE "i sa ${term}" OR \`preschentsing3\` LIKE "i s'${term}"
+        OR \`preschentplural1\` LIKE "nous ${term}" OR \`preschentplural1\` LIKE "nous ans ${term}"
+        OR \`preschentplural2\` LIKE "vous ${term}" OR \`preschentplural2\` LIKE "vous az ${term}"
+        OR \`preschentplural3\` LIKE "els/ellas ${term}" OR \`preschentplural3\` LIKE "els/ellas sa ${term}" OR \`preschentplural3\` LIKE "els/ellas s'${term}"
+        OR \`imperfectsing1\` LIKE "ia ${term}" OR \`imperfectsing1\` LIKE "ia ma ${term}" OR \`imperfectsing1\` LIKE "ia m'${term}"
+        OR \`imperfectsing2\` LIKE "te ${term}" OR \`imperfectsing2\` LIKE "te ta ${term}" OR \`imperfectsing2\` LIKE "te t'${term}"
+        OR \`imperfectsing3\` LIKE "el/ella ${term}" OR \`imperfectsing3\` LIKE "el/ella sa ${term}" OR \`imperfectsing3\` LIKE "el/ella s'${term}"
+        OR \`imperfectsing3\` LIKE "i ${term}" OR \`imperfectsing3\` LIKE "i sa ${term}" OR \`imperfectsing3\` LIKE "i s'${term}"
+        OR \`imperfectplural1\` LIKE "nous ${term}" OR \`imperfectplural1\` LIKE "nous ans ${term}"
+        OR \`imperfectplural2\` LIKE "vous ${term}" OR \`imperfectplural2\` LIKE "vous az ${term}"
+        OR \`imperfectplural3\` LIKE "els/ellas ${term}" OR \`imperfectplural3\` LIKE "els/ellas sa ${term}" OR \`imperfectplural3\` LIKE "els/ellas s'${term}"
+        OR \`participperfectfs\` LIKE "${term}"
+        OR \`participperfectms\` LIKE "${term}"
+        OR \`participperfectfp\` LIKE "${term}"
+        OR \`participperfectmp\` LIKE "${term}"
+        OR \`conjunctivsing1\` LIKE "tg'ia ${term}" OR \`conjunctivsing1\` LIKE "tg'ia ma ${term}" OR \`conjunctivsing1\` LIKE "tg'ia m'${term}"
+        OR \`conjunctivsing2\` LIKE "tgi te ${term}" OR \`conjunctivsing2\` LIKE "tgi te ta ta ${term}" OR \`conjunctivsing2\` LIKE "tgi te t'${term}"
+        OR \`conjunctivsing3\` LIKE "tg'el/ella ${term}" OR \`conjunctivsing3\` LIKE "tg'el/ella sa ${term}" OR \`conjunctivsing3\` LIKE "tg'el/ella s'${term}"
+        OR \`conjunctivplural3\` LIKE "tg'i ${term}" OR \`conjunctivplural3\` LIKE "tg'i sa ${term}" OR \`conjunctivplural3\` LIKE "tg'i s'${term}"
+        OR \`conjunctivplural1\` LIKE "tgi nous ${term}" OR \`conjunctivplural1\` LIKE "tgi nous ans ${term}"
+        OR \`conjunctivplural2\` LIKE "tgi vous ${term}" OR \`conjunctivplural2\` LIKE "tgi vous az ${term}"
+        OR \`conjunctivplural3\` LIKE "tg'els/ellas ${term}" OR \`conjunctivplural3\` LIKE "tg'els/ellas sa ${term}" OR \`conjunctivplural3\` LIKE "tg'els/ellas s'${term}"
+        OR \`cundizionalsing1\` LIKE "ia ${term}" OR \`cundizionalsing1\` LIKE "ia ma ${term}" OR \`cundizionalsing1\` LIKE "ia m'${term}"
+        OR \`cundizionalsing2\` LIKE "te ${term}" OR \`cundizionalsing2\` LIKE "te ta ${term}" OR \`cundizionalsing2\` LIKE "te t'${term}"
+        OR \`cundizionalsing3\` LIKE "el/ella ${term}" OR \`cundizionalsing3\` LIKE "el/ella sa ${term}" OR \`cundizionalsing3\` LIKE "el/ella s'${term}"
+        OR \`cundizionalsing3\` LIKE "i ${term}" OR \`cundizionalsing3\` LIKE "i sa ${term}" OR \`cundizionalsing3\` LIKE "i s'${term}"
+        OR \`cundizionalplural1\` LIKE "nous ${term}" OR \`cundizionalplural1\` LIKE "nous ans ${term}"
+        OR \`cundizionalplural2\` LIKE "vous ${term}" OR \`cundizionalplural2\` LIKE "vous az ${term}"
+        OR \`cundizionalplural3\` LIKE "els/ellas ${term}" OR \`cundizionalplural3\` LIKE "els/ellas sa ${term}" OR \`cundizionalplural3\` LIKE "els/ellas s'${term}"
+        OR \`imperativ1\` LIKE "${term}"
+        OR \`imperativ2\` LIKE "${term}"
+        OR \`gerundium\` LIKE "${term}"
+      `;
+    }
+
+    return query;
+  }
+
+  private getSutsilvanVerbQuery(searchMode: SearchMode = SearchMode.start, lemma: string): string {
+    let query = '';
+
+    if (this.searchInVerbs) {
+      let term = this.getTerm(searchMode, lemma);
+      term = term.replace(/"/g, '');
+
+      query = `
+        OR \`infinitiv\` LIKE "${term}"
+        OR \`preschentsing1\` LIKE "jou ${term}"
+        OR \`preschentsing2\` LIKE "tei ${term}"
         OR \`preschentsing3\` LIKE "el/ella ${term}"
         OR \`preschentsing3\` LIKE "i ${term}"
-        OR \`preschentplural1\` LIKE "nus ${term}"
-        OR \`preschentplural2\` LIKE "vus ${term}"
+        OR \`preschentplural1\` LIKE "nous ${term}"
+        OR \`preschentplural2\` LIKE "vous ${term}"
         OR \`preschentplural3\` LIKE "els/ellas ${term}"
-        OR \`imperfectsing1\` LIKE "jau ${term}"
-        OR \`imperfectsing2\` LIKE "ti ${term}"
+        OR \`imperfectsing1\` LIKE "jou ${term}"
+        OR \`imperfectsing2\` LIKE "tei ${term}"
         OR \`imperfectsing3\` LIKE "el/ella ${term}"
         OR \`imperfectsing3\` LIKE "i ${term}"
-        OR \`imperfectplural1\` LIKE "nus ${term}"
-        OR \`imperfectplural2\` LIKE "vus ${term}"
+        OR \`imperfectplural1\` LIKE "nous ${term}"
+        OR \`imperfectplural2\` LIKE "vous ${term}"
         OR \`imperfectplural3\` LIKE "els/ellas ${term}"
         OR \`participperfectfs\` LIKE "${term}"
         OR \`participperfectms\` LIKE "${term}"
         OR \`participperfectfp\` LIKE "${term}"
         OR \`participperfectmp\` LIKE "${term}"
-        OR \`conjunctivsing1\` LIKE "che jau ${term}"
-        OR \`conjunctivsing2\` LIKE "che ti ${term}"
-        OR \`conjunctivsing3\` LIKE "ch'ell/ella ${term}"
-        OR \`conjunctivplural1\` LIKE "che nus ${term}"
-        OR \`conjunctivplural2\` LIKE "che vus ${term}"
-        OR \`conjunctivplural3\` LIKE "ch'els/ellas ${term}"
-        OR \`conjunctivplural3\` LIKE "ch'i ${term}"
-        OR \`cundizionalsing1\` LIKE "jau ${term}"
-        OR \`cundizionalsing2\` LIKE "ti ${term}"
+        OR \`conjunctivsing1\` LIKE "tg'jou ${term}"
+        OR \`conjunctivsing2\` LIKE "tgi tei ${term}"
+        OR \`conjunctivsing3\` LIKE "tg'el/ella ${term}"
+        OR \`conjunctivplural3\` LIKE "tg'i ${term}"
+        OR \`conjunctivplural1\` LIKE "tgi nous ${term}"
+        OR \`conjunctivplural2\` LIKE "tgi vous ${term}"
+        OR \`conjunctivplural3\` LIKE "tg'els/ellas ${term}"
+        OR \`cundizionalsing1\` LIKE "jou ${term}"
+        OR \`cundizionalsing2\` LIKE "tei ${term}"
         OR \`cundizionalsing3\` LIKE "el/ella ${term}"
         OR \`cundizionalsing3\` LIKE "i ${term}"
-        OR \`cundizionalplural1\` LIKE "nus ${term}"
-        OR \`cundizionalplural2\` LIKE "vus ${term}"
+        OR \`cundizionalplural1\` LIKE "nous ${term}"
+        OR \`cundizionalplural2\` LIKE "vous ${term}"
         OR \`cundizionalplural3\` LIKE "els/ellas ${term}"
+        OR \`imperativ1\` LIKE "${term}"
+        OR \`imperativ2\` LIKE "${term}"
+        OR \`gerundium\` LIKE "${term}"
+      `;
+    }
+
+    return query;
+  }
+
+  private getSursilvanVerbQuery(searchMode: SearchMode = SearchMode.start, lemma: string): string {
+    let query = '';
+
+    if (this.searchInVerbs) {
+      let term = this.getTerm(searchMode, lemma);
+      term = term.replace(/"/g, '');
+
+      query = `
+        OR \`infinitiv\` LIKE "${term}"
+        OR \`preschentsing1\` LIKE "${term}"
+        OR \`preschentsing2\` LIKE "${term}"
+        OR \`preschentsing3\` LIKE "${term}"
+        OR \`preschentplural1\` LIKE "${term}"
+        OR \`preschentplural2\` LIKE "${term}"
+        OR \`preschentplural3\` LIKE "${term}"
+        OR \`imperfectsing1\` LIKE "${term}"
+        OR \`imperfectsing2\` LIKE "${term}"
+        OR \`imperfectsing3\` LIKE "${term}"
+        OR \`imperfectplural1\` LIKE "${term}"
+        OR \`imperfectplural2\` LIKE "${term}"
+        OR \`imperfectplural3\` LIKE "${term}"
+        OR \`participperfectfs\` LIKE "${term}"
+        OR \`participperfectms\` LIKE "${term}"
+        OR \`participperfectfp\` LIKE "${term}"
+        OR \`participperfectmp\` LIKE "${term}"
+        OR \`conjunctivsing1\` LIKE "${term}"
+        OR \`conjunctivsing2\` LIKE "${term}"
+        OR \`conjunctivsing3\` LIKE "${term}"
+        OR \`conjunctivplural1\` LIKE "${term}"
+        OR \`conjunctivplural2\` LIKE "${term}"
+        OR \`conjunctivplural3\` LIKE "${term}"
+        OR \`cundizionalsing1\` LIKE "${term}"
+        OR \`cundizionalsing2\` LIKE "${term}"
+        OR \`cundizionalsing3\` LIKE "${term}"
+        OR \`cundizionalplural1\` LIKE "${term}"
+        OR \`cundizionalplural2\` LIKE "${term}"
+        OR \`cundizionalplural3\` LIKE "${term}"
         OR \`imperativ1\` LIKE "${term}"
         OR \`imperativ2\` LIKE "${term}"
         OR \`gerundium\` LIKE "${term}"
