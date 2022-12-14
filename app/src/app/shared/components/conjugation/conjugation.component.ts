@@ -15,7 +15,7 @@ export class ConjugationComponent implements OnInit {
 
   public pronouns = new Pronouns();
 
-  private searchString? :string;
+  public searchString? :string;
 
   constructor(
     private configService: ConfigService,
