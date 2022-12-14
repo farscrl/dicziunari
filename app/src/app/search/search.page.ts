@@ -27,6 +27,7 @@ export class SearchPage implements OnInit, OnDestroy {
   private dictionarySubscription: Subscription;
   private searchDirectionSubscription: Subscription;
   private searchModeSubscription: Subscription;
+  private includeVerbsSubscription: Subscription;
 
   constructor(private searchService: SearchService, private configService: ConfigService, private modalController: ModalController) { }
 
@@ -44,12 +45,16 @@ export class SearchPage implements OnInit, OnDestroy {
     this.searchModeSubscription = this.configService.getSearchModeObservable().subscribe((searchMode) => {
       this.search();
     });
+    this.includeVerbsSubscription = this.configService.getIncludeVerbsObservable().subscribe(includeVerbs => {
+      this.search();
+    });
   }
 
   ngOnDestroy(): void {
     this.dictionarySubscription.unsubscribe();
     this.searchDirectionSubscription.unsubscribe();
     this.searchModeSubscription.unsubscribe();
+    this.includeVerbsSubscription.unsubscribe();
   }
 
   async changeDictionary() {
