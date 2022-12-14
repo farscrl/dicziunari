@@ -12,6 +12,7 @@ export class ImageCreatorUtil {
 
   private rm: string;
   private de: string;
+  private text: string;
 
   private bgImage: HTMLImageElement;
   private logoImage: HTMLImageElement;
@@ -30,8 +31,22 @@ export class ImageCreatorUtil {
 
     const ctxBg = this.getBgCanvasContext();
 
-    this.addRomanshCanvas(ctxBg)
+    this.addRomanshCanvas(ctxBg);
     this.generateGermanCanvas(ctxBg);
+
+    await this.shareImage(ctxBg.canvas);
+  }
+
+  public async createImageSursilvan(text: string) {
+    this.text = text;
+
+    if (this.text.length > 1500) {
+      this.text = this.text.substr(0, 1500) + "[\u2026]";
+    }
+
+    const ctxBg = this.getBgCanvasContext();
+
+    this.addSursilvanCanvas(ctxBg);
 
     await this.shareImage(ctxBg.canvas);
   }
@@ -59,10 +74,15 @@ export class ImageCreatorUtil {
     return ctxBg;
   }
 
-  private getTextCanvas(text: string): HTMLCanvasElement {
+  private getTextCanvas(text: string, big: boolean = false): HTMLCanvasElement {
     const canvasText = document.createElement('canvas') as HTMLCanvasElement | null;
-    canvasText.width = 740;
-    canvasText.height = 330;
+    if (big) {
+      canvasText.width = 740;
+      canvasText.height = 720;
+    } else {
+      canvasText.width = 740;
+      canvasText.height = 330;
+    }
     const ctx = canvasText.getContext('2d');
     ctx.fillStyle = '#fff';
 
@@ -86,6 +106,11 @@ export class ImageCreatorUtil {
   private generateGermanCanvas(ctxBg: CanvasRenderingContext2D) {
     const canvas = this.getTextCanvas(this.de);
     ctxBg.drawImage(canvas, 30, 420);
+  }
+
+  private addSursilvanCanvas(ctxBg: CanvasRenderingContext2D) {
+    const canvas = this.getTextCanvas(this.text, true);
+    ctxBg.drawImage(canvas, 30, 50);
   }
 
   private async shareImage(canvasBg: HTMLCanvasElement) {

@@ -81,9 +81,15 @@ export class LemmaDisplayComponent implements OnInit, OnDestroy {
   }
 
   async share(slider) {
-    this.imageCreator.createImage(this.lemma.DStichwort, this.lemma.RStichwort).finally(() => {
-      slider.close();
-    });
+    if (this.isSursilvan) {
+      this.imageCreator.createImageSursilvan(this.lemma.RStichwort + ' ' + this.completeLemma).finally(() => {
+        slider.close();
+      });
+    } else {
+      this.imageCreator.createImage(this.lemma.DStichwort, this.lemma.RStichwort).finally(() => {
+        slider.close();
+      });
+    }
   }
 
   async copy(slider) {
