@@ -7,6 +7,7 @@ import { FavouritesService } from '../../../services/favourites.service';
 import { ToastService } from '../../../services/toast.service';
 import { SearchService } from '../../../services/search.service';
 import { Subscription } from 'rxjs';
+import { ImageCreatorUtil } from "../../../util/image-creator.util";
 
 @Component({
   selector: 'app-lemma-display',
@@ -48,6 +49,7 @@ export class LemmaDisplayComponent implements OnInit, OnDestroy {
     private favouritesService: FavouritesService,
     private toastService: ToastService,
     private searchService: SearchService,
+    private imageCreator: ImageCreatorUtil,
   ) {}
 
   ngOnInit() {
@@ -74,6 +76,12 @@ export class LemmaDisplayComponent implements OnInit, OnDestroy {
     this.searchService.getDetails(this.lemma.id).then(async (lemma) => {
       await this.favouritesService.addFavorite(this.dictionary, lemma);
       await this.toastService.showNotification('SEARCH.RESULTS.SAVED');
+      slider.close();
+    });
+  }
+
+  async share(slider) {
+    this.imageCreator.createImage(this.lemma.DStichwort, this.lemma.RStichwort).finally(() => {
       slider.close();
     });
   }
