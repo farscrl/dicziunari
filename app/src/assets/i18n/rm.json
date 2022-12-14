@@ -52,11 +52,11 @@
       "TITLE": "Visualisaziun",
       "LIGHT": "Cler",
       "DARK": "Stgir",
-      "AUTO": "Surprender dal sistem"
+      "AUTO": "Surpigliar dal sistem"
     },
     "VERBS": {
       "TITLE": "Verbs conjugads",
-      "INCLUDE": "Includer en la tschertga (pli plaun)"
+      "INCLUDE": "Includer en tschertga (pli plaun)"
     },
     "OTHER": {
       "TITLE": "Info",
