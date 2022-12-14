@@ -2,9 +2,9 @@
 
 This folder contains the sources needed to build the app. It is a [Capacitor](https://capacitorjs.com/)-Project based on [Ionic](https://ionicframework.com/) and [Angular](https://angular.io/).
 
-## Requirements
+## Requirements
 
-- NodeJS v12.4.0 or higher
+- NodeJS v16.13.0 or higher
 - Ionic CLI
 - Capacitor CLI
 - Angular CLI
