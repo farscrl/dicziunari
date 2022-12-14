@@ -52,13 +52,19 @@
       </ion-item>
     </ion-radio-group>
 
-    <ion-list-header>
-      <ion-label>{{ "SETTINGS.VERBS.TITLE" | translate}}</ion-label>
-    </ion-list-header>
-    <ion-item>
-      <ion-label>{{ "SETTINGS.VERBS.INCLUDE" | translate}}</ion-label>
-      <ion-toggle slot="start" [(ngModel)]="includeVerbs" (ionChange)="includeVerbsChanged()"></ion-toggle>
-    </ion-item>
+    <ion-radio-group [(ngModel)]="includeVerbs" (ionChange)="includeVerbsChanged()">
+      <ion-list-header>
+        <ion-label>{{ "SETTINGS.VERBS.TITLE" | translate}}</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>{{ "SETTINGS.VERBS.NOT_INCLUDE" | translate}}</ion-label>
+        <ion-radio slot="start" [value]="false"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{ "SETTINGS.VERBS.INCLUDE" | translate}}</ion-label>
+        <ion-radio slot="start" [value]="true"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
 
     <ion-radio-group [(ngModel)]="currentColorMode" (ionChange)="changeColorScheme($event)">
       <ion-list-header>
