@@ -66,7 +66,7 @@ export class LemmaDisplayComponent implements OnInit, OnDestroy {
     if (this.isSaved) {
       this.router.navigate(['/tabs/favourites/detail/' + this.lemma.id], { state: { data: this.lemma } });
     } else {
-      this.router.navigate(['/tabs/search/detail/' + this.lemma.id]);
+      this.router.navigate(['/tabs/search/detail/' + this.lemma.id],{ queryParams: { searchString: this.searchString }} );
     }
   }
 

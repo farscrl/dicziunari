@@ -6,17 +6,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./conjugation-impersonal.component.scss'],
 })
 export class ConjugationImpersonalComponent implements OnInit {
-  @Input()
-  public form1;
+  @Input() public form1;
 
-  @Input()
-  public form2;
+  @Input() public form2;
 
-  @Input()
-  public form3;
+  @Input() public form3;
 
-  @Input()
-  public form4;
+  @Input() public form4;
+
+  @Input() public searchString?: string
 
   constructor() {}
 

@@ -1,20 +1,33 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { ConfigService } from "../../../services/config.service";
 import { Dictionary } from "../../../../data/search";
 import { Pronouns } from "../../../../data/pronouns";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-conjugation',
   templateUrl: './conjugation.component.html',
   styleUrls: ['./conjugation.component.scss'],
 })
-export class ConjugationComponent {
+export class ConjugationComponent implements OnInit {
   @Input()
   public lemma;
 
   public pronouns = new Pronouns();
 
-  constructor(private configService: ConfigService) {}
+  private searchString? :string;
+
+  constructor(
+    private configService: ConfigService,
+    private route: ActivatedRoute,
+  ) {}
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.searchString = params.searchString;
+      console.log(this.searchString);
+    });
+  }
 
   ngOnChanges(changes: SimpleChanges) {
     if (!changes.lemma || ! changes.lemma.currentValue) {

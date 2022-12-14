@@ -8,6 +8,7 @@
       <ion-text><h3>{{ 'CONJUGATION.PRESENT_TENSE' | translate }}</h3></ion-text>
       <p>
         <app-conjugation-personal
+          [searchString]="searchString"
           [sing1]="lemma.preschentsing1" [sing1Pronoun]="pronouns.preschentsing1"
           [sing2]="lemma.preschentsing2" [sing2Pronoun]="pronouns.preschentsing2"
           [sing3]="lemma.preschentsing3" [sing3Pronoun]="pronouns.preschentsing3"
@@ -20,6 +21,7 @@
     <ion-col size="12" sizeMd="6">
       <ion-text><h2>{{ 'CONJUGATION.PAST_TENSE' | translate }}</h2></ion-text>
       <app-conjugation-personal
+        [searchString]="searchString"
           [sing1]="lemma.imperfectsing1" [sing1Pronoun]="pronouns.imperfectsing1"
           [sing2]="lemma.imperfectsing2" [sing2Pronoun]="pronouns.imperfectsing2"
           [sing3]="lemma.imperfectsing3" [sing3Pronoun]="pronouns.imperfectsing3"
@@ -34,6 +36,7 @@
     <ion-col size="12" sizeMd="6">
       <ion-text><h2>{{ 'CONJUGATION.SUBJUNCTIVE' | translate }}</h2></ion-text>
       <app-conjugation-personal
+        [searchString]="searchString"
           [sing1]="lemma.conjunctivsing1" [sing1Pronoun]="pronouns.conjunctivsing1"
           [sing2]="lemma.conjunctivsing2" [sing2Pronoun]="pronouns.conjunctivsing2"
           [sing3]="lemma.conjunctivsing3" [sing3Pronoun]="pronouns.conjunctivsing3"
@@ -45,6 +48,7 @@
     <ion-col size="12" sizeMd="6">
       <ion-text><h2>{{ 'CONJUGATION.CONDITIONAL' | translate }}</h2></ion-text>
       <app-conjugation-personal
+        [searchString]="searchString"
           [sing1]="lemma.cundizionalsing1" [sing1Pronoun]="pronouns.cundizionalsing1"
           [sing2]="lemma.cundizionalsing2" [sing2Pronoun]="pronouns.cundizionalsing2"
           [sing3]="lemma.cundizionalsing3" [sing3Pronoun]="pronouns.cundizionalsing3"
@@ -59,6 +63,7 @@
     <ion-col size="12" sizeMd="6">
       <ion-text><h2>{{ 'CONJUGATION.FUTUR_TENSE' | translate }}</h2></ion-text>
       <app-conjugation-personal
+        [searchString]="searchString"
       [sing1]="lemma.futursing1" [sing1Pronoun]="pronouns.futursing1"
       [sing2]="lemma.futursing2" [sing2Pronoun]="pronouns.futursing2"
       [sing3]="lemma.futursing3" [sing3Pronoun]="pronouns.futursing3"
@@ -70,6 +75,7 @@
     <ion-col size="12" sizeMd="6">
       <ion-text><h2>{{ 'CONJUGATION.PAST_PARTICIPLE' | translate }}</h2></ion-text>
       <app-conjugation-impersonal
+        [searchString]="searchString"
         [form1]="lemma.participperfectms"
         [form2]="lemma.participperfectfs"
         [form3]="lemma.participperfectmp"
@@ -82,6 +88,7 @@
     <ion-col size="12" sizeMd="6">
       <ion-text><h2>{{ 'CONJUGATION.IMPERATIVE' | translate }}</h2></ion-text>
       <app-conjugation-impersonal
+        [searchString]="searchString"
         [form1]="lemma.imperativ1"
         [form2]="lemma.imperativ2">
       </app-conjugation-impersonal>
@@ -89,6 +96,7 @@
     <ion-col size="12" sizeMd="6">
       <ion-text><h2>{{ 'CONJUGATION.GERUND' | translate }}</h2></ion-text>
       <app-conjugation-impersonal
+        [searchString]="searchString"
         [form1]="lemma.gerundium">
       </app-conjugation-impersonal>
     </ion-col>

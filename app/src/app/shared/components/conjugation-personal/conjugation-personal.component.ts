@@ -24,6 +24,8 @@ export class ConjugationPersonalComponent implements OnInit {
   @Input() public plural3: string;
   @Input() public plural3Pronoun: string;
 
+  @Input() public searchString?: string
+
   constructor() {}
 
   ngOnInit() {}
