@@ -93,5 +93,12 @@
   "LABELS": {
     "OK": "OK",
     "CANCEL": "Abbrechen"
+  },
+  "SHARE": {
+    "TITLE": "Schau dir dieses Wort an!",
+    "TEXT": "{{rm}} / {{de}}",
+    "TEXT_SURSILVAN": "{{text}}",
+    "DIALOG_TITLE": "Wort teilen",
+    "SUCCESS": "Wort erfolgreich geteilt"
   }
 }

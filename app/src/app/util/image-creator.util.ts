@@ -1,7 +1,8 @@
-import { Injectable } from "@angular/core";
-import { Share } from '@capacitor/share';
-import { CanvasTextWrapper } from "canvas-wrapper";
-import { Directory, Filesystem } from "@capacitor/filesystem";
+import {Injectable} from "@angular/core";
+import {Share} from '@capacitor/share';
+import {CanvasTextWrapper} from "canvas-wrapper";
+import {Directory, Encoding, Filesystem} from "@capacitor/filesystem";
+import {TranslateService} from "@ngx-translate/core";
 
 @Injectable({
   providedIn: 'root',
@@ -14,10 +15,14 @@ export class ImageCreatorUtil {
   private de: string;
   private text: string;
 
+  private isSursilvan = false;
+
   private bgImage: HTMLImageElement;
   private logoImage: HTMLImageElement;
 
-  constructor() {
+  constructor(
+    private translateService: TranslateService,
+  ) {
     Share.canShare().then(result => {
       this.canShare = result.value;
     });
@@ -39,6 +44,7 @@ export class ImageCreatorUtil {
 
   public async createImageSursilvan(text: string) {
     this.text = text;
+    this.isSursilvan = true;
 
     if (this.text.length > 1500) {
       this.text = this.text.substr(0, 1500) + "[\u2026]";
@@ -131,11 +137,20 @@ export class ImageCreatorUtil {
         directory: Directory.Cache
       });
 
-      Share.share({
-        title: this.rm,
+      const options = {
+        title: this.translateService.instant('SHARE.TITLE'),
         text: this.de,
-        url: pathResult.uri,
-      }).then((result) => {
+        files: [pathResult.uri],
+        dialogTitle: this.translateService.instant('SHARE.DIALOG_TITLE')
+      };
+
+      if (this.isSursilvan) {
+        options.text = this.translateService.instant('SHARE.TEXT_SURSILVAN', { text: this.text });
+      } else {
+        options.text = this.translateService.instant('SHARE.TEXT', { de: this.de, rm: this.rm });
+      }
+
+      Share.share(options).then((result) => {
         console.log(result);
       });
     } else {

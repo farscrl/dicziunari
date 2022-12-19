@@ -43,5 +43,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Geteilte Bilder speichern</string>
 </dict>
 </plist>

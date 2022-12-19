@@ -83,10 +83,12 @@ export class LemmaDisplayComponent implements OnInit, OnDestroy {
   async share(slider) {
     if (this.isSursilvan) {
       this.imageCreator.createImageSursilvan(this.lemma.RStichwort + ' ' + this.completeLemma).finally(() => {
+        this.toastService.showNotification('SHARE.SUCCESS');
         slider.close();
       });
     } else {
-      this.imageCreator.createImage(this.lemma.RStichwort, this.lemma.DStichwort).finally(() => {
+      this.imageCreator.createImage(this.lemma.RStichwort, this.lemma.DStichwort).then(() => {
+        this.toastService.showNotification('SHARE.SUCCESS');
         slider.close();
       });
     }
