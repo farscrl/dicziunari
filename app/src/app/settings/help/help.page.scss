@@ -24,12 +24,24 @@ h2 {
   height: 36px;
   padding: 0px;
   align-self: center;
-  background-color: #ffcc00;
+  background-color: #11769d;
   margin-bottom: -10px;
   margin-left: 12px;
 }
 
 .copy-icon {
+  border-radius: 30px;
+  color: white;
+  width: 36px;
+  height: 36px;
+  padding: 0px;
+  align-self: center;
+  background-color: #11769d;
+  margin-bottom: -10px;
+  margin-left: 12px;
+}
+
+.share-icon {
   border-radius: 30px;
   color: white;
   width: 36px;
@@ -52,7 +64,7 @@ ul {
   list-style-type: none;
   padding-left: 18px;
 
-  li:before { 
+  li:before {
     content: "–" " ";
     margin-left: -16px;
     margin-right: 4px;
