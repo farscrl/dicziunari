@@ -69,7 +69,7 @@ export class ImageCreatorUtil {
     ctxBg.font = '40px "Fira Sans", sans-serif';
     ctxBg.fillStyle = '#fff';
     // console.log(ctxBg.measureText("www.dicziunari.ch"));
-    ctxBg.fillText("www.dicziunari.ch", 452, 961);
+    ctxBg.fillText("www.dicziunari.ch", 452, 967);
 
     return ctxBg;
   }
@@ -78,7 +78,7 @@ export class ImageCreatorUtil {
     const canvasText = document.createElement('canvas') as HTMLCanvasElement | null;
     if (big) {
       canvasText.width = 740;
-      canvasText.height = 720;
+      canvasText.height = 740;
     } else {
       canvasText.width = 740;
       canvasText.height = 330;
@@ -100,17 +100,17 @@ export class ImageCreatorUtil {
 
   private addRomanshCanvas(ctxBg: CanvasRenderingContext2D) {
     const canvas = this.getTextCanvas(this.rm);
-    ctxBg.drawImage(canvas, 30, 50);
+    ctxBg.drawImage(canvas, 30, 30);
   }
 
   private generateGermanCanvas(ctxBg: CanvasRenderingContext2D) {
     const canvas = this.getTextCanvas(this.de);
-    ctxBg.drawImage(canvas, 30, 420);
+    ctxBg.drawImage(canvas, 30, 400);
   }
 
   private addSursilvanCanvas(ctxBg: CanvasRenderingContext2D) {
     const canvas = this.getTextCanvas(this.text, true);
-    ctxBg.drawImage(canvas, 30, 50);
+    ctxBg.drawImage(canvas, 30, 30);
   }
 
   private async shareImage(canvasBg: HTMLCanvasElement) {

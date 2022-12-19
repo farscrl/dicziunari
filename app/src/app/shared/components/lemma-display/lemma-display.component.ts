@@ -86,7 +86,7 @@ export class LemmaDisplayComponent implements OnInit, OnDestroy {
         slider.close();
       });
     } else {
-      this.imageCreator.createImage(this.lemma.DStichwort, this.lemma.RStichwort).finally(() => {
+      this.imageCreator.createImage(this.lemma.RStichwort, this.lemma.DStichwort).finally(() => {
         slider.close();
       });
     }
