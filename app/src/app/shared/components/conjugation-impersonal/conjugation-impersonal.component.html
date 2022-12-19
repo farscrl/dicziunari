@@ -1,18 +1,14 @@
 <table>
   <tr *ngIf="form1">
-    <td class="pronoun"></td>
     <td [innerHtml]="replaceComma(form1) | highlight: searchString"></td>
   </tr>
   <tr *ngIf="form2">
-    <td class="pronoun"></td>
     <td [innerHtml]="replaceComma(form2) | highlight: searchString"></td>
   </tr>
   <tr *ngIf="form3">
-    <td class="pronoun"></td>
     <td [innerHtml]="replaceComma(form3) | highlight: searchString"></td>
   </tr>
   <tr *ngIf="form4">
-    <td class="pronoun"></td>
     <td [innerHtml]="replaceComma(form4) | highlight: searchString"></td>
   </tr>
 </table>

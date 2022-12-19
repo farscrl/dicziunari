@@ -5,9 +5,23 @@ h1 {
 ion-grid {
   margin-left: 12px;
   margin-right: 12px;
+  margin-bottom: 36px;
 }
 
 .verb-annotation {
   text-align: center;
   padding: 12px;
+  margin-top: 24px;
+}
+
+@media only screen and (min-width: 768px) {
+  ion-row {
+    ion-col:first-of-type {
+      padding-right: 24px;
+    }
+
+    ion-col:last-of-type {
+      padding-left: 24px;
+    }
+  }
 }
