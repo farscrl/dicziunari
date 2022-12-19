@@ -117,7 +117,7 @@ export class LemmaDisplayComponent implements OnInit, OnDestroy {
   }
 
   get isVerb() {
-    return !!this.lemma.preschentsing3;
+    return !!this.lemma.preschentsing3 || !!this.lemma.preschentsing1;
   }
 
   get dGramm() {
