@@ -95,24 +95,24 @@ export class ConjugationComponent implements OnInit {
   private definePronouns() {
     switch (this.configService.getSelectedDictionary()) {
       case Dictionary.rumgrischun:
-        const ppRumGrConj = ["che jau ", "che ti ", "ch'el/ella ", "che nus ", "che vus ", "ch'els/ellas "];
-        const ppRumGr = ["jau ", "ti ", "el/ella ", "nus ", "vus ", "els/ellas "];
-        const ppRumGrRefl = ["ma ", "ta ", "sa ", "ans ", "as ", "sa "];
-        const ppRumGrReflVowel = ["m'", "t'", "s'", "ans ", "as ", "s'"];
+        const ppRumGrConj = ["che jau ", "che ti ", "ch'el/ella ", "che nus ", "che vus ", "ch'els/ellas ", "ch'i ", "ch'igl"];
+        const ppRumGr = ["jau ", "ti ", "el/ella ", "nus ", "vus ", "els/ellas ", "i ", "igl "];
+        const ppRumGrRefl = ["ma ", "ta ", "sa ", "ans ", "as ", "sa ", "", ""];
+        const ppRumGrReflVowel = ["m'", "t'", "s'", "ans ", "as ", "s'", "", ""];
         this.extractPronouns(ppRumGrConj, ppRumGr, ppRumGrRefl, ppRumGrReflVowel);
         break;
       case Dictionary.sutsilv:
-        const ppSutsilvConj = ["ca jou ", "ca tei ", "c'el/ella ", "ca nus ", "ca vus ", "c'els/ellas "];
-        const ppSutsilv = ["jou ", "tei ", "el/ella ", "nus ", "vus ", "els/ellas "];
-        const ppSutsilvRefl = ["ma ", "ta ", "sa ", "ans ", "as ", "sa "];
-        const ppSutsilvReflVowel = ["m'", "t'", "s'", "ans ", "as ", "s'"];
+        const ppSutsilvConj = ["ca jou ", "ca tei ", "c'el/ella ", "ca nus ", "ca vus ", "c'els/ellas ", "c'i ", "c'igl"];
+        const ppSutsilv = ["jou ", "tei ", "el/ella ", "nus ", "vus ", "els/ellas ", "i ", "igl "];
+        const ppSutsilvRefl = ["ma ", "ta ", "sa ", "ans ", "as ", "sa ", "", ""];
+        const ppSutsilvReflVowel = ["m'", "t'", "s'", "ans ", "as ", "s'", "", ""];
         this.extractPronouns(ppSutsilvConj, ppSutsilv, ppSutsilvRefl, ppSutsilvReflVowel);
         break;
       case Dictionary.surm:
-        const ppSurmConj = ["tg'ia ", "tgi te ", "tg'el/ella ", "tgi nous ", "tgi vous ", "tg'els/ellas "];
-        const ppSurm = ["ia ", "te ", "el/ella ", "nous ", "vous ", "els/ellas "];
-        const ppSurmRefl = ["ma ", "ta ", "sa ", "ans ", "az ", "sa "];
-        const ppSurmReflVowel = ["m'", "t'", "s'", "ans ", "az ", "s'"];
+        const ppSurmConj = ["tg'ia ", "tgi te ", "tg'el/ella ", "tgi nous ", "tgi vous ", "tg'els/ellas ", "tg'i ", "tg'igl"];
+        const ppSurm = ["ia ", "te ", "el/ella ", "nous ", "vous ", "els/ellas ", "i ", "igl "];
+        const ppSurmRefl = ["ma ", "ta ", "sa ", "ans ", "az ", "sa ", "", ""];
+        const ppSurmReflVowel = ["m'", "t'", "s'", "ans ", "az ", "s'", "", ""];
         this.extractPronouns(ppSurmConj, ppSurm, ppSurmRefl, ppSurmReflVowel);
         break;
       case Dictionary.sursilv:
@@ -126,11 +126,11 @@ export class ConjugationComponent implements OnInit {
   }
 
   private extractPronouns(ppConj: string[], pp: string[], ppRefl: string[], ppReflVowel: string[]) {
-    [this.lemma['preschentsing1'], this.pronouns.preschentsing1] = this.extractPrefixes(this.lemma['preschentsing1'], [ppConj[0], pp[0], ppRefl[0], ppReflVowel[0]]);
-    [this.lemma['imperfectsing1'], this.pronouns.imperfectsing1] = this.extractPrefixes(this.lemma['imperfectsing1'], [ppConj[0], pp[0], ppRefl[0], ppReflVowel[0]]);
-    [this.lemma['conjunctivsing1'], this.pronouns.conjunctivsing1] = this.extractPrefixes(this.lemma['conjunctivsing1'], [ppConj[0], pp[0], ppRefl[0], ppReflVowel[0]]);
-    [this.lemma['cundizionalsing1'], this.pronouns.cundizionalsing1] = this.extractPrefixes(this.lemma['cundizionalsing1'], [ppConj[0], pp[0], ppRefl[0], ppReflVowel[0]]);
-    [this.lemma['futursing1'], this.pronouns.futursing1] = this.extractPrefixes(this.lemma['futursing1'], [ppConj[0], pp[0], ppRefl[0], ppReflVowel[0]]);
+    [this.lemma['preschentsing1'], this.pronouns.preschentsing1] = this.extractPrefixes(this.lemma['preschentsing1'], [ppConj[0], pp[0], ppRefl[0], ppReflVowel[0], ppConj[6], pp[6], ppConj[7], pp[7]]);
+    [this.lemma['imperfectsing1'], this.pronouns.imperfectsing1] = this.extractPrefixes(this.lemma['imperfectsing1'], [ppConj[0], pp[0], ppRefl[0], ppReflVowel[0], ppConj[6], pp[6], ppConj[7], pp[7]]);
+    [this.lemma['conjunctivsing1'], this.pronouns.conjunctivsing1] = this.extractPrefixes(this.lemma['conjunctivsing1'], [ppConj[0], pp[0], ppRefl[0], ppReflVowel[0], ppConj[6], pp[6], ppConj[7], pp[7]]);
+    [this.lemma['cundizionalsing1'], this.pronouns.cundizionalsing1] = this.extractPrefixes(this.lemma['cundizionalsing1'], [ppConj[0], pp[0], ppRefl[0], ppReflVowel[0], ppConj[6], pp[6], ppConj[7], pp[7]]);
+    [this.lemma['futursing1'], this.pronouns.futursing1] = this.extractPrefixes(this.lemma['futursing1'], [ppConj[0], pp[0], ppRefl[0], ppReflVowel[0], ppConj[6], pp[6], ppConj[7], pp[7]]);
 
     [this.lemma['preschentsing2'], this.pronouns.preschentsing2] = this.extractPrefixes(this.lemma['preschentsing2'], [ppConj[1], pp[1], ppRefl[1], ppReflVowel[1]]);
     [this.lemma['imperfectsing2'], this.pronouns.imperfectsing2] = this.extractPrefixes(this.lemma['imperfectsing2'], [ppConj[1], pp[1], ppRefl[1], ppReflVowel[1]]);
@@ -138,11 +138,11 @@ export class ConjugationComponent implements OnInit {
     [this.lemma['cundizionalsing2'], this.pronouns.cundizionalsing2] = this.extractPrefixes(this.lemma['cundizionalsing2'], [ppConj[1], pp[1], ppRefl[1], ppReflVowel[1]]);
     [this.lemma['futursing2'], this.pronouns.futursing2] = this.extractPrefixes(this.lemma['futursing2'], [ppConj[1], pp[1], ppRefl[1], ppReflVowel[1]]);
 
-    [this.lemma['preschentsing3'], this.pronouns.preschentsing3] = this.extractPrefixes(this.lemma['preschentsing3'], [ppConj[2], pp[2], ppRefl[2], ppReflVowel[2]]);
-    [this.lemma['imperfectsing3'], this.pronouns.imperfectsing3] = this.extractPrefixes(this.lemma['imperfectsing3'], [ppConj[2], pp[2], ppRefl[2], ppReflVowel[2]]);
-    [this.lemma['conjunctivsing3'], this.pronouns.conjunctivsing3] = this.extractPrefixes(this.lemma['conjunctivsing3'], [ppConj[2], pp[2], ppRefl[2], ppReflVowel[2]]);
-    [this.lemma['cundizionalsing3'], this.pronouns.cundizionalsing3] = this.extractPrefixes(this.lemma['cundizionalsing3'], [ppConj[2], pp[2], ppRefl[2], ppReflVowel[2]]);
-    [this.lemma['futursing3'], this.pronouns.futursing3] = this.extractPrefixes(this.lemma['futursing3'], [ppConj[2], pp[2], ppRefl[2], ppReflVowel[2]]);
+    [this.lemma['preschentsing3'], this.pronouns.preschentsing3] = this.extractPrefixes(this.lemma['preschentsing3'], [ppConj[2], pp[2], ppRefl[2], ppReflVowel[2], ppConj[6], pp[6], ppConj[7], pp[7]]);
+    [this.lemma['imperfectsing3'], this.pronouns.imperfectsing3] = this.extractPrefixes(this.lemma['imperfectsing3'], [ppConj[2], pp[2], ppRefl[2], ppReflVowel[2], ppConj[6], pp[6], ppConj[7], pp[7]]);
+    [this.lemma['conjunctivsing3'], this.pronouns.conjunctivsing3] = this.extractPrefixes(this.lemma['conjunctivsing3'], [ppConj[2], pp[2], ppRefl[2], ppReflVowel[2], ppConj[6], pp[6], ppConj[7], pp[7]]);
+    [this.lemma['cundizionalsing3'], this.pronouns.cundizionalsing3] = this.extractPrefixes(this.lemma['cundizionalsing3'], [ppConj[2], pp[2], ppRefl[2], ppReflVowel[2], ppConj[6], pp[6], ppConj[7], pp[7]]);
+    [this.lemma['futursing3'], this.pronouns.futursing3] = this.extractPrefixes(this.lemma['futursing3'], [ppConj[2], pp[2], ppRefl[2], ppReflVowel[2], ppConj[6], pp[6], ppConj[7], pp[7]]);
 
     [this.lemma['preschentplural1'], this.pronouns.preschentplural1] = this.extractPrefixes(this.lemma['preschentplural1'], [ppConj[3], pp[3], ppRefl[3], ppReflVowel[3]]);
     [this.lemma['imperfectplural1'], this.pronouns.imperfectplural1] = this.extractPrefixes(this.lemma['imperfectplural1'], [ppConj[3], pp[3], ppRefl[3], ppReflVowel[3]]);
