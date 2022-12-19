@@ -97,7 +97,7 @@ export class ImageCreatorUtil {
       textAlign: 'left',
       verticalAlign: 'top',
       sizeToFill: true,
-      maxFontSizeToFill: 190,
+      maxFontSizeToFill: 100,
       strokeText: false
     });
 
