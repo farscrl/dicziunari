@@ -82,7 +82,7 @@ export class LemmaDisplayComponent implements OnInit, OnDestroy {
 
   async share(slider) {
     if (this.isSursilvan) {
-      this.imageCreator.createImageSursilvan(this.lemma.RStichwort + ' ' + this.completeLemma).finally(() => {
+      this.imageCreator.createImageSursilvan(this.lemma.RStichwort + ' ' + this.completeLemma).then(() => {
         this.toastService.showNotification('SHARE.SUCCESS');
         slider.close();
       });
