@@ -95,10 +95,10 @@
     "CANCEL": "Interrumper"
   },
   "SHARE": {
-    "TITLE": "Guarda quest pled!",
+    "TITLE": "Guarda tge pled!",
     "TEXT": "{{rm}} / {{de}}",
     "TEXT_SURSILVAN": "{{lemma}}",
-    "DIALOG_TITLE": "Cundivider pled",
-    "SUCCESS": "Cundividì cun success il maletg"
+    "DIALOG_TITLE": "Cundivider in pled",
+    "SUCCESS": "Cundividì cun success il pled"
   }
 }
