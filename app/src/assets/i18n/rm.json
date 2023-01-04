@@ -96,8 +96,6 @@
   },
   "SHARE": {
     "TITLE": "Guarda tge pled!",
-    "TEXT": "{{rm}} / {{de}}",
-    "TEXT_SURSILVAN": "{{lemma}}",
     "DIALOG_TITLE": "Cundivider in pled",
     "SUCCESS": "Cundividì cun success il pled"
   }

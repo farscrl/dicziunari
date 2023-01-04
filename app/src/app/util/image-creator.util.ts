@@ -140,16 +140,9 @@ export class ImageCreatorUtil {
 
       const options = {
         title: this.translateService.instant('SHARE.TITLE'),
-        text: this.de,
         files: [pathResult.uri],
         dialogTitle: this.translateService.instant('SHARE.DIALOG_TITLE')
       };
-
-      if (this.isSursilvan) {
-        options.text = this.translateService.instant('SHARE.TEXT_SURSILVAN', { text: this.text });
-      } else {
-        options.text = this.translateService.instant('SHARE.TEXT', { de: this.de, rm: this.rm });
-      }
 
       Share.share(options).then((result) => {
         console.log(result);

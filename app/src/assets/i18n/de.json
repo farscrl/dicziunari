@@ -96,8 +96,6 @@
   },
   "SHARE": {
     "TITLE": "Was für ein Wort!",
-    "TEXT": "{{rm}} / {{de}}",
-    "TEXT_SURSILVAN": "{{text}}",
     "DIALOG_TITLE": "Wort teilen",
     "SUCCESS": "Wort erfolgreich geteilt"
   }
