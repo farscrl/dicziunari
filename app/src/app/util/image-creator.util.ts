@@ -33,6 +33,7 @@ export class ImageCreatorUtil {
   public async createImage(rm: string, de: string) {
     this.rm = rm;
     this.de = de;
+    this.isSursilvan = false;
 
     const ctxBg = this.getBgCanvasContext();
 
