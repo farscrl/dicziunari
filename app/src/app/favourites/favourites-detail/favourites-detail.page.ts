@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {Dictionary} from "../../../data/search";
 
 @Component({
   selector: 'app-favourites-detail-page',
@@ -9,9 +10,12 @@ import { Router } from '@angular/router';
 export class FavouritesDetailPage implements OnInit {
   public lemma;
 
+  public dictionary?: Dictionary;
+
   constructor(private router: Router) {}
 
   ngOnInit() {
     this.lemma = this.router.getCurrentNavigation().extras.state.data;
+    this.dictionary = this.lemma.dictionary;
   }
 }

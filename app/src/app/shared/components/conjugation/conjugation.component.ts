@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ConfigService } from "../../../services/config.service";
 import { Dictionary } from "../../../../data/search";
 import { Pronouns } from "../../../../data/pronouns";
@@ -9,9 +9,12 @@ import { ActivatedRoute } from "@angular/router";
   templateUrl: './conjugation.component.html',
   styleUrls: ['./conjugation.component.scss'],
 })
-export class ConjugationComponent implements OnInit {
+export class ConjugationComponent implements OnInit, OnChanges {
   @Input()
   public lemma;
+
+  @Input()
+  public dictionary: Dictionary;
 
   public pronouns = new Pronouns();
 
@@ -93,7 +96,7 @@ export class ConjugationComponent implements OnInit {
   }
 
   private definePronouns() {
-    switch (this.configService.getSelectedDictionary()) {
+    switch (this.dictionary) {
       case Dictionary.rumgrischun:
         const ppRumGrConj = ["che jau ", "che ti ", "ch'el/ella ", "che nus ", "che vus ", "ch'els/ellas ", "ch'i ", "ch'igl"];
         const ppRumGr = ["jau ", "ti ", "el/ella ", "nus ", "vus ", "els/ellas ", "i ", "igl "];
@@ -189,6 +192,6 @@ export class ConjugationComponent implements OnInit {
   }
 
   get isSursilvan() {
-    return this.configService.getSelectedDictionary() === Dictionary.sursilv;
+    return this.dictionary === Dictionary.sursilv;
   }
 }

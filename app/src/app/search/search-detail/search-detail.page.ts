@@ -2,6 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { SearchService } from '../../services/search.service';
 import { Subscription } from 'rxjs';
+import { ConfigService } from "../../services/config.service";
+import { Dictionary } from "../../../data/search";
 
 @Component({
   selector: 'app-search-detail-page',
@@ -13,9 +15,16 @@ export class SearchDetailPage implements OnInit, OnDestroy {
 
   public lemma;
 
-  private routeParamsSubscription: Subscription;
+  public dictionary: Dictionary;
 
-  constructor(private route: ActivatedRoute, private searchService: SearchService) {}
+  private routeParamsSubscription: Subscription;
+  private dictionarySubscription: Subscription;
+
+  constructor(
+    private route: ActivatedRoute,
+    private searchService: SearchService,
+    public configService: ConfigService
+  ) {}
 
   ngOnInit() {
     this.routeParamsSubscription = this.route.params.subscribe((params: Params) => {
@@ -24,9 +33,13 @@ export class SearchDetailPage implements OnInit, OnDestroy {
         this.lemma = lemma;
       });
     });
+    this.dictionarySubscription = this.configService.getDictionaryObservable().subscribe(dict => {
+      this.dictionary = dict;
+    });
   }
 
   ngOnDestroy(): void {
     this.routeParamsSubscription.unsubscribe();
+    this.dictionarySubscription.unsubscribe();
   }
 }
