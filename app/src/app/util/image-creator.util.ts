@@ -47,9 +47,7 @@ export class ImageCreatorUtil {
     this.text = text;
     this.isSursilvan = true;
 
-    if (this.text.length > 1500) {
-      this.text = this.text.substr(0, 1500) + "[\u2026]";
-    }
+    this.text = this.truncate(this.text, 1500);
 
     const ctxBg = this.getBgCanvasContext();
 
@@ -139,10 +137,16 @@ export class ImageCreatorUtil {
       });
 
       const options = {
-        title: this.translateService.instant('SHARE.TITLE'),
+        title: '',
         files: [pathResult.uri],
         dialogTitle: this.translateService.instant('SHARE.DIALOG_TITLE')
       };
+
+      if (this.isSursilvan) {
+        options.title = '🇷 ' + this.truncate(this.text, 100);
+      } else {
+        options.title = '🇷 ' + this.truncate(this.rm, 50) + ' 🇩 ' + this.truncate(this.de, 50);
+      }
 
       Share.share(options).then((result) => {
         console.log(result);
@@ -153,5 +157,13 @@ export class ImageCreatorUtil {
       link.href = dataUrl;
       link.click();
     }
+  }
+
+  private truncate(input: string, length: number): string {
+    if (input.length > length) {
+      return input.substring(0, length) + " [\u2026]";
+    }
+
+    return input;
   }
 }
