@@ -175,6 +175,10 @@ export class ConjugationComponent implements OnInit, OnChanges {
       }
     });
 
+    // replace prefix on new lines
+    const searchTerm = "\n" + prefix;
+    lemma = lemma.replaceAll(searchTerm, '\n');
+
     return [lemma, prefix];
   }
 
