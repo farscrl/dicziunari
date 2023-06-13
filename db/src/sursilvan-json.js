@@ -151,9 +151,9 @@ function parseVerbData() {
 }
 
 function normalizeLemma(lemma) {
-    lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], ' I');
-    lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], ' II');
     lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], ' III');
+    lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], ' II');
+    lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], ' I');
     lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], ' VI');
     lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], ' V');
     lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], '*');
