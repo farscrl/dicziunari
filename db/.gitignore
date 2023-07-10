@@ -1,9 +1,11 @@
 data/rumantschgrischun_data_json.json
 data/puter.htm
 data/vallader.htm
+/data/pledarigrond_export_json_puter.json
 /data/pledarigrond_export_json_rumantschgrischun.json
 /data/pledarigrond_export_json_surmiran.json
 /data/pledarigrond_export_json_sutsilvan.json
+/data/pledarigrond_export_json_vallader.json
 /data/sursilvan.json
 /data/sursilvan_verbs.json
 build/*

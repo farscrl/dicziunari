@@ -1,7 +1,7 @@
 var rumgrJson = require('./rumgr-json');
 var sursilvanJson = require('./sursilvan-json');
-var valladerHtml = require('./vallader-html');
-var puterHtml = require('./puter-html');
+var valladerJson = require('./vallader-json');
+var puterJson = require('./puter-json');
 var surmiranJson = require('./surmiran-json');
 var sutsilvanJson = require('./sutsilvan-json');
 
@@ -23,19 +23,14 @@ switch (process.argv[2]) {
         break;
     
     case "puter":
-        puterHtml.main();
+        puterJson.main();
         break;
     
     case "vallader":
-        valladerHtml.main();
+        valladerJson.main();
         break;
 
     case "all":
     default:
-        rumgrJson.main();
-        sursilvanJson.main();
-        sutsilvanJson.main();
-        surmiranJson.main();
-        puterHtml.main();
-        valladerHtml.main();
+        console.log("select valid idiom");
 }
