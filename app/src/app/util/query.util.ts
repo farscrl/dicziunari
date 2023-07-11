@@ -130,16 +130,17 @@ export class QueryUtil {
     searchMode: SearchMode,
     lemma: string,
   ): string {
+    const verbsQuery = this.getPuterVerbQuery(searchMode, lemma);
     switch(searchDirection) {
       case SearchDirection.fromDe:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RGrammatik, DGrammatik, RFlex, DFlex, RSempraez, DSempraez, NULL as preschentsing3 FROM puter WHERE DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when DStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM puter WHERE DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when DStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), DStichwort COLLATE NOCASE ASC';
       case SearchDirection.fromRm:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RGrammatik, DGrammatik, RFlex, DFlex, RSempraez, DSempraez, NULL as preschentsing3 FROM puter WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), RStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM puter WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), RStichwort COLLATE NOCASE ASC';
       case SearchDirection.both:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RGrammatik, DGrammatik, RFlex, DFlex, RSempraez, DSempraez, NULL as preschentsing3 FROM puter WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM puter WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), DStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -148,16 +149,17 @@ export class QueryUtil {
     searchMode: SearchMode,
     lemma: string,
   ): string {
+    const verbsQuery = this.getValladerVerbQuery(searchMode, lemma);
     switch(searchDirection) {
       case SearchDirection.fromDe:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RGrammatik, DGrammatik, RFlex, DFlex, RSempraez, DSempraez, NULL as preschentsing3 FROM vallader WHERE DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when DStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM vallader WHERE DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when DStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), DStichwort COLLATE NOCASE ASC';
       case SearchDirection.fromRm:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RGrammatik, DGrammatik, RFlex, DFlex, RSempraez, DSempraez, NULL as preschentsing3 FROM vallader WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), RStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM vallader WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), RStichwort COLLATE NOCASE ASC';
       case SearchDirection.both:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RGrammatik, DGrammatik, RFlex, DFlex, RSempraez, DSempraez, NULL as preschentsing3 FROM vallader WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM vallader WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), DStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -463,6 +465,114 @@ export class QueryUtil {
         OR \`cundizionalsing3\` LIKE "i ${term}"
         OR \`cundizionalplural1\` LIKE "nous ${term}"
         OR \`cundizionalplural2\` LIKE "vous ${term}"
+        OR \`cundizionalplural3\` LIKE "els/ellas ${term}"
+        OR \`imperativ1\` LIKE "${term}"
+        OR \`imperativ2\` LIKE "${term}"
+        OR \`gerundium\` LIKE "${term}"
+      `;
+    }
+
+    return query;
+  }
+
+  private getPuterVerbQuery(searchMode: SearchMode = SearchMode.start, lemma: string): string {
+    let query = '';
+
+    if (this.searchInVerbs) {
+      let term = this.getTerm(searchMode, lemma);
+      term = term.replace(/"/g, '');
+
+      query = `
+        OR \`infinitiv\` LIKE "${term}"
+        OR \`preschentsing1\` LIKE "eau ${term}"
+        OR \`preschentsing1\` LIKE "i ${term}"
+        OR \`preschentsing2\` LIKE "tü ${term}"
+        OR \`preschentsing3\` LIKE "el/ella ${term}"
+        OR \`preschentsing3\` LIKE "i ${term}"
+        OR \`preschentplural1\` LIKE "nus ${term}"
+        OR \`preschentplural2\` LIKE "vus ${term}"
+        OR \`preschentplural3\` LIKE "els/ellas ${term}"
+        OR \`imperfectsing1\` LIKE "eau ${term}"
+        OR \`imperfectsing1\` LIKE "i ${term}"
+        OR \`imperfectsing2\` LIKE "tü ${term}"
+        OR \`imperfectsing3\` LIKE "el/ella ${term}"
+        OR \`imperfectsing3\` LIKE "i ${term}"
+        OR \`imperfectplural1\` LIKE "nus ${term}"
+        OR \`imperfectplural2\` LIKE "vus ${term}"
+        OR \`imperfectplural3\` LIKE "els/ellas ${term}"
+        OR \`participperfectfs\` LIKE "${term}"
+        OR \`participperfectms\` LIKE "${term}"
+        OR \`participperfectfp\` LIKE "${term}"
+        OR \`participperfectmp\` LIKE "${term}"
+        OR \`conjunctivsing1\` LIKE "ch'eau ${term}"
+        OR \`conjunctivplural1\` LIKE "ch'i ${term}"
+        OR \`conjunctivsing2\` LIKE "cha tü ${term}"
+        OR \`conjunctivsing3\` LIKE "ch'el/ella ${term}"
+        OR \`conjunctivplural3\` LIKE "ch'i ${term}"
+        OR \`conjunctivplural1\` LIKE "cha nus ${term}"
+        OR \`conjunctivplural2\` LIKE "cha vus ${term}"
+        OR \`conjunctivplural3\` LIKE "ch'els/ellas ${term}"
+        OR \`cundizionalsing1\` LIKE "eau ${term}"
+        OR \`cundizionalsing1\` LIKE "i ${term}"
+        OR \`cundizionalsing2\` LIKE "tü ${term}"
+        OR \`cundizionalsing3\` LIKE "el/ella ${term}"
+        OR \`cundizionalsing3\` LIKE "i ${term}"
+        OR \`cundizionalplural1\` LIKE "nus ${term}"
+        OR \`cundizionalplural2\` LIKE "vus ${term}"
+        OR \`cundizionalplural3\` LIKE "els/ellas ${term}"
+        OR \`imperativ1\` LIKE "${term}"
+        OR \`imperativ2\` LIKE "${term}"
+        OR \`gerundium\` LIKE "${term}"
+      `;
+    }
+
+    return query;
+  }
+
+  private getValladerVerbQuery(searchMode: SearchMode = SearchMode.start, lemma: string): string {
+    let query = '';
+
+    if (this.searchInVerbs) {
+      let term = this.getTerm(searchMode, lemma);
+      term = term.replace(/"/g, '');
+
+      query = `
+        OR \`infinitiv\` LIKE "${term}"
+        OR \`preschentsing1\` LIKE "eu ${term}"
+        OR \`preschentsing1\` LIKE "i ${term}"
+        OR \`preschentsing2\` LIKE "tü ${term}"
+        OR \`preschentsing3\` LIKE "el/ella ${term}"
+        OR \`preschentsing3\` LIKE "i ${term}"
+        OR \`preschentplural1\` LIKE "nus ${term}"
+        OR \`preschentplural2\` LIKE "vus ${term}"
+        OR \`preschentplural3\` LIKE "els/ellas ${term}"
+        OR \`imperfectsing1\` LIKE "eu ${term}"
+        OR \`imperfectsing1\` LIKE "i ${term}"
+        OR \`imperfectsing2\` LIKE "tü ${term}"
+        OR \`imperfectsing3\` LIKE "el/ella ${term}"
+        OR \`imperfectsing3\` LIKE "i ${term}"
+        OR \`imperfectplural1\` LIKE "nus ${term}"
+        OR \`imperfectplural2\` LIKE "vus ${term}"
+        OR \`imperfectplural3\` LIKE "els/ellas ${term}"
+        OR \`participperfectfs\` LIKE "${term}"
+        OR \`participperfectms\` LIKE "${term}"
+        OR \`participperfectfp\` LIKE "${term}"
+        OR \`participperfectmp\` LIKE "${term}"
+        OR \`conjunctivsing1\` LIKE "tg'eu ${term}"
+        OR \`conjunctivplural1\` LIKE "tg'i ${term}"
+        OR \`conjunctivsing2\` LIKE "tgi tü ${term}"
+        OR \`conjunctivsing3\` LIKE "tg'el/ella ${term}"
+        OR \`conjunctivplural3\` LIKE "tg'i ${term}"
+        OR \`conjunctivplural1\` LIKE "tgi nus ${term}"
+        OR \`conjunctivplural2\` LIKE "tgi vus ${term}"
+        OR \`conjunctivplural3\` LIKE "tg'els/ellas ${term}"
+        OR \`cundizionalsing1\` LIKE "eu ${term}"
+        OR \`cundizionalsing1\` LIKE "i ${term}"
+        OR \`cundizionalsing2\` LIKE "tü ${term}"
+        OR \`cundizionalsing3\` LIKE "el/ella ${term}"
+        OR \`cundizionalsing3\` LIKE "i ${term}"
+        OR \`cundizionalplural1\` LIKE "nus ${term}"
+        OR \`cundizionalplural2\` LIKE "vus ${term}"
         OR \`cundizionalplural3\` LIKE "els/ellas ${term}"
         OR \`imperativ1\` LIKE "${term}"
         OR \`imperativ2\` LIKE "${term}"

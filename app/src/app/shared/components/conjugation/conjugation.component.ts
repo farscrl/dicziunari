@@ -99,30 +99,42 @@ export class ConjugationComponent implements OnInit, OnChanges {
     switch (this.dictionary) {
       case Dictionary.rumgrischun:
         const ppRumGrConj = ["che jau ", "che ti ", "ch'el/ella ", "che nus ", "che vus ", "ch'els/ellas ", "ch'i ", "ch'igl"];
-        const ppRumGr = ["jau ", "ti ", "el/ella ", "nus ", "vus ", "els/ellas ", "i ", "igl "];
+        const ppRumGr = ["jau ", "ti ", "el/ella ", "nus ", "vus ", "els/ellas ", "i ", "igl ", ""]; // 1sg, 2sg, 3sg, 1pl, 2pl, 3pl, inpers, inpersVowel, Vallder2pl
         const ppRumGrRefl = ["ma ", "ta ", "sa ", "ans ", "as ", "sa ", "", ""];
         const ppRumGrReflVowel = ["m'", "t'", "s'", "ans ", "as ", "s'", "", ""];
         this.extractPronouns(ppRumGrConj, ppRumGr, ppRumGrRefl, ppRumGrReflVowel);
         break;
       case Dictionary.sutsilv:
         const ppSutsilvConj = ["ca jou ", "ca tei ", "c'el/ella ", "ca nus ", "ca vus ", "c'els/ellas ", "c'i ", "c'igl"];
-        const ppSutsilv = ["jou ", "tei ", "el/ella ", "nus ", "vus ", "els/ellas ", "i ", "igl "];
+        const ppSutsilv = ["jou ", "tei ", "el/ella ", "nus ", "vus ", "els/ellas ", "i ", "igl ", ""];
         const ppSutsilvRefl = ["ma ", "ta ", "sa ", "ans ", "as ", "sa ", "", ""];
         const ppSutsilvReflVowel = ["m'", "t'", "s'", "ans ", "as ", "s'", "", ""];
         this.extractPronouns(ppSutsilvConj, ppSutsilv, ppSutsilvRefl, ppSutsilvReflVowel);
         break;
       case Dictionary.surm:
         const ppSurmConj = ["tg'ia ", "tgi te ", "tg'el/ella ", "tgi nous ", "tgi vous ", "tg'els/ellas ", "tg'i ", "tg'igl"];
-        const ppSurm = ["ia ", "te ", "el/ella ", "nous ", "vous ", "els/ellas ", "i ", "igl "];
+        const ppSurm = ["ia ", "te ", "el/ella ", "nous ", "vous ", "els/ellas ", "i ", "igl ", ""];
         const ppSurmRefl = ["ma ", "ta ", "sa ", "ans ", "az ", "sa ", "", ""];
         const ppSurmReflVowel = ["m'", "t'", "s'", "ans ", "az ", "s'", "", ""];
         this.extractPronouns(ppSurmConj, ppSurm, ppSurmRefl, ppSurmReflVowel);
         break;
+      case Dictionary.puter:
+        const ppPuterConj = ["ch'eau ", "cha tü ", "ch'el/ella ", "cha nus ", "cha vus ", "ch'els/ellas ", "ch'i ", "ch'igl"];
+        const ppPuter = ["eau ", "tü ", "el/ella ", "nus ", "vus ", "els/ellas ", "i ", "igl ", ""];
+        const ppPuterRefl = ["am ", "at ", "as ", "ans ", "as ", "as ", "", ""];
+        const ppPuterReflVowel = ["m'", "t'", "s'", "ans ", "s'", "s'", "", ""];
+        this.extractPronouns(ppPuterConj, ppPuter, ppPuterRefl, ppPuterReflVowel);
+        break;
+      case Dictionary.vall:
+        const ppVallConj = ["ch'eu ", "cha tü ", "ch'el/ella ", "cha nus ", "cha vus ", "ch'els/ellas ", "ch'i ", "ch'igl"];
+        const ppVall = ["eu ", "tü ", "el/ella ", "nus ", "vus ", "els/ellas ", "i ", "igl ", "vo "];
+        const ppVallRefl = ["am ", "at ", "as ", "ans ", "as ", "as ", "", ""];
+        const ppVallReflVowel = ["m'", "t'", "s'", "ans ", "s'", "s'", "", ""];
+        this.extractPronouns(ppVallConj, ppVall, ppVallRefl, ppVallReflVowel);
+        break;
       case Dictionary.sursilv:
         this.updateSursilvanLemma(this.lemma.currentValue);
         break;
-      case Dictionary.puter:
-      case Dictionary.vall:
       default:
         // do nothing
     }
@@ -153,7 +165,7 @@ export class ConjugationComponent implements OnInit, OnChanges {
     [this.lemma['cundizionalplural1'], this.pronouns.cundizionalplural1] = this.extractPrefixes(this.lemma['cundizionalplural1'], [ppConj[3], pp[3], ppRefl[3], ppReflVowel[3]]);
     [this.lemma['futurplural1'], this.pronouns.futurplural1] = this.extractPrefixes(this.lemma['futurplural1'], [ppConj[3], pp[3], ppRefl[3], ppReflVowel[3]]);
 
-    [this.lemma['preschentplural2'], this.pronouns.preschentplural2] = this.extractPrefixes(this.lemma['preschentplural2'], [ppConj[4], pp[4], ppRefl[4], ppReflVowel[4]]);
+    [this.lemma['preschentplural2'], this.pronouns.preschentplural2] = this.extractPrefixes(this.lemma['preschentplural2'], [ppConj[4], pp[4], pp[8], ppRefl[4], ppReflVowel[4]]);
     [this.lemma['imperfectplural2'], this.pronouns.imperfectplural2] = this.extractPrefixes(this.lemma['imperfectplural2'], [ppConj[4], pp[4], ppRefl[4], ppReflVowel[4]]);
     [this.lemma['conjunctivplural2'], this.pronouns.conjunctivplural2] = this.extractPrefixes(this.lemma['conjunctivplural2'], [ppConj[4], pp[4], ppRefl[4], ppReflVowel[4]]);
     [this.lemma['cundizionalplural2'], this.pronouns.cundizionalplural2] = this.extractPrefixes(this.lemma['cundizionalplural2'], [ppConj[4], pp[4], ppRefl[4], ppReflVowel[4]]);
@@ -167,19 +179,21 @@ export class ConjugationComponent implements OnInit, OnChanges {
   }
 
   private extractPrefixes(lemma: string, prefixCandidates: string[]): string[] {
-    let prefix = "";
-    prefixCandidates.forEach(candidate => {
-      if (lemma.startsWith(candidate)) {
-        prefix += candidate;
-        lemma = lemma.replace(candidate, "");
-      }
+    const lines = lemma.split(/\r?\n/);
+    let prefixes: string[] = [];
+    let forms: string[] = [];
+
+    lines.forEach((line, index) => {
+      prefixCandidates.forEach(candidate => {
+        if (line.startsWith(candidate)) {
+          prefixes.push(candidate);
+          line = line.replace(candidate, "");
+        }
+      });
+      forms.push(line);
     });
 
-    // replace prefix on new lines
-    const searchTerm = "\n" + prefix;
-    lemma = lemma.replaceAll(searchTerm, '\n');
-
-    return [lemma, prefix];
+    return [forms.join("\n"), prefixes.join("\n")];
   }
 
   private addPrefix(value: string, prefix: string, suffix: string): string {
