@@ -134,6 +134,11 @@ function searchColumnNames(lemma) {
 }
 
 function insertLemma(lemma) {
+    if (lemma['preschentplural2']) {
+        // replace (vo ...) forms
+        lemma['preschentplural2'] = lemma['preschentplural2'].replace(/\((vo \w+)\)/i, '$1');
+    }
+
     var binds = {};
     binds['id'] = id;
     columnList.forEach(column => binds[column.colName] = lemma[column.colName]);
