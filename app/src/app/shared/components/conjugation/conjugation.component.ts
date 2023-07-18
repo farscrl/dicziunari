@@ -119,8 +119,8 @@ export class ConjugationComponent implements OnInit, OnChanges {
         this.extractPronouns(ppSurmConj, ppSurm, ppSurmRefl, ppSurmReflVowel);
         break;
       case Dictionary.puter:
-        const ppPuterConj = ["ch'eau ", "cha tü ", "ch'el/ella ", "cha nus ", "cha vus ", "ch'els/ellas ", "ch'i ", "ch'igl"];
-        const ppPuter = ["eau ", "tü ", "el/ella ", "nus ", "vus ", "els/ellas ", "i ", "igl ", ""];
+        const ppPuterConj = ["ch'eau ", "cha tü ", "ch'el/ella ", "cha nus ", "cha vus ", "ch'els/ellas ", "ch'que ", "cha que"];
+        const ppPuter = ["eau ", "tü ", "el/ella ", "nus ", "vus ", "els/ellas ", "a/que ", "a/que ", ""];
         const ppPuterRefl = ["am ", "at ", "as ", "ans ", "as ", "as ", "", ""];
         const ppPuterReflVowel = ["m'", "t'", "s'", "ans ", "s'", "s'", "", ""];
         this.extractPronouns(ppPuterConj, ppPuter, ppPuterRefl, ppPuterReflVowel);
