@@ -184,13 +184,15 @@ export class ConjugationComponent implements OnInit, OnChanges {
     let forms: string[] = [];
 
     lines.forEach((line, index) => {
+      const prefix: string[] = [];
       prefixCandidates.forEach(candidate => {
         if (line.startsWith(candidate)) {
-          prefixes.push(candidate);
+          prefix.push(candidate);
           line = line.replace(candidate, "");
         }
       });
       forms.push(line);
+      prefixes.push(prefix.join(" "));
     });
 
     return [forms.join("\n"), prefixes.join("\n")];
