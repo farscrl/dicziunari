@@ -83,7 +83,7 @@ export class QueryUtil {
         return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM rumgr WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when RStichwort = "' + lemma.toLowerCase() + '" then 2 when RStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), RStichwort COLLATE NOCASE ASC';
       case SearchDirection.both:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM rumgr WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM rumgr WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma + '" then 1 when RStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when RStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), DStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -102,7 +102,7 @@ export class QueryUtil {
         return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM surmiran WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when RStichwort = "' + lemma.toLowerCase() + '" then 2 when RStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), RStichwort COLLATE NOCASE ASC';
       case SearchDirection.both:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM surmiran WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM surmiran WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma + '" then 1 when RStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when RStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), DStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -121,7 +121,7 @@ export class QueryUtil {
         return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM sutsilvan WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when RStichwort = "' + lemma.toLowerCase() + '" then 2 when RStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), RStichwort COLLATE NOCASE ASC';
       case SearchDirection.both:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM sutsilvan WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM sutsilvan WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma + '" then 1 when RStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when RStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), DStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -140,7 +140,7 @@ export class QueryUtil {
         return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM puter WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when RStichwort = "' + lemma.toLowerCase() + '" then 2 when RStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), RStichwort COLLATE NOCASE ASC';
       case SearchDirection.both:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM puter WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM puter WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma + '" then 1 when RStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when RStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), DStichwort COLLATE NOCASE ASC';
     }
   }
 
@@ -159,7 +159,7 @@ export class QueryUtil {
         return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM vallader WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when RStichwort = "' + lemma.toLowerCase() + '" then 2 when RStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), RStichwort COLLATE NOCASE ASC';
       case SearchDirection.both:
         // eslint-disable-next-line max-len
-        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM vallader WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), DStichwort COLLATE NOCASE ASC';
+        return  'SELECT id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3 FROM vallader WHERE RStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + verbsQuery + ' OR DStichwort GLOB ' + this.getRegexTerm(searchMode, lemma) + ' ORDER BY (case when RStichwort = "' + lemma + '" then 1 when DStichwort = "' + lemma + '" then 1 when RStichwort = "' + lemma.toLowerCase() + '" then 2 when DStichwort = "' + lemma.toLowerCase() + '" then 2 when RStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 when DStichwort = "' + this.firstLetterUppercase(lemma) + '" then 2 else 3 end), DStichwort COLLATE NOCASE ASC';
     }
   }
 
