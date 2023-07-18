@@ -141,7 +141,7 @@ function insertLemma(lemma) {
 
     var binds = {};
     binds['id'] = id;
-    columnList.forEach(column => binds[column.colName] = removePronunciationDots());
+    columnList.forEach(column => binds[column.colName] = removePronunciationDots(lemma[column.colName]));
     insertStatementLemma.run(binds);
 }
 
