@@ -136,7 +136,7 @@ function searchColumnNames(lemma) {
 function insertLemma(lemma) {
     var binds = {};
     binds['id'] = id;
-    columnList.forEach(column => binds[column.colName] = lemma[column.colName]);
+    columnList.forEach(column => binds[column.colName] = removePronunciationDots(lemma[column.colName]));
     insertStatementLemma.run(binds);
 }
 
@@ -187,6 +187,16 @@ function configurePipeline(pipeline) {
     pipeline.on('end', () => {
         finalizeDb();
     });
+}
+
+function removePronunciationDots(word) {
+    if (!word) {
+        return word;
+    }
+    word = word.normalize('NFD');
+    const pointBelowDiacriticalMark = "̣";
+    word = word.replaceAll(pointBelowDiacriticalMark, "");
+    return  word.normalize('NFC');
 }
 
 module.exports = {
