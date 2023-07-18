@@ -32,7 +32,6 @@ export class ConjugationPersonalComponent implements OnInit {
 
   public replaceComma(input: string) {
     const items = input.split(/[,|\n]/);
-    console.log(items);
     return items.map(e => {
       return e.trim();
     }).join("<br>")
