@@ -1,7 +1,6 @@
 {
 	"appId": "ch.dicziunari.app",
 	"appName": "Dicziunari",
-	"bundledWebRuntime": false,
 	"npmClient": "npm",
 	"webDir": "www",
 	"plugins": {
@@ -11,5 +10,17 @@
 			"splashFullScreen": true
 		}
 	},
-	"cordova": {}
+	"cordova": {},
+	"packageClassList": [
+		"CapacitorSQLitePlugin",
+		"AppPlugin",
+		"ClipboardPlugin",
+		"DevicePlugin",
+		"FilesystemPlugin",
+		"KeyboardPlugin",
+		"SharePlugin",
+		"SplashScreenPlugin",
+		"StatusBarPlugin",
+		"CDVPlugin"
+	]
 }

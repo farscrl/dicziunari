@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package ch.dicziunari.app;
 
 import android.content.pm.ActivityInfo;
 import android.os.Build;

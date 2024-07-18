@@ -1,7 +1,6 @@
 {
   "appId": "ch.dicziunari.app",
   "appName": "Dicziunari",
-  "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
   "plugins": {

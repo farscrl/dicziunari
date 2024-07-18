@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace "io.ionic.starter"
-  compileSdkVersion rootProject.ext.compileSdkVersion
+    namespace "ch.dicziunari.app"
+    compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "ch.dicziunari.app.android"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -50,9 +50,5 @@ try {
         apply plugin: 'com.google.gms.google-services'
     }
 } catch(Exception e) {
-    logger.warn("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
-}
-
-task prepareKotlinBuildScriptModel {
-
+    logger.info("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
 }
