@@ -4,7 +4,7 @@ This folder contains the sources needed to build the app. It is a [Capacitor](ht
 
 ## Requirements
 
-- NodeJS v16.13.0 or higher
+- NodeJS v20.11.1 or higher
 - Ionic CLI
 - Capacitor CLI
 - Angular CLI
