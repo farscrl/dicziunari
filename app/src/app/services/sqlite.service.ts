@@ -13,6 +13,7 @@ import {
   capNCDatabasePathResult,
 } from '@capacitor-community/sqlite';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { capSQLiteVersionUpgrade } from '@capacitor-community/sqlite/src/definitions';
 
 @Injectable({
   providedIn: 'root',
@@ -128,7 +129,8 @@ export class SQLiteService {
 
     if (this.sqlite != null) {
       try {
-        await this.sqlite.addUpgradeStatement(database, toVersion, statements);
+        const update: capSQLiteVersionUpgrade = { toVersion, statements};
+        await this.sqlite.addUpgradeStatement(database, [update]);
         return Promise.resolve();
       } catch (err) {
         return Promise.reject(new Error(err));
