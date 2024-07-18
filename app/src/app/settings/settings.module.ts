@@ -2,9 +2,9 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { SettingsPage } from './settings.page';
-import { TranslateModule } from '@ngx-translate/core';
 
 import { SettingsPageRoutingModule } from './settings-routing.module';
 import { FeedbackPage } from './feedback/feedback.page';
@@ -18,7 +18,7 @@ import { InfoPage } from './info/info.page';
     FormsModule,
     RouterModule.forChild([{ path: '', component: SettingsPage }]),
     SettingsPageRoutingModule,
-    TranslateModule,
+    SharedModule,
   ],
   declarations: [SettingsPage, FeedbackPage, HelpPage, InfoPage],
 })
