@@ -19,7 +19,7 @@
   "homepage": "https://github.com/gion-andri/dicziunari#readme",
   "devDependencies": {},
   "dependencies": {
-    "better-sqlite3": "^7.4.5",
+    "better-sqlite3": "^11.1.2",
     "node-html-parser": "^5.1.0",
     "stream-json": "^1.7.3",
     "xml-stream": "^0.4.5"
