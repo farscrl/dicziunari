@@ -17,13 +17,11 @@
         <ion-label>{{ "SETTINGS.LANGUAGE.TITLE" | translate}}</ion-label>
       </ion-list-header>
       <ion-item>
-        <ion-label>Rumantsch</ion-label>
-        <ion-radio slot="start" value="rm"></ion-radio>
+        <ion-radio labelPlacement="end" justify="start" value="rm">Rumantsch</ion-radio>
       </ion-item>
 
       <ion-item>
-        <ion-label>Deutsch</ion-label>
-        <ion-radio slot="start" value="de"></ion-radio>
+        <ion-radio labelPlacement="end" justify="start" value="de">Deutsch</ion-radio>
       </ion-item>
     </ion-radio-group>
 
@@ -32,23 +30,19 @@
         <ion-label>{{ "SETTINGS.MODE.TITLE" | translate}}</ion-label>
       </ion-list-header>
       <ion-item>
-        <ion-label>{{ "SETTINGS.MODE.START" | translate}}</ion-label>
-        <ion-radio slot="start" value="start"></ion-radio>
+        <ion-radio labelPlacement="end" justify="start" value="start">{{ "SETTINGS.MODE.START" | translate}}</ion-radio>
       </ion-item>
 
       <ion-item>
-        <ion-label>{{ "SETTINGS.MODE.MATCH" | translate}}</ion-label>
-        <ion-radio slot="start" value="match"></ion-radio>
+        <ion-radio labelPlacement="end" justify="start" value="match">{{ "SETTINGS.MODE.MATCH" | translate}}</ion-radio>
       </ion-item>
 
       <ion-item>
-        <ion-label>{{ "SETTINGS.MODE.SUBSTRING" | translate}}</ion-label>
-        <ion-radio slot="start" value="substring"></ion-radio>
+        <ion-radio labelPlacement="end" justify="start" value="substring">{{ "SETTINGS.MODE.SUBSTRING" | translate}}</ion-radio>
       </ion-item>
 
       <ion-item>
-        <ion-label>{{ "SETTINGS.MODE.END" | translate}}</ion-label>
-        <ion-radio slot="start" value="end"></ion-radio>
+        <ion-radio labelPlacement="end" justify="start" value="end">{{ "SETTINGS.MODE.END" | translate}}</ion-radio>
       </ion-item>
     </ion-radio-group>
 
@@ -57,12 +51,10 @@
         <ion-label>{{ "SETTINGS.VERBS.TITLE" | translate}}</ion-label>
       </ion-list-header>
       <ion-item>
-        <ion-label>{{ "SETTINGS.VERBS.NOT_INCLUDE" | translate}}</ion-label>
-        <ion-radio slot="start" [value]="false"></ion-radio>
+        <ion-radio labelPlacement="end" justify="start" [value]="false">{{ "SETTINGS.VERBS.NOT_INCLUDE" | translate}}</ion-radio>
       </ion-item>
       <ion-item>
-        <ion-label>{{ "SETTINGS.VERBS.INCLUDE" | translate}}</ion-label>
-        <ion-radio slot="start" [value]="true"></ion-radio>
+        <ion-radio labelPlacement="end" justify="start" [value]="true">{{ "SETTINGS.VERBS.INCLUDE" | translate}}</ion-radio>
       </ion-item>
     </ion-radio-group>
 
@@ -71,18 +63,15 @@
         <ion-label>{{ "SETTINGS.COLOR.TITLE" | translate}}</ion-label>
       </ion-list-header>
       <ion-item>
-        <ion-label>{{ "SETTINGS.COLOR.LIGHT" | translate}}</ion-label>
-        <ion-radio slot="start" [value]="'light'"></ion-radio>
+        <ion-radio labelPlacement="end" justify="start" [value]="'light'">{{ "SETTINGS.COLOR.LIGHT" | translate}}</ion-radio>
       </ion-item>
 
       <ion-item>
-        <ion-label>{{ "SETTINGS.COLOR.DARK" | translate}}</ion-label>
-        <ion-radio slot="start" [value]="'dark'"></ion-radio>
+        <ion-radio labelPlacement="end" justify="start" [value]="'dark'">{{ "SETTINGS.COLOR.DARK" | translate}}</ion-radio>
       </ion-item>
 
       <ion-item>
-        <ion-label>{{ "SETTINGS.COLOR.AUTO" | translate}}</ion-label>
-        <ion-radio slot="start" [value]="'auto'"></ion-radio>
+        <ion-radio labelPlacement="end" justify="start" [value]="'auto'">{{ "SETTINGS.COLOR.AUTO" | translate}}</ion-radio>
       </ion-item>
     </ion-radio-group>
 
