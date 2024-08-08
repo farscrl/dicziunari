@@ -1,5 +1,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button id="trigger-button">
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+      <ion-popover trigger="trigger-button" [dismissOnSelect]="true">
+        <ng-template>
+          <ion-content class="ion-padding dropdown-button" (click)="importModal.present()">Importar</ion-content>
+          <ion-content class="ion-padding dropdown-button" (click)="exportModal.present()">Exportar</ion-content>
+        </ng-template>
+      </ion-popover>
+    </ion-buttons>
     <ion-title> {{ "FAVOURITES.TITLE" | translate}} </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -67,4 +78,36 @@
   @if (isEmpty) {
     <app-no-favourites></app-no-favourites>
   }
+
+  <ion-modal #importModal class="small-modal">
+    <ng-template>
+      <div class="wrapper">
+        <h1>Importar</h1>
+
+        <p>Ti pos importar favorits exportads. Per quai stos ti tscherner la datoteca per importar.</p>
+        <ion-radio-group value="add" #importMode>
+          <ion-radio labelPlacement="end" justify="start" alignment="center" value="add">
+            <span class="ion-text-wrap ion-margin-bottom" style="display: inline-block">Jau vi <b>agiuntar</b> ils favurits importads tar ils favurits existents</span>
+          </ion-radio>
+          <ion-radio labelPlacement="end" justify="start" value="overwrite">
+            <span class="ion-text-wrap ion-margin-bottom" style="display: inline-block">Jau vi <b>remplazzar</b> tut mes favurits existents cun ils favurits ch'jeu importeschel</span>
+          </ion-radio>
+        </ion-radio-group>
+
+        <ion-button expand="block" (click)="importModal.dismiss(); importBackup(importMode.value);">Importar</ion-button>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal #exportModal class="small-modal">
+    <ng-template>
+      <div class="wrapper">
+        <h1>Exportar</h1>
+
+        <p>Cun questa funcziun pos ti exportar ils favorits ramassads per utilisar enavant u sco backup.</p>
+
+        <ion-button expand="block" (click)="exportModal.dismiss(); exportBackup();">Exportar</ion-button>
+      </div>
+    </ng-template>
+  </ion-modal>
 </ion-content>

@@ -3,3 +3,24 @@ ion-item-divider {
     padding-bottom: 4px;
     font-weight: bold;
 }
+
+.dropdown-button {
+  cursor: pointer;
+}
+
+.wrapper {
+  padding: 2rem;
+}
+
+ion-modal.small-modal {
+  --width: fit-content;
+  --min-width: 250px;
+  --max-width: 80%;
+  --height: fit-content;
+  --border-radius: 6px;
+  --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+
+  h1 {
+    margin-top: 0;
+  }
+}

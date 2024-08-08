@@ -152,6 +152,27 @@ export class FavouritesService {
     return false;
   }
 
+  async deleteAllFavorites() {
+    const statement = `
+    DELETE FROM favorites;
+    `;
+
+    const values = await CapacitorSQLite.query({
+      database: DB_NAME_KEY,
+      statement,
+      values: [],
+    });
+    values.values = this.iosHeaderCleanerUtil.removeIosOnlyHeaderLine(values.values);
+
+    if (Capacitor.getPlatform() === 'web') {
+      CapacitorSQLite.saveToStore({ database: DB_NAME_KEY });
+    }
+    if (values.values) {
+      return true;
+    }
+    return false;
+  }
+
   private async setupDatabase() {
     // create db connection
     const hasConnection = await this.sqlLiteService.isConnection(DB_NAME_KEY);

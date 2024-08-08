@@ -21,6 +21,7 @@
 		"SharePlugin",
 		"SplashScreenPlugin",
 		"StatusBarPlugin",
+		"FilePickerPlugin",
 		"CDVPlugin"
 	]
 }

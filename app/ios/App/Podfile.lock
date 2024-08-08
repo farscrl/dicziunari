@@ -23,6 +23,8 @@ PODS:
     - Capacitor
   - CapacitorStatusBar (7.0.1):
     - Capacitor
+  - CapawesomeCapacitorFilePicker (7.2.0):
+    - Capacitor
   - CordovaPlugins (7.4.0):
     - CapacitorCordova
   - IONFilesystemLib (1.0.0)
@@ -45,6 +47,7 @@ DEPENDENCIES:
   - "CapacitorShare (from `../../node_modules/@capacitor/share`)"
   - "CapacitorSplashScreen (from `../../node_modules/@capacitor/splash-screen`)"
   - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
+  - "CapawesomeCapacitorFilePicker (from `../../node_modules/@capawesome/capacitor-file-picker`)"
   - CordovaPlugins (from `../capacitor-cordova-ios-plugins`)
 
 SPEC REPOS:
@@ -76,6 +79,8 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/splash-screen"
   CapacitorStatusBar:
     :path: "../../node_modules/@capacitor/status-bar"
+  CapawesomeCapacitorFilePicker:
+    :path: "../../node_modules/@capawesome/capacitor-file-picker"
   CordovaPlugins:
     :path: "../capacitor-cordova-ios-plugins"
 
@@ -91,11 +96,12 @@ SPEC CHECKSUMS:
   CapacitorShare: e573823f511f260f598d0423c33b1e3d7bbe5fd1
   CapacitorSplashScreen: 1d67815a422a9b61539c94f283c08ed56667c0fc
   CapacitorStatusBar: 6e7af040d8fc4dd655999819625cae9c2d74c36f
+  CapawesomeCapacitorFilePicker: 0f4a913a00e39dd77213449f0d917e92f35a5ca9
   CordovaPlugins: bea0788846b94242fafb5b04f7342612ec44f296
   IONFilesystemLib: ceacae793975039530458eabab0c495c70515a0d
   SQLCipher: 98dc22f27c0b1790d39e710d440f22a466ebdb59
   ZIPFoundation: ae5b4b813d216d3bf0a148773267fff14bd51d37
 
-PODFILE CHECKSUM: 625189acbdc5ffcacab34cef1c3f0a03cd2189bd
+PODFILE CHECKSUM: bd5d08f56ab34a3abca82d73e00dce9ab0cdebb1
 
 COCOAPODS: 1.16.2
