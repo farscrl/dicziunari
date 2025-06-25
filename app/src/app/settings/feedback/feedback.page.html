@@ -9,10 +9,11 @@
 </ion-header>
 
 <ion-content>
-  <div class="main-content" *ngIf="selectedLocale === 'de'">
-    <p>
-      Wir freuen uns über Rückmeldungen und Verbesserungsvorschläge zur App «Dicziunari Rumantsch» via <a
-        href="mailto:app@dicziunari.ch?subject=Feedback zur App «Dicziunari Rumantsch»&body={{body}}">app&#64;dicziunari.ch</a>.
+  @if (selectedLocale === 'de') {
+    <div class="main-content">
+      <p>
+        Wir freuen uns über Rückmeldungen und Verbesserungsvorschläge zur App «Dicziunari Rumantsch» via <a
+      href="mailto:app@dicziunari.ch?subject=Feedback zur App «Dicziunari Rumantsch»&body={{body}}">app&#64;dicziunari.ch</a>.
     </p>
     <p>
       Die Lia Rumantscha und die Uniun dals Grischs haben freundlicherweise die Daten der Wörterbücher zur
@@ -25,27 +26,28 @@
       <a href="http://www.pledarigrond.ch" target="_blank">www.pledarigrond.ch</a> eingereicht werden.<br>
       Änderungen an den Daten des Pledari Grond werden jedoch erst mit dem nächsten Update der App im «Dicziunari Rumantsch»
       verfügbar sein.
-
     </p>
   </div>
+}
 
-  <div class="main-content" *ngIf="selectedLocale === 'rm'">
+@if (selectedLocale === 'rm') {
+  <div class="main-content">
     <p>
       Nus ans allegrain da resuns e propostas per optimaziuns da l’app «Dicziunari Rumantsch» via <a
-        href="mailto:app@dicziunari.ch?subject=Resun app «Dicziunari Rumantsch»&body={{ body }}">app&#64;dicziunari.ch</a>.
-    </p>
-    <p>
-      La Lia Rumantscha e l'Uniun dals Grischs han mess a disposiziun las datas dals
-      dicziunaris. Per propostas da midadas che concernan las datas linguisticas, supplitgain nus da contactar
-      directamain las persunas responsablas per ils dicziunaris.
-    </p>
-    <p>
-      Per ils dicziunaris dal rumantsch grischun ed ils idioms sursilvan, sutsilvan e surmiran è la Lia Rumantscha
-      responsabla. Eventualas propostas per midadas e correcturas pon ins inoltrar cun agid dal formular correspundent
-      sin <a href="http://www.pledarigrond.ch" target="_blank">www.pledarigrond.ch</a>.<br>
-      Midadas en il Pledari Grond vegnan dentant pir integradas en l’app «Dicziunari Rumantsch» cun la proxima actualisaziun da
-      l’app.
-
-    </p>
-  </div>
+    href="mailto:app@dicziunari.ch?subject=Resun app «Dicziunari Rumantsch»&body={{ body }}">app&#64;dicziunari.ch</a>.
+  </p>
+  <p>
+    La Lia Rumantscha e l'Uniun dals Grischs han mess a disposiziun las datas dals
+    dicziunaris. Per propostas da midadas che concernan las datas linguisticas, supplitgain nus da contactar
+    directamain las persunas responsablas per ils dicziunaris.
+  </p>
+  <p>
+    Per ils dicziunaris dal rumantsch grischun ed ils idioms sursilvan, sutsilvan e surmiran è la Lia Rumantscha
+    responsabla. Eventualas propostas per midadas e correcturas pon ins inoltrar cun agid dal formular correspundent
+    sin <a href="http://www.pledarigrond.ch" target="_blank">www.pledarigrond.ch</a>.<br>
+    Midadas en il Pledari Grond vegnan dentant pir integradas en l’app «Dicziunari Rumantsch» cun la proxima actualisaziun da
+    l’app.
+  </p>
+</div>
+}
 </ion-content>

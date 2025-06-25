@@ -1,10 +1,22 @@
 <div class="env">
-  <ion-icon src="assets/icon/redirect.svg" *ngIf="isRedirect"></ion-icon>
+  @if (isRedirect) {
+    <ion-icon src="assets/icon/redirect.svg"></ion-icon>
+  }
   <div>
-    <span *ngIf="isRedirect" [innerHtml]="displayText | highlight: searchString" class="link" (click)="changeSearchTerm.emit(displayText)"></span>
-    <span *ngIf="!isRedirect" [innerHtml]="displayText | highlight: searchString"></span>
-    <span *ngIf="flex"> {{ flex }}</span>
-    <span class="semantics" *ngIf="semantics && semantics.replace(' ', '') != ''"> ({{ semantics }})</span>
-    <span class="grammar" *ngIf="grammar && grammar.replace(' ', '') != ''"> [{{ grammar }}]</span>
+    @if (isRedirect) {
+      <span [innerHtml]="displayText | highlight: searchString" class="link" (click)="changeSearchTerm.emit(displayText)"></span>
+    }
+    @if (!isRedirect) {
+      <span [innerHtml]="displayText | highlight: searchString"></span>
+    }
+    @if (flex) {
+      <span> {{ flex }}</span>
+    }
+    @if (semantics && semantics.replace(' ', '') != '') {
+      <span class="semantics"> ({{ semantics }})</span>
+    }
+    @if (grammar && grammar.replace(' ', '') != '') {
+      <span class="grammar"> [{{ grammar }}]</span>
+    }
   </div>
 </div>

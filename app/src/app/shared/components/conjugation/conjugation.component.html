@@ -2,26 +2,27 @@
   <h1>{{ (lemma && lemma.infinitiv) ? lemma.infinitiv : '' }}</h1>
 </ion-text>
 
-<ion-grid *ngIf="lemma">
-  <ion-row>
-    <ion-col size="12" sizeMd="6">
-      <ion-text><h3>{{ 'CONJUGATION.PRESENT_TENSE' | translate }}</h3></ion-text>
-      <p>
+@if (lemma) {
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" sizeMd="6">
+        <ion-text><h3>{{ 'CONJUGATION.PRESENT_TENSE' | translate }}</h3></ion-text>
+        <p>
+          <app-conjugation-personal
+            [searchString]="searchString"
+            [sing1]="lemma.preschentsing1" [sing1Pronoun]="pronouns.preschentsing1"
+            [sing2]="lemma.preschentsing2" [sing2Pronoun]="pronouns.preschentsing2"
+            [sing3]="lemma.preschentsing3" [sing3Pronoun]="pronouns.preschentsing3"
+            [plural1]="lemma.preschentplural1" [plural1Pronoun]="pronouns.preschentplural1"
+            [plural2]="lemma.preschentplural2" [plural2Pronoun]="pronouns.preschentplural2"
+            [plural3]="lemma.preschentplural3" [plural3Pronoun]="pronouns.preschentplural3">
+          </app-conjugation-personal>
+        </p>
+      </ion-col>
+      <ion-col size="12" sizeMd="6">
+        <ion-text><h2>{{ 'CONJUGATION.PAST_TENSE' | translate }}</h2></ion-text>
         <app-conjugation-personal
           [searchString]="searchString"
-          [sing1]="lemma.preschentsing1" [sing1Pronoun]="pronouns.preschentsing1"
-          [sing2]="lemma.preschentsing2" [sing2Pronoun]="pronouns.preschentsing2"
-          [sing3]="lemma.preschentsing3" [sing3Pronoun]="pronouns.preschentsing3"
-          [plural1]="lemma.preschentplural1" [plural1Pronoun]="pronouns.preschentplural1"
-          [plural2]="lemma.preschentplural2" [plural2Pronoun]="pronouns.preschentplural2"
-          [plural3]="lemma.preschentplural3" [plural3Pronoun]="pronouns.preschentplural3">
-        </app-conjugation-personal>
-      </p>
-    </ion-col>
-    <ion-col size="12" sizeMd="6">
-      <ion-text><h2>{{ 'CONJUGATION.PAST_TENSE' | translate }}</h2></ion-text>
-      <app-conjugation-personal
-        [searchString]="searchString"
           [sing1]="lemma.imperfectsing1" [sing1Pronoun]="pronouns.imperfectsing1"
           [sing2]="lemma.imperfectsing2" [sing2Pronoun]="pronouns.imperfectsing2"
           [sing3]="lemma.imperfectsing3" [sing3Pronoun]="pronouns.imperfectsing3"
@@ -29,14 +30,13 @@
           [plural2]="lemma.imperfectplural2" [plural2Pronoun]="pronouns.imperfectplural2"
           [plural3]="lemma.imperfectplural3" [plural3Pronoun]="pronouns.imperfectplural3">
         </app-conjugation-personal>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col size="12" sizeMd="6">
-      <ion-text><h2>{{ 'CONJUGATION.SUBJUNCTIVE' | translate }}</h2></ion-text>
-      <app-conjugation-personal
-        [searchString]="searchString"
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" sizeMd="6">
+        <ion-text><h2>{{ 'CONJUGATION.SUBJUNCTIVE' | translate }}</h2></ion-text>
+        <app-conjugation-personal
+          [searchString]="searchString"
           [sing1]="lemma.conjunctivsing1" [sing1Pronoun]="pronouns.conjunctivsing1"
           [sing2]="lemma.conjunctivsing2" [sing2Pronoun]="pronouns.conjunctivsing2"
           [sing3]="lemma.conjunctivsing3" [sing3Pronoun]="pronouns.conjunctivsing3"
@@ -44,11 +44,11 @@
           [plural2]="lemma.conjunctivplural2" [plural2Pronoun]="pronouns.conjunctivplural2"
           [plural3]="lemma.conjunctivplural3" [plural3Pronoun]="pronouns.conjunctivplural3">
         </app-conjugation-personal>
-    </ion-col>
-    <ion-col size="12" sizeMd="6">
-      <ion-text><h2>{{ 'CONJUGATION.CONDITIONAL' | translate }}</h2></ion-text>
-      <app-conjugation-personal
-        [searchString]="searchString"
+      </ion-col>
+      <ion-col size="12" sizeMd="6">
+        <ion-text><h2>{{ 'CONJUGATION.CONDITIONAL' | translate }}</h2></ion-text>
+        <app-conjugation-personal
+          [searchString]="searchString"
           [sing1]="lemma.cundizionalsing1" [sing1Pronoun]="pronouns.cundizionalsing1"
           [sing2]="lemma.cundizionalsing2" [sing2Pronoun]="pronouns.cundizionalsing2"
           [sing3]="lemma.cundizionalsing3" [sing3Pronoun]="pronouns.cundizionalsing3"
@@ -56,57 +56,57 @@
           [plural2]="lemma.cundizionalplural2" [plural2Pronoun]="pronouns.cundizionalplural2"
           [plural3]="lemma.cundizionalplural3" [plural3Pronoun]="pronouns.cundizionalplural3">
         </app-conjugation-personal>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col size="12" sizeMd="6">
-      <ion-text><h2>{{ 'CONJUGATION.FUTUR_TENSE' | translate }}</h2></ion-text>
-      <app-conjugation-personal
-        [searchString]="searchString"
-      [sing1]="lemma.futursing1" [sing1Pronoun]="pronouns.futursing1"
-      [sing2]="lemma.futursing2" [sing2Pronoun]="pronouns.futursing2"
-      [sing3]="lemma.futursing3" [sing3Pronoun]="pronouns.futursing3"
-      [plural1]="lemma.futurplural1" [plural1Pronoun]="pronouns.futurplural1"
-      [plural2]="lemma.futurplural2" [plural2Pronoun]="pronouns.futurplural2"
-      [plural3]="lemma.futurplural3" [plural3Pronoun]="pronouns.futurplural3">
-    </app-conjugation-personal>
-    </ion-col>
-    <ion-col size="12" sizeMd="6">
-      <ion-text><h2>{{ 'CONJUGATION.PAST_PARTICIPLE' | translate }}</h2></ion-text>
-      <app-conjugation-impersonal
-        [searchString]="searchString"
-        [form1]="lemma.participperfectms"
-        [form2]="lemma.participperfectfs"
-        [form3]="lemma.participperfectmp"
-        [form4]="lemma.participperfectfp">
-      </app-conjugation-impersonal>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col size="12" sizeMd="6">
-      <ion-text><h2>{{ 'CONJUGATION.IMPERATIVE' | translate }}</h2></ion-text>
-      <app-conjugation-impersonal
-        [searchString]="searchString"
-        [form1]="lemma.imperativ1"
-        [form2]="lemma.imperativ2">
-      </app-conjugation-impersonal>
-    </ion-col>
-    <ion-col size="12" sizeMd="6">
-      <ion-text><h2>{{ 'CONJUGATION.GERUND' | translate }}</h2></ion-text>
-      <app-conjugation-impersonal
-        [searchString]="searchString"
-        [form1]="lemma.gerundium">
-      </app-conjugation-impersonal>
-    </ion-col>
-  </ion-row>
-
-  <ion-row *ngIf="isSursilvan">
-    <ion-col size="12">
-      <div class="verb-annotation">
-        {{ 'CONJUGATION.LINK_SURSILVAN' | translate | translateCut:0 }}<a href="https://www.liarumantscha.ch/rm/purschidas/curs-rumantschs" target="_blank">{{ 'CONJUGATION.LINK_SURSILVAN' | translate | translateCut:1 }}</a>{{ 'CONJUGATION.LINK_SURSILVAN' | translate | translateCut:2 }}
-      </div>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" sizeMd="6">
+        <ion-text><h2>{{ 'CONJUGATION.FUTUR_TENSE' | translate }}</h2></ion-text>
+        <app-conjugation-personal
+          [searchString]="searchString"
+          [sing1]="lemma.futursing1" [sing1Pronoun]="pronouns.futursing1"
+          [sing2]="lemma.futursing2" [sing2Pronoun]="pronouns.futursing2"
+          [sing3]="lemma.futursing3" [sing3Pronoun]="pronouns.futursing3"
+          [plural1]="lemma.futurplural1" [plural1Pronoun]="pronouns.futurplural1"
+          [plural2]="lemma.futurplural2" [plural2Pronoun]="pronouns.futurplural2"
+          [plural3]="lemma.futurplural3" [plural3Pronoun]="pronouns.futurplural3">
+        </app-conjugation-personal>
+      </ion-col>
+      <ion-col size="12" sizeMd="6">
+        <ion-text><h2>{{ 'CONJUGATION.PAST_PARTICIPLE' | translate }}</h2></ion-text>
+        <app-conjugation-impersonal
+          [searchString]="searchString"
+          [form1]="lemma.participperfectms"
+          [form2]="lemma.participperfectfs"
+          [form3]="lemma.participperfectmp"
+          [form4]="lemma.participperfectfp">
+        </app-conjugation-impersonal>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" sizeMd="6">
+        <ion-text><h2>{{ 'CONJUGATION.IMPERATIVE' | translate }}</h2></ion-text>
+        <app-conjugation-impersonal
+          [searchString]="searchString"
+          [form1]="lemma.imperativ1"
+          [form2]="lemma.imperativ2">
+        </app-conjugation-impersonal>
+      </ion-col>
+      <ion-col size="12" sizeMd="6">
+        <ion-text><h2>{{ 'CONJUGATION.GERUND' | translate }}</h2></ion-text>
+        <app-conjugation-impersonal
+          [searchString]="searchString"
+          [form1]="lemma.gerundium">
+        </app-conjugation-impersonal>
+      </ion-col>
+    </ion-row>
+    @if (isSursilvan) {
+      <ion-row>
+        <ion-col size="12">
+          <div class="verb-annotation">
+            {{ 'CONJUGATION.LINK_SURSILVAN' | translate | translateCut:0 }}<a href="https://www.liarumantscha.ch/rm/purschidas/curs-rumantschs" target="_blank">{{ 'CONJUGATION.LINK_SURSILVAN' | translate | translateCut:1 }}</a>{{ 'CONJUGATION.LINK_SURSILVAN' | translate | translateCut:2 }}
+          </div>
+        </ion-col>
+      </ion-row>
+    }
+  </ion-grid>
+}

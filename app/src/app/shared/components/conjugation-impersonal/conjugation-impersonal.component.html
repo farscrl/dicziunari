@@ -1,14 +1,22 @@
 <table>
-  <tr *ngIf="form1">
-    <td [innerHtml]="replaceComma(form1) | highlight: searchString"></td>
-  </tr>
-  <tr *ngIf="form2">
-    <td [innerHtml]="replaceComma(form2) | highlight: searchString"></td>
-  </tr>
-  <tr *ngIf="form3">
-    <td [innerHtml]="replaceComma(form3) | highlight: searchString"></td>
-  </tr>
-  <tr *ngIf="form4">
-    <td [innerHtml]="replaceComma(form4) | highlight: searchString"></td>
-  </tr>
+  @if (form1) {
+    <tr>
+      <td [innerHtml]="replaceComma(form1) | highlight: searchString"></td>
+    </tr>
+  }
+  @if (form2) {
+    <tr>
+      <td [innerHtml]="replaceComma(form2) | highlight: searchString"></td>
+    </tr>
+  }
+  @if (form3) {
+    <tr>
+      <td [innerHtml]="replaceComma(form3) | highlight: searchString"></td>
+    </tr>
+  }
+  @if (form4) {
+    <tr>
+      <td [innerHtml]="replaceComma(form4) | highlight: searchString"></td>
+    </tr>
+  }
 </table>

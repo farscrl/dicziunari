@@ -6,22 +6,40 @@
           <ion-label>{{ "SEARCH.DE" | translate}}</ion-label>
         </ion-col>
         <ion-col size="2" style="text-align: center;">
-          <ion-icon class="search-direction-icon" src="assets/icon/direction-from-de.svg" size="large"
-            *ngIf="searchDirection === 'fromDe'" (click)="changeSearchDirection()"></ion-icon>
-          <ion-icon class="search-direction-icon" src="assets/icon/direction-from-rm.svg" size="large"
-            *ngIf="searchDirection === 'fromRm'" (click)="changeSearchDirection()"></ion-icon>
-          <ion-icon class="search-direction-icon" src="assets/icon/direction-both.svg" size="large"
-            *ngIf="searchDirection === 'both'" (click)="changeSearchDirection()"></ion-icon>
+          @if (searchDirection === 'fromDe') {
+            <ion-icon class="search-direction-icon" src="assets/icon/direction-from-de.svg" size="large"
+            (click)="changeSearchDirection()"></ion-icon>
+          }
+          @if (searchDirection === 'fromRm') {
+            <ion-icon class="search-direction-icon" src="assets/icon/direction-from-rm.svg" size="large"
+            (click)="changeSearchDirection()"></ion-icon>
+          }
+          @if (searchDirection === 'both') {
+            <ion-icon class="search-direction-icon" src="assets/icon/direction-both.svg" size="large"
+            (click)="changeSearchDirection()"></ion-icon>
+          }
         </ion-col>
         <ion-col size="5">
           <ng-container>
-            <div class="idiom" *ngIf="selectedDictionary === 'rumgrischun'" (click)="changeDictionary()">Rumantsch
+            @if (selectedDictionary === 'rumgrischun') {
+              <div class="idiom" (click)="changeDictionary()">Rumantsch
               Grischun</div>
-            <div class="idiom" *ngIf="selectedDictionary === 'sursilv'" (click)="changeDictionary()">Sursilvan</div>
-            <div class="idiom" *ngIf="selectedDictionary === 'sutsilv'" (click)="changeDictionary()">Sutsilvan</div>
-            <div class="idiom" *ngIf="selectedDictionary === 'surm'" (click)="changeDictionary()">Surmiran</div>
-            <div class="idiom" *ngIf="selectedDictionary === 'puter'" (click)="changeDictionary()">Puter</div>
-            <div class="idiom" *ngIf="selectedDictionary === 'vall'" (click)="changeDictionary()">Vallader</div>
+            }
+            @if (selectedDictionary === 'sursilv') {
+              <div class="idiom" (click)="changeDictionary()">Sursilvan</div>
+            }
+            @if (selectedDictionary === 'sutsilv') {
+              <div class="idiom" (click)="changeDictionary()">Sutsilvan</div>
+            }
+            @if (selectedDictionary === 'surm') {
+              <div class="idiom" (click)="changeDictionary()">Surmiran</div>
+            }
+            @if (selectedDictionary === 'puter') {
+              <div class="idiom" (click)="changeDictionary()">Puter</div>
+            }
+            @if (selectedDictionary === 'vall') {
+              <div class="idiom" (click)="changeDictionary()">Vallader</div>
+            }
           </ng-container>
         </ion-col>
       </ion-row>
@@ -31,28 +49,32 @@
     <form action="#" (submit)="enterHit()">
       <ion-searchbar showCancelButton="focus" [(ngModel)]="searchString" (ngModelChange)="search()"
         [ngModelOptions]="{standalone: true}" [placeholder]="'SEARCH.SEARCHFIELD.LABEL' | translate"
-        [cancelButtonText]="'SEARCH.SEARCHFIELD.CANCEL' | translate" (keyup.enter)="enterHit()"></ion-searchbar>
+      [cancelButtonText]="'SEARCH.SEARCHFIELD.CANCEL' | translate" (keyup.enter)="enterHit()"></ion-searchbar>
     </form>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ng-container *ngIf="pleds.length > 0">
+  @if (pleds.length > 0) {
     <ion-list>
-      <ng-container *ngFor="let pled of pleds">
+      @for (pled of pleds; track pled) {
         <app-lemma-display [lemma]="pled" [searchString]="searchString" [searchDirection]="searchDirection"
-          [dictionary]="selectedDictionary" (changeSearchTerm)="changeSearchTerm($event)"></app-lemma-display>
-      </ng-container>
+        [dictionary]="selectedDictionary" (changeSearchTerm)="changeSearchTerm($event)"></app-lemma-display>
+      }
     </ion-list>
-  </ng-container>
+  }
 
   <ion-infinite-scroll threshold="10px" (ionInfinite)="loadMoreData()" [style.display]="pleds.length === 0 ? 'none' : ''">
     <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{ 'SEARCH.LOADING_DATA' | translate }}">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 
-  <ng-container *ngIf="pleds.length === 0">
-    <app-placeholder *ngIf="searchString === ''"></app-placeholder>
-    <app-no-results *ngIf="searchString !== ''"></app-no-results>
-  </ng-container>
+  @if (pleds.length === 0) {
+    @if (searchString === '') {
+      <app-placeholder></app-placeholder>
+    }
+    @if (searchString !== '') {
+      <app-no-results></app-no-results>
+    }
+  }
 </ion-content>
