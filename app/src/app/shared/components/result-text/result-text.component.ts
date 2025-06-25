@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-result-text',
-  templateUrl: './result-text.component.html',
-  styleUrls: ['./result-text.component.scss'],
+    selector: 'app-result-text',
+    templateUrl: './result-text.component.html',
+    styleUrls: ['./result-text.component.scss'],
+    standalone: false
 })
 export class ResultTextComponent implements OnInit {
   @Input()

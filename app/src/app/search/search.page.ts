@@ -9,9 +9,10 @@ import { Subscription } from 'rxjs';
 import { DictionaryModalComponent } from './dictionary-modal/dictionary-modal.component';
 
 @Component({
-  selector: 'app-search',
-  templateUrl: 'search.page.html',
-  styleUrls: ['search.page.scss'],
+    selector: 'app-search',
+    templateUrl: 'search.page.html',
+    styleUrls: ['search.page.scss'],
+    standalone: false
 })
 export class SearchPage implements OnInit, OnDestroy {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;

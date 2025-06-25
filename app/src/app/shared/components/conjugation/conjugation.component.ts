@@ -5,9 +5,10 @@ import { Pronouns } from "../../../../data/pronouns";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: 'app-conjugation',
-  templateUrl: './conjugation.component.html',
-  styleUrls: ['./conjugation.component.scss'],
+    selector: 'app-conjugation',
+    templateUrl: './conjugation.component.html',
+    styleUrls: ['./conjugation.component.scss'],
+    standalone: false
 })
 export class ConjugationComponent implements OnInit, OnChanges {
   @Input()

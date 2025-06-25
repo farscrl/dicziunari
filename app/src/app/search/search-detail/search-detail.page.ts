@@ -6,9 +6,10 @@ import { ConfigService } from "../../services/config.service";
 import { Dictionary } from "../../../data/search";
 
 @Component({
-  selector: 'app-search-detail-page',
-  templateUrl: './search-detail.page.html',
-  styleUrls: ['./search-detail.page.scss'],
+    selector: 'app-search-detail-page',
+    templateUrl: './search-detail.page.html',
+    styleUrls: ['./search-detail.page.scss'],
+    standalone: false
 })
 export class SearchDetailPage implements OnInit, OnDestroy {
   public id: string;

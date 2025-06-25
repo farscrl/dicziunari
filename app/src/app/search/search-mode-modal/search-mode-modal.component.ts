@@ -5,9 +5,10 @@ import { SearchMode } from 'src/data/search';
 import { Config } from "@ionic/angular";
 
 @Component({
-  selector: 'app-search-mode-modal',
-  templateUrl: './search-mode-modal.component.html',
-  styleUrls: ['./search-mode-modal.component.scss'],
+    selector: 'app-search-mode-modal',
+    templateUrl: './search-mode-modal.component.html',
+    styleUrls: ['./search-mode-modal.component.scss'],
+    standalone: false
 })
 export class SearchModeModalComponent implements OnInit {
   public selectedSearchMode: SearchMode;

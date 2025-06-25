@@ -5,9 +5,10 @@ import { Dictionary } from 'src/data/search';
 import { Config } from "@ionic/angular";
 
 @Component({
-  selector: 'app-dictionary-modal',
-  templateUrl: './dictionary-modal.component.html',
-  styleUrls: ['./dictionary-modal.component.scss'],
+    selector: 'app-dictionary-modal',
+    templateUrl: './dictionary-modal.component.html',
+    styleUrls: ['./dictionary-modal.component.scss'],
+    standalone: false
 })
 export class DictionaryModalComponent implements OnInit {
 

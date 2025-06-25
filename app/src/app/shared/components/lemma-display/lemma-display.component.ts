@@ -10,9 +10,10 @@ import { Subscription } from 'rxjs';
 import { ImageCreatorUtil } from "../../../util/image-creator.util";
 
 @Component({
-  selector: 'app-lemma-display',
-  templateUrl: './lemma-display.component.html',
-  styleUrls: ['./lemma-display.component.scss'],
+    selector: 'app-lemma-display',
+    templateUrl: './lemma-display.component.html',
+    styleUrls: ['./lemma-display.component.scss'],
+    standalone: false
 })
 export class LemmaDisplayComponent implements OnInit, OnDestroy {
   @Input()

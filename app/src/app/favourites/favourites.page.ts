@@ -4,9 +4,10 @@ import { Dictionary } from 'src/data/search';
 import { FavouritesService } from '../services/favourites.service';
 
 @Component({
-  selector: 'app-favourites',
-  templateUrl: 'favourites.page.html',
-  styleUrls: ['favourites.page.scss'],
+    selector: 'app-favourites',
+    templateUrl: 'favourites.page.html',
+    styleUrls: ['favourites.page.scss'],
+    standalone: false
 })
 export class FavouritesPage implements OnInit, OnDestroy {
   public dictionaryValues = Dictionary;       

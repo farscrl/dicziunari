@@ -7,9 +7,10 @@ import { Subscription } from 'rxjs';
 import { ColorMode, ColorModeService } from "../services/color-mode.service";
 
 @Component({
-  selector: 'app-settings',
-  templateUrl: 'settings.page.html',
-  styleUrls: ['settings.page.scss'],
+    selector: 'app-settings',
+    templateUrl: 'settings.page.html',
+    styleUrls: ['settings.page.scss'],
+    standalone: false
 })
 export class SettingsPage implements OnInit, OnDestroy {
   appLanguage: Locale | undefined;

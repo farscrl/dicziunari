@@ -6,9 +6,10 @@ import { Subscription } from 'rxjs';
 import { SearchModeModalComponent } from '../search-mode-modal/search-mode-modal.component';
 
 @Component({
-  selector: 'app-no-results',
-  templateUrl: './no-results.component.html',
-  styleUrls: ['./no-results.component.scss'],
+    selector: 'app-no-results',
+    templateUrl: './no-results.component.html',
+    styleUrls: ['./no-results.component.scss'],
+    standalone: false
 })
 export class NoResultsComponent implements OnInit {
 

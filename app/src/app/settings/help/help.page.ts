@@ -4,9 +4,10 @@ import { ConfigService } from 'src/app/services/config.service';
 import { Locale } from 'src/data/search';
 
 @Component({
-  selector: 'app-help',
-  templateUrl: './help.page.html',
-  styleUrls: ['./help.page.scss'],
+    selector: 'app-help',
+    templateUrl: './help.page.html',
+    styleUrls: ['./help.page.scss'],
+    standalone: false
 })
 export class HelpPage implements OnInit {
   public selectedLocale: Locale = Locale.rm;

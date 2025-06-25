@@ -5,9 +5,10 @@ import { TranslateService } from '@ngx-translate/core';
 import { Locale } from 'src/data/search';
 
 @Component({
-  selector: 'app-language-selection',
-  templateUrl: './language-selection.page.html',
-  styleUrls: ['./language-selection.page.scss'],
+    selector: 'app-language-selection',
+    templateUrl: './language-selection.page.html',
+    styleUrls: ['./language-selection.page.scss'],
+    standalone: false
 })
 export class LanguageSelectionPage implements OnInit {
   public localesValues = Locale;      

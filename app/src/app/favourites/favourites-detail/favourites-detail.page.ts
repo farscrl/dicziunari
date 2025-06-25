@@ -3,9 +3,10 @@ import { Router } from '@angular/router';
 import {Dictionary} from "../../../data/search";
 
 @Component({
-  selector: 'app-favourites-detail-page',
-  templateUrl: './favourites-detail.page.html',
-  styleUrls: ['./favourites-detail.page.scss'],
+    selector: 'app-favourites-detail-page',
+    templateUrl: './favourites-detail.page.html',
+    styleUrls: ['./favourites-detail.page.scss'],
+    standalone: false
 })
 export class FavouritesDetailPage implements OnInit {
   public lemma;

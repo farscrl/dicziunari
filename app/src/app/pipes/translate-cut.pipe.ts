@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'translateCut'
+    name: 'translateCut',
+    standalone: false
 })
 export class TranslateCutPipe implements PipeTransform {
 

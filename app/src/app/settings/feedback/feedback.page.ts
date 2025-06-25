@@ -5,9 +5,10 @@ import { Locale } from 'src/data/search';
 import { Device } from '@capacitor/device';
 
 @Component({
-  selector: 'app-feedback',
-  templateUrl: './feedback.page.html',
-  styleUrls: ['./feedback.page.scss'],
+    selector: 'app-feedback',
+    templateUrl: './feedback.page.html',
+    styleUrls: ['./feedback.page.scss'],
+    standalone: false
 })
 export class FeedbackPage implements OnInit {
 
