@@ -2,7 +2,7 @@
 	"appId": "ch.dicziunari.app",
 	"appName": "Dicziunari",
 	"npmClient": "npm",
-	"webDir": "www",
+	"webDir": "www/browser",
 	"plugins": {
 		"SplashScreen": {
 			"androidScaleType": "CENTER_CROP",
