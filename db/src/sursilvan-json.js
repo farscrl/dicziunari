@@ -164,6 +164,13 @@ function normalizeLemma(lemma) {
 function normalizeVerb(lemma) {
     lemma['DStichwort'] = lemma['DStichwortList'];
     delete lemma['DStichwortList'];
+
+    if (lemma['participperfectms'] + "s" === lemma['participperfectpredicativ']) {
+      lemma['participperfectms'] = lemma['participperfectms'] + "(s)";
+    } else if(lemma['participperfectpredicativ'] !== "-") {
+      lemma['participperfectms'] = lemma['participperfectms'] + " (" +lemma['participperfectpredicativ'] + ")";
+    }
+    delete lemma['participperfectpredicativ'];
 }
 
 
