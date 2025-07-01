@@ -87,14 +87,12 @@
         <p>{{ 'BACKUP.IMPORT.DESCRIPTION' | translate }}</p>
         <ion-radio-group value="add" #importMode>
           <ion-radio labelPlacement="end" justify="start" alignment="center" value="add">
-            <span class="ion-text-wrap ion-margin-bottom" style="display: inline-block">
-              {{ 'BACKUP.IMPORT.ADD' | translate }}
-            </span>
+            <span class="ion-text-wrap ion-margin-bottom" style="display: inline-block"
+              [innerHTML]="'BACKUP.IMPORT.ADD' | translate"></span>
           </ion-radio>
           <ion-radio labelPlacement="end" justify="start" value="overwrite">
-            <span class="ion-text-wrap ion-margin-bottom" style="display: inline-block">
-              {{ 'BACKUP.IMPORT.REPLACE' | translate }}
-            </span>
+            <span class="ion-text-wrap ion-margin-bottom" style="display: inline-block"
+              [innerHTML]="'BACKUP.IMPORT.REPLACE' | translate"></span>
           </ion-radio>
         </ion-radio-group>
 
