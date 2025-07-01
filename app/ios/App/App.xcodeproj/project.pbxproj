@@ -20,7 +20,6 @@
 /* Begin PBXFileReference section */
 		033806652950BA5F00A71B41 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		033806662950BA5F00A71B41 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		03861662270ADD6A00C0EC5F /* App copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "App copy-Info.plist"; path = "/Users/gion-andri/src/dicziunari-app/app/ios/App/App copy-Info.plist"; sourceTree = "<absolute>"; };
 		2FAD9762203C412B000D30F8 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = config.xml; sourceTree = "<group>"; };
 		36FC9932177128D7FBBA8BF2 /* Pods-Dicziunari-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dicziunari-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dicziunari-App/Pods-Dicziunari-App.debug.xcconfig"; sourceTree = "<group>"; };
 		50379B222058CBB4000EE86E /* capacitor.config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = capacitor.config.json; sourceTree = "<group>"; };
@@ -64,7 +63,6 @@
 				504EC3051FED79650016851F /* Products */,
 				7F8756D8B27F46E3366F6CEA /* Pods */,
 				27E2DDA53C4D2A4D1A88CE4A /* Frameworks */,
-				03861662270ADD6A00C0EC5F /* App copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
