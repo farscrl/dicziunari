@@ -6,13 +6,17 @@ import { Share } from '@capacitor/share';
 import { FavouritesService } from './favourites.service';
 import * as XLSX from 'xlsx';
 import { WorkBook } from 'xlsx';
+import { ToastService } from './toast.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BackupService {
 
-  constructor(private favouritesService: FavouritesService) { }
+  constructor(
+      private favouritesService: FavouritesService,
+      private toastService: ToastService,
+  ) { }
 
   async importBackup(importMode: string) {
     const platform = Capacitor.getPlatform();
@@ -77,8 +81,10 @@ export class BackupService {
       });
 
       console.log('File saved successfully!');
+      await this.toastService.showNotification('BACKUP.EXPORT.SUCCESS');
     } catch (e) {
       console.error('Unable to write file', e);
+      await this.toastService.showNotification('BACKUP.EXPORT.ERROR');
     }
   }
 
@@ -96,8 +102,10 @@ export class BackupService {
         title: fileName,
         files: [result.uri],
       });
+      await this.toastService.showNotification('BACKUP.EXPORT.SUCCESS');
     } catch (error) {
       console.error('Unable to export data on iOS', error);
+      await this.toastService.showNotification('BACKUP.EXPORT.ERROR');
     }
   }
 
@@ -106,9 +114,11 @@ export class BackupService {
     a.href = window.URL.createObjectURL(new Blob([data], { type: 'application/octet-stream' }));
     a.download = fileName;
 
-    document.body.appendChild(a)
+    document.body.appendChild(a);
     a.click();
-    document.body.removeChild(a)
+    document.body.removeChild(a);
+
+    await this.toastService.showNotification('BACKUP.EXPORT.SUCCESS');
   }
 
   private async importBackupAndroid(importMode: string) {
@@ -120,6 +130,7 @@ export class BackupService {
 
       if (!files || files.length === 0) {
         console.log('User cancelled file selection.');
+        await this.toastService.showError('BACKUP.IMPORT.ERROR');
         return null;
       }
 
@@ -127,6 +138,7 @@ export class BackupService {
       const filePath = selectedFile.path;
       if (!filePath) {
         console.error('File path not available.');
+        await this.toastService.showError('BACKUP.IMPORT.ERROR');
         return null;
       }
 
@@ -138,6 +150,7 @@ export class BackupService {
       await this.finishImport(workbook, importMode);
     } catch (error) {
       console.error('Error importing data on Android:', error);
+      await this.toastService.showError('BACKUP.IMPORT.ERROR');
       return null;
     }
   }
@@ -158,6 +171,7 @@ export class BackupService {
 
       if (!filePath) {
         console.error('File path not available.');
+        await this.toastService.showError('BACKUP.IMPORT.ERROR');
         return null;
       }
 
@@ -169,6 +183,7 @@ export class BackupService {
       await this.finishImport(workbook, importMode);
     } catch (error) {
       console.error('Error importing data on iOS:', error);
+      await this.toastService.showError('BACKUP.IMPORT.ERROR');
       return null;
     }
   }
@@ -226,6 +241,7 @@ export class BackupService {
         await this.favouritesService.addFavorite(lemmaToAdd.dictionary, lemmaToAdd);
       }
     }
+    await this.toastService.showNotification('BACKUP.IMPORT.SUCCESS');
   }
 
   /**
