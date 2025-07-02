@@ -73,7 +73,7 @@ export class SearchService {
 
   async getDetails(id: string): Promise<any> {
     const statement = this.queryUtil.getDetailQuery(this.configService.getSelectedDictionary(), id) + ' LIMIT 0,1;';
-    console.warn(statement);
+    // console.warn(statement);
     const values = await CapacitorSQLite.query({
       database: DB_NAME_KEY,
       statement,
@@ -98,7 +98,7 @@ export class SearchService {
   async getNextPage(): Promise<any[]> {
     const statement = this.getSearchStatement() + ' LIMIT ' + this.currentPage * this.pageSize + ',' + this.pageSize + ';';
 
-    console.warn(statement);
+    // console.warn(statement);
     const values = await CapacitorSQLite.query({
       database: DB_NAME_KEY,
       statement,

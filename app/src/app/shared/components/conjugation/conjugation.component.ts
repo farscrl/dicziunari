@@ -29,7 +29,7 @@ export class ConjugationComponent implements OnInit, OnChanges {
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.searchString = params.searchString;
-      console.log(this.searchString);
+      // console.log(this.searchString);
     });
   }
 
