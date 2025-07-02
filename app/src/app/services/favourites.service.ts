@@ -83,7 +83,7 @@ export class FavouritesService {
   }
 
   async loadFavourites() {
-    const statement = 'SELECT * from favorites ORDER BY id DESC;';
+    const statement = 'SELECT * from favorites ORDER BY RStichwort ASC, DStichwort ASC;';
     console.warn(statement);
     const values = await CapacitorSQLite.query({
       database: DB_NAME_KEY,
