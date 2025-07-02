@@ -109,6 +109,9 @@
         <h1>{{ 'BACKUP.EXPORT.TITLE' | translate }}</h1>
 
         <p>{{ 'BACKUP.EXPORT.DESCRIPTION' | translate }}</p>
+        @if (isAndroid) {
+          <p>{{ 'BACKUP.EXPORT.DESCRIPTION_ANDROID' | translate }}</p>
+        }
 
         <ion-button expand="block" (click)="exportModal.dismiss(); exportBackup();">{{ 'BACKUP.EXPORT.TITLE' | translate }}</ion-button>
       </div>

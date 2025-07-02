@@ -103,11 +103,16 @@
       "TITLE": "Importar",
       "DESCRIPTION": "Ti pos importar favurits exportads. Per pudair lantschar l’import stos ti tscherner la datoteca che duai vegnir importada.",
       "ADD": "Jau vi <b>agiuntar</b> ils favurits importads als favurits existents",
-      "REPLACE": "Jau vi <b>remplazzar</b> tut mes favurits existents cun ils favurits ch’jau importesch"
+      "REPLACE": "Jau vi <b>remplazzar</b> tut mes favurits existents cun ils favurits ch’jau importesch",
+      "SUCCESS": "Importà cun success",
+      "ERROR": "Errur cun importar"
     },
     "EXPORT": {
       "TITLE": "Exportar",
-      "DESCRIPTION": "Cun agid da questa funcziun pos ti exportar ils favurits ramassads per als utilisar en in’autra furma u per crear ina copia da segirezza."
+      "DESCRIPTION": "Cun agid da questa funcziun pos ti exportar ils favurits ramassads per als utilisar en in’autra furma u per crear ina copia da segirezza.",
+      "DESCRIPTION_ANDROID": "La datoteca vegn exportada en l’ordinatur «Documents».",
+      "SUCCESS": "Exportà cun success",
+      "ERROR": "Errur cun exportar"
     }
   }
 }

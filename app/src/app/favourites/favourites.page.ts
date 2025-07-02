@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { Dictionary } from 'src/data/search';
 import { FavouritesService } from '../services/favourites.service';
 import { BackupService } from '../services/backup.service';
+import { Capacitor } from '@capacitor/core';
 
 @Component({
     selector: 'app-favourites',
@@ -57,6 +58,10 @@ export class FavouritesPage implements OnInit, OnDestroy {
 
   async exportBackup() {
     await this.backupService.exportBackup();
+  }
+
+  get isAndroid(): boolean {
+    return Capacitor.getPlatform() === 'android';
   }
 
   private reloadFavourites() {

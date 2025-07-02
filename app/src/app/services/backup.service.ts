@@ -65,21 +65,12 @@ export class BackupService {
     try {
       const base64Data = this.binaryStringToBase64(data);
 
-      const directoryResult: PickDirectoryResult = await FilePicker.pickDirectory();
-      const directoryUri = directoryResult.path;
-
-      if (!directoryUri) {
-        console.log('User cancelled directory selection.');
-        return;
-      }
-
       const result = await Filesystem.writeFile({
         path: fileName,
         data: base64Data,
-        directory: Directory.Documents, // Saves in the public Documents folder
-        // The 'recursive' option is not needed here as the system handles the base directory.
+        directory: Directory.Documents,
+        recursive: true,
       });
-
       console.log('File saved successfully!');
       await this.toastService.showNotification('BACKUP.EXPORT.SUCCESS');
     } catch (e) {
