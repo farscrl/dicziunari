@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Capacitor } from '@capacitor/core';
 import { FilePicker, PickDirectoryResult, PickedFile } from '@capawesome/capacitor-file-picker';
-import { Directory, Filesystem } from '@capacitor/filesystem';
+import { Directory, Encoding, Filesystem } from '@capacitor/filesystem';
 import { Share } from '@capacitor/share';
 import { FavouritesService } from './favourites.service';
 import * as XLSX from 'xlsx';
@@ -83,16 +83,22 @@ export class BackupService {
     try {
       const base64Data = this.binaryStringToBase64(data);
 
-      const result = await Filesystem.writeFile({
+      await Filesystem.writeFile({
         path: fileName,
         data: base64Data,
         directory: Directory.Cache,
       });
 
+      const uriResult = await Filesystem.getUri({
+        directory: Directory.Cache,
+        path: fileName,
+      });
+
       await Share.share({
         title: fileName,
-        files: [result.uri],
+        url: uriResult.uri,
       });
+
       await this.toastService.showNotification('BACKUP.EXPORT.SUCCESS');
     } catch (error) {
       console.error('Unable to export data on iOS', error);
@@ -192,12 +198,16 @@ export class BackupService {
   }
 
   private getFormattedDate(): string {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = (today.getMonth() + 1).toString().padStart(2, '0');
-    const day = today.getDate().toString().padStart(2, '0');
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = (now.getMonth() + 1).toString().padStart(2, '0');
+    const day = now.getDate().toString().padStart(2, '0');
 
-    return `${year}-${month}-${day}`;
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+
+    return `${year}-${month}-${day}_${hours}-${minutes}-${seconds}`;
   }
 
 
