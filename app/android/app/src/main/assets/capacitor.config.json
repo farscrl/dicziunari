@@ -8,6 +8,12 @@
 			"androidScaleType": "CENTER_CROP",
 			"launchAutoHide": false,
 			"splashFullScreen": true
+		},
+		"Keyboard": {
+			"resizeOnFullScreen": false
+		},
+		"EdgeToEdge": {
+			"backgroundColor": "#1f1f1f"
 		}
 	},
 	"cordova": {}
