@@ -1,188 +1,205 @@
 [
- {
-  "RStichwort": "A, a",
-  "RGenus": "m",
-  "DStichwort": "A, a",
-  "DGenus": "n"
- },
- {
-  "RStichwort": "anguilla",
-  "RGrammatik": "subst",
-  "RGenus": "f",
-  "DStichwort": "Aal",
-  "DGenus": "m"
- },
- {
-  "RStichwort": "leischen scu en pesch",
-  "DStichwort": "aalglatt",
-  "DGrammatik": "adj"
- },
- {
-  "RStichwort": "Argovia",
-  "RGrammatik": "subst",
-  "RGenus": "f",
-  "DStichwort": "Aargau",
-  "DGenus": "m"
- },
- {
-  "RStichwort": "Argoves, -a",
-  "RGrammatik": "subst",
-  "RGenus": "m,f",
-  "DStichwort": "Aargauer, -in",
-  "DGenus": "m,f"
- },
- {
-  "RStichwort": "carogna",
-  "RGrammatik": "subst",
-  "RGenus": "f",
-  "DStichwort": "Aas",
-  "DGenus": "n"
- },
- {
-  "RStichwort": "coga",
-  "RGrammatik": "subst",
-  "RGenus": "f",
-  "DStichwort": "Aas",
-  "DGenus": "n"
- },
- {
-  "RStichwort": "zèpla",
-  "RGrammatik": "subst",
-  "RGenus": "f",
-  "DStichwort": "Aas",
-  "DGenus": "n"
- },
- {
-  "RStichwort": "carpisch",
-  "RGrammatik": "subst",
-  "RGenus": "m",
-  "DStichwort": "Aas",
-  "DGenus": "n"
- },
- {
-  "RStichwort": "davent da",
-  "RGrammatik": "II. prep",
-  "DStichwort": "ab",
-  "DGrammatik": "I. Präposition"
- },
- {
-  "RStichwort": "a parteir da",
-  "DStichwort": "ab"
- },
- {
-  "RStichwort": "davent digl amprem da schaner",
-  "DStichwort": "ab ersten Januar"
- },
- {
-  "RStichwort": "a parteir digl amprem da schaner",
-  "DStichwort": "ab ersten Januar"
- },
- {
-  "RStichwort": "giu",
-  "DStichwort": "ab",
-  "DGrammatik": "adv"
- },
- {
-  "RStichwort": "giu cun tot!",
-  "DStichwort": "ab damit!"
- },
- {
-  "RStichwort": "tot respect!",
-  "DStichwort": "Hut ab!"
- },
- {
-  "RStichwort": "mintgatant",
-  "DStichwort": "ab und zu"
- },
- {
-  "RStichwort": "da taimp an taimp",
-  "DStichwort": "ab und zu"
- },
- {
-  "RStichwort": "tscho e lò",
-  "DStichwort": "ab und zu"
- },
- {
-  "conjunctivsing1": "tg'ia meida",
-  "futurplural2": "vous midarossas",
-  "futurplural3": "els/ellas midaron",
-  "gerundium": "midond",
-  "conjunctivsing3": "tg'el/ella meida",
-  "conjunctivsing2": "tgi te meidas",
-  "futurplural1": "nous midaron",
-  "imperativ2": "mide!",
-  "imperativ1": "meida!",
-  "DStichwort": "abändern",
-  "DGrammatik": "tr",
-  "participperfectfs": "midada",
-  "preschentplural1": "nous midagn",
-  "participperfectfp": "midadas",
-  "cundizionalsing1": "ia midess",
-  "cundizionalsing2": "te midessas",
-  "preschentplural3": "els/ellas meidan",
-  "conjunctivplural1": "tgi nous meidan",
-  "cundizionalsing3": "el/ella midess",
-  "preschentplural2": "vous midez",
-  "conjunctivplural2": "tgi vous meidas",
-  "preschentsing3": "el/ella meida",
-  "preschentsing2": "te meidas",
-  "preschentsing1": "ia meid",
-  "cundizionalplural3": "els/ellas midessan",
-  "cundizionalplural2": "vous midessas",
-  "conjunctivplural3": "tg'els/ellas meidan",
-  "cundizionalplural1": "nous midessan",
-  "RStichwort": "midar",
-  "participperfectmp": "midos",
-  "futursing2": "te midarossas",
-  "futursing1": "ia midaro",
-  "participperfectms": "mido",
-  "futursing3": "el/ella midaro",
-  "imperfectplural2": "vous midavas",
-  "imperfectsing1": "ia midava",
-  "imperfectplural1": "nous midavan",
-  "imperfectsing2": "te midavas",
-  "imperfectsing3": "el/ella midava",
-  "imperfectplural3": "els/ellas midavan"
- },
- {
-  "conjunctivsing1": "tg'ia currigia",
-  "futurplural2": "vous currigiarossas",
-  "futurplural3": "els/ellas currigiaron",
-  "gerundium": "currigiond",
-  "conjunctivsing3": "tg'el/ella currigia",
-  "conjunctivsing2": "tgi te currigias",
-  "futurplural1": "nous currigiaron",
-  "imperativ2": "currige!",
-  "imperativ1": "currigia!",
-  "DStichwort": "abändern",
-  "participperfectfs": "currigeida",
-  "preschentplural1": "nous currigiagn",
-  "participperfectfp": "currigeidas",
-  "cundizionalsing1": "ia currigess",
-  "cundizionalsing2": "te currigessas",
-  "preschentplural3": "els/ellas currigian",
-  "conjunctivplural1": "tgi nous currigian",
-  "cundizionalsing3": "el/ella currigess",
-  "preschentplural2": "vous currigez",
-  "conjunctivplural2": "tgi vous currigias",
-  "preschentsing3": "el/ella currigia",
-  "preschentsing2": "te currigias",
-  "preschentsing1": "ia curritg",
-  "cundizionalplural3": "els/ellas currigessan",
-  "cundizionalplural2": "vous currigessas",
-  "conjunctivplural3": "tg'els/ellas currigian",
-  "cundizionalplural1": "nous currigessan",
-  "RStichwort": "curriger",
-  "participperfectmp": "currigias",
-  "futursing2": "te currigiarossas",
-  "futursing1": "ia currigiaro",
-  "participperfectms": "currigia",
-  "futursing3": "el/ella currigiaro",
-  "imperfectplural2": "vous currigivas",
-  "imperfectsing1": "ia currigiva",
-  "imperfectplural1": "nous currigivan",
-  "imperfectsing2": "te currigivas",
-  "imperfectsing3": "el/ella currigiva",
-  "imperfectplural3": "els/ellas currigivan"
- }
+  {
+    "entryId": "5565c7d9e4b0dfeb34480147",
+    "rmStichwort": "carpisch",
+    "rmStichwortSort": "carpisch",
+    "rmGrammatik": "nomen",
+    "rmGenus": "m",
+    "rmPronunciation": "prod/674f04265e8d2d28fe95a104",
+    "inflection": {
+      "inflectionType": "NOUN",
+      "reviewLater": false,
+      "noun": {
+        "baseForm": "carpisch",
+        "irregular": false,
+        "inflectionSubtype": "1",
+        "mSingular": "carpisch",
+        "mPlural": "carpischs"
+      }
+    },
+    "deStichwort": "Aas",
+    "deStichwortSort": "aas40",
+    "deSubsemantik": "Faulenzer",
+    "deGenus": "n"
+  },
+  {
+    "entryId": "5565c7d9e4b0dfeb34480148",
+    "rmStichwort": "davent da",
+    "rmStichwortSort": "davent60",
+    "rmGrammatik": "preposiziun",
+    "rmPronunciation": "prod/674f04265e8d2d28fe95a105",
+    "deStichwort": "ab",
+    "deStichwortSort": "ab",
+    "deGrammatik": "preposiziun"
+  },
+  {
+    "entryId": "5565c7d9e4b0dfeb34480149",
+    "rmStichwort": "a parteir da",
+    "rmStichwortSort": "zzab",
+    "deStichwort": "ab",
+    "deStichwortSort": "ab05"
+  },
+  {
+    "entryId": "5565c7d9e4b0dfeb3448014a",
+    "rmStichwort": "davent digl amprem da schaner",
+    "rmStichwortSort": "davent66",
+    "deStichwort": "ab ersten Januar",
+    "deStichwortSort": "ab10"
+  },
+  {
+    "entryId": "5565c7d9e4b0dfeb3448014b",
+    "rmStichwort": "a parteir digl amprem da schaner",
+    "rmStichwortSort": "parteir295",
+    "deStichwort": "ab ersten Januar",
+    "deStichwortSort": "ab12"
+  },
+  {
+    "entryId": "5565c7d9e4b0dfeb3448014c",
+    "rmStichwort": "giu",
+    "rmStichwortSort": "zzab",
+    "rmPronunciation": "prod/674f04265e8d2d28fe95a106",
+    "deStichwort": "ab",
+    "deStichwortSort": "ab20",
+    "deGrammatik": "adverb"
+  },
+  {
+    "entryId": "5565c7d9e4b0dfeb3448014d",
+    "rmStichwort": "giu cun tot!",
+    "rmStichwortSort": "zzab",
+    "deStichwort": "ab damit!",
+    "deStichwortSort": "ab22"
+  },
+  {
+    "entryId": "5565c7d9e4b0dfeb3448014e",
+    "rmStichwort": "tot respect!",
+    "rmStichwortSort": "zzab",
+    "deStichwort": "Hut ab!",
+    "deStichwortSort": "ab24",
+    "deSubsemantik": "fig."
+  },
+  {
+    "entryId": "5565c7d9e4b0dfeb3448014f",
+    "rmStichwort": "mintgatant",
+    "rmStichwortSort": "mintgatant10",
+    "rmPronunciation": "prod/674f04265e8d2d28fe95a107",
+    "deStichwort": "ab und zu",
+    "deStichwortSort": "ab26"
+  },
+  {
+    "entryId": "5565c7d9e4b0dfeb34480150",
+    "rmStichwort": "da taimp an taimp",
+    "rmStichwortSort": "da1755",
+    "deStichwort": "ab und zu",
+    "deStichwortSort": "ab262"
+  },
+  {
+    "entryId": "5565c7d9e4b0dfeb34480151",
+    "rmStichwort": "tscho e lò",
+    "rmStichwortSort": "tscho10",
+    "deStichwort": "ab und zu",
+    "deStichwortSort": "ab264"
+  },
+  {
+    "entryId": "5565c7d9e4b0dfeb34480152",
+    "rmStichwort": "midar",
+    "rmStichwortSort": "midar10",
+    "rmPronunciation": "prod/674f04265e8d2d28fe95a108",
+    "inflection": {
+      "inflectionType": "VERB",
+      "reviewLater": false,
+      "verb": {
+        "irregular": false,
+        "preschent": {
+          "sing1": "ia meid",
+          "sing2": "te meidas",
+          "sing3": "el/ella meida",
+          "plural1": "nous midagn",
+          "plural2": "vous midez",
+          "plural3": "els/ellas meidan"
+        },
+        "imperfect": {
+          "sing1": "ia midava",
+          "sing2": "te midavas",
+          "sing3": "el/ella midava",
+          "plural1": "nous midavan",
+          "plural2": "vous midavas",
+          "plural3": "els/ellas midavan"
+        },
+        "conjunctiv": {
+          "sing1": "tg'ia meida",
+          "sing2": "tgi te meidas",
+          "sing3": "tg'el/ella meida",
+          "plural1": "tgi nous meidan",
+          "plural2": "tgi vous meidas",
+          "plural3": "tg'els/ellas meidan"
+        },
+        "cundiziunal": {
+          "sing1": "ia midess",
+          "sing2": "te midessas",
+          "sing3": "el/ella midess",
+          "plural1": "nous midessan",
+          "plural2": "vous midessas",
+          "plural3": "els/ellas midessan"
+        },
+        "participPerfect": {
+          "ms": "mido",
+          "fs": "midada",
+          "mp": "midos",
+          "fp": "midadas"
+        },
+        "imperativ": {
+          "singular": "meida!",
+          "plural": "mide!"
+        },
+        "gerundium": "midond",
+        "futur": {
+          "sing1": "ia midaro",
+          "sing2": "te midarossas",
+          "sing3": "el/ella midaro",
+          "plural1": "nous midaron",
+          "plural2": "vous midarossas",
+          "plural3": "els/ellas midaron"
+        },
+        "preschentEnclitic": {
+          "sing1": "meida",
+          "sing2": "meidast",
+          "sing3m": "meida'l",
+          "sing3f": "meid'la",
+          "plural1": "midainsa",
+          "plural2": "midez",
+          "plural3": "meidigl"
+        },
+        "imperfectEnclitic": {
+          "sing1": "midava",
+          "sing2": "midavast",
+          "sing3m": "midava'l",
+          "sing3f": "midav'la",
+          "plural1": "midavans",
+          "plural2": "midavas",
+          "plural3": "midavigl"
+        },
+        "cundiziunalEnclitic": {
+          "sing1": "midessa",
+          "sing2": "midessast",
+          "sing3m": "midessa'l",
+          "sing3f": "midess'la",
+          "plural1": "midessans",
+          "plural2": "midessas",
+          "plural3": "midessigl"
+        },
+        "futurEnclitic": {
+          "sing1": "midaroia",
+          "sing2": "midarossast",
+          "sing3m": "midaro'l",
+          "sing3f": "midaro'la",
+          "plural1": "midaronsa",
+          "plural2": "midarossas",
+          "plural3": "midaronigl"
+        }
+      }
+    },
+    "deStichwort": "abändern",
+    "deStichwortSort": "abandern",
+    "deGrammatik": "tr"
+  }
 ]

@@ -1,36 +1,56 @@
-var rumgrJson = require('./rumgr-json');
-var sursilvanJson = require('./sursilvan-json');
-var valladerJson = require('./vallader-json');
-var puterJson = require('./puter-json');
-var surmiranJson = require('./surmiran-json');
-var sutsilvanJson = require('./sutsilvan-json');
+const convert = require('./convert-json');
 
-switch (process.argv[2]) {
-    case "rumantschgrischun":
-        rumgrJson.main();
-        break;
+const configs = {
+    rumantschgrischun: {
+        tableName: 'rumgr',
+        filePath: 'data/pledarigrond_export_json_rumantschgrischun.json',
+        displayName: 'Rumantsch Grischun',
+        removeDots: false,
+    },
+    sursilvan: {
+        tableName: 'sursilvan',
+        filePath: 'data/pledarigrond_export_json_sursilvan.json',
+        displayName: 'Sursilvan',
+        removeDots: false,
+    },
+    sutsilvan: {
+        tableName: 'sutsilvan',
+        filePath: 'data/pledarigrond_export_json_sutsilvan.json',
+        displayName: 'Sutsilvan',
+        removeDots: false,
+    },
+    surmiran: {
+        tableName: 'surmiran',
+        filePath: 'data/pledarigrond_export_json_surmiran.json',
+        displayName: 'Surmiran',
+        removeDots: false,
+    },
+    puter: {
+        tableName: 'puter',
+        filePath: 'data/pledarigrond_export_json_puter.json',
+        displayName: 'Puter',
+        removeDots: true,
+    },
+    vallader: {
+        tableName: 'vallader',
+        filePath: 'data/pledarigrond_export_json_vallader.json',
+        displayName: 'Vallader',
+        removeDots: true,
+        preprocessLemma: (lemma) => {
+            const preschent = lemma?.inflection?.verb?.preschent;
+            if (preschent?.plural2) {
+                preschent.plural2 = preschent.plural2.replace(/\((vo \w+)\)/i, '$1');
+            }
+        },
+    },
+};
 
-    case "sursilvan":
-        sursilvanJson.main();
-        break;
+const idiom = process.argv[2];
+const config = configs[idiom];
 
-    case "sutsilvan":
-        sutsilvanJson.main();
-        break;
-
-    case "surmiran":
-        surmiranJson.main();
-        break;
-    
-    case "puter":
-        puterJson.main();
-        break;
-    
-    case "vallader":
-        valladerJson.main();
-        break;
-
-    case "all":
-    default:
-        console.log("select valid idiom");
+if (!config) {
+    console.log("select valid idiom: " + Object.keys(configs).join(', '));
+    process.exit(1);
 }
+
+convert.main(config);

@@ -14,7 +14,20 @@ better-sqlite3 is a native module that needs to be compiled for your current Nod
 
 1. The script expects an empty db in the `db/build` directory. You can rename the file `db/build/dicziunariSQLite_sample.db` to `dicziunariSQLite.db` to have an empty db file.
 1. Place the export into the data folder and name them like the example data, but without the `_short` suffix
-1. Run `pnpm run convert <idiom>`
+1. Run for each idiom
+
+   `pnpm run convert puter`
+
+   `pnpm run convert rumantschgrischun`
+
+   `pnpm run convert surmiran`
+
+   `pnpm run convert sursilvan`
+
+   `pnpm run convert sutsilvan`
+
+   `pnpm run convert vallader`
+
 1. Copy the result into the databases folder of the `app` project (`app/src/assets/databases`)
 
 ## DB structure

@@ -1,352 +1,168 @@
 [
- {
-  "RStichwort": "unglịh",
-  "RGrammatik": "",
-  "RGenus": "m",
-  "DStichwort": "cf. ungli",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "eau desdrụ̈j",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "cf. deṣdrụ̈r",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "tü desdrụ̈jast",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "cf. deṣdrụ̈r",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "el desdrụ̈ja",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "cf. deṣdrụ̈r",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "ella desdrụ̈ja",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "cf. deṣdrụ̈r",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "ellas desdrụ̈jan",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "cf. deṣdrụ̈r",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "els desdrụ̈jan",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "cf. deṣdrụ̈r",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a desdrụ̈jan",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "cf. deṣdrụ̈r",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a + il = al (+ cons.)",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "dem",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "al bap",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "dem Vater",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a + il = l'(+ voc.)",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "dem",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a l'amịh",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "dem Freund",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a me, te",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "mir, dir",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "ad el, ẹlla",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "ihm, ihr",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a nus, vus (intunbinderẹl)",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "uns, euch",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a + il = al (+ cons.)",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "den",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "al bap",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "den Vater",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a + il = a l'(voc.)",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "den",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a l'amịh",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "den Freund",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a + la = a la (+ cons.)",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "der",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a la mạmma",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "der Mutter",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a + la = a l' (+ voc.)",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "der",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a l'amịa",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "der Freundin",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a + la = a la (+ cons.)",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "die",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a la mạmma",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "die Mutter",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a + la = a l' (+ voc.)",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "die",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a l'amịa",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "die Freundin",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "cf. me, te, el, ella, nus, vus",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "eau pigl a te, na ad el",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "ich nehme dich, nicht ihn",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "hest tü chattọ a tịa sọur?",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "hast du deine Schwester gefunden?",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a chi ho maridọ tịeu frer?",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "wen hat dein Bruder geheiratet?",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a (temporẹl)",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "an",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "auf",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "bei",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "bis",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a (modẹl)",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "auf",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "per / je",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "RStichwort": "a",
-  "RGrammatik": "",
-  "RGenus": "",
-  "DStichwort": "um",
-  "DGrammatik": "",
-  "DGenus": ""
- },
- {
-  "conjunctivsing1": "ch'eau giaja",
-  "futurplural2": "vus giaros",
-  "futurplural3": "els/ellas giaron",
-  "gerundium": "giand",
-  "conjunctivsing3": "ch'el/ella giaja",
-  "conjunctivsing2": "cha tü giajast",
-  "futurplural1": "nus giarons",
-  "imperativ2": "gè!",
-  "imperativ1": "vo!",
-  "DStichwort": "auf den Markt gehen",
-  "DGrammatik": "",
-  "participperfectfs": "ida",
-  "infinitiv": "ir",
-  "preschentplural1": "nus giains",
-  "participperfectfp": "idas",
-  "RGrammatik": "",
-  "cundizionalsing1": "eau gess",
-  "cundizionalsing2": "tü gessast",
-  "preschentplural3": "els/ellas vaun",
-  "conjunctivplural1": "cha nus giajans",
-  "cundizionalsing3": "el/ella gess",
-  "DGenus": "",
-  "preschentplural2": "vus giais",
-  "conjunctivplural2": "cha vus giajas",
-  "preschentsing3": "el/ella vo",
-  "preschentsing2": "tü vest",
-  "preschentsing1": "eau vegn",
-  "cundizionalplural3": "els/ellas gessan",
-  "cundizionalplural2": "vus gessas",
-  "conjunctivplural3": "ch'els/ellas giajan",
-  "cundizionalplural1": "nus gessans",
-  "RStichwort": "ir a fạira",
-  "participperfectmp": "ieus",
-  "futursing2": "tü giarost",
-  "RGenus": "",
-  "futursing1": "eau giaro",
-  "participperfectms": "ieu",
-  "futursing3": "el/ella giaro",
-  "imperfectplural2": "vus giaivas",
-  "imperfectsing1": "eau giaiva",
-  "imperfectplural1": "nus giaivans",
-  "imperfectsing2": "tü giaivast",
-  "imperfectsing3": "el/ella giaiva",
-  "imperfectplural3": "els/ellas giaivan"
- }
+  {
+    "entryId": "64901c7368fa4354b25655f1",
+    "rmStichwort": "a",
+    "rmStichwortSort": "a6500",
+    "rmEtymologie": "lat. ad (+ ab); tal. a; fr. à surs. a; rg. a",
+    "rmPronunciation": "ladin/674f192f8e88bb7c5b84470d",
+    "deStichwort": "per / je"
+  },
+  {
+    "entryId": "64901c7368fa4354b25655f2",
+    "rmStichwort": "a",
+    "rmStichwortSort": "a6600",
+    "rmEtymologie": "lat. ad (+ ab); tal. a; fr. à surs. a; rg. a",
+    "rmPronunciation": "ladin/674f192f8e88bb7c5b84470d",
+    "deStichwort": "um"
+  },
+  {
+    "entryId": "64901c7368fa4354b25655f4",
+    "rmStichwort": "ir a fạira",
+    "rmStichwortSort": "a7300",
+    "deStichwort": "auf den Markt gehen"
+  },
+  {
+    "entryId": "64901c7368fa4354b25655f5",
+    "rmStichwort": "ir a fin",
+    "rmStichwortSort": "a7420",
+    "deStichwort": "zu Ende gehen",
+    "deStichwortSort": "0"
+  },
+  {
+    "entryId": "64901c7368fa4354b25655f6",
+    "rmStichwort": "ir a clamẹr a qchn",
+    "rmStichwortSort": "a7720",
+    "deStichwort": "jn rufen gehen"
+  },
+  {
+    "entryId": "64901c7368fa4354b25655f7",
+    "rmStichwort": "cumanzẹr a rir",
+    "rmStichwortSort": "a7860",
+    "inflection": {
+      "inflectionType": "VERB",
+      "reviewLater": false,
+      "verb": {
+        "infinitiv": "cumanzer",
+        "irregular": false,
+        "composedWith": "avair",
+        "preschent": {
+          "sing1": "eau cumainz",
+          "sing2": "tü cumainzast",
+          "sing3": "el/ella cumainza",
+          "plural1": "nus cumanzains",
+          "plural2": "vus cumanzais",
+          "plural3": "els/ellas cumainzan"
+        },
+        "imperfect": {
+          "sing1": "eau cumanzaiva",
+          "sing2": "tü cumanzaivast",
+          "sing3": "el/ella cumanzaiva",
+          "plural1": "nus cumanzaivans",
+          "plural2": "vus cumanzaivas",
+          "plural3": "els/ellas cumanzaivan"
+        },
+        "conjunctiv": {
+          "sing1": "ch'eau cumainza",
+          "sing2": "cha tü cumainzast",
+          "sing3": "ch'el/ella cumainza",
+          "plural1": "cha nus cumainzans",
+          "plural2": "cha vus cumainzas",
+          "plural3": "ch'els/ellas cumainzan"
+        },
+        "conjunctivImperfect": {
+          "sing1": "ch'eau cumanzess",
+          "sing2": "cha tü cumanzessast",
+          "sing3": "ch'el/ella cumanzess",
+          "plural1": "cha nus cumanzessans",
+          "plural2": "cha vus cumanzessas",
+          "plural3": "ch'els/ellas cumanzessan"
+        },
+        "cundiziunal": {
+          "sing1": "eau cumanzess",
+          "sing2": "tü cumanzessast",
+          "sing3": "el/ella cumanzess",
+          "plural1": "nus cumanzessans",
+          "plural2": "vus cumanzessas",
+          "plural3": "els/ellas cumanzessan"
+        },
+        "participPerfect": {
+          "ms": "cumanzo",
+          "fs": "cumanzeda",
+          "mp": "cumanzos",
+          "fp": "cumanzedas"
+        },
+        "imperativ": {
+          "singular": "cumainza!",
+          "plural": "cumanzè!",
+          "form3": "nu cumanzer!",
+          "form4": "nu cumanzè!",
+          "form5": "ch'El/Ella cumainza!",
+          "form6": "ch'Els/Ellas cumainzan!"
+        },
+        "gerundium": "cumanzand",
+        "futur": {
+          "sing1": "eau cumanzaro",
+          "sing2": "tü cumanzarost",
+          "sing3": "el/ella cumanzaro",
+          "plural1": "nus cumanzarons",
+          "plural2": "vus cumanzaros",
+          "plural3": "els/ellas cumanzaron"
+        },
+        "futurDubitativ": {
+          "sing1": "eau cumanzaregia",
+          "sing2": "tü cumanzaregiast",
+          "sing3": "el/ella cumanzaregia",
+          "plural1": "nus cumanzaregians",
+          "plural2": "vus cumanzaregias",
+          "plural3": "els/ellas cumanzaregian"
+        },
+        "preschentEnclitic": {
+          "sing1": "cumainzi",
+          "sing2": "cumainzast",
+          "sing3m": "cumainza'l",
+          "sing3f": "cumainz'la",
+          "plural1": "cumanzainsa",
+          "plural2": "cumanzais",
+          "plural3": "cumainzane"
+        },
+        "imperfectEnclitic": {
+          "sing1": "cumanzaivi",
+          "sing2": "cumanzaivast",
+          "sing3m": "cumanzaiva'l",
+          "sing3f": "cumanzaiv'la",
+          "plural1": "cumanzaivans",
+          "plural2": "cumanzaivas",
+          "plural3": "cumanzaivane"
+        },
+        "cundiziunalEnclitic": {
+          "sing1": "cumanzessi",
+          "sing2": "cumanzessast",
+          "sing3m": "cumanzessa'l",
+          "sing3f": "cumanzess'la",
+          "plural1": "cumanzessans",
+          "plural2": "cumanzessas",
+          "plural3": "cumanzessane"
+        },
+        "futurEnclitic": {
+          "sing1": "cumanzaro eau",
+          "sing2": "cumanzarost",
+          "sing3m": "cumanzaro'l",
+          "sing3f": "cumanzaro'la",
+          "plural1": "cumanzaronsa",
+          "plural2": "cumanzaros",
+          "plural3": "cumanzarone"
+        },
+        "futurDubitativEnclitic": {
+          "sing1": "cumanzaregi",
+          "sing2": "cumanzaregiast",
+          "sing3m": "cumanzaregia'l",
+          "sing3f": "cumanzareg'la",
+          "plural1": "cumanzaregians",
+          "plural2": "cumanzaregias",
+          "plural3": "cumanzaregiane"
+        }
+      }
+    },
+    "deStichwort": "zu lachen beginnen"
+  }
 ]

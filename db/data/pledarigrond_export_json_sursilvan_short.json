@@ -1,96 +1,207 @@
-[ {
-  "entryId" : "68bd6a71a63da36df49b93cf",
-  "rmStichwort" : "dir si enzatgei naven dad a tochen z",
-  "rmSemantik" : "ohne Art.",
-  "rmGrammatik" : "v",
-  "rmEtymologie" : "",
-  "rmPhonetics" : "$",
-  "rmSynonym" : "",
-  "deStichwort" : "etwas von A bis Z hersagen",
-  "deSubsemantik" : "",
-  "deGrammatik" : "v",
-  "deGenus" : "",
-  "categories" : ""
-}, {
-  "entryId" : "68bd6a71a63da36df49b93d0",
-  "rmStichwort" : "a-dur",
-  "rmSemantik" : "Tonart",
-  "rmSubsemantik" : "musica",
-  "rmGrammatik" : "",
-  "rmGenus" : "m",
-  "rmEtymologie" : "",
-  "rmPhonetics" : "$",
-  "rmSynonym" : "",
-  "rmPronunciation" : "prod/68bd6e47a63da36df4a04ed1",
-  "deStichwort" : "A-Dur",
-  "deSubsemantik" : "",
-  "deGrammatik" : "",
-  "deGenus" : "n",
-  "categories" : ""
-}, {
-  "entryId" : "68bd6a71a63da36df49b93d1",
-  "rmStichwort" : "a-moll",
-  "rmSemantik" : "Tonart",
-  "rmSubsemantik" : "musica",
-  "rmGenus" : "m",
-  "rmPronunciation" : "prod/68bd6e47a63da36df4a04ed3",
-  "deStichwort" : "a-Moll"
-}, {
-  "entryId" : "68bd6a71a63da36df49b93d2",
-  "rmStichwort" : "a",
-  "rmSemantik" : "des Erstaunens",
-  "rmGrammatik" : "interj",
-  "rmGenus" : "",
-  "rmEtymologie" : "",
-  "rmPhonetics" : "$",
-  "rmSynonym" : "",
-  "rmPronunciation" : "prod/68bd6e47a63da36df4a04ed5",
-  "deStichwort" : "ah",
-  "deSubsemantik" : "Ausruf",
-  "deGrammatik" : "interj",
-  "deGenus" : "",
-  "categories" : "",
-  "examples" : [ {
-    "rm" : "a, pusch, puschin!",
-    "de" : "komm, Kälbchen, komm!"
-  }, {
-    "rm" : "a, ussa vegn ei pér endamen a mi!",
-    "de" : "ah, jetzt entsinne ich mich erst wieder!"
-  }, {
-    "rm" : "a, buca ver!",
-    "de" : "ah, das darf doch nicht wahr sein!"
-  }, {
-    "rm" : "a, quei vala meins che nuot!",
-    "de" : "ah, das ist doch nichts wert!"
-  } ]
-}, {
-  "entryId" : "68bd6a71a63da36df49b93d3",
-  "rmStichwort" : "a mi",
-  "rmSemantik" : "mit präp. Obj.",
-  "rmGenus" : "",
-  "rmEtymologie" : "[zu lat. ad tw. mit Einw. von ab; it. a, frz. à].",
-  "rmPhonetics" : "",
-  "rmSynonym" : "",
-  "deStichwort" : "mir",
-  "deSubsemantik" : "",
-  "deGrammatik" : "Dat. pron pers",
-  "deGenus" : "",
-  "categories" : "",
-  "examples" : [ {
-    "rm" : "quei s'auda a mi",
-    "de" : "das gehört mir"
-  } ]
-}, {
-  "entryId" : "68bd6a71a63da36df49b93d4",
-  "rmStichwort" : "a nus",
-  "rmSemantik" : "mit präp. Obj.",
-  "rmGenus" : "",
-  "rmEtymologie" : "[zu lat. ad tw. mit Einw. von ab; it. a, frz. à].",
-  "rmPhonetics" : "",
-  "rmSynonym" : "",
-  "deStichwort" : "uns",
-  "deSubsemantik" : "",
-  "deGrammatik" : "Dat. pron pers",
-  "deGenus" : "",
-  "categories" : ""
-} ]
+[
+  {
+    "entryId": "68bd6a72a63da36df49b942d",
+    "rmStichwort": "abonnament",
+    "rmSemantik": "",
+    "rmGrammatik": "",
+    "rmGenus": "m",
+    "rmEtymologie": "[Abl. von # abonnar; eng.-surm. abunamaint; it. abbonamento, frz. abonnement].",
+    "rmPhonetics": "bonmDn",
+    "rmSynonym": "",
+    "rmPronunciation": "prod/68bd6e47a63da36df4a04f3a",
+    "inflection": {
+      "inflectionType": "NOUN",
+      "reviewLater": false,
+      "noun": {
+        "baseForm": "abonnament",
+        "irregular": false,
+        "inflectionSubtype": "1",
+        "mSingular": "abonnament",
+        "mPlural": "abonnaments"
+      }
+    },
+    "deStichwort": "Abonnement",
+    "deSubsemantik": "",
+    "deGrammatik": "",
+    "deGenus": "n",
+    "categories": ""
+  },
+  {
+    "entryId": "68bd6a72a63da36df49b942e",
+    "rmStichwort": "abonnament da gasetta",
+    "rmSemantik": "",
+    "rmGrammatik": "",
+    "rmGenus": "m",
+    "rmEtymologie": "[Abl. von # abonnar; eng.-surm. abunamaint; it. abbonamento, frz. abonnement].",
+    "rmPhonetics": "bonmDn",
+    "rmSynonym": "",
+    "deStichwort": "Zeitungsabonnement",
+    "deSubsemantik": "",
+    "deGrammatik": "",
+    "deGenus": "n",
+    "categories": ""
+  },
+  {
+    "entryId": "68bd6a72a63da36df49b942f",
+    "rmStichwort": "abonnament general",
+    "rmSemantik": "",
+    "rmGrammatik": "",
+    "rmGenus": "m",
+    "rmEtymologie": "[Abl. von # abonnar; eng.-surm. abunamaint; it. abbonamento, frz. abonnement].",
+    "rmPhonetics": "bonmDn",
+    "rmSynonym": "",
+    "deStichwort": "Generalabonnement",
+    "deSubsemantik": "",
+    "deGrammatik": "",
+    "deGenus": "n",
+    "categories": ""
+  },
+  {
+    "entryId": "68bd6a72a63da36df49b9430",
+    "rmStichwort": "abonnament a mesa taxa",
+    "rmSemantik": "",
+    "rmGrammatik": "",
+    "rmGenus": "m",
+    "rmEtymologie": "[Abl. von # abonnar; eng.-surm. abunamaint; it. abbonamento, frz. abonnement].",
+    "rmPhonetics": "bonmDn",
+    "rmSynonym": "",
+    "deStichwort": "Halbtaxabonnement",
+    "deSubsemantik": "",
+    "deGrammatik": "",
+    "deGenus": "n",
+    "categories": ""
+  },
+  {
+    "entryId": "68bd6a72a63da36df49b9431",
+    "rmStichwort": "abonnar",
+    "rmSemantik": "",
+    "rmGrammatik": "tr",
+    "rmGenus": "",
+    "rmEtymologie": "[dt. abonnieren, it. abbonare, frz. s'abonner à].",
+    "rmPhonetics": "bon6,",
+    "rmSynonym": "",
+    "rmPronunciation": "prod/68bd6e47a63da36df4a04f3f",
+    "inflection": {
+      "inflectionType": "VERB",
+      "reviewLater": false,
+      "verb": {
+        "infinitiv": "abonnar",
+        "irregular": false,
+        "isReflexive": false,
+        "inflectionSubtype": "6",
+        "composedWith": "haver",
+        "preschent": {
+          "sing1": "jeu abonneschel",
+          "sing2": "ti abonneschas",
+          "sing3": "el/ella abonnescha",
+          "plural1": "nus abonnein",
+          "plural2": "vus abonneis",
+          "plural3": "els/ellas abonneschan"
+        },
+        "imperfect": {
+          "sing1": "jeu abonnavel",
+          "sing2": "ti abonnavas",
+          "sing3": "el/ella abonnava",
+          "plural1": "nus abonnavan",
+          "plural2": "vus abonnavas",
+          "plural3": "els/ellas abonnavan"
+        },
+        "conjunctiv": {
+          "sing1": "che jeu abonneschi",
+          "sing2": "che ti abonneschies",
+          "sing3": "ch'el/ella abonneschi",
+          "plural1": "che nus abonneschien\nche nus abonneien",
+          "plural2": "che vus abonneschies\nche vus abonneies",
+          "plural3": "ch'els/ellas abonneschien"
+        },
+        "conjunctivImperfect": {
+          "sing1": "che jeu abonnavi",
+          "sing2": "che ti abonnavies",
+          "sing3": "ch'el/ella abonnavi",
+          "plural1": "che nus abonnavien",
+          "plural2": "che vus abonnavies",
+          "plural3": "ch'els/ellas abonnavien"
+        },
+        "cundiziunal": {
+          "sing1": "jeu abonnass",
+          "sing2": "ti abonnasses",
+          "sing3": "el/ella abonnass",
+          "plural1": "nus abonnassen",
+          "plural2": "vus abonnasses",
+          "plural3": "els/ellas abonnassen"
+        },
+        "cundiziunalIndirect": {
+          "sing1": "jeu abonnassi",
+          "sing2": "ti abonnassies",
+          "sing3": "el/ella abonnassi",
+          "plural1": "nus abonnassien",
+          "plural2": "vus abonnassies",
+          "plural3": "els/ellas abonnassien"
+        },
+        "participPerfect": {
+          "ms": "abonnau",
+          "fs": "abonnada",
+          "mp": "abonnai",
+          "fp": "abonnadas",
+          "msPredicativ": "abonnaus"
+        },
+        "imperativ": {
+          "singular": "abonnescha!",
+          "plural": "abonnei!"
+        },
+        "gerundium": "abonnond",
+        "futur": {
+          "sing1": "jeu vegn(el) ad abonnar",
+          "sing2": "ti vegns ad abonnar",
+          "sing3": "el/ella vegn ad abonnar",
+          "plural1": "nus vegnin ad abonnar",
+          "plural2": "vus vegnis ad abonnar",
+          "plural3": "els/ellas vegnan ad abonnar"
+        },
+        "futurDubitativ": {},
+        "preschentEnclitic": {},
+        "imperfectEnclitic": {},
+        "cundiziunalEnclitic": {},
+        "futurEnclitic": {},
+        "futurDubitativEnclitic": {}
+      }
+    },
+    "deStichwort": "abonnieren",
+    "deSubsemantik": "",
+    "deGrammatik": "v",
+    "deGenus": "",
+    "categories": ""
+  },
+  {
+    "entryId": "68bd6a72a63da36df49b942c",
+    "rmStichwort": "abomineivel",
+    "rmSemantik": "",
+    "rmGrammatik": "adj",
+    "rmGenus": "",
+    "rmEtymologie": "[it. abominazione, frz. abomination].",
+    "rmPhonetics": "",
+    "rmSynonym": "",
+    "rmPronunciation": "prod/68bd6e47a63da36df4a04f38",
+    "inflection": {
+      "inflectionType": "ADJECTIVE",
+      "reviewLater": false,
+      "adjective": {
+        "baseForm": "abomineivel",
+        "irregular": false,
+        "inflectionSubtype": "2",
+        "adverbialForm": "abomineivlamein",
+        "predicative": "abomineivels",
+        "mSingular": "abomineivel",
+        "fSingular": "abomineivla",
+        "mPlural": "abomineivels",
+        "fPlural": "abomineivlas"
+      }
+    },
+    "deStichwort": "cf. abominabel",
+    "deSubsemantik": "",
+    "deGrammatik": "",
+    "deGenus": "",
+    "deRedirect": "abominabel",
+    "categories": ""
+  }
+]
