@@ -108,7 +108,7 @@ export class BackupService {
 
   private async exportBackupWeb(data: Uint8Array, fileName: string) {
     const a = window.document.createElement('a');
-    a.href = window.URL.createObjectURL(new Blob([data], { type: 'application/octet-stream' }));
+    a.href = window.URL.createObjectURL(new Blob([data as Uint8Array<ArrayBuffer>], { type: 'application/octet-stream' }));
     a.download = fileName;
 
     document.body.appendChild(a);
