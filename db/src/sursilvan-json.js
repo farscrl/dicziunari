@@ -1,22 +1,30 @@
 const fs = require('fs');
+const { chain }  = require('stream-chain');
+const { parser } = require('stream-json');
+const { pick }   = require('stream-json/filters/Pick');
+const { ignore } = require('stream-json/filters/Ignore');
+const { streamArray } = require('stream-json/streamers/StreamArray');
 const Database = require('better-sqlite3');
 
 const DB_NAME = 'build/dicziunariSQLite.db';
 const TABLE_SURSILVAN = 'sursilvan';
 // const TABLE_SURSILVAN_IDX = 'sursilvan_idx';
-const FILE_PATH = 'data/sursilvan.json';
-const VERB_FILE_PATH = 'data/sursilvan_verbs.json';
-// const FILE_PATH = 'data/sursilvan_short.json';
-// const VERB_FILE_PATH = 'data/sursilvan_verbs_short.json';
+const FILE_PATH = 'data/pledarigrond_export_json_sursilvan.json';
+// const FILE_PATH = 'data/pledarigrond_export_json_sursilvan_short.json';
 
 let processedEntries = 0;
 const columnList = [
     { colName: 'id',                 colType: 'INTEGER PRIMARY KEY' },
-    { colName: 'Etymologie',         colType: 'TEXT' },
-    { colName: 'Corp',               colType: 'TEXT' },
-    { colName: 'Redewendung',        colType: 'TEXT' },
+
+    // R
     { colName: 'RStichwort',         colType: 'TEXT' },
+    { colName: 'RGenus',             colType: 'TEXT' },
+    { colName: 'RSempraez',          colType: 'TEXT' },
+
+    // D
     { colName: 'DStichwort',         colType: 'TEXT' },
+    { colName: 'DGenus',             colType: 'TEXT' },
+    { colName: 'DSempraez',          colType: 'TEXT' },
 
     // R conj
     { colName: 'infinitiv',          colType: 'TEXT' },
@@ -82,7 +90,6 @@ function prepareAndCleanDb() {
     db.exec("CREATE TABLE " + TABLE_SURSILVAN + "(" +columnDef + ");");
     db.exec("CREATE INDEX sursilvan_RStichwort_index ON sursilvan (RStichwort COLLATE NOCASE);");
     db.exec("CREATE INDEX sursilvan_DStichwort_index ON sursilvan (DStichwort COLLATE NOCASE);");
-    db.exec("CREATE INDEX sursilvan_Corp_index ON sursilvan (Corp COLLATE NOCASE);");
 
     // creating virtual fts5 table. Used options:
     // lemma is the search term. content sets the content to another table, content_rowid defines what column that identifies the data in the data-table, columsize defines, that values are not stored seperately in the virtual table
@@ -90,12 +97,40 @@ function prepareAndCleanDb() {
 
     // create prepared statement to add each lemma
     insertStatementLemma = db.prepare(
-        "INSERT INTO " + TABLE_SURSILVAN + " ("+ columnList.map(col => col.colName).join(", ")+") " + 
+        "INSERT INTO " + TABLE_SURSILVAN + " ("+ columnList.map(col => col.colName).join(", ")+") " +
         "VALUES (" + Array.from(columnList).map(column => "$"+column.colName).join(", ")+");");
     // insertStatementIdx = db.prepare("INSERT INTO " + TABLE_SURSILVAN_IDX + " (rowId, lemma) VALUES ($rowId, $lemma);");
-    
+
     // start transaction
     db.exec("BEGIN TRANSACTION;");
+}
+
+function createPipeline(filePath) {
+    return chain([
+        fs.createReadStream(filePath),
+        parser(),
+        //pick(),
+        streamArray(),
+        data => {
+            return data.value;
+        }
+    ]);
+}
+
+// This function can be used to handle each lemma to check if all columns exported from the json are found
+function searchColumnNames(lemma) {
+    ++processedEntries;
+
+    for(let property in lemma) {
+        if (!columnList.includes(property)) {
+            console.error("Colum '" + property + "' missing");
+            throw new Error("Column missing!");
+        }
+    }
+
+    if (processedEntries % 1000 === 0) {
+        console.log('Processed ' + processedEntries + ' lemmas');
+    }
 }
 
 function insertLemma(lemma) {
@@ -114,72 +149,23 @@ function insertIndex(lemma) {
     insertStatementIdx.run(binds);
 }
 
-function parseData() {
-    const data = fs.readFileSync(FILE_PATH, 'utf8');
-    const lemmas = JSON.parse(data)[1].data;
-    // console.log(lemmas);
+function handleLemma(lemma) {
+    //console.log(lemma);
 
-    lemmas.forEach(lemma => {
-        lemma['id'] = lemma['cn_DS'];
-        normalizeLemma(lemma);
-        insertLemma(lemma);
-        // insertIndex(lemma);
-
-        processedEntries++;
-        if (processedEntries % 100 === 0) {
-            console.log('Processed ' + processedEntries + ' lemmas');
-        }
-    });
-}
-
-function parseVerbData() {
-    const data = fs.readFileSync(VERB_FILE_PATH, 'utf8');
-    const lemmas = JSON.parse(data);
-    // console.log(lemmas);
-
-    lemmas.forEach((lemma, idx) => {
-        lemma['id'] = 100000 + idx;
-        normalizeVerb(lemma);
-        insertLemma(lemma);
-        // insertIndex(lemma);
-
-        processedEntries++;
-        if (processedEntries % 100 === 0) {
-            console.log('Processed ' + processedEntries + ' lemmas');
-        }
-    });
-}
-
-function normalizeLemma(lemma) {
-    lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], ' III');
-    lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], ' II');
-    lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], ' I');
-    lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], ' VI');
-    lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], ' V');
-    lemma['RStichwort'] = replaceEnding(lemma['RStichwort'], '*');
-
-    lemma['Corp'] = lemma['Corp'].replace(/~/g, lemma['RStichwort']);
-}
-
-function normalizeVerb(lemma) {
-    lemma['DStichwort'] = lemma['DStichwortList'];
-    delete lemma['DStichwortList'];
-
-    if (lemma['participperfectms'] + "s" === lemma['participperfectpredicativ']) {
-      lemma['participperfectms'] = lemma['participperfectms'] + "(s)";
-    } else if(lemma['participperfectpredicativ'] !== "-") {
-      lemma['participperfectms'] = lemma['participperfectms'] + " (" +lemma['participperfectpredicativ'] + ")";
-    }
-    delete lemma['participperfectpredicativ'];
-}
-
-
-function replaceEnding(string, ending) {
-    if (string.endsWith(ending)) {
-        return string.slice(0, -ending.length);
+    // filter empty objects
+    if (!Object.keys(lemma).length) {
+        return;
     }
 
-    return string;
+    ++processedEntries;
+
+    insertLemma(lemma);
+    // insertIndex(lemma);
+    id++;
+
+    if (processedEntries % 1000 === 0) {
+        console.log('Processed ' + processedEntries + ' lemmas');
+    }
 }
 
 function finalizeDb() {
@@ -188,7 +174,19 @@ function finalizeDb() {
 
     db.exec("COMMIT TRANSACTION;");
     db.close();
+
     console.log('Conversion ended');
+}
+
+function configurePipeline(pipeline) {
+    pipeline.on('data', (data) => {
+        handleLemma(data);
+        // searchColumnNames(data);
+    });
+
+    pipeline.on('end', () => {
+        finalizeDb();
+    });
 }
 
 module.exports = {
@@ -196,8 +194,8 @@ module.exports = {
         console.log('Start converting JSON file for Sursilvan...');
 
         prepareAndCleanDb();
-        parseData();
-        parseVerbData();
-        finalizeDb();
+
+        const pipeline = createPipeline(FILE_PATH);
+        configurePipeline(pipeline);
     }
 }
