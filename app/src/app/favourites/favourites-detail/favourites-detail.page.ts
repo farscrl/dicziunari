@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {Dictionary} from "../../../data/search";
+import { Dictionary } from '../../../data/search';
 
 @Component({
-    selector: 'app-favourites-detail-page',
-    templateUrl: './favourites-detail.page.html',
-    styleUrls: ['./favourites-detail.page.scss'],
-    standalone: false
+  selector: 'app-favourites-detail-page',
+  templateUrl: './favourites-detail.page.html',
+  styleUrls: ['./favourites-detail.page.scss'],
+  standalone: false,
 })
 export class FavouritesDetailPage implements OnInit {
   public lemma;
@@ -16,7 +16,7 @@ export class FavouritesDetailPage implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    this.lemma = this.router.getCurrentNavigation().extras.state.data;
+    this.lemma = this.router.currentNavigation().extras.state.data;
     this.dictionary = this.lemma.dictionary;
   }
 }
