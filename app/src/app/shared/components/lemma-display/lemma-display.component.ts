@@ -7,13 +7,15 @@ import { FavouritesService } from '../../../services/favourites.service';
 import { ToastService } from '../../../services/toast.service';
 import { SearchService } from '../../../services/search.service';
 import { Subscription } from 'rxjs';
-import { ImageCreatorUtil } from "../../../util/image-creator.util";
+import { ImageCreatorUtil } from '../../../util/image-creator.util';
+import { IonicModule } from '@ionic/angular';
+import { ResultTextComponent } from '../result-text/result-text.component';
 
 @Component({
-    selector: 'app-lemma-display',
-    templateUrl: './lemma-display.component.html',
-    styleUrls: ['./lemma-display.component.scss'],
-    standalone: false
+  selector: 'app-lemma-display',
+  templateUrl: './lemma-display.component.html',
+  styleUrls: ['./lemma-display.component.scss'],
+  imports: [IonicModule, ResultTextComponent],
 })
 export class LemmaDisplayComponent implements OnInit, OnDestroy {
   @Input()
@@ -69,7 +71,7 @@ export class LemmaDisplayComponent implements OnInit, OnDestroy {
     if (this.isSaved) {
       this.router.navigate(['/tabs/favourites/detail/' + this.lemma.id], { state: { data: this.lemma } });
     } else {
-      this.router.navigate(['/tabs/search/detail/' + this.lemma.id],{ queryParams: { searchString: this.searchString }} );
+      this.router.navigate(['/tabs/search/detail/' + this.lemma.id], { queryParams: { searchString: this.searchString } });
     }
   }
 

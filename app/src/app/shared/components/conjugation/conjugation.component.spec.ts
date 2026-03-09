@@ -9,8 +9,7 @@ describe('ConjugationComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ConjugationComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), ConjugationComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ConjugationComponent);

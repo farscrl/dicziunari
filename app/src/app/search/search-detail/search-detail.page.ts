@@ -2,14 +2,17 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { SearchService } from '../../services/search.service';
 import { Subscription } from 'rxjs';
-import { ConfigService } from "../../services/config.service";
-import { Dictionary } from "../../../data/search";
+import { ConfigService } from '../../services/config.service';
+import { Dictionary } from '../../../data/search';
+import { IonicModule } from '@ionic/angular';
+import { ConjugationComponent } from '../../shared/components/conjugation/conjugation.component';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-    selector: 'app-search-detail-page',
-    templateUrl: './search-detail.page.html',
-    styleUrls: ['./search-detail.page.scss'],
-    standalone: false
+  selector: 'app-search-detail-page',
+  templateUrl: './search-detail.page.html',
+  styleUrls: ['./search-detail.page.scss'],
+  imports: [IonicModule, ConjugationComponent, TranslatePipe],
 })
 export class SearchDetailPage implements OnInit, OnDestroy {
   public id: string;
@@ -24,7 +27,7 @@ export class SearchDetailPage implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private searchService: SearchService,
-    public configService: ConfigService
+    public configService: ConfigService,
   ) {}
 
   ngOnInit() {
@@ -34,7 +37,7 @@ export class SearchDetailPage implements OnInit, OnDestroy {
         this.lemma = lemma;
       });
     });
-    this.dictionarySubscription = this.configService.getDictionaryObservable().subscribe(dict => {
+    this.dictionarySubscription = this.configService.getDictionaryObservable().subscribe((dict) => {
       this.dictionary = dict;
     });
   }

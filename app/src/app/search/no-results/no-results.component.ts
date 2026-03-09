@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, IonicModule } from '@ionic/angular';
 import { ConfigService } from '../../services/config.service';
 import { SearchDirection, SearchMode } from 'src/data/search';
 import { Subscription } from 'rxjs';
 import { SearchModeModalComponent } from '../search-mode-modal/search-mode-modal.component';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-    selector: 'app-no-results',
-    templateUrl: './no-results.component.html',
-    styleUrls: ['./no-results.component.scss'],
-    standalone: false
+  selector: 'app-no-results',
+  templateUrl: './no-results.component.html',
+  styleUrls: ['./no-results.component.scss'],
+  imports: [IonicModule, TranslatePipe],
 })
 export class NoResultsComponent implements OnInit {
-
   searchMode: SearchMode;
   public searchDirection: SearchDirection;
 
@@ -22,7 +22,10 @@ export class NoResultsComponent implements OnInit {
 
   private searchDirectionSubscription: Subscription;
 
-  constructor(private configService: ConfigService, private modalController: ModalController) { }
+  constructor(
+    private configService: ConfigService,
+    private modalController: ModalController,
+  ) {}
 
   ngOnInit() {
     this.searchMode = this.configService.getSearchMode();

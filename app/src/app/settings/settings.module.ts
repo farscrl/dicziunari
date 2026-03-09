@@ -19,7 +19,10 @@ import { InfoPage } from './info/info.page';
     RouterModule.forChild([{ path: '', component: SettingsPage }]),
     SettingsPageRoutingModule,
     SharedModule,
+    SettingsPage,
+    FeedbackPage,
+    HelpPage,
+    InfoPage,
   ],
-  declarations: [SettingsPage, FeedbackPage, HelpPage, InfoPage],
 })
 export class SettingsPageModule {}

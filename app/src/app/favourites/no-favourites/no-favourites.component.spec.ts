@@ -9,8 +9,7 @@ describe('NoFavouritesComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ NoFavouritesComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), NoFavouritesComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NoFavouritesComponent);

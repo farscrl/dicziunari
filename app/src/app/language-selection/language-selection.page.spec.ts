@@ -9,8 +9,7 @@ describe('LanguageSelectionPage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LanguageSelectionPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), LanguageSelectionPage],
     }).compileComponents();
 
     fixture = TestBed.createComponent(LanguageSelectionPage);

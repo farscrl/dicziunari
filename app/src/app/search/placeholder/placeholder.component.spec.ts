@@ -9,8 +9,7 @@ describe('PlaceholderComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ PlaceholderComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), PlaceholderComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PlaceholderComponent);

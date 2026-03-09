@@ -12,7 +12,18 @@ import { SearchModeModalComponent } from './search-mode-modal/search-mode-modal.
 import { DictionaryModalComponent } from './dictionary-modal/dictionary-modal.component';
 
 @NgModule({
-  imports: [IonicModule, CommonModule, FormsModule, SearchPageRoutingModule, SharedModule],
-  declarations: [SearchPage, NoResultsComponent, PlaceholderComponent, SearchDetailPage, DictionaryModalComponent, SearchModeModalComponent],
+  imports: [
+    IonicModule,
+    CommonModule,
+    FormsModule,
+    SearchPageRoutingModule,
+    SharedModule,
+    SearchPage,
+    NoResultsComponent,
+    PlaceholderComponent,
+    SearchDetailPage,
+    DictionaryModalComponent,
+    SearchModeModalComponent,
+  ],
 })
-export class SearchPageModule { }
+export class SearchPageModule {}

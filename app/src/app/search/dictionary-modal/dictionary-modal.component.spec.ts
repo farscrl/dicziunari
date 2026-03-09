@@ -9,8 +9,7 @@ describe('DictionaryModalComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ DictionaryModalComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), DictionaryModalComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(DictionaryModalComponent);

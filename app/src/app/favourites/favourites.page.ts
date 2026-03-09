@@ -4,12 +4,16 @@ import { Dictionary } from 'src/data/search';
 import { FavouritesService } from '../services/favourites.service';
 import { BackupService } from '../services/backup.service';
 import { Capacitor } from '@capacitor/core';
+import { IonicModule } from '@ionic/angular';
+import { LemmaDisplayComponent } from '../shared/components/lemma-display/lemma-display.component';
+import { NoFavouritesComponent } from './no-favourites/no-favourites.component';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-    selector: 'app-favourites',
-    templateUrl: 'favourites.page.html',
-    styleUrls: ['favourites.page.scss'],
-    standalone: false
+  selector: 'app-favourites',
+  templateUrl: 'favourites.page.html',
+  styleUrls: ['favourites.page.scss'],
+  imports: [IonicModule, LemmaDisplayComponent, NoFavouritesComponent, TranslatePipe],
 })
 export class FavouritesPage implements OnInit, OnDestroy {
   public dictionaryValues = Dictionary;

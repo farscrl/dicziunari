@@ -9,8 +9,7 @@ describe('FeedbackPage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ FeedbackPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), FeedbackPage],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FeedbackPage);

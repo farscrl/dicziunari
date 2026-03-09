@@ -9,8 +9,7 @@ describe('ResultTextComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResultTextComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), ResultTextComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ResultTextComponent);

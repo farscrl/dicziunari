@@ -1,24 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, IonicModule } from '@ionic/angular';
 import { ConfigService } from 'src/app/services/config.service';
 import { Dictionary } from 'src/data/search';
-import { Config } from "@ionic/angular";
+import { Config } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-    selector: 'app-dictionary-modal',
-    templateUrl: './dictionary-modal.component.html',
-    styleUrls: ['./dictionary-modal.component.scss'],
-    standalone: false
+  selector: 'app-dictionary-modal',
+  templateUrl: './dictionary-modal.component.html',
+  styleUrls: ['./dictionary-modal.component.scss'],
+  imports: [IonicModule, FormsModule, TranslatePipe],
 })
 export class DictionaryModalComponent implements OnInit {
-
   public selectedDictionary: Dictionary;
 
   constructor(
     private configService: ConfigService,
     private modalController: ModalController,
-    private config: Config
-  ) { }
+    private config: Config,
+  ) {}
 
   ngOnInit() {
     this.selectedDictionary = this.configService.getSelectedDictionary();
@@ -30,7 +31,7 @@ export class DictionaryModalComponent implements OnInit {
   }
 
   get slot() {
-    if (this.config.get("mode") === 'ios') {
+    if (this.config.get('mode') === 'ios') {
       return 'end';
     }
     return 'start';

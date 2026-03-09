@@ -9,8 +9,7 @@ describe('LemmaDisplayComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LemmaDisplayComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), LemmaDisplayComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(LemmaDisplayComponent);

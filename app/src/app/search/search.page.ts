@@ -1,18 +1,23 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { ConfigService } from '../services/config.service';
-import { IonContent, IonInfiniteScroll, IonSelect, ModalController } from '@ionic/angular';
+import { IonContent, IonInfiniteScroll, IonSelect, ModalController, IonicModule } from '@ionic/angular';
 import { Dictionary, SearchDirection } from 'src/data/search';
 import { Capacitor } from '@capacitor/core';
 import { Keyboard } from '@capacitor/keyboard';
 import { Subscription } from 'rxjs';
 import { DictionaryModalComponent } from './dictionary-modal/dictionary-modal.component';
+import { FormsModule } from '@angular/forms';
+import { LemmaDisplayComponent } from '../shared/components/lemma-display/lemma-display.component';
+import { PlaceholderComponent } from './placeholder/placeholder.component';
+import { NoResultsComponent } from './no-results/no-results.component';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-    selector: 'app-search',
-    templateUrl: 'search.page.html',
-    styleUrls: ['search.page.scss'],
-    standalone: false
+  selector: 'app-search',
+  templateUrl: 'search.page.html',
+  styleUrls: ['search.page.scss'],
+  imports: [IonicModule, FormsModule, LemmaDisplayComponent, PlaceholderComponent, NoResultsComponent, TranslatePipe],
 })
 export class SearchPage implements OnInit, OnDestroy {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
@@ -30,7 +35,11 @@ export class SearchPage implements OnInit, OnDestroy {
   private searchModeSubscription: Subscription;
   private includeVerbsSubscription: Subscription;
 
-  constructor(private searchService: SearchService, private configService: ConfigService, private modalController: ModalController) { }
+  constructor(
+    private searchService: SearchService,
+    private configService: ConfigService,
+    private modalController: ModalController,
+  ) {}
 
   ngOnInit() {
     this.selectedDictionary = this.configService.getSelectedDictionary();
@@ -46,7 +55,7 @@ export class SearchPage implements OnInit, OnDestroy {
     this.searchModeSubscription = this.configService.getSearchModeObservable().subscribe((searchMode) => {
       this.search();
     });
-    this.includeVerbsSubscription = this.configService.getIncludeVerbsObservable().subscribe(includeVerbs => {
+    this.includeVerbsSubscription = this.configService.getIncludeVerbsObservable().subscribe((includeVerbs) => {
       this.search();
     });
   }

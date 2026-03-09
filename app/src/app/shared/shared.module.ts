@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HighlightPipe } from '../pipes/highlight.pipe';
-import { TranslateCutPipe } from "../pipes/translate-cut.pipe";
+import { TranslateCutPipe } from '../pipes/translate-cut.pipe';
 import { ConjugationComponent } from './components/conjugation/conjugation.component';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
@@ -11,9 +11,10 @@ import { ResultTextComponent } from './components/result-text/result-text.compon
 import { LemmaDisplayComponent } from './components/lemma-display/lemma-display.component';
 
 @NgModule({
-  imports: [IonicModule, CommonModule, TranslateModule],
-
-  declarations: [
+  imports: [
+    IonicModule,
+    CommonModule,
+    TranslateModule,
     HighlightPipe,
     TranslateCutPipe,
     ConjugationComponent,

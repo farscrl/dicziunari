@@ -7,18 +7,15 @@ describe('SearchDetailPage', () => {
   let component: SearchDetailPage;
   let fixture: ComponentFixture<SearchDetailPage>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [SearchDetailPage],
-        imports: [IonicModule.forRoot()],
-      }).compileComponents();
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [IonicModule.forRoot(), SearchDetailPage],
+    }).compileComponents();
 
-      fixture = TestBed.createComponent(SearchDetailPage);
-      component = fixture.componentInstance;
-      fixture.detectChanges();
-    }),
-  );
+    fixture = TestBed.createComponent(SearchDetailPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
 
   it('should create', () => {
     expect(component).toBeTruthy();

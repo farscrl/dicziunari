@@ -10,7 +10,15 @@ import { NoFavouritesComponent } from './no-favourites/no-favourites.component';
 import { FavouritesPageRoutingModule } from './favourites-routing.module';
 
 @NgModule({
-  imports: [IonicModule, CommonModule, FormsModule, FavouritesPageRoutingModule, SharedModule],
-  declarations: [FavouritesPage, FavouritesDetailPage, NoFavouritesComponent],
+  imports: [
+    IonicModule,
+    CommonModule,
+    FormsModule,
+    FavouritesPageRoutingModule,
+    SharedModule,
+    FavouritesPage,
+    FavouritesDetailPage,
+    NoFavouritesComponent,
+  ],
 })
 export class FavouritesPageModule {}

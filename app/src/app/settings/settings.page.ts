@@ -1,16 +1,17 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ConfigService } from '../services/config.service';
-import { TranslateService } from '@ngx-translate/core';
-import { NavController } from '@ionic/angular';
+import { TranslateService, TranslatePipe } from '@ngx-translate/core';
+import { NavController, IonicModule } from '@ionic/angular';
 import { Locale, SearchMode } from 'src/data/search';
 import { Subscription } from 'rxjs';
-import { ColorMode, ColorModeService } from "../services/color-mode.service";
+import { ColorMode, ColorModeService } from '../services/color-mode.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-    selector: 'app-settings',
-    templateUrl: 'settings.page.html',
-    styleUrls: ['settings.page.scss'],
-    standalone: false
+  selector: 'app-settings',
+  templateUrl: 'settings.page.html',
+  styleUrls: ['settings.page.scss'],
+  imports: [IonicModule, FormsModule, TranslatePipe],
 })
 export class SettingsPage implements OnInit, OnDestroy {
   appLanguage: Locale | undefined;
@@ -22,7 +23,12 @@ export class SettingsPage implements OnInit, OnDestroy {
   public colorModes: ColorMode[] = ['auto', 'dark', 'light'];
   public currentColorMode: ColorMode;
 
-  constructor(private configService: ConfigService, private translateService: TranslateService, private navCtrl: NavController, private colorMode: ColorModeService) {}
+  constructor(
+    private configService: ConfigService,
+    private translateService: TranslateService,
+    private navCtrl: NavController,
+    private colorMode: ColorModeService,
+  ) {}
 
   ngOnInit() {
     this.appLanguage = this.configService.getSelectedLocale();

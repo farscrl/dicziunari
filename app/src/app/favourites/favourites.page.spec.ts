@@ -7,18 +7,15 @@ describe('FavouritesPage', () => {
   let component: FavouritesPage;
   let fixture: ComponentFixture<FavouritesPage>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [FavouritesPage],
-        imports: [IonicModule.forRoot()],
-      }).compileComponents();
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [IonicModule.forRoot(), FavouritesPage],
+    }).compileComponents();
 
-      fixture = TestBed.createComponent(FavouritesPage);
-      component = fixture.componentInstance;
-      fixture.detectChanges();
-    }),
-  );
+    fixture = TestBed.createComponent(FavouritesPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
 
   it('should create', () => {
     expect(component).toBeTruthy();

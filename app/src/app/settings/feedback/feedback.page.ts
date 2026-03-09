@@ -3,24 +3,23 @@ import { Subscription } from 'rxjs';
 import { ConfigService } from 'src/app/services/config.service';
 import { Locale } from 'src/data/search';
 import { Device } from '@capacitor/device';
+import { IonicModule } from '@ionic/angular';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-    selector: 'app-feedback',
-    templateUrl: './feedback.page.html',
-    styleUrls: ['./feedback.page.scss'],
-    standalone: false
+  selector: 'app-feedback',
+  templateUrl: './feedback.page.html',
+  styleUrls: ['./feedback.page.scss'],
+  imports: [IonicModule, TranslatePipe],
 })
 export class FeedbackPage implements OnInit {
-
   public selectedLocale: Locale = Locale.rm;
 
-  public body: string = "";
+  public body: string = '';
 
   private localeSubscription: Subscription;
 
-  constructor(
-    private configService: ConfigService
-  ) { }
+  constructor(private configService: ConfigService) {}
 
   ngOnInit() {
     this.localeSubscription = this.configService.getLocaleObservable().subscribe((locale) => {
@@ -36,11 +35,8 @@ export class FeedbackPage implements OnInit {
   private async loadDeviceInfo(): Promise<void> {
     const info = await Device.getInfo();
 
-    this.body = "\n\n\n\n\n\n" +
-      "os: " + info.operatingSystem + "\n" +
-      "osVersion: " + info.osVersion + "\n" +
-      "model: " + info.model + "\n" +
-      "";
+    this.body =
+      '\n\n\n\n\n\n' + 'os: ' + info.operatingSystem + '\n' + 'osVersion: ' + info.osVersion + '\n' + 'model: ' + info.model + '\n' + '';
 
     this.body = encodeURIComponent(this.body);
   }

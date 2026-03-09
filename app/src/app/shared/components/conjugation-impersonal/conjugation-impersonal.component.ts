@@ -1,10 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { HighlightPipe } from '../../../pipes/highlight.pipe';
 
 @Component({
   selector: 'app-conjugation-impersonal',
   templateUrl: './conjugation-impersonal.component.html',
   styleUrls: ['./conjugation-impersonal.component.scss'],
-  standalone: false,
+  imports: [HighlightPipe],
 })
 export class ConjugationImpersonalComponent implements OnInit {
   @Input() public form1;

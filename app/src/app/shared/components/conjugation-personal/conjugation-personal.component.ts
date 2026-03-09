@@ -1,10 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { HighlightPipe } from '../../../pipes/highlight.pipe';
 
 @Component({
-    selector: 'app-conjugation-personal',
-    templateUrl: './conjugation-personal.component.html',
-    styleUrls: ['./conjugation-personal.component.scss'],
-    standalone: false
+  selector: 'app-conjugation-personal',
+  templateUrl: './conjugation-personal.component.html',
+  styleUrls: ['./conjugation-personal.component.scss'],
+  imports: [HighlightPipe],
 })
 export class ConjugationPersonalComponent implements OnInit {
   @Input() public sing1: string;
@@ -25,7 +26,7 @@ export class ConjugationPersonalComponent implements OnInit {
   @Input() public plural3: string;
   @Input() public plural3Pronoun: string;
 
-  @Input() public searchString?: string
+  @Input() public searchString?: string;
 
   constructor() {}
 
@@ -33,8 +34,10 @@ export class ConjugationPersonalComponent implements OnInit {
 
   public replaceComma(input: string) {
     const items = input.split(/[,|\n]/);
-    return items.map(e => {
-      return e.trim();
-    }).join("<br>")
+    return items
+      .map((e) => {
+        return e.trim();
+      })
+      .join('<br>');
   }
 }
