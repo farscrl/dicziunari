@@ -4,7 +4,24 @@ import { Dictionary } from 'src/data/search';
 import { FavouritesService } from '../services/favourites.service';
 import { BackupService } from '../services/backup.service';
 import { Capacitor } from '@capacitor/core';
-import { IonicModule } from '@ionic/angular';
+import {
+  IonHeader,
+  IonToolbar,
+  IonButtons,
+  IonButton,
+  IonIcon,
+  IonPopover,
+  IonContent,
+  IonTitle,
+  IonList,
+  IonItemGroup,
+  IonItemDivider,
+  IonModal,
+  IonRadioGroup,
+  IonRadio,
+} from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { ellipsisHorizontal, ellipsisVertical } from 'ionicons/icons';
 import { LemmaDisplayComponent } from '../shared/components/lemma-display/lemma-display.component';
 import { NoFavouritesComponent } from './no-favourites/no-favourites.component';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -13,7 +30,25 @@ import { TranslatePipe } from '@ngx-translate/core';
   selector: 'app-favourites',
   templateUrl: 'favourites.page.html',
   styleUrls: ['favourites.page.scss'],
-  imports: [IonicModule, LemmaDisplayComponent, NoFavouritesComponent, TranslatePipe],
+  imports: [
+    IonHeader,
+    IonToolbar,
+    IonButtons,
+    IonButton,
+    IonIcon,
+    IonPopover,
+    IonContent,
+    IonTitle,
+    IonList,
+    IonItemGroup,
+    IonItemDivider,
+    IonModal,
+    IonRadioGroup,
+    IonRadio,
+    LemmaDisplayComponent,
+    NoFavouritesComponent,
+    TranslatePipe,
+  ],
 })
 export class FavouritesPage implements OnInit, OnDestroy {
   public dictionaryValues = Dictionary;
@@ -32,7 +67,9 @@ export class FavouritesPage implements OnInit, OnDestroy {
   constructor(
     private favouritesService: FavouritesService,
     private backupService: BackupService,
-  ) {}
+  ) {
+    addIcons({ ellipsisHorizontal, ellipsisVertical });
+  }
 
   ngOnInit(): void {
     this.reloadFavourites();

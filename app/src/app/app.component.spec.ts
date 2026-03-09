@@ -8,6 +8,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [AppComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      providers: [provideIonicAngular()],
     }).compileComponents();
   }));
 

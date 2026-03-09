@@ -8,14 +8,23 @@ import { ToastService } from '../../../services/toast.service';
 import { SearchService } from '../../../services/search.service';
 import { Subscription } from 'rxjs';
 import { ImageCreatorUtil } from '../../../util/image-creator.util';
-import { IonicModule } from '@ionic/angular';
+import {
+  IonItemSliding,
+  IonItem,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonIcon,
+  IonItemOptions,
+  IonItemOption,
+} from '@ionic/angular/standalone';
 import { ResultTextComponent } from '../result-text/result-text.component';
 
 @Component({
   selector: 'app-lemma-display',
   templateUrl: './lemma-display.component.html',
   styleUrls: ['./lemma-display.component.scss'],
-  imports: [IonicModule, ResultTextComponent],
+  imports: [IonItemSliding, IonItem, IonGrid, IonRow, IonCol, IonIcon, IonItemOptions, IonItemOption, ResultTextComponent],
 })
 export class LemmaDisplayComponent implements OnInit, OnDestroy {
   @Input()

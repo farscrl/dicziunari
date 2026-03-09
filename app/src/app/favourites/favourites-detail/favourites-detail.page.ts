@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Dictionary } from '../../../data/search';
-import { IonicModule } from '@ionic/angular';
+import { IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent } from '@ionic/angular/standalone';
 import { ConjugationComponent } from '../../shared/components/conjugation/conjugation.component';
 import { TranslatePipe } from '@ngx-translate/core';
 
@@ -9,7 +9,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   selector: 'app-favourites-detail-page',
   templateUrl: './favourites-detail.page.html',
   styleUrls: ['./favourites-detail.page.scss'],
-  imports: [IonicModule, ConjugationComponent, TranslatePipe],
+  imports: [IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent, ConjugationComponent, TranslatePipe],
 })
 export class FavouritesDetailPage implements OnInit {
   public lemma;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, IonicModule } from '@ionic/angular';
+import { IonContent, IonIcon, IonButton, ModalController } from '@ionic/angular/standalone';
 import { ConfigService } from '../../services/config.service';
 import { SearchDirection, SearchMode } from 'src/data/search';
 import { Subscription } from 'rxjs';
@@ -10,7 +10,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   selector: 'app-no-results',
   templateUrl: './no-results.component.html',
   styleUrls: ['./no-results.component.scss'],
-  imports: [IonicModule, TranslatePipe],
+  imports: [IonContent, IonIcon, IonButton, TranslatePipe],
 })
 export class NoResultsComponent implements OnInit {
   searchMode: SearchMode;

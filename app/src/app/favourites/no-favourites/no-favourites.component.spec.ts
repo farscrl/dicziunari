@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { provideIonicAngular } from '@ionic/angular/standalone';
 
 import { NoFavouritesComponent } from './no-favourites.component';
 
@@ -9,7 +9,8 @@ describe('NoFavouritesComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [IonicModule.forRoot(), NoFavouritesComponent],
+      imports: [NoFavouritesComponent],
+      providers: [provideIonicAngular()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NoFavouritesComponent);

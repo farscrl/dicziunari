@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { provideIonicAngular } from '@ionic/angular/standalone';
 
 import { ConjugationComponent } from './conjugation.component';
 
@@ -9,7 +9,8 @@ describe('ConjugationComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [IonicModule.forRoot(), ConjugationComponent],
+      imports: [ConjugationComponent],
+      providers: [provideIonicAngular()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ConjugationComponent);

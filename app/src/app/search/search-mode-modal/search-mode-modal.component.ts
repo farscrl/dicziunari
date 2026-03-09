@@ -1,8 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, IonicModule } from '@ionic/angular';
+import {
+  IonContent,
+  IonItem,
+  IonTitle,
+  IonList,
+  IonRadioGroup,
+  IonLabel,
+  IonRadio,
+  ModalController,
+  Config,
+} from '@ionic/angular/standalone';
 import { ConfigService } from 'src/app/services/config.service';
 import { SearchMode } from 'src/data/search';
-import { Config } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
 
@@ -10,7 +19,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   selector: 'app-search-mode-modal',
   templateUrl: './search-mode-modal.component.html',
   styleUrls: ['./search-mode-modal.component.scss'],
-  imports: [IonicModule, FormsModule, TranslatePipe],
+  imports: [IonContent, IonItem, IonTitle, IonList, IonRadioGroup, IonLabel, IonRadio, FormsModule, TranslatePipe],
 })
 export class SearchModeModalComponent implements OnInit {
   public selectedSearchMode: SearchMode;

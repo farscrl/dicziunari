@@ -1,7 +1,21 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { ConfigService } from '../services/config.service';
-import { IonContent, IonInfiniteScroll, IonSelect, ModalController, IonicModule } from '@ionic/angular';
+import {
+  IonContent,
+  IonInfiniteScroll,
+  IonInfiniteScrollContent,
+  IonHeader,
+  IonToolbar,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonLabel,
+  IonIcon,
+  IonSearchbar,
+  IonList,
+  ModalController,
+} from '@ionic/angular/standalone';
 import { Dictionary, SearchDirection } from 'src/data/search';
 import { Capacitor } from '@capacitor/core';
 import { Keyboard } from '@capacitor/keyboard';
@@ -17,7 +31,25 @@ import { TranslatePipe } from '@ngx-translate/core';
   selector: 'app-search',
   templateUrl: 'search.page.html',
   styleUrls: ['search.page.scss'],
-  imports: [IonicModule, FormsModule, LemmaDisplayComponent, PlaceholderComponent, NoResultsComponent, TranslatePipe],
+  imports: [
+    IonHeader,
+    IonToolbar,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonLabel,
+    IonIcon,
+    IonSearchbar,
+    IonContent,
+    IonList,
+    IonInfiniteScroll,
+    IonInfiniteScrollContent,
+    FormsModule,
+    LemmaDisplayComponent,
+    PlaceholderComponent,
+    NoResultsComponent,
+    TranslatePipe,
+  ],
 })
 export class SearchPage implements OnInit, OnDestroy {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;

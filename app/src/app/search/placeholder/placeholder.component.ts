@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import { IonContent } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-placeholder',
   templateUrl: './placeholder.component.html',
   styleUrls: ['./placeholder.component.scss'],
-  imports: [IonicModule],
+  imports: [IonContent],
 })
 export class PlaceholderComponent implements OnInit {
   constructor() {}

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/quotes */
 import { Injectable } from '@angular/core';
 import { Device } from '@capacitor/device';
-import { AlertController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular/standalone';
 import { CapacitorSQLite, SQLiteConnection } from '@capacitor-community/sqlite';
 import { SQLiteService } from './sqlite.service';
 import { QueryUtil } from '../util/query.util';

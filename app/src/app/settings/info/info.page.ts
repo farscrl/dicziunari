@@ -4,14 +4,14 @@ import { Capacitor } from '@capacitor/core';
 import { Subscription } from 'rxjs';
 import { ConfigService } from 'src/app/services/config.service';
 import { Locale } from 'src/data/search';
-import { IonicModule } from '@ionic/angular';
+import { IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent } from '@ionic/angular/standalone';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-info',
   templateUrl: './info.page.html',
   styleUrls: ['./info.page.scss'],
-  imports: [IonicModule, TranslatePipe],
+  imports: [IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent, TranslatePipe],
 })
 export class InfoPage implements OnInit {
   public appVersion = '-';

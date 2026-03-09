@@ -4,7 +4,7 @@ import { SearchService } from '../../services/search.service';
 import { Subscription } from 'rxjs';
 import { ConfigService } from '../../services/config.service';
 import { Dictionary } from '../../../data/search';
-import { IonicModule } from '@ionic/angular';
+import { IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent } from '@ionic/angular/standalone';
 import { ConjugationComponent } from '../../shared/components/conjugation/conjugation.component';
 import { TranslatePipe } from '@ngx-translate/core';
 
@@ -12,7 +12,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   selector: 'app-search-detail-page',
   templateUrl: './search-detail.page.html',
   styleUrls: ['./search-detail.page.scss'],
-  imports: [IonicModule, ConjugationComponent, TranslatePipe],
+  imports: [IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent, ConjugationComponent, TranslatePipe],
 })
 export class SearchDetailPage implements OnInit, OnDestroy {
   public id: string;

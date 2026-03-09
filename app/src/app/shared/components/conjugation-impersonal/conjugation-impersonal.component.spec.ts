@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { provideIonicAngular } from '@ionic/angular/standalone';
 
 import { ConjugationImpersonalComponent } from './conjugation-impersonal.component';
 
@@ -9,7 +9,8 @@ describe('ConjugationImpersonalComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [IonicModule.forRoot(), ConjugationImpersonalComponent],
+      imports: [ConjugationImpersonalComponent],
+      providers: [provideIonicAngular()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ConjugationImpersonalComponent);

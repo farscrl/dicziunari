@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { provideIonicAngular } from '@ionic/angular/standalone';
 
 import { LemmaDisplayComponent } from './lemma-display.component';
 
@@ -9,7 +9,8 @@ describe('LemmaDisplayComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [IonicModule.forRoot(), LemmaDisplayComponent],
+      imports: [LemmaDisplayComponent],
+      providers: [provideIonicAngular()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(LemmaDisplayComponent);

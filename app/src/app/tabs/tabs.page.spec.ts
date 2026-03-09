@@ -11,6 +11,7 @@ describe('TabsPage', () => {
     TestBed.configureTestingModule({
       imports: [TabsPage],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      providers: [provideIonicAngular()],
     }).compileComponents();
   }));
 

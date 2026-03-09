@@ -1,7 +1,19 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ConfigService } from '../services/config.service';
 import { TranslateService, TranslatePipe } from '@ngx-translate/core';
-import { NavController, IonicModule } from '@ionic/angular';
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonList,
+  IonRadioGroup,
+  IonListHeader,
+  IonLabel,
+  IonItem,
+  IonRadio,
+  NavController,
+} from '@ionic/angular/standalone';
 import { Locale, SearchMode } from 'src/data/search';
 import { Subscription } from 'rxjs';
 import { ColorMode, ColorModeService } from '../services/color-mode.service';
@@ -11,7 +23,20 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-settings',
   templateUrl: 'settings.page.html',
   styleUrls: ['settings.page.scss'],
-  imports: [IonicModule, FormsModule, TranslatePipe],
+  imports: [
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonList,
+    IonRadioGroup,
+    IonListHeader,
+    IonLabel,
+    IonItem,
+    IonRadio,
+    FormsModule,
+    TranslatePipe,
+  ],
 })
 export class SettingsPage implements OnInit, OnDestroy {
   appLanguage: Locale | undefined;

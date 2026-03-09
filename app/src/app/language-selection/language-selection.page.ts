@@ -3,13 +3,13 @@ import { ConfigService } from '../services/config.service';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Locale } from 'src/data/search';
-import { IonicModule } from '@ionic/angular';
+import { IonContent, IonText, IonButton } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-language-selection',
   templateUrl: './language-selection.page.html',
   styleUrls: ['./language-selection.page.scss'],
-  imports: [IonicModule],
+  imports: [IonContent, IonText, IonButton],
 })
 export class LanguageSelectionPage implements OnInit {
   public localesValues = Locale;

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { SplashScreen } from '@capacitor/splash-screen';
-import { Platform, IonicModule } from '@ionic/angular';
+import { Platform, IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 import { ConfigService } from './services/config.service';
 import { SQLiteService } from './services/sqlite.service';
 import { Keyboard } from '@capacitor/keyboard';
@@ -12,7 +12,7 @@ import { ColorModeService } from './services/color-mode.service';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
-  imports: [IonicModule],
+  imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent {
   private sqlitePluginInitialized = false;

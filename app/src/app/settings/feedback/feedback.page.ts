@@ -3,14 +3,14 @@ import { Subscription } from 'rxjs';
 import { ConfigService } from 'src/app/services/config.service';
 import { Locale } from 'src/data/search';
 import { Device } from '@capacitor/device';
-import { IonicModule } from '@ionic/angular';
+import { IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent } from '@ionic/angular/standalone';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-feedback',
   templateUrl: './feedback.page.html',
   styleUrls: ['./feedback.page.scss'],
-  imports: [IonicModule, TranslatePipe],
+  imports: [IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent, TranslatePipe],
 })
 export class FeedbackPage implements OnInit {
   public selectedLocale: Locale = Locale.rm;

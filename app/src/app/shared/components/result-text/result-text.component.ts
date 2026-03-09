@@ -1,12 +1,12 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import { IonIcon } from '@ionic/angular/standalone';
 import { HighlightPipe } from '../../../pipes/highlight.pipe';
 
 @Component({
   selector: 'app-result-text',
   templateUrl: './result-text.component.html',
   styleUrls: ['./result-text.component.scss'],
-  imports: [IonicModule, HighlightPipe],
+  imports: [IonIcon, HighlightPipe],
 })
 export class ResultTextComponent implements OnInit {
   @Input()
