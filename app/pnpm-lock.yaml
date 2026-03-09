@@ -89,6 +89,9 @@ importers:
       rxjs:
         specifier: ^7.8.2
         version: 7.8.2
+      sql.js:
+        specifier: 1.11.0
+        version: 1.11.0
       tslib:
         specifier: ^2.8.1
         version: 2.8.1
@@ -3791,8 +3794,8 @@ packages:
     resolution: {integrity: sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==}
     engines: {node: '>= 10.x'}
 
-  sql.js@1.14.1:
-    resolution: {integrity: sha512-gcj8zBWU5cFsi9WUP+4bFNXAyF1iRpA3LLyS/DP5xlrNzGmPIizUeBggKa8DbDwdqaKwUcTEnChtd2grWo/x/A==}
+  sql.js@1.11.0:
+    resolution: {integrity: sha512-GsLUDU3vhOo14Pd5ME0y2te49JQyby6HuoCuadevEV+CGgTUjmYRrm7B7lhRyzOgrmcWmspUfyjNb6sOAEqdsA==}
 
   ssri@13.0.1:
     resolution: {integrity: sha512-QUiRf1+u9wPTL/76GTYlKttDEBWV1ga9ZXW8BG6kfdeyyM8LGPix9gROyg9V2+P0xNyF3X2Go526xKFdMZrHSQ==}
@@ -7192,7 +7195,7 @@ snapshots:
       '@stencil/core': 2.22.3
       jszip: 3.10.1
       localforage: 1.10.0
-      sql.js: 1.14.1
+      sql.js: 1.11.0
 
   jeep-sqlite@2.8.0:
     dependencies:
@@ -7200,7 +7203,7 @@ snapshots:
       browser-fs-access: 0.35.0
       jszip: 3.10.1
       localforage: 1.10.0
-      sql.js: 1.14.1
+      sql.js: 1.11.0
 
   jose@6.2.1: {}
 
@@ -8266,7 +8269,7 @@ snapshots:
 
   split2@4.2.0: {}
 
-  sql.js@1.14.1: {}
+  sql.js@1.11.0: {}
 
   ssri@13.0.1:
     dependencies:
