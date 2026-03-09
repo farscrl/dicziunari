@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { SplashScreen } from '@capacitor/splash-screen';
-import { Platform } from '@ionic/angular';
+import { Platform, IonicModule } from '@ionic/angular';
 import { ConfigService } from './services/config.service';
 import { SQLiteService } from './services/sqlite.service';
 import { Keyboard } from '@capacitor/keyboard';
 import { Capacitor } from '@capacitor/core';
-import { ColorModeService } from "./services/color-mode.service";
+import { ColorModeService } from './services/color-mode.service';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: 'app.component.html',
-    styleUrls: ['app.component.scss'],
-    standalone: false
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss'],
+  imports: [IonicModule],
 })
 export class AppComponent {
   private sqlitePluginInitialized = false;
@@ -58,6 +58,6 @@ export class AppComponent {
       } else {
         document.documentElement.classList.remove('dark-theme');
       }
-    })
+    });
   }
 }
