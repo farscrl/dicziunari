@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SearchPage } from './search.page';
-import { SharedModule } from '../shared/shared.module';
+
 import { NoResultsComponent } from './no-results/no-results.component';
 import { PlaceholderComponent } from './placeholder/placeholder.component';
 import { SearchPageRoutingModule } from './search-routing.module';
@@ -17,7 +17,6 @@ import { DictionaryModalComponent } from './dictionary-modal/dictionary-modal.co
     CommonModule,
     FormsModule,
     SearchPageRoutingModule,
-    SharedModule,
     SearchPage,
     NoResultsComponent,
     PlaceholderComponent,

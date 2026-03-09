@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FavouritesPage } from './favourites.page';
-import { SharedModule } from '../shared/shared.module';
+
 import { FavouritesDetailPage } from './favourites-detail/favourites-detail.page';
 import { NoFavouritesComponent } from './no-favourites/no-favourites.component';
 
@@ -15,7 +15,6 @@ import { FavouritesPageRoutingModule } from './favourites-routing.module';
     CommonModule,
     FormsModule,
     FavouritesPageRoutingModule,
-    SharedModule,
     FavouritesPage,
     FavouritesDetailPage,
     NoFavouritesComponent,
