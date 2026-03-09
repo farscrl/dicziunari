@@ -1,53 +1,53 @@
 PODS:
-  - Capacitor (7.4.0):
+  - Capacitor (7.5.0):
     - CapacitorCordova
-  - CapacitorApp (7.0.1):
+  - CapacitorApp (7.1.2):
     - Capacitor
-  - CapacitorClipboard (7.0.1):
+  - CapacitorClipboard (7.0.4):
     - Capacitor
-  - CapacitorCommunitySqlite (7.0.0):
+  - CapacitorCommunitySqlite (7.0.3):
     - Capacitor
     - SQLCipher
     - ZIPFoundation
-  - CapacitorCordova (7.4.0)
-  - CapacitorDevice (7.0.1):
+  - CapacitorCordova (7.5.0)
+  - CapacitorDevice (7.0.4):
     - Capacitor
-  - CapacitorFilesystem (7.1.1):
+  - CapacitorFilesystem (7.1.8):
     - Capacitor
-    - IONFilesystemLib (~> 1.0)
-  - CapacitorKeyboard (7.0.1):
+    - IONFilesystemLib (~> 1.1.1)
+  - CapacitorKeyboard (7.0.4):
     - Capacitor
-  - CapacitorShare (7.0.1):
+  - CapacitorShare (7.0.4):
     - Capacitor
-  - CapacitorSplashScreen (7.0.1):
+  - CapacitorSplashScreen (7.0.5):
     - Capacitor
-  - CapacitorStatusBar (7.0.1):
+  - CapacitorStatusBar (7.0.5):
     - Capacitor
   - CapawesomeCapacitorFilePicker (7.2.0):
     - Capacitor
-  - CordovaPlugins (7.4.0):
+  - CordovaPlugins (7.5.0):
     - CapacitorCordova
-  - IONFilesystemLib (1.0.0)
-  - SQLCipher (4.5.0):
-    - SQLCipher/standard (= 4.5.0)
-  - SQLCipher/common (4.5.0)
-  - SQLCipher/standard (4.5.0):
+  - IONFilesystemLib (1.1.1)
+  - SQLCipher (4.10.0):
+    - SQLCipher/standard (= 4.10.0)
+  - SQLCipher/common (4.10.0)
+  - SQLCipher/standard (4.10.0):
     - SQLCipher/common
-  - ZIPFoundation (0.9.13)
+  - ZIPFoundation (0.9.20)
 
 DEPENDENCIES:
-  - "Capacitor (from `../../node_modules/@capacitor/ios`)"
-  - "CapacitorApp (from `../../node_modules/@capacitor/app`)"
-  - "CapacitorClipboard (from `../../node_modules/@capacitor/clipboard`)"
-  - "CapacitorCommunitySqlite (from `../../node_modules/@capacitor-community/sqlite`)"
-  - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
-  - "CapacitorDevice (from `../../node_modules/@capacitor/device`)"
-  - "CapacitorFilesystem (from `../../node_modules/@capacitor/filesystem`)"
-  - "CapacitorKeyboard (from `../../node_modules/@capacitor/keyboard`)"
-  - "CapacitorShare (from `../../node_modules/@capacitor/share`)"
-  - "CapacitorSplashScreen (from `../../node_modules/@capacitor/splash-screen`)"
-  - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
-  - "CapawesomeCapacitorFilePicker (from `../../node_modules/@capawesome/capacitor-file-picker`)"
+  - "Capacitor (from `../../node_modules/.pnpm/@capacitor+ios@7.5.0_@capacitor+core@7.5.0/node_modules/@capacitor/ios`)"
+  - "CapacitorApp (from `../../node_modules/.pnpm/@capacitor+app@7.1.2_@capacitor+core@7.5.0/node_modules/@capacitor/app`)"
+  - "CapacitorClipboard (from `../../node_modules/.pnpm/@capacitor+clipboard@7.0.4_@capacitor+core@7.5.0/node_modules/@capacitor/clipboard`)"
+  - "CapacitorCommunitySqlite (from `../../node_modules/.pnpm/@capacitor-community+sqlite@7.0.3_@capacitor+core@7.5.0/node_modules/@capacitor-community/sqlite`)"
+  - "CapacitorCordova (from `../../node_modules/.pnpm/@capacitor+ios@7.5.0_@capacitor+core@7.5.0/node_modules/@capacitor/ios`)"
+  - "CapacitorDevice (from `../../node_modules/.pnpm/@capacitor+device@7.0.4_@capacitor+core@7.5.0/node_modules/@capacitor/device`)"
+  - "CapacitorFilesystem (from `../../node_modules/.pnpm/@capacitor+filesystem@7.1.8_@capacitor+core@7.5.0/node_modules/@capacitor/filesystem`)"
+  - "CapacitorKeyboard (from `../../node_modules/.pnpm/@capacitor+keyboard@7.0.4_@capacitor+core@7.5.0/node_modules/@capacitor/keyboard`)"
+  - "CapacitorShare (from `../../node_modules/.pnpm/@capacitor+share@7.0.4_@capacitor+core@7.5.0/node_modules/@capacitor/share`)"
+  - "CapacitorSplashScreen (from `../../node_modules/.pnpm/@capacitor+splash-screen@7.0.5_@capacitor+core@7.5.0/node_modules/@capacitor/splash-screen`)"
+  - "CapacitorStatusBar (from `../../node_modules/.pnpm/@capacitor+status-bar@7.0.5_@capacitor+core@7.5.0/node_modules/@capacitor/status-bar`)"
+  - "CapawesomeCapacitorFilePicker (from `../../node_modules/.pnpm/@capawesome+capacitor-file-picker@7.2.0_@capacitor+core@7.5.0/node_modules/@capawesome/capacitor-file-picker`)"
   - CordovaPlugins (from `../capacitor-cordova-ios-plugins`)
 
 SPEC REPOS:
@@ -58,50 +58,50 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Capacitor:
-    :path: "../../node_modules/@capacitor/ios"
+    :path: "../../node_modules/.pnpm/@capacitor+ios@7.5.0_@capacitor+core@7.5.0/node_modules/@capacitor/ios"
   CapacitorApp:
-    :path: "../../node_modules/@capacitor/app"
+    :path: "../../node_modules/.pnpm/@capacitor+app@7.1.2_@capacitor+core@7.5.0/node_modules/@capacitor/app"
   CapacitorClipboard:
-    :path: "../../node_modules/@capacitor/clipboard"
+    :path: "../../node_modules/.pnpm/@capacitor+clipboard@7.0.4_@capacitor+core@7.5.0/node_modules/@capacitor/clipboard"
   CapacitorCommunitySqlite:
-    :path: "../../node_modules/@capacitor-community/sqlite"
+    :path: "../../node_modules/.pnpm/@capacitor-community+sqlite@7.0.3_@capacitor+core@7.5.0/node_modules/@capacitor-community/sqlite"
   CapacitorCordova:
-    :path: "../../node_modules/@capacitor/ios"
+    :path: "../../node_modules/.pnpm/@capacitor+ios@7.5.0_@capacitor+core@7.5.0/node_modules/@capacitor/ios"
   CapacitorDevice:
-    :path: "../../node_modules/@capacitor/device"
+    :path: "../../node_modules/.pnpm/@capacitor+device@7.0.4_@capacitor+core@7.5.0/node_modules/@capacitor/device"
   CapacitorFilesystem:
-    :path: "../../node_modules/@capacitor/filesystem"
+    :path: "../../node_modules/.pnpm/@capacitor+filesystem@7.1.8_@capacitor+core@7.5.0/node_modules/@capacitor/filesystem"
   CapacitorKeyboard:
-    :path: "../../node_modules/@capacitor/keyboard"
+    :path: "../../node_modules/.pnpm/@capacitor+keyboard@7.0.4_@capacitor+core@7.5.0/node_modules/@capacitor/keyboard"
   CapacitorShare:
-    :path: "../../node_modules/@capacitor/share"
+    :path: "../../node_modules/.pnpm/@capacitor+share@7.0.4_@capacitor+core@7.5.0/node_modules/@capacitor/share"
   CapacitorSplashScreen:
-    :path: "../../node_modules/@capacitor/splash-screen"
+    :path: "../../node_modules/.pnpm/@capacitor+splash-screen@7.0.5_@capacitor+core@7.5.0/node_modules/@capacitor/splash-screen"
   CapacitorStatusBar:
-    :path: "../../node_modules/@capacitor/status-bar"
+    :path: "../../node_modules/.pnpm/@capacitor+status-bar@7.0.5_@capacitor+core@7.5.0/node_modules/@capacitor/status-bar"
   CapawesomeCapacitorFilePicker:
-    :path: "../../node_modules/@capawesome/capacitor-file-picker"
+    :path: "../../node_modules/.pnpm/@capawesome+capacitor-file-picker@7.2.0_@capacitor+core@7.5.0/node_modules/@capawesome/capacitor-file-picker"
   CordovaPlugins:
     :path: "../capacitor-cordova-ios-plugins"
 
 SPEC CHECKSUMS:
-  Capacitor: 10feab36396883c55373328124a677f118cd4b5f
-  CapacitorApp: febecbb9582cb353aed037e18ec765141f880fe9
-  CapacitorClipboard: 70bfdb42b877b320a6e511ab94fa7a6a55d57ecb
-  CapacitorCommunitySqlite: b11e556cf5d149f9e0b6fbbb47959a6cd718c3d0
-  CapacitorCordova: 723e017d8a80ab2ede9959fbe37556c35ac860d5
-  CapacitorDevice: c6f6d587dd310527f8a48bf09c4e7b4a4cf14329
-  CapacitorFilesystem: 39173fe5a0e77851119998d0d8c61c70551a412a
-  CapacitorKeyboard: 09fd91dcde4f8a37313e7f11bde553ad1ed52036
-  CapacitorShare: e573823f511f260f598d0423c33b1e3d7bbe5fd1
-  CapacitorSplashScreen: 1d67815a422a9b61539c94f283c08ed56667c0fc
-  CapacitorStatusBar: 6e7af040d8fc4dd655999819625cae9c2d74c36f
+  Capacitor: 0a78ec6b54580fa055c11744a4e83cd7942d98ca
+  CapacitorApp: f01a913211780e0718dae9750442c3e23f96e106
+  CapacitorClipboard: d1f123674cf413125db816a45e8f70e8770972fc
+  CapacitorCommunitySqlite: 4813d82ad33001e612a39d313cb5d28066cbafda
+  CapacitorCordova: ae35646a9b46cfd00d637f195509c86594026aad
+  CapacitorDevice: 640708bccf73e5c248fe57b1a463ce7710d83c1f
+  CapacitorFilesystem: c63fc54df41e5a6761785a7f3c49dc696c22e296
+  CapacitorKeyboard: 5660c760113bfa48962817a785879373cf5339c3
+  CapacitorShare: 25f7fc5dd0e4edbde5d6801c6de5d14a8b450a41
+  CapacitorSplashScreen: 409eeaaeac603d264f209c0fcb718aa22fe1f7bb
+  CapacitorStatusBar: 6de542f202c0dd3f9d0a73b240d4c9d3dddc49b4
   CapawesomeCapacitorFilePicker: 0f4a913a00e39dd77213449f0d917e92f35a5ca9
-  CordovaPlugins: bea0788846b94242fafb5b04f7342612ec44f296
-  IONFilesystemLib: ceacae793975039530458eabab0c495c70515a0d
-  SQLCipher: 98dc22f27c0b1790d39e710d440f22a466ebdb59
-  ZIPFoundation: ae5b4b813d216d3bf0a148773267fff14bd51d37
+  CordovaPlugins: c55c3ad94f85e4ad569ac87a1830b291a4eb52d6
+  IONFilesystemLib: dfa8706539ac9ab77ccfd6e5b3830ce9b5e57f6c
+  SQLCipher: eb79c64049cb002b4e9fcb30edb7979bf4706dfc
+  ZIPFoundation: dfd3d681c4053ff7e2f7350bc4e53b5dba3f5351
 
-PODFILE CHECKSUM: bd5d08f56ab34a3abca82d73e00dce9ab0cdebb1
+PODFILE CHECKSUM: 33c41caf9210d6728c4786b24b80ab03e963d990
 
 COCOAPODS: 1.16.2
