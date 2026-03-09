@@ -23,6 +23,6 @@ Then, open XCode or Android Studio to run the app on a device or simulator.
 During development, the app can be run in the browser. To do so, switch to the `web` branch, as this needs some more dependencies, that should not be included in app builds.
 
 - `npx cap sync`
-- `npm run build`
+- `pnpm run build`
 - `npx cap copy web`
 - `ionic serve`
