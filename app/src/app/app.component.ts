@@ -43,10 +43,10 @@ export class AppComponent {
   private initTranslateService() {
     this.translateService.addLangs(['de', 'rm']);
     if (!!this.configService.getSelectedLocale()) {
-      this.translateService.setDefaultLang(this.configService.getSelectedLocale());
+      this.translateService.setFallbackLang(this.configService.getSelectedLocale());
       this.translateService.use(this.configService.getSelectedLocale());
     } else {
-      this.translateService.setDefaultLang('de');
+      this.translateService.setFallbackLang('de');
       this.translateService.use('de');
     }
   }
