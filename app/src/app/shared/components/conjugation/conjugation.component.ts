@@ -1,5 +1,4 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ConfigService } from "../../../services/config.service";
 import { Dictionary } from "../../../../data/search";
 import { Pronouns } from "../../../../data/pronouns";
 import { ActivatedRoute } from "@angular/router";
@@ -21,8 +20,9 @@ export class ConjugationComponent implements OnInit, OnChanges {
 
   public searchString? :string;
 
+  readonly Dictionary = Dictionary;
+
   constructor(
-    private configService: ConfigService,
     private route: ActivatedRoute,
   ) {}
 
@@ -38,62 +38,6 @@ export class ConjugationComponent implements OnInit, OnChanges {
       return;
     }
     this.definePronouns();
-  }
-
-  private updateSursilvanLemma(lemma: any): any {
-    this.pronouns.preschentsing1 = 'jeu ';
-    this.pronouns.preschentsing2 = 'ti ';
-    this.pronouns.preschentsing3 = 'el/ella ';
-    this.pronouns.preschentplural1 = 'nus ';
-    this.pronouns.preschentplural2 = 'vus ';
-    this.pronouns.preschentplural3 = 'els/ellas ';
-
-    this.pronouns.imperfectsing1 = 'jeu ';
-    this.pronouns.imperfectsing2 = 'ti ';
-    this.pronouns.imperfectsing3 = 'el/ella ';
-    this.pronouns.imperfectplural1 = 'nus ';
-    this.pronouns.imperfectplural2 = 'vus ';
-    this.pronouns.imperfectplural3 = 'els/ellas ';
-
-    this.pronouns.conjunctivsing1 = 'che jeu ';
-    this.pronouns.conjunctivsing2 = 'che ti ';
-    this.pronouns.conjunctivsing3 = 'che el/ella ';
-    this.pronouns.conjunctivplural1 = 'che nus ';
-    this.pronouns.conjunctivplural2 = 'che vus ';
-    this.pronouns.conjunctivplural3 = 'che els/ellas ';
-
-    this.pronouns.cundizionalsing1 = 'jeu ';
-    this.pronouns.cundizionalsing2 = 'ti ';
-    this.pronouns.cundizionalsing3 = 'el/ella ';
-    this.pronouns.cundizionalplural1 = 'nus ';
-    this.pronouns.cundizionalplural2 = 'vus ';
-    this.pronouns.cundizionalplural3 = 'els/ellas ';
-
-    this.pronouns.futursing1 = 'jeu ';
-    this.pronouns.futursing2 = 'ti ';
-    this.pronouns.futursing3 = 'el/ella ';
-    this.pronouns.futurplural1 = 'nus ';
-    this.pronouns.futurplural2 = 'vus ';
-    this.pronouns.futurplural3 = 'els/ellas ';
-
-    const infinitiv = this.lemma['infinitiv'];
-
-    this.lemma['futursing1'] = this.startsWithVowel(infinitiv) ? 'vegnel ad ' + infinitiv : 'vegnel a ' + infinitiv;
-    this.lemma['futursing2'] = this.startsWithVowel(infinitiv) ? 'vegns ad ' + infinitiv : 'vegns a ' + infinitiv;
-    this.lemma['futursing3'] = this.startsWithVowel(infinitiv) ? 'vegn ad ' + infinitiv : 'vegn a ' + infinitiv;
-    this.lemma['futurplural1'] = this.startsWithVowel(infinitiv) ? 'vegnin ad ' + infinitiv : 'vegnin a ' + infinitiv;
-    this.lemma['futurplural2'] = this.startsWithVowel(infinitiv) ? 'vegnis ad ' + infinitiv : 'vegnis a ' + infinitiv;
-    this.lemma['futurplural3'] = this.startsWithVowel(infinitiv) ? 'vegnan ad ' + infinitiv : 'vegnan a ' + infinitiv;
-
-    this.lemma['participperfectms'] = this.addPrefix(this.lemma['participperfectms'], '', '');
-    this.lemma['participperfectmp'] = this.addPrefix(this.lemma['participperfectmp'], '', '');
-    this.lemma['participperfectfs'] = this.addPrefix(this.lemma['participperfectfs'], '', '');
-    this.lemma['participperfectfp'] = this.addPrefix(this.lemma['participperfectfp'], '', '');
-
-    this.lemma['gerundium'] = this.addPrefix(this.lemma['gerundium'], '', '');
-
-    this.lemma['imperativ1'] = this.addPrefix(this.lemma['imperativ1'], '', '!');
-    this.lemma['imperativ2'] = this.addPrefix(this.lemma['imperativ2'], '', '!');
   }
 
   private definePronouns() {
@@ -134,7 +78,11 @@ export class ConjugationComponent implements OnInit, OnChanges {
         this.extractPronouns(ppVallConj, ppVall, ppVallRefl, ppVallReflVowel);
         break;
       case Dictionary.sursilv:
-        this.updateSursilvanLemma(this.lemma.currentValue);
+        const ppSursilvanConj = ["che jeu ", "che ti ", "ch'el/ella ", "che nus ", "che vus ", "ch'els/ellas ", "", ""];
+        const ppSursilvan = ["jeu ", "ti ", "el/ella ", "nus ", "vus ", "els/ellas ", "", "", ""];
+        const ppSursilvanRefl = ["ma ", "ta ", "sa ", "ans ", "as ", "sa ", "", ""];
+        const ppSursilvanReflVowel = ["m'", "t'", "s'", "ans ", "as ", "s'", "", ""];
+        this.extractPronouns(ppSursilvanConj, ppSursilvan, ppSursilvanRefl, ppSursilvanReflVowel);
         break;
       default:
         // do nothing
@@ -177,6 +125,36 @@ export class ConjugationComponent implements OnInit, OnChanges {
     [this.lemma['conjunctivplural3'], this.pronouns.conjunctivplural3] = this.extractPrefixes(this.lemma['conjunctivplural3'], [ppConj[5], pp[5], ppRefl[5], ppReflVowel[5]]);
     [this.lemma['cundizionalplural3'], this.pronouns.cundizionalplural3] = this.extractPrefixes(this.lemma['cundizionalplural3'], [ppConj[5], pp[5], ppRefl[5], ppReflVowel[5]]);
     [this.lemma['futurplural3'], this.pronouns.futurplural3] = this.extractPrefixes(this.lemma['futurplural3'], [ppConj[5], pp[5], ppRefl[5], ppReflVowel[5]]);
+
+    // conjunctiv imperfect — same pronoun patterns as conjunctiv
+    [this.lemma['conjunctivimperfectsing1'], this.pronouns.conjunctivimperfectsing1] = this.extractPrefixes(this.lemma['conjunctivimperfectsing1'], [ppConj[0], pp[0], ppRefl[0], ppReflVowel[0], ppConj[6], pp[6], ppConj[7], pp[7]]);
+    [this.lemma['conjunctivimperfectsing2'], this.pronouns.conjunctivimperfectsing2] = this.extractPrefixes(this.lemma['conjunctivimperfectsing2'], [ppConj[1], pp[1], ppRefl[1], ppReflVowel[1]]);
+    [this.lemma['conjunctivimperfectsing3'], this.pronouns.conjunctivimperfectsing3] = this.extractPrefixes(this.lemma['conjunctivimperfectsing3'], [ppConj[2], pp[2], ppRefl[2], ppReflVowel[2], ppConj[6], pp[6], ppConj[7], pp[7]]);
+    [this.lemma['conjunctivimperfectplural1'], this.pronouns.conjunctivimperfectplural1] = this.extractPrefixes(this.lemma['conjunctivimperfectplural1'], [ppConj[3], pp[3], ppRefl[3], ppReflVowel[3]]);
+    [this.lemma['conjunctivimperfectplural2'], this.pronouns.conjunctivimperfectplural2] = this.extractPrefixes(this.lemma['conjunctivimperfectplural2'], [ppConj[4], pp[4], ppRefl[4], ppReflVowel[4]]);
+    [this.lemma['conjunctivimperfectplural3'], this.pronouns.conjunctivimperfectplural3] = this.extractPrefixes(this.lemma['conjunctivimperfectplural3'], [ppConj[5], pp[5], ppRefl[5], ppReflVowel[5]]);
+
+    // cundizional indirect — same pronoun patterns as cundizional
+    [this.lemma['cundizionalindirectsing1'], this.pronouns.cundizionalindirectsing1] = this.extractPrefixes(this.lemma['cundizionalindirectsing1'], [ppConj[0], pp[0], ppRefl[0], ppReflVowel[0], ppConj[6], pp[6], ppConj[7], pp[7]]);
+    [this.lemma['cundizionalindirectsing2'], this.pronouns.cundizionalindirectsing2] = this.extractPrefixes(this.lemma['cundizionalindirectsing2'], [ppConj[1], pp[1], ppRefl[1], ppReflVowel[1]]);
+    [this.lemma['cundizionalindirectsing3'], this.pronouns.cundizionalindirectsing3] = this.extractPrefixes(this.lemma['cundizionalindirectsing3'], [ppConj[2], pp[2], ppRefl[2], ppReflVowel[2], ppConj[6], pp[6], ppConj[7], pp[7]]);
+    [this.lemma['cundizionalindirectplural1'], this.pronouns.cundizionalindirectplural1] = this.extractPrefixes(this.lemma['cundizionalindirectplural1'], [ppConj[3], pp[3], ppRefl[3], ppReflVowel[3]]);
+    [this.lemma['cundizionalindirectplural2'], this.pronouns.cundizionalindirectplural2] = this.extractPrefixes(this.lemma['cundizionalindirectplural2'], [ppConj[4], pp[4], ppRefl[4], ppReflVowel[4]]);
+    [this.lemma['cundizionalindirectplural3'], this.pronouns.cundizionalindirectplural3] = this.extractPrefixes(this.lemma['cundizionalindirectplural3'], [ppConj[5], pp[5], ppRefl[5], ppReflVowel[5]]);
+
+    // futur dubitativ — same pronoun patterns as futur
+    [this.lemma['futurdubitativsing1'], this.pronouns.futurdubitativsing1] = this.extractPrefixes(this.lemma['futurdubitativsing1'], [ppConj[0], pp[0], ppRefl[0], ppReflVowel[0], ppConj[6], pp[6], ppConj[7], pp[7]]);
+    [this.lemma['futurdubitativsing2'], this.pronouns.futurdubitativsing2] = this.extractPrefixes(this.lemma['futurdubitativsing2'], [ppConj[1], pp[1], ppRefl[1], ppReflVowel[1]]);
+    [this.lemma['futurdubitativsing3'], this.pronouns.futurdubitativsing3] = this.extractPrefixes(this.lemma['futurdubitativsing3'], [ppConj[2], pp[2], ppRefl[2], ppReflVowel[2], ppConj[6], pp[6], ppConj[7], pp[7]]);
+    [this.lemma['futurdubitativplural1'], this.pronouns.futurdubitativplural1] = this.extractPrefixes(this.lemma['futurdubitativplural1'], [ppConj[3], pp[3], ppRefl[3], ppReflVowel[3]]);
+    [this.lemma['futurdubitativplural2'], this.pronouns.futurdubitativplural2] = this.extractPrefixes(this.lemma['futurdubitativplural2'], [ppConj[4], pp[4], ppRefl[4], ppReflVowel[4]]);
+    [this.lemma['futurdubitativplural3'], this.pronouns.futurdubitativplural3] = this.extractPrefixes(this.lemma['futurdubitativplural3'], [ppConj[5], pp[5], ppRefl[5], ppReflVowel[5]]);
+  }
+
+  public enclSing3(m: string, f: string): string {
+    if (!m) return f ?? '';
+    if (!f || f === m) return m;
+    return m + '\n' + f;
   }
 
   private extractPrefixes(lemma: string, prefixCandidates: string[]): string[] {
@@ -199,20 +177,4 @@ export class ConjugationComponent implements OnInit, OnChanges {
     return [forms.join("\n"), prefixes.join("\n")];
   }
 
-  private addPrefix(value: string, prefix: string, suffix: string): string {
-    const elements = value.split(/[\n|,]/);
-    elements.forEach((e, idx) => {
-      elements[idx] = prefix + e + suffix;
-    });
-    return elements.join(', ');
-  }
-
-  private startsWithVowel(word: string) {
-    const vowelRegex = '^[aieouhAIEOUH].*'
-    return word.match(vowelRegex)
-  }
-
-  get isSursilvan() {
-    return this.dictionary === Dictionary.sursilv;
-  }
 }

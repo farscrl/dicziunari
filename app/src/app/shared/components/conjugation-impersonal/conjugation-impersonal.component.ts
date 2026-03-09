@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-conjugation-impersonal',
-    templateUrl: './conjugation-impersonal.component.html',
-    styleUrls: ['./conjugation-impersonal.component.scss'],
-    standalone: false
+  selector: 'app-conjugation-impersonal',
+  templateUrl: './conjugation-impersonal.component.html',
+  styleUrls: ['./conjugation-impersonal.component.scss'],
+  standalone: false,
 })
 export class ConjugationImpersonalComponent implements OnInit {
   @Input() public form1;
@@ -15,7 +15,9 @@ export class ConjugationImpersonalComponent implements OnInit {
 
   @Input() public form4;
 
-  @Input() public searchString?: string
+  @Input() public form5;
+
+  @Input() public searchString?: string;
 
   constructor() {}
 
@@ -23,8 +25,10 @@ export class ConjugationImpersonalComponent implements OnInit {
 
   public replaceComma(input: string) {
     const items = input.split(/[,|\n]/);
-    return items.map(e => {
-      return e.trim();
-    }).join("<br>")
+    return items
+      .map((e) => {
+        return e.trim();
+      })
+      .join('<br>');
   }
 }

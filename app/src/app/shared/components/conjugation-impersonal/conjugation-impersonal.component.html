@@ -19,4 +19,9 @@
       <td [innerHtml]="replaceComma(form4) | highlight: searchString"></td>
     </tr>
   }
+  @if (form5) {
+    <tr>
+      <td [innerHtml]="replaceComma(form5) | highlight: searchString"></td>
+    </tr>
+  }
 </table>

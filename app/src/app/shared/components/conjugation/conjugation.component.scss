@@ -2,10 +2,16 @@ h1 {
   margin-left: 22px;
 }
 
-ion-grid {
+.conj-grid {
   margin-left: 12px;
   margin-right: 12px;
   margin-bottom: 36px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.conj-full {
+  grid-column: 1 / -1;
 }
 
 .verb-annotation {
@@ -15,13 +21,8 @@ ion-grid {
 }
 
 @media only screen and (min-width: 768px) {
-  ion-row {
-    ion-col:first-of-type {
-      padding-right: 24px;
-    }
-
-    ion-col:last-of-type {
-      padding-left: 24px;
-    }
+  .conj-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
   }
 }

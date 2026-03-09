@@ -88,7 +88,15 @@
     "FUTUR_TENSE": "Futur",
     "IMPERATIVE": "Imperativ",
     "GERUND": "Gerundi",
-    "LINK_SURSILVAN": "Glistas da verbs sursilvanas pli detagliadas sco PDF sin |www.liarumantscha.ch|."
+    "SUBJUNCTIVE_IMPERFECT": "Conjunctiv imperfect",
+    "CONDITIONAL_INDIRECT": "Cundiziunal indirect",
+    "FUTURE_DUBITATIVE": "Futur dubitativ",
+    "ENCLITIC": "Enclitic",
+    "ENCLITIC_PRESENT": "Enclitic preschent",
+    "ENCLITIC_PAST": "Enclitic imperfect",
+    "ENCLITIC_CONDITIONAL": "Enclitic cundiziunal",
+    "ENCLITIC_FUTURE": "Enclitic futur",
+    "ENCLITIC_FUTURE_DUBITATIVE": "Enclitic futur dubitativ"
   },
   "LABELS": {
     "OK": "OK",

@@ -88,7 +88,15 @@
     "FUTUR_TENSE": "Futur",
     "IMPERATIVE": "Imperativ",
     "GERUND": "Gerundium",
-    "LINK_SURSILVAN": "Ausführlichere Verbenlisten des Surselvischen als PDF auf |www.liarumantscha.ch|."
+    "SUBJUNCTIVE_IMPERFECT": "Konjunktiv Imperfekt",
+    "CONDITIONAL_INDIRECT": "Konditional Indirekt",
+    "FUTURE_DUBITATIVE": "Futur Dubitativ",
+    "ENCLITIC": "Enklitisch",
+    "ENCLITIC_PRESENT": "Enklitisch Präsens",
+    "ENCLITIC_PAST": "Enklitisch Imperfekt",
+    "ENCLITIC_CONDITIONAL": "Enklitisch Konditional",
+    "ENCLITIC_FUTURE": "Enklitisch Futur",
+    "ENCLITIC_FUTURE_DUBITATIVE": "Enklitisch Futur Dubitativ"
   },
   "LABELS": {
     "OK": "OK",
