@@ -57,7 +57,7 @@
 <ion-content [fullscreen]="true">
   @if (pleds.length > 0) {
     <ion-list>
-      @for (pled of pleds; track pled) {
+      @for (pled of pleds; track pled.id) {
         <app-lemma-display [lemma]="pled" [searchString]="searchString" [searchDirection]="searchDirection"
         [dictionary]="selectedDictionary" (changeSearchTerm)="changeSearchTerm($event)"></app-lemma-display>
       }
