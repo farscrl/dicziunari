@@ -7,15 +7,18 @@
             <app-result-text [text]="lemma.DStichwort" [flex]="lemma.DFlex" [grammar]="dGramm"
                              [semantics]="lemma.DSempraez" [searchString]="searchString" (changeSearchTerm)="changeTerm($event)"></app-result-text>
           </ion-col>
-          <ion-col [size]="hasInflection ? 5 : 6">
+          <ion-col [size]="rmColSize" class="rm-col">
             <app-result-text [text]="lemma.RStichwort" [flex]="lemma.RFlex" [grammar]="rGramm"
                              [semantics]="lemma.RSempraez" [searchString]="searchDirection === 'both' ? searchString : ''" (changeSearchTerm)="changeTerm($event)">
             </app-result-text>
+            @if (hasPronunciation) {
+              <app-audio-player [url]="lemma.RPronunciation"></app-audio-player>
+            }
           </ion-col>
           @if (hasInflection) {
             <ion-col size="1" (click)="goToDetail()" class="verb">
               <div>
-                <ion-icon src="assets/icon/verb.svg" size="large"></ion-icon>
+                <ion-icon src="assets/icon/info.svg" size="large"></ion-icon>
               </div>
             </ion-col>
           }
@@ -23,14 +26,17 @@
       }
       @if ((searchDirection === 'fromRm') || (searchDirection === 'both' && selectedLocale === 'rm')) {
         <ion-row>
-          <ion-col [size]="hasInflection ? 5 : 6">
+          <ion-col [size]="rmColSize" class="rm-col">
             <app-result-text [text]="lemma.RStichwort" [flex]="lemma.RFlex" [grammar]="rGramm"
                              [semantics]="lemma.RSempraez" [searchString]="searchString" (changeSearchTerm)="changeTerm($event)"></app-result-text>
+            @if (hasPronunciation) {
+              <app-audio-player [url]="lemma.RPronunciation"></app-audio-player>
+            }
           </ion-col>
           @if (hasInflection) {
             <ion-col size="1" (click)="goToDetail()" class="verb">
               <div>
-                <ion-icon src="assets/icon/verb.svg" size="large"></ion-icon>
+                <ion-icon src="assets/icon/info.svg" size="large"></ion-icon>
               </div>
             </ion-col>
           }

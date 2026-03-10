@@ -1,0 +1,26 @@
+.icon-container {
+  display: inline-block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+
+  ion-icon {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    &.hidden {
+      opacity: 0;
+      transform: scale(0.7) rotate(-90deg);
+      pointer-events: none;
+    }
+
+    &:not(.hidden) {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+  }
+}

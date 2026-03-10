@@ -1,0 +1,6 @@
+<div class="icon-container">
+  <ion-icon src="assets/icon/play.svg" [class.hidden]="isPlaying" (click)="play()"></ion-icon>
+  <ion-icon src="assets/icon/stop.svg" [class.hidden]="!isPlaying" (click)="pause()"></ion-icon>
+</div>
+
+<audio #audioControl></audio>
