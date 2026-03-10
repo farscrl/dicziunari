@@ -58,7 +58,7 @@ export class QueryUtil {
     searchMode: SearchMode,
     lemma: string,
   ): string {
-    const cols = 'id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, preschentsing1, preschentsing3';
+    const cols = 'id, RStichwort, DStichwort, RGenus, DGenus, RSempraez, DSempraez, inflectiontype';
     const rx = this.getRegexTerm(searchMode, lemma);
     const lc = lemma.toLowerCase();
     const uc = this.firstLetterUppercase(lemma);

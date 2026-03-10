@@ -1,232 +1,279 @@
-<h1>{{ (lemma && lemma.infinitiv) ? lemma.infinitiv : '' }}</h1>
+<h1>{{ lemma?.inflectiontype === 'VERB' ? lemma.infinitiv : lemma?.inflectiontype === 'NOUN' ? lemma.nounbaseform : lemma?.inflectiontype === 'ADJECTIVE' ? lemma.adjectivebaseform : '' }}</h1>
 
 @if (lemma) {
-  <div class="conj-grid">
-
-    <div>
-      <h3>{{ 'CONJUGATION.PRESENT_TENSE' | translate }}</h3>
-      <p>
-        <app-conjugation-personal
-          [searchString]="searchString"
-          [sing1]="lemma.preschentsing1" [sing1Pronoun]="pronouns.preschentsing1"
-          [sing2]="lemma.preschentsing2" [sing2Pronoun]="pronouns.preschentsing2"
-          [sing3]="lemma.preschentsing3" [sing3Pronoun]="pronouns.preschentsing3"
-          [plural1]="lemma.preschentplural1" [plural1Pronoun]="pronouns.preschentplural1"
-          [plural2]="lemma.preschentplural2" [plural2Pronoun]="pronouns.preschentplural2"
-          [plural3]="lemma.preschentplural3" [plural3Pronoun]="pronouns.preschentplural3">
-        </app-conjugation-personal>
-      </p>
-    </div>
-
-    <div>
-      <h2>{{ 'CONJUGATION.PAST_TENSE' | translate }}</h2>
-      <app-conjugation-personal
-        [searchString]="searchString"
-        [sing1]="lemma.imperfectsing1" [sing1Pronoun]="pronouns.imperfectsing1"
-        [sing2]="lemma.imperfectsing2" [sing2Pronoun]="pronouns.imperfectsing2"
-        [sing3]="lemma.imperfectsing3" [sing3Pronoun]="pronouns.imperfectsing3"
-        [plural1]="lemma.imperfectplural1" [plural1Pronoun]="pronouns.imperfectplural1"
-        [plural2]="lemma.imperfectplural2" [plural2Pronoun]="pronouns.imperfectplural2"
-        [plural3]="lemma.imperfectplural3" [plural3Pronoun]="pronouns.imperfectplural3">
-      </app-conjugation-personal>
-    </div>
-
-    <div>
-      <h2>{{ 'CONJUGATION.SUBJUNCTIVE' | translate }}</h2>
-      <app-conjugation-personal
-        [searchString]="searchString"
-        [sing1]="lemma.conjunctivsing1" [sing1Pronoun]="pronouns.conjunctivsing1"
-        [sing2]="lemma.conjunctivsing2" [sing2Pronoun]="pronouns.conjunctivsing2"
-        [sing3]="lemma.conjunctivsing3" [sing3Pronoun]="pronouns.conjunctivsing3"
-        [plural1]="lemma.conjunctivplural1" [plural1Pronoun]="pronouns.conjunctivplural1"
-        [plural2]="lemma.conjunctivplural2" [plural2Pronoun]="pronouns.conjunctivplural2"
-        [plural3]="lemma.conjunctivplural3" [plural3Pronoun]="pronouns.conjunctivplural3">
-      </app-conjugation-personal>
-    </div>
-
-    @if (dictionary === Dictionary.puter || dictionary === Dictionary.sursilv || dictionary === Dictionary.sutsilv || dictionary === Dictionary.vall) {
+  @if (lemma.inflectiontype === 'VERB') {
+    <div class="conj-grid">
       <div>
-        <h2>{{ 'CONJUGATION.SUBJUNCTIVE_IMPERFECT' | translate }}</h2>
-        <app-conjugation-personal
-          [searchString]="searchString"
-          [sing1]="lemma.conjunctivimperfectsing1" [sing1Pronoun]="pronouns.conjunctivimperfectsing1"
-          [sing2]="lemma.conjunctivimperfectsing2" [sing2Pronoun]="pronouns.conjunctivimperfectsing2"
-          [sing3]="lemma.conjunctivimperfectsing3" [sing3Pronoun]="pronouns.conjunctivimperfectsing3"
-          [plural1]="lemma.conjunctivimperfectplural1" [plural1Pronoun]="pronouns.conjunctivimperfectplural1"
-          [plural2]="lemma.conjunctivimperfectplural2" [plural2Pronoun]="pronouns.conjunctivimperfectplural2"
-          [plural3]="lemma.conjunctivimperfectplural3" [plural3Pronoun]="pronouns.conjunctivimperfectplural3">
-        </app-conjugation-personal>
-      </div>
-    }
-
-    <div>
-      <h2>{{ 'CONJUGATION.CONDITIONAL' | translate }}</h2>
-      <app-conjugation-personal
-        [searchString]="searchString"
-        [sing1]="lemma.cundizionalsing1" [sing1Pronoun]="pronouns.cundizionalsing1"
-        [sing2]="lemma.cundizionalsing2" [sing2Pronoun]="pronouns.cundizionalsing2"
-        [sing3]="lemma.cundizionalsing3" [sing3Pronoun]="pronouns.cundizionalsing3"
-        [plural1]="lemma.cundizionalplural1" [plural1Pronoun]="pronouns.cundizionalplural1"
-        [plural2]="lemma.cundizionalplural2" [plural2Pronoun]="pronouns.cundizionalplural2"
-        [plural3]="lemma.cundizionalplural3" [plural3Pronoun]="pronouns.cundizionalplural3">
-      </app-conjugation-personal>
-    </div>
-
-    @if (dictionary === Dictionary.sursilv || dictionary === Dictionary.sutsilv) {
-      <div>
-        <h2>{{ 'CONJUGATION.CONDITIONAL_INDIRECT' | translate }}</h2>
-        <app-conjugation-personal
-          [searchString]="searchString"
-          [sing1]="lemma.cundizionalindirectsing1" [sing1Pronoun]="pronouns.cundizionalindirectsing1"
-          [sing2]="lemma.cundizionalindirectsing2" [sing2Pronoun]="pronouns.cundizionalindirectsing2"
-          [sing3]="lemma.cundizionalindirectsing3" [sing3Pronoun]="pronouns.cundizionalindirectsing3"
-          [plural1]="lemma.cundizionalindirectplural1" [plural1Pronoun]="pronouns.cundizionalindirectplural1"
-          [plural2]="lemma.cundizionalindirectplural2" [plural2Pronoun]="pronouns.cundizionalindirectplural2"
-          [plural3]="lemma.cundizionalindirectplural3" [plural3Pronoun]="pronouns.cundizionalindirectplural3">
-        </app-conjugation-personal>
-      </div>
-    }
-
-    <div>
-      <h2>{{ 'CONJUGATION.FUTUR_TENSE' | translate }}</h2>
-      <app-conjugation-personal
-        [searchString]="searchString"
-        [sing1]="lemma.futursing1" [sing1Pronoun]="pronouns.futursing1"
-        [sing2]="lemma.futursing2" [sing2Pronoun]="pronouns.futursing2"
-        [sing3]="lemma.futursing3" [sing3Pronoun]="pronouns.futursing3"
-        [plural1]="lemma.futurplural1" [plural1Pronoun]="pronouns.futurplural1"
-        [plural2]="lemma.futurplural2" [plural2Pronoun]="pronouns.futurplural2"
-        [plural3]="lemma.futurplural3" [plural3Pronoun]="pronouns.futurplural3">
-      </app-conjugation-personal>
-    </div>
-
-    @if (dictionary === Dictionary.puter) {
-      <div>
-        <h2>{{ 'CONJUGATION.FUTURE_DUBITATIVE' | translate }}</h2>
-        <app-conjugation-personal
-          [searchString]="searchString"
-          [sing1]="lemma.futurdubitativsing1" [sing1Pronoun]="pronouns.futurdubitativsing1"
-          [sing2]="lemma.futurdubitativsing2" [sing2Pronoun]="pronouns.futurdubitativsing2"
-          [sing3]="lemma.futurdubitativsing3" [sing3Pronoun]="pronouns.futurdubitativsing3"
-          [plural1]="lemma.futurdubitativplural1" [plural1Pronoun]="pronouns.futurdubitativplural1"
-          [plural2]="lemma.futurdubitativplural2" [plural2Pronoun]="pronouns.futurdubitativplural2"
-          [plural3]="lemma.futurdubitativplural3" [plural3Pronoun]="pronouns.futurdubitativplural3">
-        </app-conjugation-personal>
-      </div>
-    }
-
-    <div>
-      <h2>{{ 'CONJUGATION.PAST_PARTICIPLE' | translate }}</h2>
-      <app-conjugation-impersonal
-        [searchString]="searchString"
-        [form1]="lemma.participperfectms"
-        [form2]="lemma.participperfectfs"
-        [form3]="lemma.participperfectmp"
-        [form4]="lemma.participperfectfp"
-        [form5]="lemma.participperfectmspredicativ">
-      </app-conjugation-impersonal>
-    </div>
-
-    <div>
-      <h2>{{ 'CONJUGATION.IMPERATIVE' | translate }}</h2>
-      <app-conjugation-impersonal
-        [searchString]="searchString"
-        [form1]="lemma.imperativ1"
-        [form2]="lemma.imperativ2">
-      </app-conjugation-impersonal>
-      @if (dictionary === Dictionary.puter || dictionary === Dictionary.vall) {
-        <app-conjugation-impersonal
-          [searchString]="searchString"
-          [form1]="lemma.imperativ3"
-          [form2]="lemma.imperativ4"
-          [form3]="lemma.imperativ5"
-          [form4]="lemma.imperativ6">
-        </app-conjugation-impersonal>
-      }
-    </div>
-
-    <div>
-      <h2>{{ 'CONJUGATION.GERUND' | translate }}</h2>
-      <app-conjugation-impersonal
-        [searchString]="searchString"
-        [form1]="lemma.gerundium">
-      </app-conjugation-impersonal>
-    </div>
-
-    @if (dictionary === Dictionary.puter || dictionary === Dictionary.surm || dictionary === Dictionary.sutsilv || dictionary === Dictionary.vall) {
-      <div class="conj-full">
-        <h2>{{ 'CONJUGATION.ENCLITIC' | translate }}</h2>
-      </div>
-
-      <div>
-        <h3>{{ 'CONJUGATION.ENCLITIC_PRESENT' | translate }}</h3>
-        <app-conjugation-personal
-          [searchString]="searchString"
-          [sing1]="lemma.preschentencliticsing1"
-          [sing2]="lemma.preschentencliticsing2"
-          [sing3]="enclSing3(lemma.preschentencliticsing3m, lemma.preschentencliticsing3f)"
-          [plural1]="lemma.preschentencliticplural1"
-          [plural2]="lemma.preschentencliticplural2"
-          [plural3]="lemma.preschentencliticplural3">
-        </app-conjugation-personal>
-      </div>
-
-      <div>
-        <h3>{{ 'CONJUGATION.ENCLITIC_PAST' | translate }}</h3>
-        <app-conjugation-personal
-          [searchString]="searchString"
-          [sing1]="lemma.imperfectencliticsing1"
-          [sing2]="lemma.imperfectencliticsing2"
-          [sing3]="enclSing3(lemma.imperfectencliticsing3m, lemma.imperfectencliticsing3f)"
-          [plural1]="lemma.imperfectencliticplural1"
-          [plural2]="lemma.imperfectencliticplural2"
-          [plural3]="lemma.imperfectencliticplural3">
-        </app-conjugation-personal>
-      </div>
-
-      <div>
-        <h3>{{ 'CONJUGATION.ENCLITIC_CONDITIONAL' | translate }}</h3>
-        <app-conjugation-personal
-          [searchString]="searchString"
-          [sing1]="lemma.cundizionalencliticsing1"
-          [sing2]="lemma.cundizionalencliticsing2"
-          [sing3]="enclSing3(lemma.cundizionalencliticsing3m, lemma.cundizionalencliticsing3f)"
-          [plural1]="lemma.cundizionalencliticplural1"
-          [plural2]="lemma.cundizionalencliticplural2"
-          [plural3]="lemma.cundizionalencliticplural3">
-        </app-conjugation-personal>
-      </div>
-
-      @if (dictionary === Dictionary.puter || dictionary === Dictionary.surm || dictionary === Dictionary.vall) {
-        <div>
-          <h3>{{ 'CONJUGATION.ENCLITIC_FUTURE' | translate }}</h3>
+        <h3>{{ 'CONJUGATION.PRESENT_TENSE' | translate }}</h3>
+        <p>
           <app-conjugation-personal
             [searchString]="searchString"
-            [sing1]="lemma.futurencliticsing1"
-            [sing2]="lemma.futurencliticsing2"
-            [sing3]="enclSing3(lemma.futurencliticsing3m, lemma.futurencliticsing3f)"
-            [plural1]="lemma.futurencliticplural1"
-            [plural2]="lemma.futurencliticplural2"
-            [plural3]="lemma.futurencliticplural3">
+            [sing1]="lemma.preschentsing1" [sing1Pronoun]="pronouns.preschentsing1"
+            [sing2]="lemma.preschentsing2" [sing2Pronoun]="pronouns.preschentsing2"
+            [sing3]="lemma.preschentsing3" [sing3Pronoun]="pronouns.preschentsing3"
+            [plural1]="lemma.preschentplural1" [plural1Pronoun]="pronouns.preschentplural1"
+            [plural2]="lemma.preschentplural2" [plural2Pronoun]="pronouns.preschentplural2"
+            [plural3]="lemma.preschentplural3" [plural3Pronoun]="pronouns.preschentplural3">
+          </app-conjugation-personal>
+        </p>
+      </div>
+
+      <div>
+        <h2>{{ 'CONJUGATION.PAST_TENSE' | translate }}</h2>
+        <app-conjugation-personal
+          [searchString]="searchString"
+          [sing1]="lemma.imperfectsing1" [sing1Pronoun]="pronouns.imperfectsing1"
+          [sing2]="lemma.imperfectsing2" [sing2Pronoun]="pronouns.imperfectsing2"
+          [sing3]="lemma.imperfectsing3" [sing3Pronoun]="pronouns.imperfectsing3"
+          [plural1]="lemma.imperfectplural1" [plural1Pronoun]="pronouns.imperfectplural1"
+          [plural2]="lemma.imperfectplural2" [plural2Pronoun]="pronouns.imperfectplural2"
+          [plural3]="lemma.imperfectplural3" [plural3Pronoun]="pronouns.imperfectplural3">
+        </app-conjugation-personal>
+      </div>
+
+      <div>
+        <h2>{{ 'CONJUGATION.SUBJUNCTIVE' | translate }}</h2>
+        <app-conjugation-personal
+          [searchString]="searchString"
+          [sing1]="lemma.conjunctivsing1" [sing1Pronoun]="pronouns.conjunctivsing1"
+          [sing2]="lemma.conjunctivsing2" [sing2Pronoun]="pronouns.conjunctivsing2"
+          [sing3]="lemma.conjunctivsing3" [sing3Pronoun]="pronouns.conjunctivsing3"
+          [plural1]="lemma.conjunctivplural1" [plural1Pronoun]="pronouns.conjunctivplural1"
+          [plural2]="lemma.conjunctivplural2" [plural2Pronoun]="pronouns.conjunctivplural2"
+          [plural3]="lemma.conjunctivplural3" [plural3Pronoun]="pronouns.conjunctivplural3">
+        </app-conjugation-personal>
+      </div>
+
+      @if (dictionary === Dictionary.puter || dictionary === Dictionary.sursilv || dictionary === Dictionary.sutsilv || dictionary === Dictionary.vall) {
+        <div>
+          <h2>{{ 'CONJUGATION.SUBJUNCTIVE_IMPERFECT' | translate }}</h2>
+          <app-conjugation-personal
+            [searchString]="searchString"
+            [sing1]="lemma.conjunctivimperfectsing1" [sing1Pronoun]="pronouns.conjunctivimperfectsing1"
+            [sing2]="lemma.conjunctivimperfectsing2" [sing2Pronoun]="pronouns.conjunctivimperfectsing2"
+            [sing3]="lemma.conjunctivimperfectsing3" [sing3Pronoun]="pronouns.conjunctivimperfectsing3"
+            [plural1]="lemma.conjunctivimperfectplural1" [plural1Pronoun]="pronouns.conjunctivimperfectplural1"
+            [plural2]="lemma.conjunctivimperfectplural2" [plural2Pronoun]="pronouns.conjunctivimperfectplural2"
+            [plural3]="lemma.conjunctivimperfectplural3" [plural3Pronoun]="pronouns.conjunctivimperfectplural3">
           </app-conjugation-personal>
         </div>
       }
+
+      <div>
+        <h2>{{ 'CONJUGATION.CONDITIONAL' | translate }}</h2>
+        <app-conjugation-personal
+          [searchString]="searchString"
+          [sing1]="lemma.cundizionalsing1" [sing1Pronoun]="pronouns.cundizionalsing1"
+          [sing2]="lemma.cundizionalsing2" [sing2Pronoun]="pronouns.cundizionalsing2"
+          [sing3]="lemma.cundizionalsing3" [sing3Pronoun]="pronouns.cundizionalsing3"
+          [plural1]="lemma.cundizionalplural1" [plural1Pronoun]="pronouns.cundizionalplural1"
+          [plural2]="lemma.cundizionalplural2" [plural2Pronoun]="pronouns.cundizionalplural2"
+          [plural3]="lemma.cundizionalplural3" [plural3Pronoun]="pronouns.cundizionalplural3">
+        </app-conjugation-personal>
+      </div>
+
+      @if (dictionary === Dictionary.sursilv || dictionary === Dictionary.sutsilv) {
+        <div>
+          <h2>{{ 'CONJUGATION.CONDITIONAL_INDIRECT' | translate }}</h2>
+          <app-conjugation-personal
+            [searchString]="searchString"
+            [sing1]="lemma.cundizionalindirectsing1" [sing1Pronoun]="pronouns.cundizionalindirectsing1"
+            [sing2]="lemma.cundizionalindirectsing2" [sing2Pronoun]="pronouns.cundizionalindirectsing2"
+            [sing3]="lemma.cundizionalindirectsing3" [sing3Pronoun]="pronouns.cundizionalindirectsing3"
+            [plural1]="lemma.cundizionalindirectplural1" [plural1Pronoun]="pronouns.cundizionalindirectplural1"
+            [plural2]="lemma.cundizionalindirectplural2" [plural2Pronoun]="pronouns.cundizionalindirectplural2"
+            [plural3]="lemma.cundizionalindirectplural3" [plural3Pronoun]="pronouns.cundizionalindirectplural3">
+          </app-conjugation-personal>
+        </div>
+      }
+
+      <div>
+        <h2>{{ 'CONJUGATION.FUTUR_TENSE' | translate }}</h2>
+        <app-conjugation-personal
+          [searchString]="searchString"
+          [sing1]="lemma.futursing1" [sing1Pronoun]="pronouns.futursing1"
+          [sing2]="lemma.futursing2" [sing2Pronoun]="pronouns.futursing2"
+          [sing3]="lemma.futursing3" [sing3Pronoun]="pronouns.futursing3"
+          [plural1]="lemma.futurplural1" [plural1Pronoun]="pronouns.futurplural1"
+          [plural2]="lemma.futurplural2" [plural2Pronoun]="pronouns.futurplural2"
+          [plural3]="lemma.futurplural3" [plural3Pronoun]="pronouns.futurplural3">
+        </app-conjugation-personal>
+      </div>
 
       @if (dictionary === Dictionary.puter) {
         <div>
-          <h3>{{ 'CONJUGATION.ENCLITIC_FUTURE_DUBITATIVE' | translate }}</h3>
+          <h2>{{ 'CONJUGATION.FUTURE_DUBITATIVE' | translate }}</h2>
           <app-conjugation-personal
             [searchString]="searchString"
-            [sing1]="lemma.futurdubitativencliticsing1"
-            [sing2]="lemma.futurdubitativencliticsing2"
-            [sing3]="enclSing3(lemma.futurdubitativencliticsing3m, lemma.futurdubitativencliticsing3f)"
-            [plural1]="lemma.futurdubitativencliticplural1"
-            [plural2]="lemma.futurdubitativencliticplural2"
-            [plural3]="lemma.futurdubitativencliticplural3">
+            [sing1]="lemma.futurdubitativsing1" [sing1Pronoun]="pronouns.futurdubitativsing1"
+            [sing2]="lemma.futurdubitativsing2" [sing2Pronoun]="pronouns.futurdubitativsing2"
+            [sing3]="lemma.futurdubitativsing3" [sing3Pronoun]="pronouns.futurdubitativsing3"
+            [plural1]="lemma.futurdubitativplural1" [plural1Pronoun]="pronouns.futurdubitativplural1"
+            [plural2]="lemma.futurdubitativplural2" [plural2Pronoun]="pronouns.futurdubitativplural2"
+            [plural3]="lemma.futurdubitativplural3" [plural3Pronoun]="pronouns.futurdubitativplural3">
           </app-conjugation-personal>
         </div>
       }
-    }
 
-  </div>
+      <div>
+        <h2>{{ 'CONJUGATION.PAST_PARTICIPLE' | translate }}</h2>
+        <app-conjugation-impersonal
+          [searchString]="searchString"
+          [form1]="lemma.participperfectms"
+          [form2]="lemma.participperfectfs"
+          [form3]="lemma.participperfectmp"
+          [form4]="lemma.participperfectfp"
+          [form5]="lemma.participperfectmspredicativ">
+        </app-conjugation-impersonal>
+      </div>
+
+      <div>
+        <h2>{{ 'CONJUGATION.IMPERATIVE' | translate }}</h2>
+        <app-conjugation-impersonal
+          [searchString]="searchString"
+          [form1]="lemma.imperativ1"
+          [form2]="lemma.imperativ2">
+        </app-conjugation-impersonal>
+        @if (dictionary === Dictionary.puter || dictionary === Dictionary.vall) {
+          <app-conjugation-impersonal
+            [searchString]="searchString"
+            [form1]="lemma.imperativ3"
+            [form2]="lemma.imperativ4"
+            [form3]="lemma.imperativ5"
+            [form4]="lemma.imperativ6">
+          </app-conjugation-impersonal>
+        }
+      </div>
+
+      <div>
+        <h2>{{ 'CONJUGATION.GERUND' | translate }}</h2>
+        <app-conjugation-impersonal
+          [searchString]="searchString"
+          [form1]="lemma.gerundium">
+        </app-conjugation-impersonal>
+      </div>
+
+      @if (dictionary === Dictionary.puter || dictionary === Dictionary.surm || dictionary === Dictionary.sutsilv || dictionary === Dictionary.vall) {
+        <div class="conj-full">
+          <h2>{{ 'CONJUGATION.ENCLITIC' | translate }}</h2>
+        </div>
+
+        <div>
+          <h3>{{ 'CONJUGATION.ENCLITIC_PRESENT' | translate }}</h3>
+          <app-conjugation-personal
+            [searchString]="searchString"
+            [sing1]="lemma.preschentencliticsing1"
+            [sing2]="lemma.preschentencliticsing2"
+            [sing3]="enclSing3(lemma.preschentencliticsing3m, lemma.preschentencliticsing3f)"
+            [plural1]="lemma.preschentencliticplural1"
+            [plural2]="lemma.preschentencliticplural2"
+            [plural3]="lemma.preschentencliticplural3">
+          </app-conjugation-personal>
+        </div>
+
+        <div>
+          <h3>{{ 'CONJUGATION.ENCLITIC_PAST' | translate }}</h3>
+          <app-conjugation-personal
+            [searchString]="searchString"
+            [sing1]="lemma.imperfectencliticsing1"
+            [sing2]="lemma.imperfectencliticsing2"
+            [sing3]="enclSing3(lemma.imperfectencliticsing3m, lemma.imperfectencliticsing3f)"
+            [plural1]="lemma.imperfectencliticplural1"
+            [plural2]="lemma.imperfectencliticplural2"
+            [plural3]="lemma.imperfectencliticplural3">
+          </app-conjugation-personal>
+        </div>
+
+        <div>
+          <h3>{{ 'CONJUGATION.ENCLITIC_CONDITIONAL' | translate }}</h3>
+          <app-conjugation-personal
+            [searchString]="searchString"
+            [sing1]="lemma.cundizionalencliticsing1"
+            [sing2]="lemma.cundizionalencliticsing2"
+            [sing3]="enclSing3(lemma.cundizionalencliticsing3m, lemma.cundizionalencliticsing3f)"
+            [plural1]="lemma.cundizionalencliticplural1"
+            [plural2]="lemma.cundizionalencliticplural2"
+            [plural3]="lemma.cundizionalencliticplural3">
+          </app-conjugation-personal>
+        </div>
+
+        @if (dictionary === Dictionary.puter || dictionary === Dictionary.surm || dictionary === Dictionary.vall) {
+          <div>
+            <h3>{{ 'CONJUGATION.ENCLITIC_FUTURE' | translate }}</h3>
+            <app-conjugation-personal
+              [searchString]="searchString"
+              [sing1]="lemma.futurencliticsing1"
+              [sing2]="lemma.futurencliticsing2"
+              [sing3]="enclSing3(lemma.futurencliticsing3m, lemma.futurencliticsing3f)"
+              [plural1]="lemma.futurencliticplural1"
+              [plural2]="lemma.futurencliticplural2"
+              [plural3]="lemma.futurencliticplural3">
+            </app-conjugation-personal>
+          </div>
+        }
+
+        @if (dictionary === Dictionary.puter) {
+          <div>
+            <h3>{{ 'CONJUGATION.ENCLITIC_FUTURE_DUBITATIVE' | translate }}</h3>
+            <app-conjugation-personal
+              [searchString]="searchString"
+              [sing1]="lemma.futurdubitativencliticsing1"
+              [sing2]="lemma.futurdubitativencliticsing2"
+              [sing3]="enclSing3(lemma.futurdubitativencliticsing3m, lemma.futurdubitativencliticsing3f)"
+              [plural1]="lemma.futurdubitativencliticplural1"
+              [plural2]="lemma.futurdubitativencliticplural2"
+              [plural3]="lemma.futurdubitativencliticplural3">
+            </app-conjugation-personal>
+          </div>
+        }
+      }
+
+    </div>
+  }
+
+  @if (lemma.inflectiontype === 'NOUN') {
+    <div class="inflection-section">
+      <h2>{{ 'INFLECTION.NOUN_TITLE' | translate }}</h2>
+      <table class="inflection-table">
+        <tr>
+          <td></td>
+          <th>{{ 'INFLECTION.MASCULINE' | translate }}</th>
+          <th>{{ 'INFLECTION.FEMININE' | translate }}</th>
+        </tr>
+        <tr>
+          <th>{{ 'INFLECTION.SINGULAR' | translate }}</th>
+          <td>{{ lemma.nounmsingular }}</td>
+          <td>{{ lemma.nounfsingular }}</td>
+        </tr>
+        <tr>
+          <th>{{ 'INFLECTION.PLURAL' | translate }}</th>
+          <td>{{ lemma.nounmplural }}</td>
+          <td>{{ lemma.nounfplural }}</td>
+        </tr>
+      </table>
+    </div>
+  }
+
+  @if (lemma.inflectiontype === 'ADJECTIVE') {
+    <div class="inflection-section">
+      <h2>{{ 'INFLECTION.ADJECTIVE_TITLE' | translate }}</h2>
+      <table class="inflection-table">
+        <tr>
+          <td></td>
+          <th>{{ 'INFLECTION.MASCULINE' | translate }}</th>
+          <th>{{ 'INFLECTION.FEMININE' | translate }}</th>
+        </tr>
+        <tr>
+          <th>{{ 'INFLECTION.SINGULAR' | translate }}</th>
+          <td>{{ lemma.adjectivemsingular }}</td>
+          <td>{{ lemma.adjectivefsingular }}</td>
+        </tr>
+        <tr>
+          <th>{{ 'INFLECTION.PLURAL' | translate }}</th>
+          <td>{{ lemma.adjectivemplural }}</td>
+          <td>{{ lemma.adjectivefplural }}</td>
+        </tr>
+      </table>
+    </div>
+  }
 }

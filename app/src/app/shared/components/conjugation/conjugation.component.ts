@@ -38,7 +38,9 @@ export class ConjugationComponent implements OnInit, OnChanges {
     if (!changes.lemma || !changes.lemma.currentValue) {
       return;
     }
-    this.definePronouns();
+    if (this.lemma.inflectiontype === 'VERB') {
+      this.definePronouns();
+    }
   }
 
   private definePronouns() {

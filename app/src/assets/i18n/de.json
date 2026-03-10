@@ -98,6 +98,14 @@
     "ENCLITIC_FUTURE": "Enklitisch Futur",
     "ENCLITIC_FUTURE_DUBITATIVE": "Enklitisch Futur Dubitativ"
   },
+  "INFLECTION": {
+    "NOUN_TITLE": "Formen des Substantivs",
+    "ADJECTIVE_TITLE": "Formen des Adjektivs",
+    "MASCULINE": "Maskulin",
+    "FEMININE": "Feminin",
+    "SINGULAR": "Singular",
+    "PLURAL": "Plural"
+  },
   "LABELS": {
     "OK": "OK",
     "CANCEL": "Abbrechen"

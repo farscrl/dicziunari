@@ -20,6 +20,34 @@ h1 {
   margin-top: 24px;
 }
 
+.inflection-section {
+  margin: 12px 22px 36px;
+
+  h2 {
+    margin-bottom: 16px;
+  }
+}
+
+.inflection-table {
+  border-collapse: collapse;
+
+  th {
+    font-weight: normal;
+    padding: 4px 32px 4px 0;
+    vertical-align: top;
+  }
+
+  td {
+    padding: 4px 32px 4px 0;
+    vertical-align: top;
+  }
+
+  tr:first-child th,
+  tr:first-child td {
+    padding-bottom: 12px;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .conj-grid {
     grid-template-columns: 1fr 1fr;

@@ -128,8 +128,9 @@ export class LemmaDisplayComponent implements OnInit, OnDestroy {
     return this.dictionary === Dictionary.sursilv;
   }
 
-  get isVerb() {
-    return !!this.lemma.preschentsing3 || !!this.lemma.preschentsing1;
+  get hasInflection() {
+    // we need to keep the test on preschentsing1/preschentsing3 for backwards compatibility with sursilvan favorites
+    return !!this.lemma.inflectiontype || !!this.lemma.preschentsing3 || !!this.lemma.preschentsing1;
   }
 
   get dGramm() {

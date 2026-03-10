@@ -98,6 +98,14 @@
     "ENCLITIC_FUTURE": "Enclitic futur",
     "ENCLITIC_FUTURE_DUBITATIVE": "Enclitic futur dubitativ"
   },
+  "INFLECTION": {
+    "NOUN_TITLE": "Furmas dal substantiv",
+    "ADJECTIVE_TITLE": "Furmas da l'adjectiv",
+    "MASCULINE": "masculin",
+    "FEMININE": "feminin",
+    "SINGULAR": "singular",
+    "PLURAL": "plural"
+  },
   "LABELS": {
     "OK": "OK",
     "CANCEL": "Interrumper"
