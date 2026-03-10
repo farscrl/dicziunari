@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { App } from '@capacitor/app';
 import { Capacitor } from '@capacitor/core';
 import { Subscription } from 'rxjs';
@@ -14,13 +14,13 @@ import { TranslatePipe } from '@ngx-translate/core';
   imports: [IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent, TranslatePipe],
 })
 export class InfoPage implements OnInit {
+  private configService = inject(ConfigService);
+
   public appVersion = '-';
 
   public selectedLocale: Locale = Locale.rm;
 
   private localeSubscription: Subscription;
-
-  constructor(private configService: ConfigService) {}
 
   ngOnInit() {
     if (Capacitor.isNativePlatform()) {

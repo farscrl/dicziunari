@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ConfigService } from '../services/config.service';
@@ -6,8 +6,9 @@ import { ConfigService } from '../services/config.service';
 @Injectable({
   providedIn: 'root',
 })
-export class LocaleNotDefinedGuard  {
-  constructor(private configService: ConfigService, public router: Router) {}
+export class LocaleNotDefinedGuard {
+  private configService = inject(ConfigService);
+  router = inject(Router);
 
   canActivate(
     route: ActivatedRouteSnapshot,

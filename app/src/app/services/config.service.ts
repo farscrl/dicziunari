@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { LocalStorageService } from './local-storage.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Dictionary, Locale, SearchDirection, SearchMode } from 'src/data/search';
@@ -7,6 +7,8 @@ import { Dictionary, Locale, SearchDirection, SearchMode } from 'src/data/search
   providedIn: 'root',
 })
 export class ConfigService {
+  private localStorageService = inject(LocalStorageService);
+
   private localeSubject = new BehaviorSubject<Locale>(undefined);
 
   private dictionarySubject = new BehaviorSubject<Dictionary>(Dictionary.rumgrischun);
@@ -17,28 +19,28 @@ export class ConfigService {
 
   private includeVerbsSubject = new BehaviorSubject<boolean>(false);
 
-  constructor(private localStorageService: LocalStorageService) {
-    const locale = localStorageService.getItem('locale') as Locale;
+  constructor() {
+    const locale = this.localStorageService.getItem('locale') as Locale;
     if (locale) {
       this.localeSubject.next(locale);
     }
 
-    const dictionary = localStorageService.getItem('dictionary') as Dictionary;
+    const dictionary = this.localStorageService.getItem('dictionary') as Dictionary;
     if (dictionary) {
       this.dictionarySubject.next(dictionary);
     }
 
-    const searchDirection = localStorageService.getItem('searchDirection') as SearchDirection;
+    const searchDirection = this.localStorageService.getItem('searchDirection') as SearchDirection;
     if (searchDirection) {
       this.searchDirectionSubject.next(searchDirection);
     }
 
-    const searchMode = localStorageService.getItem('searchMode') as SearchMode;
+    const searchMode = this.localStorageService.getItem('searchMode') as SearchMode;
     if (searchMode) {
       this.searchModeSubject.next(searchMode);
     }
 
-    const includeVerbs = JSON.parse(localStorageService.getItem('includeVerbs')) as boolean;
+    const includeVerbs = JSON.parse(this.localStorageService.getItem('includeVerbs')) as boolean;
     if (includeVerbs) {
       this.includeVerbsSubject.next(includeVerbs);
     }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {
   IonContent,
   IonItem,
@@ -22,13 +22,11 @@ import { TranslatePipe } from '@ngx-translate/core';
   imports: [IonContent, IonItem, IonTitle, IonList, IonRadioGroup, IonLabel, IonRadio, FormsModule, TranslatePipe],
 })
 export class DictionaryModalComponent implements OnInit {
-  public selectedDictionary: Dictionary;
+  private configService = inject(ConfigService);
+  private modalController = inject(ModalController);
+  private config = inject(Config);
 
-  constructor(
-    private configService: ConfigService,
-    private modalController: ModalController,
-    private config: Config,
-  ) {}
+  public selectedDictionary: Dictionary;
 
   ngOnInit() {
     this.selectedDictionary = this.configService.getSelectedDictionary();

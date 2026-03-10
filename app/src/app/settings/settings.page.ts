@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { ConfigService } from '../services/config.service';
 import { TranslateService, TranslatePipe } from '@ngx-translate/core';
 import {
@@ -39,6 +39,11 @@ import { FormsModule } from '@angular/forms';
   ],
 })
 export class SettingsPage implements OnInit, OnDestroy {
+  private configService = inject(ConfigService);
+  private translateService = inject(TranslateService);
+  private navCtrl = inject(NavController);
+  private colorMode = inject(ColorModeService);
+
   appLanguage: Locale | undefined;
   searchMode: SearchMode;
   includeVerbs: boolean;
@@ -47,13 +52,6 @@ export class SettingsPage implements OnInit, OnDestroy {
 
   public colorModes: ColorMode[] = ['auto', 'dark', 'light'];
   public currentColorMode: ColorMode;
-
-  constructor(
-    private configService: ConfigService,
-    private translateService: TranslateService,
-    private navCtrl: NavController,
-    private colorMode: ColorModeService,
-  ) {}
 
   ngOnInit() {
     this.appLanguage = this.configService.getSelectedLocale();

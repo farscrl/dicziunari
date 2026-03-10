@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { ConfigService } from '../services/config.service';
 import {
@@ -52,6 +52,10 @@ import { TranslatePipe } from '@ngx-translate/core';
   ],
 })
 export class SearchPage implements OnInit, OnDestroy {
+  private searchService = inject(SearchService);
+  private configService = inject(ConfigService);
+  private modalController = inject(ModalController);
+
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
   @ViewChild(IonContent, { static: false }) private content: IonContent;
 
@@ -66,12 +70,6 @@ export class SearchPage implements OnInit, OnDestroy {
   private searchDirectionSubscription: Subscription;
   private searchModeSubscription: Subscription;
   private includeVerbsSubscription: Subscription;
-
-  constructor(
-    private searchService: SearchService,
-    private configService: ConfigService,
-    private modalController: ModalController,
-  ) {}
 
   ngOnInit() {
     this.selectedDictionary = this.configService.getSelectedDictionary();

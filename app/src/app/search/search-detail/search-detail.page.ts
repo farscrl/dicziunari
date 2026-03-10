@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { SearchService } from '../../services/search.service';
 import { Subscription } from 'rxjs';
@@ -15,6 +15,10 @@ import { TranslatePipe } from '@ngx-translate/core';
   imports: [IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent, ConjugationComponent, TranslatePipe],
 })
 export class SearchDetailPage implements OnInit, OnDestroy {
+  private route = inject(ActivatedRoute);
+  private searchService = inject(SearchService);
+  configService = inject(ConfigService);
+
   public id: string;
 
   public lemma;
@@ -23,12 +27,6 @@ export class SearchDetailPage implements OnInit, OnDestroy {
 
   private routeParamsSubscription: Subscription;
   private dictionarySubscription: Subscription;
-
-  constructor(
-    private route: ActivatedRoute,
-    private searchService: SearchService,
-    public configService: ConfigService,
-  ) {}
 
   ngOnInit() {
     this.routeParamsSubscription = this.route.params.subscribe((params: Params) => {

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy, inject } from '@angular/core';
 import { CopyService } from '../../../services/copy.service';
 import { SearchDirection, Locale, Dictionary } from 'src/data/search';
 import { Router } from '@angular/router';
@@ -27,6 +27,14 @@ import { ResultTextComponent } from '../result-text/result-text.component';
   imports: [IonItemSliding, IonItem, IonGrid, IonRow, IonCol, IonIcon, IonItemOptions, IonItemOption, ResultTextComponent],
 })
 export class LemmaDisplayComponent implements OnInit, OnDestroy {
+  private copyService = inject(CopyService);
+  private router = inject(Router);
+  private configService = inject(ConfigService);
+  private favouritesService = inject(FavouritesService);
+  private toastService = inject(ToastService);
+  private searchService = inject(SearchService);
+  private imageCreator = inject(ImageCreatorUtil);
+
   @Input()
   public lemma: any;
 
@@ -53,16 +61,6 @@ export class LemmaDisplayComponent implements OnInit, OnDestroy {
   public selectedLocale: Locale = Locale.rm;
 
   private localeSubscription: Subscription;
-
-  constructor(
-    private copyService: CopyService,
-    private router: Router,
-    private configService: ConfigService,
-    private favouritesService: FavouritesService,
-    private toastService: ToastService,
-    private searchService: SearchService,
-    private imageCreator: ImageCreatorUtil,
-  ) {}
 
   ngOnInit() {
     this.localeSubscription = this.configService.getLocaleObservable().subscribe((locale) => {

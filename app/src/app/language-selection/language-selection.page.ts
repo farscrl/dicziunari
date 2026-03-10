@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ConfigService } from '../services/config.service';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
@@ -12,13 +12,11 @@ import { IonContent, IonText, IonButton } from '@ionic/angular/standalone';
   imports: [IonContent, IonText, IonButton],
 })
 export class LanguageSelectionPage implements OnInit {
-  public localesValues = Locale;
+  private configService = inject(ConfigService);
+  private router = inject(Router);
+  private translateService = inject(TranslateService);
 
-  constructor(
-    private configService: ConfigService,
-    private router: Router,
-    private translateService: TranslateService,
-  ) {}
+  public localesValues = Locale;
 
   ngOnInit() {}
 

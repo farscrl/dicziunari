@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { SQLiteService } from './sqlite.service';
 import { CapacitorSQLite } from '@capacitor-community/sqlite';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -218,12 +218,12 @@ const migrationV2Commands = [
   providedIn: 'root',
 })
 export class FavouritesService {
+  private sqlLiteService = inject(SQLiteService);
+  private iosHeaderCleanerUtil = inject(IosHeaderCleanerUtil);
+
   private isReadySubject = new BehaviorSubject(false);
 
-  constructor(
-    private sqlLiteService: SQLiteService,
-    private iosHeaderCleanerUtil: IosHeaderCleanerUtil,
-  ) {
+  constructor() {
     this.setupDatabase();
   }
 

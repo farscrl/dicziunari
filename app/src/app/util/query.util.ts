@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Dictionary, SearchDirection, SearchMode } from 'src/data/search';
 import { ConfigService } from "../services/config.service";
 
@@ -6,10 +6,12 @@ import { ConfigService } from "../services/config.service";
   providedIn: 'root',
 })
 export class QueryUtil {
+  private configService = inject(ConfigService);
+
   searchInVerbs = false;
-  constructor(
-    private configService: ConfigService,
-  ) {
+  constructor() {
+    const configService = this.configService;
+
     configService.getIncludeVerbsObservable().subscribe(value => {
       this.searchInVerbs = value;
     });

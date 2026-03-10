@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { Platform, IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
@@ -15,15 +15,15 @@ import { ColorModeService } from './services/color-mode.service';
   imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent {
+  private translateService = inject(TranslateService);
+  private platform = inject(Platform);
+  private configService = inject(ConfigService);
+  private sqliteService = inject(SQLiteService);
+  private colorMode = inject(ColorModeService);
+
   private sqlitePluginInitialized = false;
 
-  constructor(
-    private translateService: TranslateService,
-    private platform: Platform,
-    private configService: ConfigService,
-    private sqliteService: SQLiteService,
-    private colorMode: ColorModeService,
-  ) {
+  constructor() {
     this.platform.ready().then(() => {
       SplashScreen.show();
       if (Capacitor.isNativePlatform()) {

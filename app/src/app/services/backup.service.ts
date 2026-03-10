@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Capacitor } from '@capacitor/core';
 import { FilePicker, PickDirectoryResult, PickedFile } from '@capawesome/capacitor-file-picker';
 import { Directory, Encoding, Filesystem } from '@capacitor/filesystem';
@@ -12,11 +12,8 @@ import { ToastService } from './toast.service';
   providedIn: 'root'
 })
 export class BackupService {
-
-  constructor(
-      private favouritesService: FavouritesService,
-      private toastService: ToastService,
-  ) { }
+  private favouritesService = inject(FavouritesService);
+  private toastService = inject(ToastService);
 
   async importBackup(importMode: string) {
     const platform = Capacitor.getPlatform();

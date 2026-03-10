@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Clipboard } from '@capacitor/clipboard';
 import { ToastService } from './toast.service';
 
@@ -6,7 +6,7 @@ import { ToastService } from './toast.service';
   providedIn: 'root',
 })
 export class CopyService {
-  constructor(private toastService: ToastService) {}
+  private toastService = inject(ToastService);
 
   public async copyItem(lemmaDe: string, lemmaRm: string) {
     await Clipboard.write({

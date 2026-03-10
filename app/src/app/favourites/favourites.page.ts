@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Dictionary } from 'src/data/search';
 import { FavouritesService } from '../services/favourites.service';
@@ -51,6 +51,9 @@ import { TranslatePipe } from '@ngx-translate/core';
   ],
 })
 export class FavouritesPage implements OnInit, OnDestroy {
+  private favouritesService = inject(FavouritesService);
+  private backupService = inject(BackupService);
+
   public dictionaryValues = Dictionary;
 
   public favouritesRumantschGrischun = [];
@@ -64,10 +67,7 @@ export class FavouritesPage implements OnInit, OnDestroy {
 
   private favouritesReadySubscription: Subscription;
 
-  constructor(
-    private favouritesService: FavouritesService,
-    private backupService: BackupService,
-  ) {
+  constructor() {
     addIcons({ ellipsisHorizontal, ellipsisVertical });
   }
 

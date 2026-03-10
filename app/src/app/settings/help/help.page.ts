@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ConfigService } from 'src/app/services/config.service';
 import { Locale } from 'src/data/search';
@@ -12,11 +12,11 @@ import { TranslatePipe } from '@ngx-translate/core';
   imports: [IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent, IonIcon, TranslatePipe],
 })
 export class HelpPage implements OnInit {
+  private configService = inject(ConfigService);
+
   public selectedLocale: Locale = Locale.rm;
 
   private localeSubscription: Subscription;
-
-  constructor(private configService: ConfigService) {}
 
   ngOnInit() {
     this.localeSubscription = this.configService.getLocaleObservable().subscribe((locale) => {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Dictionary } from '../../../data/search';
 import { IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent } from '@ionic/angular/standalone';
@@ -12,11 +12,11 @@ import { TranslatePipe } from '@ngx-translate/core';
   imports: [IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent, ConjugationComponent, TranslatePipe],
 })
 export class FavouritesDetailPage implements OnInit {
+  private router = inject(Router);
+
   public lemma;
 
   public dictionary?: Dictionary;
-
-  constructor(private router: Router) {}
 
   ngOnInit() {
     this.lemma = this.router.currentNavigation().extras.state.data;

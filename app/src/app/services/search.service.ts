@@ -1,18 +1,24 @@
 /* eslint-disable @typescript-eslint/quotes */
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Device } from '@capacitor/device';
 import { AlertController } from '@ionic/angular/standalone';
 import { CapacitorSQLite, SQLiteConnection } from '@capacitor-community/sqlite';
 import { SQLiteService } from './sqlite.service';
 import { QueryUtil } from '../util/query.util';
 import { ConfigService } from './config.service';
-import { IosHeaderCleanerUtil } from "../util/ios-header-cleaner.util";
+import { IosHeaderCleanerUtil } from '../util/ios-header-cleaner.util';
 const DB_NAME_KEY = 'dicziunari';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SearchService {
+  private alertCtrl = inject(AlertController);
+  private sqlLiteService = inject(SQLiteService);
+  private configService = inject(ConfigService);
+  private queryUtil = inject(QueryUtil);
+  private iosHeaderCleanerUtil = inject(IosHeaderCleanerUtil);
+
   private isReady = false;
 
   private searchLemma = '';
@@ -20,13 +26,7 @@ export class SearchService {
   private pageSize = 20;
   private hasMoreResults = true;
 
-  constructor(
-    private alertCtrl: AlertController,
-    private sqlLiteService: SQLiteService,
-    private configService: ConfigService,
-    private queryUtil: QueryUtil,
-    private iosHeaderCleanerUtil: IosHeaderCleanerUtil,
-  ) {
+  constructor() {
     this.sqlLiteService.isInitialized().subscribe((isInitialized) => {
       if (isInitialized) {
         this.init();

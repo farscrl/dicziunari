@@ -1,5 +1,5 @@
-import {Injectable} from "@angular/core";
-import {Share} from '@capacitor/share';
+import { Injectable, inject } from '@angular/core';
+import { Share } from '@capacitor/share';
 import {CanvasTextWrapper} from "canvas-wrapper";
 import {Directory, Encoding, Filesystem} from "@capacitor/filesystem";
 import {TranslateService} from "@ngx-translate/core";
@@ -8,6 +8,7 @@ import {TranslateService} from "@ngx-translate/core";
   providedIn: 'root',
 })
 export class ImageCreatorUtil {
+  private translateService = inject(TranslateService);
 
   private canShare = false;
 
@@ -20,9 +21,7 @@ export class ImageCreatorUtil {
   private bgImage: HTMLImageElement;
   private logoImage: HTMLImageElement;
 
-  constructor(
-    private translateService: TranslateService,
-  ) {
+  constructor() {
     Share.canShare().then(result => {
       this.canShare = result.value;
     });
@@ -68,8 +67,8 @@ export class ImageCreatorUtil {
     canvasBg.height = 1000;
     const ctxBg = canvasBg.getContext('2d');
 
-    ctxBg.drawImage(this.bgImage,0,0);
-    ctxBg.drawImage(this.logoImage,30,810);
+    ctxBg.drawImage(this.bgImage, 0, 0);
+    ctxBg.drawImage(this.logoImage, 30, 810);
 
     ctxBg.font = '40px "Fira Sans", sans-serif';
     ctxBg.fillStyle = '#fff';
@@ -91,7 +90,7 @@ export class ImageCreatorUtil {
     const ctx = canvasText.getContext('2d');
     ctx.fillStyle = '#fff';
 
-    CanvasTextWrapper(canvasText, text,{
+    CanvasTextWrapper(canvasText, text, {
       font: "70px -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", Roboto, sans-serif",
       textAlign: 'left',
       verticalAlign: 'top',

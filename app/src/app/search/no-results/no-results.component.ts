@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { IonContent, IonIcon, IonButton, ModalController } from '@ionic/angular/standalone';
 import { ConfigService } from '../../services/config.service';
 import { SearchDirection, SearchMode } from 'src/data/search';
@@ -13,6 +13,9 @@ import { TranslatePipe } from '@ngx-translate/core';
   imports: [IonContent, IonIcon, IonButton, TranslatePipe],
 })
 export class NoResultsComponent implements OnInit {
+  private configService = inject(ConfigService);
+  private modalController = inject(ModalController);
+
   searchMode: SearchMode;
   public searchDirection: SearchDirection;
 
@@ -21,11 +24,6 @@ export class NoResultsComponent implements OnInit {
   };
 
   private searchDirectionSubscription: Subscription;
-
-  constructor(
-    private configService: ConfigService,
-    private modalController: ModalController,
-  ) {}
 
   ngOnInit() {
     this.searchMode = this.configService.getSearchMode();

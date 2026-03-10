@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, inject } from '@angular/core';
 import { Dictionary } from '../../../../data/search';
 import { Pronouns } from '../../../../data/pronouns';
 import { ActivatedRoute } from '@angular/router';
@@ -13,6 +13,8 @@ import { TranslatePipe } from '@ngx-translate/core';
   imports: [ConjugationPersonalComponent, ConjugationImpersonalComponent, TranslatePipe],
 })
 export class ConjugationComponent implements OnInit, OnChanges {
+  private route = inject(ActivatedRoute);
+
   @Input()
   public lemma;
 
@@ -24,8 +26,6 @@ export class ConjugationComponent implements OnInit, OnChanges {
   public searchString?: string;
 
   readonly Dictionary = Dictionary;
-
-  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
