@@ -1,12 +1,13 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IonIcon } from '@ionic/angular/standalone';
 import { HighlightPipe } from '../../pipes/highlight.pipe';
+import { AudioPlayerComponent } from '../audio-player/audio-player.component';
 
 @Component({
   selector: 'app-result-text',
   templateUrl: './result-text.component.html',
   styleUrls: ['./result-text.component.scss'],
-  imports: [IonIcon, HighlightPipe],
+  imports: [IonIcon, HighlightPipe, AudioPlayerComponent],
 })
 export class ResultTextComponent implements OnInit {
   @Input()
@@ -23,6 +24,9 @@ export class ResultTextComponent implements OnInit {
 
   @Input()
   public searchString: string;
+
+  @Input()
+  public pronunciation: string;
 
   @Output()
   public changeSearchTerm = new EventEmitter<string>();

@@ -19,13 +19,12 @@ import {
   IonItemOption,
 } from '@ionic/angular/standalone';
 import { ResultTextComponent } from '../result-text/result-text.component';
-import { AudioPlayerComponent } from '../audio-player/audio-player.component';
 
 @Component({
   selector: 'app-lemma-display',
   templateUrl: './lemma-display.component.html',
   styleUrls: ['./lemma-display.component.scss'],
-  imports: [IonItemSliding, IonItem, IonGrid, IonRow, IonCol, IonIcon, IonItemOptions, IonItemOption, ResultTextComponent, AudioPlayerComponent],
+  imports: [IonItemSliding, IonItem, IonGrid, IonRow, IonCol, IonIcon, IonItemOptions, IonItemOption, ResultTextComponent],
 })
 export class LemmaDisplayComponent implements OnInit, OnDestroy {
   private copyService = inject(CopyService);
@@ -132,10 +131,6 @@ export class LemmaDisplayComponent implements OnInit, OnDestroy {
   get hasInflection() {
     // we need to keep the test on preschentsing1/preschentsing3 for backwards compatibility with sursilvan favorites
     return !!this.lemma.inflectiontype || !!this.lemma.preschentsing3 || !!this.lemma.preschentsing1;
-  }
-
-  get hasPronunciation() {
-    return !!this.lemma.RPronunciation;
   }
 
   get rmColSize() {

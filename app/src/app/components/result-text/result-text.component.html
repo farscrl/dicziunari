@@ -18,5 +18,8 @@
     @if (grammar && grammar.replace(' ', '') != '') {
       <span class="grammar"> [{{ grammar }}]</span>
     }
+    @if (pronunciation) {
+      <app-audio-player [url]="pronunciation"></app-audio-player>
+    }
   </div>
 </div>

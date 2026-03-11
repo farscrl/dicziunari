@@ -7,13 +7,10 @@
             <app-result-text [text]="lemma.DStichwort" [flex]="lemma.DFlex" [grammar]="dGramm"
                              [semantics]="lemma.DSempraez" [searchString]="searchString" (changeSearchTerm)="changeTerm($event)"></app-result-text>
           </ion-col>
-          <ion-col [size]="rmColSize" class="rm-col">
+          <ion-col [size]="rmColSize">
             <app-result-text [text]="lemma.RStichwort" [flex]="lemma.RFlex" [grammar]="rGramm"
-                             [semantics]="lemma.RSempraez" [searchString]="searchDirection === 'both' ? searchString : ''" (changeSearchTerm)="changeTerm($event)">
+                             [semantics]="lemma.RSempraez" [searchString]="searchDirection === 'both' ? searchString : ''" [pronunciation]="lemma.RPronunciation" (changeSearchTerm)="changeTerm($event)">
             </app-result-text>
-            @if (hasPronunciation) {
-              <app-audio-player [url]="lemma.RPronunciation"></app-audio-player>
-            }
           </ion-col>
           @if (hasInflection) {
             <ion-col size="1" (click)="goToDetail()" class="verb">
@@ -26,12 +23,9 @@
       }
       @if ((searchDirection === 'fromRm') || (searchDirection === 'both' && selectedLocale === 'rm')) {
         <ion-row>
-          <ion-col [size]="rmColSize" class="rm-col">
+          <ion-col [size]="rmColSize">
             <app-result-text [text]="lemma.RStichwort" [flex]="lemma.RFlex" [grammar]="rGramm"
-                             [semantics]="lemma.RSempraez" [searchString]="searchString" (changeSearchTerm)="changeTerm($event)"></app-result-text>
-            @if (hasPronunciation) {
-              <app-audio-player [url]="lemma.RPronunciation"></app-audio-player>
-            }
+                             [semantics]="lemma.RSempraez" [searchString]="searchString" [pronunciation]="lemma.RPronunciation" (changeSearchTerm)="changeTerm($event)"></app-result-text>
           </ion-col>
           @if (hasInflection) {
             <ion-col size="1" (click)="goToDetail()" class="verb">
