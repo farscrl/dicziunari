@@ -1,11 +1,15 @@
 .verb {
-  text-align: right;
   padding: 0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  width: 44px;
 
-  div {
-    height: 100%;
-    display: flex;
+  ion-icon {
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -22,10 +26,10 @@ ion-item-options {
     display: flex;
 
     :first-of-type {
-      margin-left: 16px;
+      margin-left: 12px;
     }
     :last-of-type {
-      margin-right: 16px;
+      margin-right: 12px;
     }
   }
 

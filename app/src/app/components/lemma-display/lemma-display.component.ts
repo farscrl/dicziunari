@@ -133,10 +133,6 @@ export class LemmaDisplayComponent implements OnInit, OnDestroy {
     return !!this.lemma.inflectiontype || !!this.lemma.preschentsing3 || !!this.lemma.preschentsing1;
   }
 
-  get rmColSize() {
-    return this.hasInflection ? 5 : 6;
-  }
-
   get dGramm() {
     let dGramm = '';
     if (this.lemma.DGenus) {

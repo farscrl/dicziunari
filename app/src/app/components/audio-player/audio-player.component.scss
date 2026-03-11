@@ -1,14 +1,15 @@
 .icon-container {
   display: inline-block;
   position: relative;
-  width: 24px;
-  height: 24px;
+  width: 16px;
+  height: 16px;
   vertical-align: middle;
+  margin-left: 4px;
 
   ion-icon {
     position: absolute;
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
     cursor: pointer;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 
