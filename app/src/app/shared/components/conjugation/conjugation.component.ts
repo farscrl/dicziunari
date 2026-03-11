@@ -426,6 +426,7 @@ export class ConjugationComponent implements OnInit, OnChanges {
   }
 
   private extractPrefixes(lemma: string, prefixCandidates: string[]): string[] {
+    if (!lemma) return ['', ''];
     const lines = lemma.split(/\r?\n/);
     let prefixes: string[] = [];
     let forms: string[] = [];
