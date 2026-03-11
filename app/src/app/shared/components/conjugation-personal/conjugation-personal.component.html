@@ -1,37 +1,37 @@
 <table>
   @if (sing1) {
     <tr>
-      <td class="pronoun" [innerHTML]="replaceComma(sing1Pronoun)"></td>
+      @if (!noPronouns) { <td class="pronoun" [innerHTML]="replaceComma(sing1Pronoun)"></td> }
       <td [innerHtml]="replaceComma(sing1) | highlight: searchString"></td>
     </tr>
   }
   @if (sing2) {
     <tr>
-      <td class="pronoun" [innerHTML]="replaceComma(sing2Pronoun)"></td>
+      @if (!noPronouns) { <td class="pronoun" [innerHTML]="replaceComma(sing2Pronoun)"></td> }
       <td [innerHtml]="replaceComma(sing2) | highlight: searchString"></td>
     </tr>
   }
   @if (sing3) {
     <tr>
-      <td class="pronoun" [innerHTML]="replaceComma(sing3Pronoun)"></td>
+      @if (!noPronouns) { <td class="pronoun" [innerHTML]="replaceComma(sing3Pronoun)"></td> }
       <td [innerHtml]="replaceComma(sing3) | highlight: searchString"></td>
     </tr>
   }
   @if (plural1) {
     <tr>
-      <td class="pronoun" [innerHTML]="replaceComma(plural1Pronoun)"></td>
+      @if (!noPronouns) { <td class="pronoun" [innerHTML]="replaceComma(plural1Pronoun)"></td> }
       <td [innerHtml]="replaceComma(plural1) | highlight: searchString"></td>
     </tr>
   }
   @if (plural2) {
     <tr>
-      <td class="pronoun" [innerHTML]="replaceComma(plural2Pronoun)"></td>
+      @if (!noPronouns) { <td class="pronoun" [innerHTML]="replaceComma(plural2Pronoun)"></td> }
       <td [innerHtml]="replaceComma(plural2) | highlight: searchString"></td>
     </tr>
   }
   @if (plural3) {
     <tr>
-      <td class="pronoun" [innerHTML]="replaceComma(plural3Pronoun)"></td>
+      @if (!noPronouns) { <td class="pronoun" [innerHTML]="replaceComma(plural3Pronoun)"></td> }
       <td [innerHtml]="replaceComma(plural3) | highlight: searchString"></td>
     </tr>
   }

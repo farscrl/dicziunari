@@ -161,6 +161,7 @@
         <div>
           <h3>{{ 'CONJUGATION.ENCLITIC_PRESENT' | translate }}</h3>
           <app-conjugation-personal
+            [noPronouns]="true"
             [searchString]="searchString"
             [sing1]="lemma.preschentencliticsing1"
             [sing2]="lemma.preschentencliticsing2"
@@ -174,6 +175,7 @@
         <div>
           <h3>{{ 'CONJUGATION.ENCLITIC_PAST' | translate }}</h3>
           <app-conjugation-personal
+            [noPronouns]="true"
             [searchString]="searchString"
             [sing1]="lemma.imperfectencliticsing1"
             [sing2]="lemma.imperfectencliticsing2"
@@ -187,6 +189,7 @@
         <div>
           <h3>{{ 'CONJUGATION.ENCLITIC_CONDITIONAL' | translate }}</h3>
           <app-conjugation-personal
+            [noPronouns]="true"
             [searchString]="searchString"
             [sing1]="lemma.cundizionalencliticsing1"
             [sing2]="lemma.cundizionalencliticsing2"
@@ -201,6 +204,7 @@
           <div>
             <h3>{{ 'CONJUGATION.ENCLITIC_FUTURE' | translate }}</h3>
             <app-conjugation-personal
+              [noPronouns]="true"
               [searchString]="searchString"
               [sing1]="lemma.futurencliticsing1"
               [sing2]="lemma.futurencliticsing2"
@@ -216,6 +220,7 @@
           <div>
             <h3>{{ 'CONJUGATION.ENCLITIC_FUTURE_DUBITATIVE' | translate }}</h3>
             <app-conjugation-personal
+              [noPronouns]="true"
               [searchString]="searchString"
               [sing1]="lemma.futurdubitativencliticsing1"
               [sing2]="lemma.futurdubitativencliticsing2"

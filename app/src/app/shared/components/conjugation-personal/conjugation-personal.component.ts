@@ -27,6 +27,7 @@ export class ConjugationPersonalComponent implements OnInit {
   @Input() public plural3Pronoun: string;
 
   @Input() public searchString?: string;
+  @Input() public noPronouns = false;
 
   constructor() {}
 
