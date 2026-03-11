@@ -5,22 +5,22 @@
 
   <ion-list>
     <ion-radio-group [(ngModel)]="selectedSearchMode">
-      <ion-item lines="none" (click)="onChange('start')">
+      <ion-item lines="none" (click)="onChange(SearchMode.start)">
         <ion-label>{{ "SETTINGS.MODE.START" | translate}}</ion-label>
         <ion-radio value="start" [slot]="slot"></ion-radio>
       </ion-item>
 
-      <ion-item lines="none" (click)="onChange('match')">
+      <ion-item lines="none" (click)="onChange(SearchMode.match)">
         <ion-label>{{ "SETTINGS.MODE.MATCH" | translate }}</ion-label>
         <ion-radio value="match" [slot]="slot"></ion-radio>
       </ion-item>
 
-      <ion-item lines="none" (click)="onChange('substring')">
+      <ion-item lines="none" (click)="onChange(SearchMode.substring)">
         <ion-label>{{ "SETTINGS.MODE.SUBSTRING" | translate }}</ion-label>
         <ion-radio value="substring" [slot]="slot"></ion-radio>
       </ion-item>
 
-      <ion-item lines="none" (click)="onChange('end')">
+      <ion-item lines="none" (click)="onChange(SearchMode.end)">
         <ion-label>{{ "SETTINGS.MODE.END" | translate}}</ion-label>
         <ion-radio value="end" [slot]="slot"></ion-radio>
       </ion-item>

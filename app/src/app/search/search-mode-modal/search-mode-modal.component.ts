@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   IonContent,
   IonItem,
@@ -21,18 +21,18 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrls: ['./search-mode-modal.component.scss'],
   imports: [IonContent, IonItem, IonTitle, IonList, IonRadioGroup, IonLabel, IonRadio, FormsModule, TranslatePipe],
 })
-export class SearchModeModalComponent implements OnInit {
+export class SearchModeModalComponent {
   private configService = inject(ConfigService);
   private modalController = inject(ModalController);
   private config = inject(Config);
 
   public selectedSearchMode: SearchMode;
 
-  ngOnInit() {
+  ionViewWillEnter() {
     this.selectedSearchMode = this.configService.getSearchMode();
   }
 
-  onChange(searchMode) {
+  onChange(searchMode: SearchMode) {
     this.configService.setSearchMode(searchMode);
     this.modalController.dismiss();
   }
@@ -43,4 +43,6 @@ export class SearchModeModalComponent implements OnInit {
     }
     return 'start';
   }
+
+  protected readonly SearchMode = SearchMode;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   IonContent,
   IonItem,
@@ -21,18 +21,18 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrls: ['./dictionary-modal.component.scss'],
   imports: [IonContent, IonItem, IonTitle, IonList, IonRadioGroup, IonLabel, IonRadio, FormsModule, TranslatePipe],
 })
-export class DictionaryModalComponent implements OnInit {
+export class DictionaryModalComponent {
   private configService = inject(ConfigService);
   private modalController = inject(ModalController);
   private config = inject(Config);
 
   public selectedDictionary: Dictionary;
 
-  ngOnInit() {
+  ionViewWillEnter() {
     this.selectedDictionary = this.configService.getSelectedDictionary();
   }
 
-  onChange(dictionary) {
+  onChange(dictionary: Dictionary) {
     this.configService.setSelectedDictionary(dictionary);
     this.modalController.dismiss();
   }
@@ -43,4 +43,6 @@ export class DictionaryModalComponent implements OnInit {
     }
     return 'start';
   }
+
+  protected readonly Dictionary = Dictionary;
 }
