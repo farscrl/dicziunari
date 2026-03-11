@@ -22,7 +22,7 @@ import {
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { ellipsisHorizontal, ellipsisVertical } from 'ionicons/icons';
-import { LemmaDisplayComponent } from '../shared/components/lemma-display/lemma-display.component';
+import { LemmaDisplayComponent } from '../components/lemma-display/lemma-display.component';
 import { NoFavouritesComponent } from './no-favourites/no-favourites.component';
 import { TranslatePipe } from '@ngx-translate/core';
 

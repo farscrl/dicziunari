@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IonIcon } from '@ionic/angular/standalone';
-import { HighlightPipe } from '../../../pipes/highlight.pipe';
+import { HighlightPipe } from '../../pipes/highlight.pipe';
 
 @Component({
   selector: 'app-result-text',

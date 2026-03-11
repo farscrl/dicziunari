@@ -1,13 +1,13 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnDestroy, inject } from '@angular/core';
-import { CopyService } from '../../../services/copy.service';
+import { CopyService } from '../../services/copy.service';
 import { SearchDirection, Locale, Dictionary } from 'src/data/search';
 import { Router } from '@angular/router';
-import { ConfigService } from '../../../services/config.service';
-import { FavouritesService } from '../../../services/favourites.service';
-import { ToastService } from '../../../services/toast.service';
-import { SearchService } from '../../../services/search.service';
+import { ConfigService } from '../../services/config.service';
+import { FavouritesService } from '../../services/favourites.service';
+import { ToastService } from '../../services/toast.service';
+import { SearchService } from '../../services/search.service';
 import { Subscription } from 'rxjs';
-import { ImageCreatorUtil } from '../../../util/image-creator.util';
+import { ImageCreatorUtil } from '../../util/image-creator.util';
 import {
   IonItemSliding,
   IonItem,

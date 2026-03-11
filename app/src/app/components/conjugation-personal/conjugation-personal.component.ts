@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { HighlightPipe } from '../../../pipes/highlight.pipe';
+import { HighlightPipe } from '../../pipes/highlight.pipe';
 
 @Component({
   selector: 'app-conjugation-personal',

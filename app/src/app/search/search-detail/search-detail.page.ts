@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import { ConfigService } from '../../services/config.service';
 import { Dictionary } from '../../../data/search';
 import { IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent } from '@ionic/angular/standalone';
-import { ConjugationComponent } from '../../shared/components/conjugation/conjugation.component';
+import { ConjugationComponent } from '../../components/conjugation/conjugation.component';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({

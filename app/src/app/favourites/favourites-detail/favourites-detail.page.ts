@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Dictionary } from '../../../data/search';
 import { IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent } from '@ionic/angular/standalone';
-import { ConjugationComponent } from '../../shared/components/conjugation/conjugation.component';
+import { ConjugationComponent } from '../../components/conjugation/conjugation.component';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({

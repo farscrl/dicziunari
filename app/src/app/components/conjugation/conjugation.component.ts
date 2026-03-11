@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges, inject } from '@angular/core';
-import { Dictionary } from '../../../../data/search';
-import { Pronouns } from '../../../../data/pronouns';
+import { Dictionary } from '../../../data/search';
+import { Pronouns } from '../../../data/pronouns';
 import { ActivatedRoute } from '@angular/router';
 import { ConjugationPersonalComponent } from '../conjugation-personal/conjugation-personal.component';
 import { ConjugationImpersonalComponent } from '../conjugation-impersonal/conjugation-impersonal.component';

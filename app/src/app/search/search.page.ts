@@ -22,7 +22,7 @@ import { Keyboard } from '@capacitor/keyboard';
 import { Subscription } from 'rxjs';
 import { DictionaryModalComponent } from './dictionary-modal/dictionary-modal.component';
 import { FormsModule } from '@angular/forms';
-import { LemmaDisplayComponent } from '../shared/components/lemma-display/lemma-display.component';
+import { LemmaDisplayComponent } from '../components/lemma-display/lemma-display.component';
 import { PlaceholderComponent } from './placeholder/placeholder.component';
 import { NoResultsComponent } from './no-results/no-results.component';
 import { TranslatePipe } from '@ngx-translate/core';
