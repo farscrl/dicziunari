@@ -27,6 +27,8 @@ export class ConjugationComponent implements OnInit, OnChanges {
 
   readonly Dictionary = Dictionary;
 
+  encliticExpanded = false;
+
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
       this.searchString = params.searchString;

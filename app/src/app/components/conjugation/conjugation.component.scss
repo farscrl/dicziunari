@@ -14,6 +14,31 @@ h1 {
   grid-column: 1 / -1;
 }
 
+.enclitic-header {
+  cursor: pointer;
+  user-select: none;
+}
+
+.triangle {
+  display: inline-block;
+  margin-right: 6px;
+  font-size: 0.7em;
+  transition: transform 0.2s ease;
+
+  &.expanded {
+    transform: rotate(90deg);
+  }
+}
+
+.enclitic-content {
+  display: none;
+  grid-column: 1 / -1;
+
+  &.expanded {
+    display: contents;
+  }
+}
+
 .verb-annotation {
   text-align: center;
   padding: 12px;

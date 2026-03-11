@@ -155,9 +155,13 @@
 
       @if (dictionary === Dictionary.puter || dictionary === Dictionary.surm || dictionary === Dictionary.sutsilv || dictionary === Dictionary.vall) {
         <div class="conj-full">
-          <h2>{{ 'CONJUGATION.ENCLITIC' | translate }}</h2>
+          <h2 class="enclitic-header" (click)="encliticExpanded = !encliticExpanded">
+            <span class="triangle" [class.expanded]="encliticExpanded">▶</span>
+            {{ 'CONJUGATION.ENCLITIC' | translate }}
+          </h2>
         </div>
 
+        <div class="enclitic-content" [class.expanded]="encliticExpanded">
         <div>
           <h3>{{ 'CONJUGATION.ENCLITIC_PRESENT' | translate }}</h3>
           <app-conjugation-personal
@@ -231,6 +235,7 @@
             </app-conjugation-personal>
           </div>
         }
+        </div><!-- enclitic-content -->
       }
 
     </div>
