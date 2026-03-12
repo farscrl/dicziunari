@@ -252,13 +252,13 @@
         </tr>
         <tr>
           <th>{{ 'INFLECTION.SINGULAR' | translate }}</th>
-          <td>{{ lemma.nounmsingular }}</td>
-          <td>{{ lemma.nounfsingular }}</td>
+          <td [class.empty]="!lemma.nounmsingular">{{ lemma.nounmsingular || '—' }}</td>
+          <td [class.empty]="!lemma.nounfsingular">{{ lemma.nounfsingular || '—' }}</td>
         </tr>
         <tr>
           <th>{{ 'INFLECTION.PLURAL' | translate }}</th>
-          <td>{{ lemma.nounmplural }}</td>
-          <td>{{ lemma.nounfplural }}</td>
+          <td [class.empty]="!lemma.nounmplural">{{ lemma.nounmplural || '—' }}</td>
+          <td [class.empty]="!lemma.nounfplural">{{ lemma.nounfplural || '—' }}</td>
         </tr>
       </table>
     </div>
@@ -275,13 +275,13 @@
         </tr>
         <tr>
           <th>{{ 'INFLECTION.SINGULAR' | translate }}</th>
-          <td>{{ lemma.adjectivemsingular }}</td>
-          <td>{{ lemma.adjectivefsingular }}</td>
+          <td [class.empty]="!lemma.adjectivemsingular">{{ lemma.adjectivemsingular || '—' }}</td>
+          <td [class.empty]="!lemma.adjectivefsingular">{{ lemma.adjectivefsingular || '—' }}</td>
         </tr>
         <tr>
           <th>{{ 'INFLECTION.PLURAL' | translate }}</th>
-          <td>{{ lemma.adjectivemplural }}</td>
-          <td>{{ lemma.adjectivefplural }}</td>
+          <td [class.empty]="!lemma.adjectivemplural">{{ lemma.adjectivemplural || '—' }}</td>
+          <td [class.empty]="!lemma.adjectivefplural">{{ lemma.adjectivefplural || '—' }}</td>
         </tr>
       </table>
     </div>

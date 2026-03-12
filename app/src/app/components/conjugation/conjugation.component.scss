@@ -71,6 +71,14 @@ h1 {
   tr:first-child td {
     padding-bottom: 12px;
   }
+
+  th {
+    color: #bbb;
+  }
+
+  td.empty {
+    color: #bbb;
+  }
 }
 
 @media only screen and (min-width: 768px) {
