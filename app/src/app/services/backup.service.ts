@@ -32,7 +32,34 @@ export class BackupService {
 
   async exportBackup() {
     const favorites = await this.favouritesService.loadFavourites();
-    const worksheet = XLSX.utils.json_to_sheet(favorites);
+    const worksheet = XLSX.utils.json_to_sheet(favorites, {
+      header: [
+        'dictionary',
+        'RStichwort', 'RGenus', 'RFlex', 'RGrammatik', 'RSempraez', 'RPronunciation', 'Corp', 'Etymologie',
+        'DStichwort', 'DGenus', 'DFlex', 'DGrammatik', 'DSempraez',
+        'inflectiontype',
+        'nounbaseform', 'nounmsingular', 'nounmplural', 'nounfsingular', 'nounfplural',
+        'adjectivebaseform', 'adjectivemsingular', 'adjectivefsingular', 'adjectivemplural', 'adjectivefplural', 'adjectiveadverbialform', 'adjectivepredicative',
+        'infinitiv',
+        'preschentsing1', 'preschentsing2', 'preschentsing3', 'preschentplural1', 'preschentplural2', 'preschentplural3',
+        'imperfectsing1', 'imperfectsing2', 'imperfectsing3', 'imperfectplural1', 'imperfectplural2', 'imperfectplural3',
+        'conjunctivsing1', 'conjunctivsing2', 'conjunctivsing3', 'conjunctivplural1', 'conjunctivplural2', 'conjunctivplural3',
+        'conjunctivimperfectsing1', 'conjunctivimperfectsing2', 'conjunctivimperfectsing3', 'conjunctivimperfectplural1', 'conjunctivimperfectplural2', 'conjunctivimperfectplural3',
+        'cundizionalsing1', 'cundizionalsing2', 'cundizionalsing3', 'cundizionalplural1', 'cundizionalplural2', 'cundizionalplural3',
+        'cundizionalindirectsing1', 'cundizionalindirectsing2', 'cundizionalindirectsing3', 'cundizionalindirectplural1', 'cundizionalindirectplural2', 'cundizionalindirectplural3',
+        'futursing1', 'futursing2', 'futursing3', 'futurplural1', 'futurplural2', 'futurplural3',
+        'futurdubitativsing1', 'futurdubitativsing2', 'futurdubitativsing3', 'futurdubitativplural1', 'futurdubitativplural2', 'futurdubitativplural3',
+        'participperfectfs', 'participperfectms', 'participperfectfp', 'participperfectmp', 'participperfectmspredicativ',
+        'imperativ1', 'imperativ2', 'imperativ3', 'imperativ4', 'imperativ5', 'imperativ6',
+        'gerundium',
+        'preschentencliticsing1', 'preschentencliticsing2', 'preschentencliticsing3m', 'preschentencliticsing3f', 'preschentencliticplural1', 'preschentencliticplural2', 'preschentencliticplural3',
+        'imperfectencliticsing1', 'imperfectencliticsing2', 'imperfectencliticsing3m', 'imperfectencliticsing3f', 'imperfectencliticplural1', 'imperfectencliticplural2', 'imperfectencliticplural3',
+        'cundizionalencliticsing1', 'cundizionalencliticsing2', 'cundizionalencliticsing3m', 'cundizionalencliticsing3f', 'cundizionalencliticplural1', 'cundizionalencliticplural2', 'cundizionalencliticplural3',
+        'futurencliticsing1', 'futurencliticsing2', 'futurencliticsing3m', 'futurencliticsing3f', 'futurencliticplural1', 'futurencliticplural2', 'futurencliticplural3',
+        'futurdubitativencliticsing1', 'futurdubitativencliticsing2', 'futurdubitativencliticsing3m', 'futurdubitativencliticsing3f', 'futurdubitativencliticplural1', 'futurdubitativencliticplural2', 'futurdubitativencliticplural3',
+        'id', 'last_modified',
+      ],
+    });
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, 'export dicziunari');
     const binaryData = XLSX.write(workbook, { bookType: 'xlsx', type: 'binary' });
