@@ -130,5 +130,8 @@
       "SUCCESS": "Exportà cun success",
       "ERROR": "Errur cun exportar"
     }
+  },
+  "AUDIO": {
+    "OFFLINE": "Nagina connexiun a l’internet"
   }
 }

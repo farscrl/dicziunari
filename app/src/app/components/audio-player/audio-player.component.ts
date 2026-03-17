@@ -1,5 +1,6 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild, inject } from '@angular/core';
 import { IonIcon } from '@ionic/angular/standalone';
+import { ToastService } from '../../services/toast.service';
 
 @Component({
   selector: 'app-audio-player',
@@ -8,6 +9,8 @@ import { IonIcon } from '@ionic/angular/standalone';
   styleUrl: './audio-player.component.scss',
 })
 export class AudioPlayerComponent {
+  private toastService = inject(ToastService);
+
   @Input() url?: string;
 
   isPlaying = false;
@@ -15,6 +18,11 @@ export class AudioPlayerComponent {
 
   async play() {
     if (!this.url) {
+      return;
+    }
+
+    if (!navigator.onLine) {
+      await this.toastService.showNotification('AUDIO.OFFLINE');
       return;
     }
 
