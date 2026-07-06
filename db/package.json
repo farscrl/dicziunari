@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gion-andri/dicziunari.git"
+    "url": "git+https://github.com/farscrl/dicziunari.git"
   },
-  "author": "Gion-Andri Cantieni <gion-andri@cantieni.info>",
+  "author": "far ScRL",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gion-andri/dicziunari/issues"
+    "url": "https://github.com/farscrl/dicziunari/issues"
   },
-  "homepage": "https://github.com/gion-andri/dicziunari#readme",
+  "homepage": "https://github.com/farscrl/dicziunari#readme",
   "dependencies": {
     "better-sqlite3": "^12.6.2",
     "stream-chain": "^3.4.0",
