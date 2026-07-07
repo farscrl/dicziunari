@@ -105,3 +105,9 @@ dist
 
 # macOS
 .DS_Store
+
+# JetBrains IDEs
+.idea/
+
+# VSCode
+.vscode/
