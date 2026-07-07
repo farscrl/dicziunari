@@ -74,12 +74,3 @@ ion-modal.search-mode {
     border-radius: 10px !important;
   }
 }
-
-// dark mode fixes
-.dark-theme {
-  app-placeholder {
-    .main-content {
-      fill: #2b2b2b;
-    }
-  }
-}

@@ -22,3 +22,11 @@
     font-weight: 700;
   }
 }
+
+:host-context(.dark-theme) .main-content {
+  fill: #454545;
+
+  .company-link {
+    color: #454545FF;
+  }
+}
