@@ -18,6 +18,8 @@ export class InfoPage implements OnInit {
 
   public appVersion = '-';
 
+  public appBuild = '-';
+
   public selectedLocale: Locale = Locale.rm;
 
   private localeSubscription: Subscription;
@@ -26,6 +28,7 @@ export class InfoPage implements OnInit {
     if (Capacitor.isNativePlatform()) {
       App.getInfo().then((info) => {
         this.appVersion = info.version;
+        this.appBuild = info.build;
       });
     }
 
