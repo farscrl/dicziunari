@@ -40,9 +40,16 @@ export class ConjugationComponent implements OnInit, OnChanges {
     if (!changes.lemma || !changes.lemma.currentValue) {
       return;
     }
-    if (this.lemma.inflectiontype === 'VERB') {
+    if (this.isVerb) {
       this.definePronouns();
     }
+  }
+
+  get isVerb(): boolean {
+    // legacy favorites saved before the inflectiontype column existed don't have it set, but do
+    // have conjugation data via preschentsing1/preschentsing3 (see lemma-display.component.ts's
+    // hasInflection getter for the same backwards-compatibility check)
+    return this.lemma?.inflectiontype === 'VERB' || (!this.lemma?.inflectiontype && (!!this.lemma?.preschentsing1 || !!this.lemma?.preschentsing3));
   }
 
   private definePronouns() {

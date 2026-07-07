@@ -1,7 +1,7 @@
-<h1>{{ lemma?.inflectiontype === 'VERB' ? lemma.infinitiv : lemma?.inflectiontype === 'NOUN' ? lemma.nounbaseform : lemma?.inflectiontype === 'ADJECTIVE' ? lemma.adjectivebaseform : '' }}</h1>
+<h1>{{ isVerb ? lemma.infinitiv : lemma?.inflectiontype === 'NOUN' ? lemma.nounbaseform : lemma?.inflectiontype === 'ADJECTIVE' ? lemma.adjectivebaseform : '' }}</h1>
 
 @if (lemma) {
-  @if (lemma.inflectiontype === 'VERB') {
+  @if (isVerb) {
     <div class="conj-grid">
       <div>
         <h3>{{ 'CONJUGATION.PRESENT_TENSE' | translate }}</h3>
