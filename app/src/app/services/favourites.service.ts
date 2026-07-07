@@ -9,7 +9,11 @@ import { IosHeaderCleanerUtil } from "../util/ios-header-cleaner.util";
 const DB_NAME_KEY = 'favourites';
 const DB_VERSION = 2;
 
-const initializationCommand = `
+// Base schema for brand new installs (curVersion 0). Registered as the version-1 upgrade step
+// below, so the plugin's own version-upgrade mechanism creates it before applying
+// migrationV2Commands - this deliberately excludes the columns added in migrationV2Commands,
+// otherwise a fresh install would apply both steps and fail on "duplicate column".
+const createTableV1Command = `
       CREATE TABLE IF NOT EXISTS favorites (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
           dictionary TEXT,
@@ -18,7 +22,6 @@ const initializationCommand = `
           RFlex TEXT,
           RGrammatik TEXT,
           RSempraez TEXT,
-          RPronunciation TEXT,
           Corp TEXT,
           Etymologie TEXT,
           DStichwort TEXT,
@@ -26,19 +29,6 @@ const initializationCommand = `
           DFlex TEXT,
           DGrammatik TEXT,
           DSempraez TEXT,
-          inflectiontype TEXT,
-          nounbaseform TEXT,
-          nounmsingular TEXT,
-          nounmplural TEXT,
-          nounfsingular TEXT,
-          nounfplural TEXT,
-          adjectivebaseform TEXT,
-          adjectivemsingular TEXT,
-          adjectivefsingular TEXT,
-          adjectivemplural TEXT,
-          adjectivefplural TEXT,
-          adjectiveadverbialform TEXT,
-          adjectivepredicative TEXT,
           infinitiv TEXT,
           preschentsing1 TEXT,
           preschentsing2 TEXT,
@@ -46,94 +36,36 @@ const initializationCommand = `
           preschentplural1 TEXT,
           preschentplural2 TEXT,
           preschentplural3 TEXT,
-          preschentencliticsing1 TEXT,
-          preschentencliticsing2 TEXT,
-          preschentencliticsing3m TEXT,
-          preschentencliticsing3f TEXT,
-          preschentencliticplural1 TEXT,
-          preschentencliticplural2 TEXT,
-          preschentencliticplural3 TEXT,
           imperfectsing1 TEXT,
           imperfectsing2 TEXT,
           imperfectsing3 TEXT,
           imperfectplural1 TEXT,
           imperfectplural2 TEXT,
           imperfectplural3 TEXT,
-          imperfectencliticsing1 TEXT,
-          imperfectencliticsing2 TEXT,
-          imperfectencliticsing3m TEXT,
-          imperfectencliticsing3f TEXT,
-          imperfectencliticplural1 TEXT,
-          imperfectencliticplural2 TEXT,
-          imperfectencliticplural3 TEXT,
           conjunctivsing1 TEXT,
           conjunctivsing2 TEXT,
           conjunctivsing3 TEXT,
           conjunctivplural1 TEXT,
           conjunctivplural2 TEXT,
           conjunctivplural3 TEXT,
-          conjunctivimperfectsing1 TEXT,
-          conjunctivimperfectsing2 TEXT,
-          conjunctivimperfectsing3 TEXT,
-          conjunctivimperfectplural1 TEXT,
-          conjunctivimperfectplural2 TEXT,
-          conjunctivimperfectplural3 TEXT,
           cundizionalsing1 TEXT,
           cundizionalsing2 TEXT,
           cundizionalsing3 TEXT,
           cundizionalplural1 TEXT,
           cundizionalplural2 TEXT,
           cundizionalplural3 TEXT,
-          cundizionalencliticsing1 TEXT,
-          cundizionalencliticsing2 TEXT,
-          cundizionalencliticsing3m TEXT,
-          cundizionalencliticsing3f TEXT,
-          cundizionalencliticplural1 TEXT,
-          cundizionalencliticplural2 TEXT,
-          cundizionalencliticplural3 TEXT,
-          cundizionalindirectsing1 TEXT,
-          cundizionalindirectsing2 TEXT,
-          cundizionalindirectsing3 TEXT,
-          cundizionalindirectplural1 TEXT,
-          cundizionalindirectplural2 TEXT,
-          cundizionalindirectplural3 TEXT,
           participperfectfs TEXT,
           participperfectms TEXT,
           participperfectfp TEXT,
           participperfectmp TEXT,
-          participperfectmspredicativ TEXT,
           futursing1 TEXT,
           futursing2 TEXT,
           futursing3 TEXT,
           futurplural1 TEXT,
           futurplural2 TEXT,
           futurplural3 TEXT,
-          futurencliticsing1 TEXT,
-          futurencliticsing2 TEXT,
-          futurencliticsing3m TEXT,
-          futurencliticsing3f TEXT,
-          futurencliticplural1 TEXT,
-          futurencliticplural2 TEXT,
-          futurencliticplural3 TEXT,
-          futurdubitativsing1 TEXT,
-          futurdubitativsing2 TEXT,
-          futurdubitativsing3 TEXT,
-          futurdubitativplural1 TEXT,
-          futurdubitativplural2 TEXT,
-          futurdubitativplural3 TEXT,
-          futurdubitativencliticsing1 TEXT,
-          futurdubitativencliticsing2 TEXT,
-          futurdubitativencliticsing3m TEXT,
-          futurdubitativencliticsing3f TEXT,
-          futurdubitativencliticplural1 TEXT,
-          futurdubitativencliticplural2 TEXT,
-          futurdubitativencliticplural3 TEXT,
           imperativ1 TEXT,
           imperativ2 TEXT,
-          imperativ3 TEXT,
-          imperativ4 TEXT,
-          imperativ5 TEXT,
-          imperativ6 TEXT,
           gerundium TEXT,
           last_modified INTEGER DEFAULT (strftime('%s', 'now'))
       );
@@ -222,9 +154,10 @@ export class FavouritesService {
   private iosHeaderCleanerUtil = inject(IosHeaderCleanerUtil);
 
   private isReadySubject = new BehaviorSubject(false);
+  private readyPromise: Promise<void>;
 
   constructor() {
-    this.setupDatabase();
+    this.readyPromise = this.setupDatabase();
   }
 
   isReadyObservable(): Observable<boolean> {
@@ -232,6 +165,8 @@ export class FavouritesService {
   }
 
   async loadFavourites() {
+    await this.readyPromise;
+
     const statement = 'SELECT * from favorites ORDER BY RStichwort ASC, DStichwort ASC;';
     // console.warn(statement);
     const values = await CapacitorSQLite.query({
@@ -244,6 +179,8 @@ export class FavouritesService {
   }
 
   async addFavorite(dictionary, lemma): Promise<boolean> {
+    await this.readyPromise;
+
     if (lemma.Corp) {
       lemma.Corp = lemma.Corp.replace(/"/g, '""');
     }
@@ -281,6 +218,8 @@ export class FavouritesService {
   }
 
   async deleteFavorite(id: number) {
+    await this.readyPromise;
+
     const statement = `
     DELETE FROM favorites WHERE id = ${id};
     `;
@@ -302,6 +241,8 @@ export class FavouritesService {
   }
 
   async deleteAllFavorites() {
+    await this.readyPromise;
+
     const statement = `
     DELETE FROM favorites;
     `;
@@ -323,22 +264,22 @@ export class FavouritesService {
   }
 
   private async setupDatabase() {
-    await this.sqlLiteService.addUpgradeStatement(DB_NAME_KEY, DB_VERSION, migrationV2Commands);
+    // Register the full upgrade chain before opening. The plugin replays every registered step
+    // whose toVersion is > the database's current version, so a brand new install (curVersion 0)
+    // runs both steps in order (1 creates the table, 2 adds the newer columns), while an
+    // existing install only replays whichever steps it hasn't already applied.
+    await this.sqlLiteService.addUpgradeStatement(DB_NAME_KEY, 1, [createTableV1Command]);
+    await this.sqlLiteService.addUpgradeStatement(DB_NAME_KEY, 2, migrationV2Commands);
 
     // create db connection
-    const hasConnection = await this.sqlLiteService.isConnection(DB_NAME_KEY);
+    const hasConnection = (await this.sqlLiteService.isConnection(DB_NAME_KEY)).result;
     let db;
     if (hasConnection) {
-      db = await this.sqlLiteService.createConnection(DB_NAME_KEY, false, 'no-encryption', DB_VERSION);
-    } else {
       db = await this.sqlLiteService.retrieveConnection(DB_NAME_KEY);
+    } else {
+      db = await this.sqlLiteService.createConnection(DB_NAME_KEY, false, 'no-encryption', DB_VERSION);
     }
     await db.open();
-
-    const ret: any = await db.execute(initializationCommand);
-    if (ret.changes.changes < 0) {
-      return Promise.reject(new Error('Execute initializationCommand failed'));
-    }
 
     this.isReadySubject.next(true);
   }

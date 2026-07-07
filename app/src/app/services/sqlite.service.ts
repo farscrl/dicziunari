@@ -44,10 +44,6 @@ export class SQLiteService {
     });
   }
 
-
-
-
-
   isInitialized(): Observable<boolean> {
     return this.isInitializedSubject.asObservable();
   }
@@ -121,12 +117,6 @@ export class SQLiteService {
 
    */
   async addUpgradeStatement(database: string, toVersion: number, statements: string[]): Promise<void> {
-
-
-
-
-
-
     if (this.sqlite != null) {
       try {
         const update: capSQLiteVersionUpgrade = { toVersion, statements};
