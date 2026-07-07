@@ -5,7 +5,7 @@ import { Platform, IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 import { ConfigService } from './services/config.service';
 import { SQLiteService } from './services/sqlite.service';
 import { Keyboard } from '@capacitor/keyboard';
-import { Capacitor } from '@capacitor/core';
+import { Capacitor, SystemBars, SystemBarsStyle } from '@capacitor/core';
 import { ColorModeService } from './services/color-mode.service';
 
 @Component({
@@ -57,6 +57,11 @@ export class AppComponent {
         document.documentElement.classList.add('dark-theme');
       } else {
         document.documentElement.classList.remove('dark-theme');
+      }
+
+      if (Capacitor.isNativePlatform()) {
+        // Dark background needs light (white) system bar icons and vice versa.
+        SystemBars.setStyle({ style: darkMode ? SystemBarsStyle.Dark : SystemBarsStyle.Light });
       }
     });
   }

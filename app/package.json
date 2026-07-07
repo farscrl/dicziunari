@@ -29,7 +29,6 @@
     "@capacitor/share": "^8.0.1",
     "@capacitor/splash-screen": "^8.0.1",
     "@capacitor/status-bar": "^8.0.1",
-    "@capawesome/capacitor-android-edge-to-edge-support": "^8.0.6",
     "@capawesome/capacitor-file-picker": "^8.0.2",
     "@ionic/angular": "^8.8.1",
     "@ngx-translate/core": "^17.0.0",

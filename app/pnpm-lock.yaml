@@ -62,9 +62,6 @@ importers:
       '@capacitor/status-bar':
         specifier: ^8.0.1
         version: 8.0.1(@capacitor/core@8.2.0)
-      '@capawesome/capacitor-android-edge-to-edge-support':
-        specifier: ^8.0.6
-        version: 8.0.6(@capacitor/core@8.2.0)
       '@capawesome/capacitor-file-picker':
         specifier: ^8.0.2
         version: 8.0.2(@capacitor/core@8.2.0)
@@ -567,11 +564,6 @@ packages:
 
   '@capacitor/synapse@1.0.4':
     resolution: {integrity: sha512-/C1FUo8/OkKuAT4nCIu/34ny9siNHr9qtFezu4kxm6GY1wNFxrCFWjfYx5C1tUhVGz3fxBABegupkpjXvjCHrw==}
-
-  '@capawesome/capacitor-android-edge-to-edge-support@8.0.6':
-    resolution: {integrity: sha512-DhE45F0D73d1nEZyU8J103l7NiBIPKEC3BfvF1+LBxcDkxQpV9J/63VASblKjqHaM0/5k+UZGxmQT5WEp2D1iA==}
-    peerDependencies:
-      '@capacitor/core': '>=8.0.0'
 
   '@capawesome/capacitor-file-picker@8.0.2':
     resolution: {integrity: sha512-TQstOBrynvQP7t1s7egvf0RkiTR29EUbBMEhus8bb4uPFROfACOxR0s68uuOS6uTN3bSF2tpsz2NcVnVV/XvzA==}
@@ -4727,10 +4719,6 @@ snapshots:
       '@capacitor/core': 8.2.0
 
   '@capacitor/synapse@1.0.4': {}
-
-  '@capawesome/capacitor-android-edge-to-edge-support@8.0.6(@capacitor/core@8.2.0)':
-    dependencies:
-      '@capacitor/core': 8.2.0
 
   '@capawesome/capacitor-file-picker@8.0.2(@capacitor/core@8.2.0)':
     dependencies:
