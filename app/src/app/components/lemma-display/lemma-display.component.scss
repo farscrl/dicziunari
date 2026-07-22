@@ -8,9 +8,24 @@
   width: 44px;
 
   ion-icon {
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
+    padding: 4px;
   }
+}
+
+ion-col {
+  padding: 0;
+}
+
+app-result-text.first-col {
+  padding: 8px 0 8px 16px;
+  display: block;
+}
+
+app-result-text.second-col {
+  padding: 8px 0 8px 4px;
+  display: block;
 }
 
 ion-item-options {

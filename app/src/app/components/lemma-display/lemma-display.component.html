@@ -4,14 +4,14 @@
       @if ((searchDirection === 'fromDe') || (searchDirection === 'both' && selectedLocale === 'de')) {
         <ion-row>
           <ion-col>
-            <app-result-text [text]="lemma.DStichwort" [flex]="lemma.DFlex" [grammar]="dGramm"
+            <app-result-text [text]="lemma.DStichwort" [flex]="lemma.DFlex" [grammar]="dGramm" class="first-col"
                              [semantics]="lemma.DSempraez" [searchString]="searchString" (changeSearchTerm)="changeTerm($event)"></app-result-text>
           </ion-col>
           <ion-col size="auto" class="verb" (click)="goToDetail()">
             <ion-icon src="assets/icon/info.svg" size="large" [style.visibility]="hasInflection ? 'visible' : 'hidden'"></ion-icon>
           </ion-col>
           <ion-col>
-            <app-result-text [text]="lemma.RStichwort" [flex]="lemma.RFlex" [grammar]="rGramm"
+            <app-result-text [text]="lemma.RStichwort" [flex]="lemma.RFlex" [grammar]="rGramm" class="second-col"
                              [semantics]="lemma.RSempraez" [searchString]="searchDirection === 'both' ? searchString : ''" [pronunciation]="lemma.RPronunciation" (changeSearchTerm)="changeTerm($event)">
             </app-result-text>
           </ion-col>
@@ -20,14 +20,14 @@
       @if ((searchDirection === 'fromRm') || (searchDirection === 'both' && selectedLocale === 'rm')) {
         <ion-row>
           <ion-col>
-            <app-result-text [text]="lemma.RStichwort" [flex]="lemma.RFlex" [grammar]="rGramm"
+            <app-result-text [text]="lemma.RStichwort" [flex]="lemma.RFlex" [grammar]="rGramm" class="first-col"
                              [semantics]="lemma.RSempraez" [searchString]="searchString" [pronunciation]="lemma.RPronunciation" (changeSearchTerm)="changeTerm($event)"></app-result-text>
           </ion-col>
           <ion-col size="auto" class="verb" (click)="goToDetail()">
             <ion-icon src="assets/icon/info.svg" size="large" [style.visibility]="hasInflection ? 'visible' : 'hidden'"></ion-icon>
           </ion-col>
           <ion-col>
-            <app-result-text [text]="lemma.DStichwort" [flex]="lemma.DFlex" [grammar]="dGramm"
+            <app-result-text [text]="lemma.DStichwort" [flex]="lemma.DFlex" [grammar]="dGramm" class="second-col"
                              [semantics]="lemma.DSempraez" [searchString]="searchDirection === 'both' ? searchString : ''" (changeSearchTerm)="changeTerm($event)">
             </app-result-text>
           </ion-col>
