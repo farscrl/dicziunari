@@ -56,8 +56,6 @@ export class LemmaDisplayComponent implements OnInit, OnDestroy {
   @Output()
   public deleteItem = new EventEmitter<any>();
 
-  public completeLemma: string;
-
   public selectedLocale: Locale = Locale.rm;
 
   private localeSubscription: Subscription;
@@ -66,8 +64,6 @@ export class LemmaDisplayComponent implements OnInit, OnDestroy {
     this.localeSubscription = this.configService.getLocaleObservable().subscribe((locale) => {
       this.selectedLocale = locale;
     });
-
-    this.completeLemma = this.isSursilvan ? (this.lemma.Corp ? this.lemma.Corp : this.lemma.DStichwort) : '';
   }
 
   ngOnDestroy(): void {
@@ -91,25 +87,14 @@ export class LemmaDisplayComponent implements OnInit, OnDestroy {
   }
 
   async share(slider) {
-    if (this.isSursilvan) {
-      this.imageCreator.createImageSursilvan(this.lemma.RStichwort + ' ' + this.completeLemma).then(() => {
-        this.toastService.showNotification('SHARE.SUCCESS');
-        slider.close();
-      });
-    } else {
-      this.imageCreator.createImage(this.lemma.RStichwort, this.lemma.DStichwort).then(() => {
-        this.toastService.showNotification('SHARE.SUCCESS');
-        slider.close();
-      });
-    }
+    this.imageCreator.createImage(this.lemma.RStichwort, this.lemma.DStichwort).then(() => {
+      this.toastService.showNotification('SHARE.SUCCESS');
+      slider.close();
+    });
   }
 
   async copy(slider) {
-    if (this.isSursilvan) {
-      await this.copyService.copyItem(this.lemma.DStichwort, this.lemma.Corp);
-    } else {
-      await this.copyService.copyItem(this.lemma.DStichwort, this.lemma.RStichwort);
-    }
+    await this.copyService.copyItem(this.lemma.DStichwort, this.lemma.RStichwort);
     slider.close();
   }
 
@@ -122,10 +107,6 @@ export class LemmaDisplayComponent implements OnInit, OnDestroy {
 
   changeTerm(term: string) {
     this.changeSearchTerm.emit(term);
-  }
-
-  get isSursilvan() {
-    return this.dictionary === Dictionary.sursilv;
   }
 
   get hasInflection() {

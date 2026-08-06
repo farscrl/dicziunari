@@ -14,9 +14,6 @@ export class ImageCreatorUtil {
 
   private rm: string;
   private de: string;
-  private text: string;
-
-  private isSursilvan = false;
 
   private bgImage: HTMLImageElement;
   private logoImage: HTMLImageElement;
@@ -32,25 +29,11 @@ export class ImageCreatorUtil {
   public async createImage(rm: string, de: string) {
     this.rm = rm;
     this.de = de;
-    this.isSursilvan = false;
 
     const ctxBg = this.getBgCanvasContext();
 
     this.addRomanshCanvas(ctxBg);
     this.generateGermanCanvas(ctxBg);
-
-    await this.shareImage(ctxBg.canvas);
-  }
-
-  public async createImageSursilvan(text: string) {
-    this.text = text;
-    this.isSursilvan = true;
-
-    this.text = this.truncate(this.text, 1500);
-
-    const ctxBg = this.getBgCanvasContext();
-
-    this.addSursilvanCanvas(ctxBg);
 
     await this.shareImage(ctxBg.canvas);
   }
@@ -78,15 +61,10 @@ export class ImageCreatorUtil {
     return ctxBg;
   }
 
-  private getTextCanvas(text: string, big: boolean = false): HTMLCanvasElement {
+  private getTextCanvas(text: string): HTMLCanvasElement {
     const canvasText = document.createElement('canvas') as HTMLCanvasElement | null;
-    if (big) {
-      canvasText.width = 740;
-      canvasText.height = 740;
-    } else {
-      canvasText.width = 740;
-      canvasText.height = 330;
-    }
+    canvasText.width = 740;
+    canvasText.height = 330;
     const ctx = canvasText.getContext('2d');
     ctx.fillStyle = '#fff';
 
@@ -110,11 +88,6 @@ export class ImageCreatorUtil {
   private generateGermanCanvas(ctxBg: CanvasRenderingContext2D) {
     const canvas = this.getTextCanvas(this.de);
     ctxBg.drawImage(canvas, 30, 400);
-  }
-
-  private addSursilvanCanvas(ctxBg: CanvasRenderingContext2D) {
-    const canvas = this.getTextCanvas(this.text, true);
-    ctxBg.drawImage(canvas, 30, 30);
   }
 
   private async shareImage(canvasBg: HTMLCanvasElement) {
@@ -141,11 +114,7 @@ export class ImageCreatorUtil {
         dialogTitle: this.translateService.instant('SHARE.DIALOG_TITLE')
       };
 
-      if (this.isSursilvan) {
-        options.title = '🇷 ' + this.truncate(this.text, 100);
-      } else {
-        options.title = '🇷 ' + this.truncate(this.rm, 50) + ' 🇩 ' + this.truncate(this.de, 50);
-      }
+      options.title = '🇷 ' + this.truncate(this.rm, 50) + ' 🇩 ' + this.truncate(this.de, 50);
 
       Share.share(options).then((result) => {
         console.log(result);
